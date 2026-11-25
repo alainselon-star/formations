@@ -1,0 +1,57 @@
+$CATEGORY: $course$/K4-L4 Atelier
+
+::K4L4-A1 Taux global::Étape 1 – Quel est le taux de réouverture de Valdor, tous incidents confondus ?{
+=10,5 %#Exact \: 90 incidents rouverts sur 856.
+~30 %#Non \: c'est le taux de Kevin Dubois. Revoyez la diapositive 5 (K4-L4-S1).
+~16,1 %#Non \: c'est le taux du niveau 1. Revoyez la diapositive 5 (K4-L4-S1).
+~90 %#Non \: 90 est le nombre d'incidents rouverts, pas un pourcentage. Revoyez la diapositive 5 (K4-L4-S1).
+}
+
+::K4L4-A2 Par technicien::Étape 1 – Pourquoi lire le taux de réouverture par technicien ?{
+=Parce qu'un taux global moyen peut cacher une personne qui concentre les réouvertures#Exact \: Kevin, à 30 %, en porte presque la moitié.
+~Pour classer les techniciens et sanctionner le dernier#Non \: le but est de coacher, pas de sanctionner. Revoyez la diapositive 6 (K4-L4-S1).
+~Parce que le taux global est faux#Non \: il est juste, mais il ne dit pas où agir. Revoyez la diapositive 5 (K4-L4-S1).
+~Parce que seuls les techniciens N1 rouvrent des tickets#Non \: les N2 et N3 ont aussi des réouvertures. Revoyez la diapositive 5 (K4-L4-S1).
+}
+
+::K4L4-A3 Coût::Étape 2 – Que montre la comparaison entre incidents rouverts et non rouverts ?{
+=Un incident rouvert prend 24,1 h au lieu de 6,6 h, et obtient 2,0 sur 5 au lieu de 3,7#Exact \: le travail mal fait se paie deux fois.
+~Les incidents rouverts sont plus rapides#Non \: c'est l'inverse. Revoyez la diapositive 3 (K4-L4).
+~La satisfaction ne change pas#Non \: elle passe de 3,7 à 2,0. Revoyez la diapositive 3 (K4-L4).
+~La réouverture ne change que la satisfaction#Non \: elle multiplie aussi le délai par près de quatre. Revoyez la diapositive 3 (K4-L4).
+}
+
+::K4L4-A4 Paire::Étape 2 – Kevin a le délai médian le plus court et 30 % de réouvertures. Quel KPI doit toujours accompagner un KPI de vitesse ?{
+=Le taux de réouverture#Exact \: c'est la paire vitesse – qualité.
+~Le nombre de tickets traités#Non \: un volume ne dit rien de la qualité. Revoyez la diapositive 6 (K4-L4-S1).
+~Le SLA de prise en charge#Non \: c'est encore un KPI de vitesse. Revoyez la diapositive 6 (K4-L4-S1).
+~Le MTTA#Non \: c'est encore un KPI de vitesse. Revoyez la diapositive 6 (K4-L4-S1).
+}
+
+::K4L4-A5 Critère::Étape 3 – Dans NB.SI.ENS(T_Incidents[Catégorie];A9;T_Incidents[Nb réassignations];">\=2"), que compte le dernier critère ?{
+=Les incidents réassignés au moins deux fois#Exact \: ">\=2" veut dire « supérieur ou égal à 2 ».
+~Les incidents réassignés exactement deux fois#Non \: il faudrait écrire 2, sans signe.
+~Les incidents qui ont deux catégories#Non \: le critère porte sur la colonne Nb réassignations.
+~Les incidents rouverts deux fois#Non \: la colonne compte les changements de groupe, pas les réouvertures.
+}
+
+::K4L4-A6 Wifi::Étape 3 – Les incidents Wifi ont 2,0 réassignations en moyenne, contre 0,8 pour l'ensemble. Quelle est la cause la plus probable ?{
+=Une frontière floue entre équipes \: personne ne sait qui traite le Wifi#Exact \: la réponse est une règle d'affectation et un OLA.
+~Des techniciens peu compétents#Non \: le problème touche une catégorie, pas une personne. Revoyez la diapositive 8 (K4-L4-S2).
+~Des utilisateurs qui rouvrent leurs tickets#Non \: une réouverture n'est pas un changement de groupe. Revoyez la diapositive 7 (K4-L4-S2).
+~Un SLA trop court#Non \: le SLA ne fait pas changer un ticket de groupe. Revoyez la diapositive 8 (K4-L4-S2).
+}
+
+::K4L4-A7 Quatre et plus::Étape 4 – Combien d'incidents ont été réassignés 4 fois ou plus, et de quelles catégories ?{
+=27, tous Wifi (15) ou VPN (12)#Exact \: le ping-pong se concentre sur deux catégories.
+~94, de toutes les catégories#Non \: 94 est le nombre d'incidents réassignés 2 fois ou plus. Revoyez la diapositive 8 (K4-L4-S2).
+~27, répartis dans toutes les catégories#Non \: comptez avec le critère de catégorie. Revoyez la diapositive 8 (K4-L4-S2).
+~6, comme dans la plainte de l'entrepôt#Non \: 6 était le nombre d'équipes citées par Hélène. Revoyez la diapositive 8 (K4-L4-S2).
+}
+
+::K4L4-A8 Coût ping-pong::Étape 4 – Quel est le MTTR moyen des incidents réassignés 2 fois ou plus, comparé à ceux sans réassignation ?{
+=17,1 h, contre 3,8 h#Exact \: chaque passage de main fait perdre du temps.
+~3,8 h, contre 17,1 h#Non \: vous avez inversé les deux. Revoyez la diapositive 7 (K4-L4-S2).
+~10,6 h, contre 3,8 h#Non \: 10,6 h est le MTTR des incidents réassignés une seule fois. Revoyez la diapositive 7 (K4-L4-S2).
+~Les deux sont équivalents#Non \: l'écart est de plus de 13 h. Revoyez la diapositive 7 (K4-L4-S2).
+}

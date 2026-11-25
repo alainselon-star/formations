@@ -1,0 +1,57 @@
+$CATEGORY: $course$/K4-L2 Atelier
+
+::K4L2-A1 MTTA médian::Étape 1 – Le MTTA moyen vaut 21,5 min et le MTTA médian 4 min. Que signifie la médiane ?{
+=La moitié des incidents sont pris en charge en 4 minutes ou moins#Exact \: la médiane coupe les incidents en deux moitiés.
+~Les incidents sont en moyenne pris en charge en 4 minutes#Non \: la moyenne vaut 21,5 min. Revoyez la diapositive 8 (K4-L2-S4).
+~Aucun incident n'attend plus de 4 minutes#Non \: c'est le rôle du maximum, pas de la médiane. Revoyez la diapositive 8 (K4-L2-S4).
+~Le calcul est faux, les deux devraient être égaux#Non \: moyenne et médiane diffèrent dès que quelques cas extrêmes existent. Revoyez la diapositive 8 (K4-L2-S4).
+}
+
+::K4L2-A2 Canal::Étape 2 – D'après vos calculs, quel canal a le MTTA le plus faible ?{
+=Le téléphone, avec 2,4 min en moyenne#Exact \: le technicien prend l'incident pendant l'appel.
+~Le mail, avec 41,0 min#Non \: c'est le MTTA le plus élevé. Revoyez la diapositive 5 (K4-L2-S1).
+~Le portail, avec 39,6 min#Non \: le portail attend, comme le mail, l'ouverture de la file. Revoyez la diapositive 5 (K4-L2-S1).
+~Les trois canaux sont équivalents#Non \: l'écart va de 2 à 41 minutes. Revoyez la diapositive 5 (K4-L2-S1).
+}
+
+::K4L2-A3 MOYENNE.SI::Étape 2 – Que calcule MOYENNE.SI(T_Incidents[Source];A10;T_Incidents[Prise en charge (min)]) ?{
+=La moyenne des délais de prise en charge des seuls incidents du canal écrit en A10#Exact \: le 2e argument filtre, le 3e est la colonne dont on fait la moyenne.
+~Le nombre d'incidents du canal écrit en A10#Non \: c'est NB.SI qui compte.
+~La moyenne de tous les délais de prise en charge#Non \: le critère A10 filtre un seul canal.
+~La médiane des délais du canal A10#Non \: la médiane se calcule avec MEDIANE(SI(…)).
+}
+
+::K4L2-A4 Définition MTTR::Étape 3 – Dans le fichier, quelle durée mesure la colonne Résolution (min) ?{
+=De l'ouverture à la résolution finale, en minutes ouvrées, hors temps en attente#Exact \: c'est la règle de Valdor fixée dans la leçon 1.
+~De l'ouverture à la clôture#Non \: la clôture mesure la validation par l'utilisateur. Revoyez la diapositive 6 (K4-L2-S2).
+~De la prise en charge à la 1re résolution#Non \: le MTTR part de l'ouverture et va jusqu'à la résolution finale. Revoyez la diapositive 6 (K4-L2-S2).
+~De l'ouverture au premier message à l'utilisateur#Non \: c'est le délai de 1re réponse. Revoyez la diapositive 7 (K4-L2-S3).
+}
+
+::K4L2-A5 P1::Étape 3 – Pour les incidents P1, le MTTR moyen vaut 4,4 h (cible 4 h) et la médiane 1,8 h. Que faut-il en conclure ?{
+=La plupart des P1 sont réparés vite, mais quelques-uns très longs font dépasser la moyenne#Exact \: il faut analyser ces quelques incidents un par un.
+~La majorité des P1 dépassent la cible de 4 h#Non \: la médiane de 1,8 h montre le contraire. Revoyez la diapositive 8 (K4-L2-S4).
+~Le MTTR des P1 est conforme, inutile de regarder plus loin#Non \: la moyenne dépasse la cible. Revoyez la diapositive 6 (K4-L2-S2).
+~Les P1 sont mal classés#Non \: rien ici ne permet de le dire. Revoyez la diapositive 6 (K4-L2-S2).
+}
+
+::K4L2-A6 Centile::Étape 4 – Le 90e centile du MTTR vaut 22,1 h. Que signifie ce chiffre ?{
+=Un incident sur dix est résolu en plus de 22,1 h#Exact \: 90 % des incidents font mieux, 10 % font pire.
+~90 % des incidents sont résolus en plus de 22,1 h#Non \: c'est l'inverse. Revoyez la diapositive 8 (K4-L2-S4).
+~Le MTTR moyen des 10 % les plus lents#Non \: le centile est une valeur seuil, pas une moyenne. Revoyez la diapositive 8 (K4-L2-S4).
+~La cible SLA à atteindre#Non \: le centile décrit les données, il ne fixe pas de cible. Revoyez la diapositive 8 (K4-L2-S4).
+}
+
+::K4L2-A7 Sous la moyenne::Étape 4 – Quelle part des incidents est résolue plus vite que la moyenne de 8,4 h ?{
+=67 %#Exact \: deux incidents sur trois, car la moyenne est tirée vers le haut par les cas longs.
+~50 %#Non \: c'est la définition de la médiane, pas de la moyenne. Revoyez la diapositive 3 (K4-L2).
+~10 %#Non \: 10 % correspond au 90e centile. Revoyez la diapositive 8 (K4-L2-S4).
+~90 %#Non \: recalculez avec NB.SI(…;"<"&B5*60). Revoyez la diapositive 3 (K4-L2).
+}
+
+::K4L2-A8 Comité::Étape 4 – Hélène ne peut présenter que deux chiffres pour décrire le MTTR. Lesquels choisir ?{
+=La médiane (4,6 h) pour l'incident typique et le 90e centile (22,1 h) pour les pires cas#Exact \: l'un décrit l'expérience courante, l'autre les cas à traiter.
+~La moyenne et le maximum#Non \: le maximum est un cas isolé, à analyser à part. Revoyez la diapositive 8 (K4-L2-S4).
+~Le MTTA et le MTTR#Non \: le MTTA mesure la réactivité, pas la réparation. Revoyez la diapositive 7 (K4-L2-S3).
+~La moyenne seule suffit#Non \: elle ne décrit pas l'incident typique. Revoyez la diapositive 3 (K4-L2).
+}

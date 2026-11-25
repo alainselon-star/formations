@@ -1,0 +1,36 @@
+<h3>Atelier 11 – L'impression ratée, à vous de jouer (20 min)</h3>
+<p>La banque veut la liste des 300 clients et le récapitulatif par ville, en PDF, propres et lisibles. Vous allez régler l'impression une fois pour toutes, sans toucher aux données.</p>
+<p><strong>Fichier :</strong> votre copie de <em>Excel_11_Mise_en_page_clients.xlsx</em> (à télécharger juste sous cette page) : feuille <strong>Clients</strong> (300 clients, 11 colonnes) et feuille <strong>Récap</strong> (le récapitulatif en A1:F17, des calculs intermédiaires plus bas). <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie que vous avez compris chaque geste.</p>
+
+<h4>Étape 1 – Voir le problème</h4>
+<p><strong>Faites :</strong> feuille Clients, <strong>Ctrl+P</strong> (Fichier → Imprimer). Faites défiler l'aperçu avec les flèches, en bas.</p>
+<p><strong>Vous devez voir :</strong> beaucoup de pages (le nombre exact est en bas de l'aperçu, notez-le) ; les titres seulement sur la première ; plus loin, des pages avec seulement les dernières colonnes, sans le nom du client.</p>
+<p><strong>Pourquoi :</strong> Excel imprime d'abord vers le bas, puis passe aux colonnes qui ne tenaient pas en largeur.</p>
+
+<h4>Étape 2 – Les titres sur chaque page</h4>
+<p><strong>Faites :</strong> revenez à la feuille (Échap). Mise en page → <strong>Imprimer les titres</strong> → onglet Feuille → cliquez dans « Lignes à répéter en haut », puis sur le numéro de la ligne 1 → OK.</p>
+<p><strong>Vous devez voir :</strong> <code>$1:$1</code> dans la zone ; dans l'aperçu (Ctrl+P), la ligne des titres en haut de chaque page.</p>
+<p><strong>Si ça ne marche pas :</strong> vous avez figé les volets ? Cela n'agit que sur l'écran. La zone est grisée ? Vous êtes dans l'aperçu : revenez à la feuille.</p>
+
+<h4>Étape 3 – Toutes les colonnes sur la largeur</h4>
+<p><strong>Faites :</strong> Mise en page → Orientation → <strong>Paysage</strong>. Groupe Mise à l'échelle : <strong>Largeur : 1 page</strong>, Hauteur : Automatique.</p>
+<p><strong>Vous devez voir :</strong> dans l'aperçu, beaucoup moins de pages, chacune avec les 11 colonnes, du N° client à la date du dernier devis.</p>
+<p><strong>Si ça ne marche pas :</strong> tout est minuscule ? Vous avez aussi mis Hauteur : 1 page : remettez Automatique.</p>
+
+<h4>Étape 4 – Un pied de page</h4>
+<p><strong>Faites :</strong> Insertion → En-tête et pied de page. Dans le pied de page, au centre, cliquez sur Numéro de page, tapez « sur », puis Nombre de pages. Revenez en affichage Normal (Affichage → Normal).</p>
+<p><strong>Vous devez voir :</strong> dans l'aperçu, « 1 sur… » en bas de chaque page.</p>
+
+<h4>Étape 5 – N'imprimer que le récapitulatif</h4>
+<p><strong>Faites :</strong> feuille Récap, sélectionnez <strong>A1:F17</strong>, puis Mise en page → <strong>Zone d'impression → Définir</strong>. Ctrl+P.</p>
+<p><strong>Vous devez voir :</strong> une seule page, avec le récapitulatif par ville (300 clients, 2 753 400 € de CA) et par commercial, sans les calculs intermédiaires des lignes 24 à 27.</p>
+<p><strong>Pourquoi :</strong> la zone est enregistrée avec la feuille. « Imprimer la sélection » ne vaudrait que pour une seule impression.</p>
+
+<h4>Étape 6 – L'aperçu des sauts de page</h4>
+<p><strong>Faites :</strong> feuille Clients, Affichage → <strong>Aperçu des sauts de page</strong>, puis revenez en Normal.</p>
+<p><strong>Vous devez voir :</strong> les pages numérotées, délimitées par des traits bleus que l'on peut faire glisser.</p>
+
+<h4>Étape 7 – Le PDF pour la banque</h4>
+<p><strong>Faites :</strong> Fichier → Exporter → <strong>Créer un document PDF/XPS</strong>. Dans Options, choisissez « Classeur entier » → OK → Publier. Ouvrez le PDF.</p>
+<p><strong>Vous devez voir :</strong> la liste des clients avec ses titres sur chaque page et toutes ses colonnes, puis le récapitulatif seul. Enregistrez votre fichier Excel : les réglages sont conservés pour la prochaine fois.</p>

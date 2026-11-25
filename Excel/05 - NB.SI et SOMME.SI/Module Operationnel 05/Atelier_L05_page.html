@@ -1,0 +1,36 @@
+<h3>Atelier 05 – Compter et totaliser par critère, à vous de jouer (25 min)</h3>
+<p>Sophie prépare la réunion commerciale. Vous allez remplir sa synthèse à partir des 300 devis, puis répondre à ses questions, avec une formule par case.</p>
+<p><strong>Fichier :</strong> votre copie de <em>Excel_5_NB_SI_SOMME_SI_devis_2026.xlsx</em> (à télécharger juste sous cette page) : feuille <strong>Devis</strong> (les données, lignes 2 à 301), feuilles <strong>Synthèse</strong> et <strong>Pratique</strong> (à remplir). <strong>Durée :</strong> 25 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie que vous avez compris chaque geste.</p>
+
+<h4>Étape 1 – Le nombre de devis : NB.SI</h4>
+<p><strong>Faites :</strong> feuille Synthèse, en B4, tapez <code>=NB.SI(</code>, allez sur la feuille Devis, sélectionnez G2:G301, appuyez sur F4, tapez <code>;</code>, revenez sur Synthèse, cliquez sur A4, fermez la parenthèse et validez. Recopiez jusqu'en B6, puis en B7 : <code>=SOMME(B4:B6)</code>.</p>
+<p><strong>Vous devez voir :</strong> <code>=NB.SI(Devis!$G$2:$G$301;A4)</code>, 141 pour Julie, et 300 en B7.</p>
+<p><strong>Si ça ne marche pas :</strong> le total n'est pas 300 ? La plage a glissé en recopiant : il manque les $.</p>
+
+<h4>Étape 2 – Le montant : SOMME.SI</h4>
+<p><strong>Faites :</strong> en C4, tapez <code>=SOMME.SI(Devis!$G$2:$G$301;A4;Devis!$H$2:$H$301)</code> et recopiez jusqu'en C6.</p>
+<p><strong>Vous devez voir :</strong> 727 190 € pour Julie.</p>
+<p><strong>Pourquoi :</strong> Excel parcourt la colonne Commercial et, chaque fois qu'il trouve Julie, ajoute le montant de la même ligne. La plage à additionner vient en dernier.</p>
+
+<h4>Étape 3 – Deux critères : .ENS</h4>
+<p><strong>Faites :</strong> en D4, <code>=NB.SI.ENS(Devis!$G$2:$G$301;A4;Devis!$I$2:$I$301;"Accepté")</code>. En E4, <code>=SOMME.SI.ENS(Devis!$H$2:$H$301;Devis!$G$2:$G$301;A4;Devis!$I$2:$I$301;"Accepté")</code>. En F4, <code>=D4/B4</code> au format pourcentage, une décimale. Recopiez, et complétez la ligne 7.</p>
+<p><strong>Vous devez voir :</strong> Julie : 83 devis acceptés, 434 730 €, 58,9 %. Total : 176 devis, 903 030 €, 58,7 %.</p>
+<p><strong>Si ça ne marche pas :</strong> #VALEUR! ? Les plages n'ont pas la même taille. Un montant absurde en E4 ? Dans SOMME.SI.ENS, les montants viennent en premier.</p>
+
+<h4>Étape 4 – La synthèse se met à jour</h4>
+<p><strong>Faites :</strong> feuille Devis, en I20 (devis D-2026-019 de Julie), remplacez « En attente » par « Accepté ». Revenez sur Synthèse.</p>
+<p><strong>Vous devez voir :</strong> D4 passe de 83 à 84, E4 augmente de 10 190 €. Remettez « En attente ».</p>
+
+<h4>Étape 5 – Un seuil modifiable</h4>
+<p><strong>Faites :</strong> en B13, <code>=NB.SI.ENS(Devis!$G$2:$G$301;A13;Devis!$H$2:$H$301;"&gt;"&amp;$B$9)</code> et recopiez jusqu'en B15. Puis tapez 8000 en B9.</p>
+<p><strong>Vous devez voir :</strong> Julie : 61 gros devis au-dessus de 5 000 €, puis 21 au-dessus de 8 000 €. Remettez 5000.</p>
+<p><strong>Si ça ne marche pas :</strong> 0 partout ? Vous avez écrit <code>"&gt;$B$9"</code> : le $B$9 doit être hors des guillemets, collé avec &amp;.</p>
+
+<h4>Étape 6 – Un trimestre</h4>
+<p><strong>Faites :</strong> en C13, comptez les devis acceptés de Julie entre les dates de E9 et E10 : ajoutez à NB.SI.ENS les critères <code>Devis!$B$2:$B$301;"&gt;="&amp;$E$9;Devis!$B$2:$B$301;"&lt;="&amp;$E$10</code>. Faites de même en D13 avec SOMME.SI.ENS.</p>
+<p><strong>Vous devez voir :</strong> 20 devis acceptés pour 81 740 € au 3e trimestre.</p>
+
+<h4>Étape 7 – Les questions de Sophie</h4>
+<p><strong>Faites :</strong> feuille Pratique : le nombre de devis par type de travaux (NB.SI, colonne B), le montant par ville (SOMME.SI, colonne E), les devis refusés de Thomas et le montant accepté en plomberie à Compiègne (.ENS, colonne F).</p>
+<p><strong>Vous devez voir :</strong> Peinture : 89 devis ; Compiègne : 512 860 € ; Thomas : 38 devis refusés ; plomberie à Compiègne : 56 290 € acceptés.</p>

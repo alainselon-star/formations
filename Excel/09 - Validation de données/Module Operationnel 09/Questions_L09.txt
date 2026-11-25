@@ -1,0 +1,31 @@
+MC
+10
+Pour éviter les fautes de frappe, Karim veut que la colonne Statut n'accepte que « Accepté », « Refusé » ou « En attente », choisis dans une liste déroulante. Quel outil utilise-t-il ?
+*Données > Validation des données > Liste | Exact : la validation des données contrôle la saisie et propose une liste déroulante.
+Accueil > Mise en forme conditionnelle | Non : elle colore les cellules, elle ne contrôle pas la saisie.
+Données > Filtrer | Non : le filtre cache des lignes, il n'empêche aucune saisie.
+Révision > Protéger la feuille | Non : la protection empêche de modifier, elle ne propose pas de liste.
+
+MC
+10
+La synthèse compte 51 devis alors que la liste en contient 60. Les statuts comportent des fautes de frappe. Comment retrouver ces cellules après avoir posé la règle de validation ?
+*Données > Validation des données (flèche) > Entourer les données non valides | Exact : Excel entoure en rouge chaque cellule qui ne respecte pas la règle.
+Rien : la règle corrige automatiquement les cellules existantes | Non : elle ne contrôle que les nouvelles saisies.
+Accueil > Rechercher > « Accepté » | Non : cela trouve les bons statuts, pas les fautes.
+Ctrl+Z jusqu'à la première saisie | Non : cela annulerait le travail sans trouver les erreurs.
+
+MC
+10
+La colonne Montant HT ne doit accepter que des nombres positifs. Quelle règle poser ?
+*Validation des données : Autoriser Décimal, supérieure à 0 | Exact : un montant négatif ou un texte sera refusé.
+Format de cellule Monétaire | Non : le format change l'affichage, il ne refuse rien.
+Validation des données : Autoriser Liste, source 0 | Non : la liste n'accepterait que la valeur 0.
+Mise en forme conditionnelle en rouge si négatif | Non : elle signale, mais n'empêche pas la saisie.
+
+MC
+10
+Une règle de validation (style Arrêt) est posée sur la colonne Statut. Julie colle une cellule copiée ailleurs, contenant « OK ». Que se passe-t-il ?
+*Le collage passe et la cellule perd sa règle | Exact : le copier-coller contourne la validation. Préférez Collage spécial > Valeurs.
+Excel refuse le collage | Non : la règle ne contrôle que la saisie au clavier.
+Excel transforme « OK » en « Accepté » | Non : Excel ne corrige rien tout seul.
+Excel demande une confirmation | Non : ce serait le style Avertissement, et seulement pour une saisie au clavier.

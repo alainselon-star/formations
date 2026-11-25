@@ -1,0 +1,57 @@
+$CATEGORY: $course$/K4-L7 Atelier
+
+::K4L7-A1 Deux taux::Étape 1 – Vous trouvez 98,2 % de succès large et 70,2 % de succès strict. D'où vient l'écart ?{
+=Des 16 changements « Réussi avec incidents », comptés comme réussis dans le taux large#Exact \: le taux strict exige un lendemain sans incident.
+~Du changement annulé#Non \: il est exclu des deux calculs. Revoyez la diapositive 5 (K4-L7-S1).
+~Des changements d'urgence#Non \: ils ne sont que 4. Revoyez la diapositive 5 (K4-L7-S1).
+~D'une erreur de calcul#Non \: les deux sont justes, avec deux définitions différentes. Revoyez la diapositive 5 (K4-L7-S1).
+}
+
+::K4L7-A2 Annulé::Étape 1 – Pourquoi exclure les changements annulés avec le critère "<>Annulé" ?{
+=Parce qu'un changement annulé n'a pas été réalisé \: il ne peut ni réussir ni échouer#Exact \: on divise par les 57 changements réalisés.
+~Parce qu'il compte comme un échec#Non \: il n'a rien modifié.
+~Parce que NB.SI ne sait pas compter les annulés#Non \: c'est un choix de définition, pas une limite d'Excel.
+~Pour améliorer le taux#Non \: on cherche la bonne définition, pas un meilleur chiffre.
+}
+
+::K4L7-A3 Normal::Étape 2 – Quel type de changement a le taux de succès strict le plus faible ?{
+=Les changements normaux, avec 27 % (6 sur 22)#Exact \: les mises en production en font partie.
+~Les changements standard, avec 100 %#Non \: c'est le meilleur taux. Revoyez la diapositive 5 (K4-L7-S1).
+~Les changements d'urgence, avec 75 %#Non \: les normaux font bien pire. Revoyez la diapositive 5 (K4-L7-S1).
+~Tous les types ont le même taux#Non \: l'écart va de 27 % à 100 %. Revoyez la diapositive 5 (K4-L7-S1).
+}
+
+::K4L7-A4 Standard::Étape 2 – Pourquoi les changements standard réussissent-ils à 100 % ?{
+=Ils sont répétitifs, connus et préapprouvés \: le risque est maîtrisé#Exact \: patchs, antivirus, certificats.
+~Ils ne sont jamais testés#Non \: c'est l'inverse, leur procédure est éprouvée. Revoyez la diapositive 5 (K4-L7-S1).
+~Ils passent tous en urgence#Non \: un changement standard n'est pas un changement d'urgence. Revoyez la diapositive 7 (K4-L7-S2).
+~Le comité ne les compte pas#Non \: ils sont bien comptés, 31 sur 57. Revoyez la diapositive 5 (K4-L7-S1).
+}
+
+::K4L7-A5 Causé::Étape 3 – Quelle part des changements réalisés a causé au moins un incident ?{
+=29,8 % (17 sur 57)#Exact \: près d'un changement sur trois.
+~15,4 %#Non \: c'est la part des incidents de Valdor causés par des changements. Revoyez la diapositive 6 (K4-L7-S3).
+~1,8 %#Non \: c'est la part des changements en échec. Revoyez la diapositive 5 (K4-L7-S1).
+~98,2 %#Non \: c'est le taux de succès large. Revoyez la diapositive 5 (K4-L7-S1).
+}
+
+::K4L7-A6 Vendredi::Étape 3 – 77 incidents liés à un changement ont été ouverts un vendredi. Pourquoi ?{
+=Les mises en production ont lieu le jeudi \: les incidents arrivent le lendemain#Exact \: le graphique G1 le montre.
+~Le vendredi, les utilisateurs signalent plus#Non \: les autres incidents ne suivent pas ce schéma. Revoyez la diapositive 6 (K4-L7-S3).
+~Les changements sont faits le vendredi#Non \: les mises en production ont lieu le jeudi. Revoyez la diapositive 6 (K4-L7-S3).
+~C'est le hasard#Non \: 77 incidents, c'est plus de la moitié des 132. Revoyez la diapositive 6 (K4-L7-S3).
+}
+
+::K4L7-A7 Urgence::Étape 4 – 7 % des changements sont des urgences. Pourquoi surveiller ce KPI ?{
+=Un changement d'urgence passe avec moins de contrôle \: une part qui grimpe signale un risque#Exact \: manque de planification ou contournement du comité.
+~Parce que les urgences sont interdites#Non \: elles sont parfois nécessaires. Revoyez la diapositive 7 (K4-L7-S2).
+~Parce qu'elles échouent toutes#Non \: 3 sur 4 ont réussi sans incident. Revoyez la diapositive 7 (K4-L7-S2).
+~Pour calculer le MTTR#Non \: ce KPI concerne les changements. Revoyez la diapositive 7 (K4-L7-S2).
+}
+
+::K4L7-A8 Non autorisé::Étape 4 – Les 2 changements non autorisés ont causé 15 incidents. Quelle est la cible de ce KPI ?{
+=Zéro changement non autorisé#Exact \: aucun changement ne doit éviter le comité, même « sans risque ».
+~Moins de 5 % des changements#Non \: la cible est zéro. Revoyez la diapositive 8 (K4-L7-S4).
+~Moins de 15 incidents causés#Non \: on vise l'absence de changement non autorisé. Revoyez la diapositive 8 (K4-L7-S4).
+~Il n'y a pas de cible#Non \: la cible est zéro. Revoyez la diapositive 8 (K4-L7-S4).
+}

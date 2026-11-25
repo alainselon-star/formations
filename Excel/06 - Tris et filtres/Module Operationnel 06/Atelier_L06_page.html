@@ -1,0 +1,38 @@
+<h3>Atelier 06 – Les 500 lignes, à vous de jouer (20 min)</h3>
+<p>Le comptable et Sophie ont des questions précises sur les 500 dépenses de chantier. Vous allez y répondre sans rien recopier ni rien supprimer.</p>
+<p><strong>Fichier :</strong> votre copie de <em>Excel_6_Tris_filtres_depenses_2026.xlsx</em> (à télécharger juste sous cette page), feuille <strong>Dépenses 2026</strong> : 500 dépenses dans l'ordre d'arrivée, lignes 2 à 501. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie que vous avez compris chaque geste.</p>
+
+<h4>Étape 1 – La demande du comptable</h4>
+<p><strong>Faites :</strong> cliquez en A2. Affichage → Figer les volets → <strong>Figer la ligne supérieure</strong>. Données → <strong>Filtrer</strong>. Flèche de Catégorie : ne cochez que Sous-traitance. Flèche de Date : ne cochez que janvier, février et mars. Flèche de Montant HT : Trier du plus grand au plus petit. Cliquez sur la lettre E.</p>
+<p><strong>Vous devez voir :</strong> en bas à gauche, « 21 enregistrements trouvés sur 500 » ; en bas à droite, Nombre : 21 et Somme : 65 480. En tête : 8 110 €, Benali Électricité, chantier Leroy SARL — Creil.</p>
+<p><strong>Si ça ne marche pas :</strong> la barre d'état n'affiche pas Somme ? Clic droit sur la barre d'état, cochez Nombre et Somme.</p>
+
+<h4>Étape 2 – Le chantier Leroy</h4>
+<p><strong>Faites :</strong> flèche de Catégorie → Effacer le filtre ; même chose pour Date. Flèche de Chantier → tapez « Leroy » dans la zone Rechercher → OK.</p>
+<p><strong>Vous devez voir :</strong> 43 lignes, Somme : 53 956,33.</p>
+<p><strong>Pourquoi :</strong> les filtres se cumulent : il faut effacer les précédents avant d'en poser un nouveau. Données → Effacer les retire tous d'un coup.</p>
+
+<h4>Étape 3 – Filtres numériques</h4>
+<p><strong>Faites :</strong> Données → Effacer. Flèche de Montant HT → Filtres numériques → Supérieur à… → 3000. Puis remplacez par Filtres numériques → <strong>Entre…</strong> : est supérieur ou égal à 2000, Et, est inférieur ou égal à 4000.</p>
+<p><strong>Vous devez voir :</strong> 77 dépenses au-dessus de 3 000 € ; puis 105 dépenses entre 2 000 et 4 000 €, pour 306 769,73 €.</p>
+<p><strong>Si ça ne marche pas :</strong> aucune ligne ? Vous avez tapé « 3 000 € » : tapez 3000, sans espace ni symbole.</p>
+
+<h4>Étape 4 – Filtre textuel</h4>
+<p><strong>Faites :</strong> Données → Effacer. Flèche de Fournisseur → Filtres textuels → <strong>Contient…</strong> → Duval.</p>
+<p><strong>Vous devez voir :</strong> 55 lignes, chez Échafaudages Duval et chez Duval Plomberie.</p>
+
+<h4>Étape 5 – Trier sur deux niveaux</h4>
+<p><strong>Faites :</strong> Données → Effacer, puis Données → <strong>Trier</strong>. Vérifiez « Mes données ont des en-têtes ». Trier par Chantier, de A à Z ; Ajouter un niveau ; puis par Montant HT, du plus grand au plus petit.</p>
+<p><strong>Vous devez voir :</strong> les chantiers regroupés. La plus grosse dépense du chantier Hôtel du Parc — Senlis : 4 102,39 € (Sanitaires Dubreuil, 01/06/2026).</p>
+<p><strong>Si ça ne marche pas :</strong> la ligne des titres se retrouve au milieu ? « Mes données ont des en-têtes » était décoché : Ctrl+Z.</p>
+
+<h4>Étape 6 – Un total qui suit le filtre</h4>
+<p><strong>Faites :</strong> filtrez Catégorie sur Location et Date sur juin. Cliquez en E502, puis Accueil → <strong>Somme automatique</strong> → Entrée. En F502, tapez <code>=SOMME(E2:E501)</code>.</p>
+<p><strong>Vous devez voir :</strong> en E502, <code>=SOUS.TOTAL(9;E2:E501)</code> et 9 458,91 € (16 locations en juin) ; en F502, 728 826,13 €, le total des 500 lignes.</p>
+<p><strong>Pourquoi :</strong> SOUS.TOTAL ignore les lignes masquées, SOMME non. Effacez ensuite E502 et F502.</p>
+
+<h4>Étape 7 – Figer les volets</h4>
+<p><strong>Faites :</strong> Affichage → Figer les volets → Libérer les volets. Cliquez en B2, puis Affichage → Figer les volets → <strong>Figer les volets</strong>. Faites défiler vers le bas, puis vers la droite.</p>
+<p><strong>Vous devez voir :</strong> la ligne des titres et la colonne des dates restent visibles.</p>
+<p><strong>Si ça ne marche pas :</strong> la moitié de l'écran est bloquée ? Vous n'étiez pas en B2 : libérez les volets et recommencez.</p>

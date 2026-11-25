@@ -1,0 +1,46 @@
+Excel Opérationnel · Leçon 12 – Le prix qui se trouve tout seul
+
+Diapositive 1 – Le prix qui se trouve tout seul
+  NARRATEUR : Un code d'un côté, une liste de référence de l'autre : c'est la situation la plus courante en entreprise. Un code article et le catalogue, un numéro de client et le fichier clients, un matricule et la liste du personnel. Dans cette leçon, vous allez apprendre à laisser Excel aller chercher l'information à votre place, avec la fonction RECHERCHEV.
+
+Diapositive 2 – Un devis, huit lignes, trente articles
+  SOPHIE : Karim, la boulangerie Roux attend son devis ce soir. Huit lignes, je t'ai mis les codes article et les quantités.
+  KARIM : Il me faut le nom de chaque article et son prix. Je les cherche un par un dans le catalogue et je les recopie. Et la semaine dernière, je me suis trompé de ligne : le client a eu le prix de la sous-couche à la place de la peinture.
+
+Diapositive 3 – Des codes, mais ni articles ni prix
+  NARRATEUR : Voici le devis. La colonne A contient les codes, la colonne C les quantités. Il manque l'article et le prix unitaire. Ces informations existent déjà : elles sont dans la feuille Catalogue, trente articles, avec pour chacun son code, son nom, sa catégorie et son prix. Le code est le point commun entre les deux listes.
+
+Diapositive 4 – Solution 1 : chercher et recopier
+  NARRATEUR : Sans l'outil, Karim cherche chaque code dans le catalogue, avec Contrôle F ou à l'œil, puis recopie l'article et le prix dans le devis. Huit lignes, seize recopies. Le risque : lire la mauvaise ligne, inverser deux chiffres. Et quand un prix change dans le catalogue, les devis en cours ne suivent pas : il faut tout reprendre.
+
+Diapositive 5 – Le principe de RECHERCHEV
+  NARRATEUR : RECHERCHEV fait exactement ce que fait Karim, sans se tromper. Elle prend une valeur, le code. Elle la cherche dans la première colonne d'une table, le catalogue. Quand elle la trouve, elle reste sur cette ligne et renvoie la valeur d'une autre colonne : la deuxième pour l'article, la quatrième pour le prix. Le V veut dire verticale : la recherche descend dans une colonne.
+
+Diapositive 6 – La formule, argument par argument
+  NARRATEUR : En B5, tapez égal RECHERCHEV, ouvrez la parenthèse. Cliquez sur A5, le code. Point-virgule. Cliquez sur la feuille Catalogue et sélectionnez A2 à D31, puis appuyez sur F4 pour la bloquer. Point-virgule, 2, la colonne de l'article. Point-virgule, FAUX, pour le code exact. Entrée : peinture acrylique blanche, dix litres. C'est bien l'article du code P-118.
+
+Diapositive 7 – Recopier sans que la table glisse
+  NARRATEUR : Recopiez B5 jusqu'en B12. Le code doit changer à chaque ligne : A5, A6, A7. Mais le catalogue, lui, ne doit pas bouger. Sans les dollars, la table glisserait d'une ligne à chaque recopie : A3 à D32, puis A4 à D33. Les premiers articles du catalogue sortiraient de la table et des dièse N A apparaîtraient sans raison. D'où la touche F4 : dollar A dollar 2 deux-points dollar D dollar 31.
+
+Diapositive 8 – Le prix : la même formule, colonne 4
+  NARRATEUR : Pour le prix, même formule, un seul chiffre change : le numéro de colonne. Code, un. Article, deux. Catégorie, trois. Prix, quatre. En D5 : égal RECHERCHEV, A5, la table, 4, FAUX. Recopiez jusqu'en D12 : la colonne Total, quantité fois prix, se calcule seule. Et si demain un prix change dans le catalogue, le devis se met à jour tout seul.
+
+Diapositive 9 – Quand le code n'est pas trouvé : #N/A
+  NARRATEUR : Deux lignes affichent dièse N A : non disponible. RECHERCHEV n'a pas trouvé le code. Ligne 9, P-1O4 : la lettre O à la place du chiffre zéro, une faute de frappe à corriger. Ligne 11, E-299 : cet article a été retiré du catalogue. Le message est utile : il signale un vrai problème. Pour un devis propre, on l'habille avec SIERREUR : égal SIERREUR, la recherche, point-virgule, Code inconnu entre guillemets. Et pour le prix, SIERREUR avec zéro.
+
+Diapositive 10 – Le piège : oublier FAUX
+  NARRATEUR : Le piège le plus dangereux. Sans le quatrième argument, RECHERCHEV ne cherche pas le code exact : elle cherche une valeur approchée, en supposant la première colonne triée. Le catalogue n'est pas trié par code : Excel s'arrête au mauvais endroit et renvoie le prix d'un autre article. Trois euros vingt pour un chauffe-eau à quatre cent quatre-vingt-neuf euros. Et aucun message d'erreur. Pour un code, une référence, un nom : toujours FAUX.
+
+Diapositive 11 – Quand la valeur approchée est utile : un barème
+  NARRATEUR : La valeur approchée a pourtant un vrai usage : les barèmes. Remise de zéro pour cent sous mille euros, trois pour cent à partir de mille, cinq à partir de trois mille, huit à partir de huit mille. Neuf mille trois cent vingt euros n'est pas dans le barème, mais avec VRAI, RECHERCHEV s'arrête sur le plus grand seuil qui ne dépasse pas : huit mille, donc huit pour cent. Condition : le barème doit être trié du plus petit au plus grand.
+
+Diapositive 12 – Les pièges à éviter
+  NARRATEUR : Récapitulons les pièges. Oublier les dollars : la table glisse, des dièse N A apparaissent en bas. Oublier FAUX : des prix faux sans message. Compter les lettres au lieu des colonnes de la table. Chercher une valeur qui n'est pas dans la première colonne : RECHERCHEV ne regarde jamais à gauche. Et masquer toutes les erreurs avec SIERREUR sans chercher leur cause.
+
+Diapositive 13 – À retenir
+  NARRATEUR : Retenez. RECHERCHEV cherche une valeur dans la première colonne d'une table et renvoie une autre colonne de la même ligne. Quatre arguments : la valeur cherchée, la table bloquée avec F4, le numéro de colonne, et FAUX pour une correspondance exacte. Dièse N A veut dire non trouvé : vérifiez le code, puis habillez avec SIERREUR. VRAI sert seulement aux barèmes triés. Dans la prochaine leçon, RECHERCHEX lèvera la limite de la première colonne.
+
+Diapositive 14 – Huit lignes, zéro recopie
+  SOPHIE : Le devis Roux est parti, et les prix sont ceux du catalogue.
+  KARIM : Je tape le code, Excel fait le reste. Plus une ligne recopiée.
+  NARRATEUR : Bravo. Passez maintenant à l'atelier.

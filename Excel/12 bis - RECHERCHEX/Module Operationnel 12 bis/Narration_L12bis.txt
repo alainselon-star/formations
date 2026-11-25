@@ -1,0 +1,43 @@
+Excel Opérationnel · Leçon 12 bis – Le catalogue à l'envers
+
+Diapositive 1 – Le catalogue à l'envers
+  NARRATEUR : Dans la leçon précédente, RECHERCHEV allait chercher l'article et le prix dans le catalogue. Mais elle a des limites : elle ne cherche que dans la première colonne, elle ne regarde jamais à gauche, et elle s'arrête toujours sur la première ligne trouvée. Dans cette leçon, vous allez découvrir RECHERCHEX, sa remplaçante, plus simple et plus souple.
+
+Diapositive 2 – Le nouveau catalogue du fournisseur
+  SOPHIE : Karim, on change de fournisseur. Voici son catalogue : prépare le devis de l'Hôtel du Parc avec ses prix.
+  KARIM : Mes formules RECHERCHEV ne marchent plus. Dans ce catalogue, le code est dans la dernière colonne, et l'article dans la première.
+
+Diapositive 3 – Le code est à droite de l'article
+  NARRATEUR : Voici le catalogue du fournisseur. Article, catégorie, prix, et le code tout à droite, en colonne D. RECHERCHEV cherche toujours dans la première colonne de la table, puis renvoie une colonne située à sa droite. Ici, il faudrait chercher en colonne D et renvoyer la colonne A : vers la gauche. RECHERCHEV ne sait pas le faire.
+
+Diapositive 4 – Solution 1 : remettre le code en premier
+  NARRATEUR : Sans l'outil, Karim déplace la colonne des codes au début du catalogue, puis il écrit ses RECHERCHEV. Mais le fournisseur envoie un nouveau catalogue chaque trimestre, toujours dans le même ordre : il faut tout recommencer. Et en déplaçant les colonnes, les numéros de colonne de ses formules changent : le prix n'est plus en colonne 4. Une formule qui renvoyait le prix renvoie maintenant la catégorie.
+
+Diapositive 5 – Le principe de RECHERCHEX
+  NARRATEUR : RECHERCHEX sépare les deux colonnes. Premier argument : ce que l'on cherche, le code. Deuxième : où on le cherche, la colonne des codes. Troisième : ce que l'on renvoie, la colonne des articles. Les deux colonnes peuvent être n'importe où, à gauche ou à droite, et il n'y a plus de numéro de colonne à compter. Trois autres arguments sont facultatifs : la valeur si rien n'est trouvé, le mode de correspondance et le sens de recherche.
+
+Diapositive 6 – La formule, argument par argument
+  NARRATEUR : En B5 : égal RECHERCHEX, ouvrez la parenthèse. A5, le code. Point-virgule. Sur la feuille Catalogue, sélectionnez D2 à D31, les codes, et F4. Point-virgule. Sélectionnez A2 à A31, les articles, et F4. Point-virgule, Code inconnu entre guillemets pour le cas où le code n'existe pas. Entrée, puis recopiez. Pour le prix, même formule, avec la colonne C en troisième argument.
+
+Diapositive 7 – « Si non trouvé » : plus besoin de SIERREUR
+  NARRATEUR : Le quatrième argument remplace SIERREUR. Avec RECHERCHEV, il fallait entourer la formule : SIERREUR, la recherche, Code inconnu. Avec RECHERCHEX, on écrit simplement Code inconnu en quatrième argument. C'est plus court, et plus sûr : SIERREUR masque toutes les erreurs, même une faute dans la formule. Le quatrième argument ne traite que le cas où le code n'est pas trouvé.
+
+Diapositive 8 – Partir de la fin : le dernier prix facturé
+  NARRATEUR : La feuille Historique liste tous les prix facturés, du plus ancien au plus récent. Le chauffe-eau L-342 y apparaît quatre fois. Une recherche normale s'arrête sur la première ligne trouvée : quatre cent cinquante-neuf euros, le prix de janvier. Le sixième argument, moins un, fait partir la recherche de la fin : quatre cent quatre-vingt-neuf euros, le prix de septembre. RECHERCHEV ne sait pas faire ça.
+
+Diapositive 9 – Un barème, dans n'importe quel ordre
+  NARRATEUR : Le barème des remises de ce fournisseur est écrit du plus haut au plus bas : huit mille, trois mille, mille, zéro. RECHERCHEV avec VRAI exigeait un barème trié par ordre croissant. RECHERCHEX a un mode de correspondance : moins un, exact ou immédiatement inférieur. Deux mille cent cinquante euros donne la tranche de mille euros : trois pour cent. Et l'ordre du barème n'a plus d'importance.
+
+Diapositive 10 – Plusieurs colonnes d'un coup, et en ligne
+  NARRATEUR : Deux bonus. Si le tableau renvoyé contient plusieurs colonnes, par exemple A à C, RECHERCHEX renvoie l'article, la catégorie et le prix d'un seul coup : les résultats se déversent dans les cellules voisines, qui doivent être vides. Et RECHERCHEX cherche aussi en ligne : si les villes sont dans la ligne 1 et les tarifs de livraison dans la ligne 2, elle trouve le tarif de Senlis. Elle remplace donc aussi RECHERCHEH.
+
+Diapositive 11 – RECHERCHEV ou RECHERCHEX ?
+  NARRATEUR : RECHERCHEX existe dans Microsoft 365, Excel 2021, Excel 2024 et Excel pour le web. Dans Excel 2019 ou 2016, elle n'existe pas : le fichier affiche dièse NOM. Avant d'envoyer un classeur, demandez-vous qui va l'ouvrir. Pour un client ou un comptable équipé d'une ancienne version, gardez RECHERCHEV. Pour vos fichiers internes sous Microsoft 365, préférez RECHERCHEX.
+
+Diapositive 12 – À retenir
+  NARRATEUR : Retenez. RECHERCHEX cherche une valeur dans une colonne et renvoie la valeur d'une autre colonne, à gauche ou à droite. Trois arguments obligatoires : la valeur, où chercher, quoi renvoyer. Le quatrième pour le cas non trouvé. Le cinquième, moins un, pour un barème. Le sixième, moins un, pour partir de la fin. Et vérifiez la version d'Excel de la personne qui ouvrira votre fichier.
+
+Diapositive 13 – Le catalogue tel qu'il est
+  SOPHIE : Le catalogue du fournisseur, tel qu'il arrive, et le devis est juste.
+  KARIM : Je ne déplace plus aucune colonne. Je désigne où chercher et quoi renvoyer.
+  NARRATEUR : Bravo. Passez maintenant à l'atelier.

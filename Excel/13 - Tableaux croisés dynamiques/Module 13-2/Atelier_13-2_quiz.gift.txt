@@ -1,0 +1,42 @@
+$CATEGORY: $course$/Atelier 13.2
+
+::B1 Moyenne générale::[html]Étape 2 – Quelle est la <strong>moyenne générale</strong> (ligne Total général) ?<br><em>Arrondi à l'euro \: un nombre entier, sans espace et sans €, par exemple 1235.</em>{#3921:0.5
+####3 921,17 €, la même moyenne que dans la barre d'état. Si vous lisez 1 176 350, le calcul est encore sur Somme.}
+
+::B2 Moyenne menuiserie::[html]Étape 2 – Quelle est la facture moyenne de la <strong>menuiserie</strong> ?<br><em>Arrondi à l'euro, sans espace et sans €.</em>{#5844:0.5
+####5 843,81 €, la plus forte moyenne \: la menuiserie fait peu de factures (42), mais les plus grosses.}
+
+::B3 Plus petite moyenne::Étape 2 – Quel type de travaux a la plus petite facture moyenne ?{
+=Peinture#Exact \: 3 118,74 €. C'est pourtant le type qui fait le plus de factures (87).
+~Électricité#Presque \: l'électricité est juste au-dessus (3 313,77 €). Relisez la colonne Moyenne.
+~Carrelage#Non \: le carrelage est à 3 733,49 €.
+~Plomberie#Non \: la plomberie est à 4 312,13 €, au-dessus de la moyenne générale.
+}
+
+::B4 Plus grosse facture::[html]Étape 3 – Quelle est la <strong>plus grosse facture</strong> de l'année (Max, ligne Total général) ?<br><em>Sans espace et sans €.</em>{#10570:0
+####10 570 €, en menuiserie. Si vous lisez une moyenne, vérifiez que la 2e colonne est bien réglée sur Max.}
+
+::B5 Max plomberie::[html]Étape 3 – Quelle est la plus grosse facture de <strong>plomberie</strong> ?<br><em>Sans espace et sans €.</em>{#8440:0
+####8 440 €. Lisez la ligne Plomberie, colonne « Max de Montant HT ».}
+
+::B6 Part plomberie::[html]Étape 5 – Quelle part du chiffre d'affaires fait la <strong>plomberie</strong> ?<br><em>Arrondi à l'unité \: un nombre entier, sans espace et sans %, par exemple 12.</em>{#27:0.5
+####27,49 %. Si vous lisez 100, vous avez choisi « % du total de la ligne » \: recommencez avec « % du total général ».}
+
+::B7 Part carrelage::[html]Étape 5 – Quelle part du chiffre d'affaires fait le <strong>carrelage</strong> ?<br><em>Arrondi à l'unité, sans espace et sans %.</em>{#14:0.5
+####13,65 %, la plus petite part.}
+
+::B8 Colonne à 100::Étape 5 – Toute votre colonne de pourcentages affiche 100 %. Qu'avez-vous choisi ?{
+=« % du total de la ligne »#Exact \: chaque ligne est comparée à elle-même. Choisissez « % du total général ».
+~« % du total général »#Non \: avec ce choix, les parts vont de 13,65 % à 27,49 %.
+~Synthétiser les valeurs par Moyenne#Non \: une moyenne s'affiche en euros, pas en pourcentage.
+~Actualiser#Non \: Actualiser reprend les données, il ne change pas l'affichage.
+}
+
+::B9 Nombre de Client::[html]Étape 6 – Avec Client dans Valeurs, que vaut <strong>Nombre de Client</strong> pour la peinture ?<br><em>Sans espace.</em>{#87:0
+####87 \: il y a 87 lignes de peinture, donc 87 factures.}
+
+::B10 Ce que compte Excel::Étape 6 – Le total de « Nombre de Client » est 300. Que représente ce nombre ?{
+=Le nombre de factures (de lignes)#Exact \: Excel compte les lignes. Il y a 300 factures, mais seulement 34 clients différents.
+~Le nombre de clients différents#Non \: Karim n'a que 34 clients. Excel compte les lignes, pas les clients différents.
+~La somme des montants#Non \: la somme des montants fait 1 176 350 €.
+}

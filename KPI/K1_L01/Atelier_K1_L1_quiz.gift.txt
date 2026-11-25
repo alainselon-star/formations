@@ -1,0 +1,52 @@
+$CATEGORY: $course$/K1-L1 Atelier
+
+::K1L1-A1 Donnée::Étape 1 – Élément 6 \: « Le technicien qui a résolu INC-00262 est Inès Morel ». De quoi s'agit-il ?{
+=D'une donnée#Exact \: c'est un fait brut, propre à un seul ticket.
+~D'une métrique#Non \: rien n'est compté ni calculé. Revoyez la diapositive 5 de la leçon (K1-L1-S2).
+~D'un indicateur#Non \: il n'y a ni calcul ni référence. Revoyez la diapositive 5 de la leçon (K1-L1-S2).
+~D'un KPI#Non \: aucun objectif ni cible. Revoyez la diapositive 5 de la leçon (K1-L1-S2).
+}
+
+::K1L1-A2 Métrique::Étape 1 – Élément 8 \: « Délai moyen de prise en charge en juin \: 20 minutes ». De quoi s'agit-il ?{
+=D'une métrique#Exact \: une moyenne est un calcul sur des données, sans référence ni cible.
+~D'un indicateur#Non \: une moyenne n'est pas rapportée à une référence (un délai promis, un total). Avec « 20 minutes pour une cible de 30 », on irait plus loin. Revoyez la diapositive 6 (K1-L1-S2).
+~D'une donnée#Non \: une donnée concerne un seul ticket ; ici, on a calculé sur tout le mois. Revoyez la diapositive 5 (K1-L1-S2).
+~D'un KPI#Non \: aucune cible ni usage pour décider. Revoyez la diapositive 6 (K1-L1-S2).
+}
+
+::K1L1-A3 KPI::Étape 1 – Élément 5 \: « Backlog en fin de journée \: seuil d'alerte 15 tickets, suivi chaque matin par Romain ». Pourquoi est-ce un KPI ?{
+=Il a un seuil, un responsable et une fréquence de suivi pour décider#Exact \: c'est l'usage pour piloter qui en fait un KPI.
+~Parce que le backlog est un nombre de tickets#Non \: un nombre seul est une métrique. Revoyez la diapositive 6 (K1-L1-S2).
+~Parce qu'il est calculé chaque jour#Non \: la fréquence ne suffit pas sans seuil ni usage. Revoyez la diapositive 6 (K1-L1-S2).
+~Ce n'est pas un KPI, c'est une donnée#Non \: le backlog est un comptage, suivi face à un seuil. Revoyez la diapositive 5 (K1-L1-S2).
+}
+
+::K1L1-A4 NB.SI::Étape 3 – Quelle formule compte les incidents de juin résolus dans le SLA ?{
+=\=NB.SI(T_Juin[SLA résolution respecté];"Oui")#Exact \: NB.SI compte les lignes qui remplissent la condition.
+~\=NBVAL(T_Juin[SLA résolution respecté])#Non \: NBVAL compte toutes les cellules non vides, « Oui » comme « Non ».
+~\=SOMME(T_Juin[SLA résolution respecté])#Non \: on ne peut pas additionner du texte.
+}
+
+::K1L1-A5 Indicateur::Étape 4 – En B5, \=B4/B3 donne 92,2 %. Qu'est-ce qui fait de ce résultat un indicateur ?{
+=La métrique (142) est rapportée à une référence (le total de 154)#Exact \: rapporter à une référence donne un sens au chiffre.
+~Le format pourcentage#Non \: le format n'est qu'un habillage. Revoyez la diapositive 6 (K1-L1-S2).
+~La comparaison à la cible de 90 %#Non \: la comparaison à une cible fait passer au KPI, étape suivante. Revoyez la diapositive 6 (K1-L1-S2).
+}
+
+::K1L1-A6 Situation::Étape 5 – Si B5 vaut 87 %, avec une cible de 90 % et un seuil d'alerte de 85 %, qu'affiche B8 ?{
+=Sous la cible#Exact \: 87 % est sous la cible mais au-dessus du seuil d'alerte.
+~Cible atteinte#Non \: 87 % est inférieur à 90 %. Revoyez la diapositive 8 (K1-L1-S4).
+~Alerte#Non \: l'alerte se déclenche sous 85 %. Revoyez la diapositive 8 (K1-L1-S4).
+}
+
+::K1L1-A7 Réouverture::Étape 6 – Le taux de réouverture de juin est de 9,7 %. Pourquoi n'est-ce pas encore un KPI ?{
+=Aucune cible ni usage pour décider ne lui a été fixé#Exact \: c'est un indicateur ; il devient KPI quand on le relie à un objectif.
+~Parce qu'il est trop faible#Non \: la valeur ne change pas la nature du chiffre. Revoyez la diapositive 6 (K1-L1-S2).
+~Parce qu'il n'est pas en pourcentage#Non \: il est bien en pourcentage, et ce n'est pas le critère. Revoyez la diapositive 6 (K1-L1-S2).
+}
+
+::K1L1-A8 Résultat::Étape 7 – Satisfaction moyenne de 4,0 sur 42 réponses pour 154 incidents. Quelle lecture est la bonne ?{
+=Un indicateur de résultat, à lire avec prudence car 27 % seulement ont répondu#Exact \: il constate, et l'échantillon est réduit.
+~Un indicateur avancé, qui annonce les problèmes à venir#Non \: la satisfaction constate ce qui s'est déjà passé. Revoyez la diapositive 7 (K1-L1-S3).
+~Un chiffre fiable pour tous les utilisateurs#Non \: 112 utilisateurs n'ont pas répondu. Revoyez la diapositive 7 (K1-L1-S3).
+}

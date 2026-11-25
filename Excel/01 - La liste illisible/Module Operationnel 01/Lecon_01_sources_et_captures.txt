@@ -1,0 +1,10 @@
+Excel Opérationnel – Leçon 01 – La liste illisible
+Source : Excel_1_Liste_illisible_deroule_formateur.docx (déroulé 1 h 30), transposé en module de 15 min + atelier de 20 min.
+Questions du test de positionnement couvertes : Q13, N23, N24 (O-3.1 Formats numériques) ; aussi B-3.1, B-3.2.
+
+Captures (rendues à partir des vraies données du fichier brut, pas des captures d'écran Excel) :
+- X01_C01_liste_brute.png : devis de janvier bruts, colonne H sélectionnée, Somme 33320 (7 nombres sur 30).
+- X01_C02_remplacer.png : schéma de la boîte Rechercher et remplacer (« euros » → rien).
+- X01_C03_apres_remplacer.png : après remplacement, tout calé à droite, Somme 146240.
+- X01_C04_liste_propre.png : liste mise en forme, Somme 146 240,00 €.
+Vérifié : 7 montants numériques = 33 320 ; total des 30 = 146 240 ; atelier (feuille Pratique, 25 factures, toutes en texte) = 120 920.

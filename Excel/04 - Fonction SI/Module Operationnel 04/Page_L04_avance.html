@@ -1,0 +1,21 @@
+<h3>Pour aller plus loin – Primes, pénalités et catégories de clients (facultatif, 30 à 45 min)</h3>
+<p>Vous avez réussi l'atelier ? Ce défi se fait dans le <strong>vrai Excel</strong>, sur un fichier à télécharger. Il est <strong>moins guidé</strong>, et il ajoute trois outils : OU, SI.CONDITIONS et SIERREUR.</p>
+<p><strong>Le fichier :</strong> <em>Excel_4_avance_primes_penalites.xlsx</em>, juste sous cette page. Les cellules à remplir sont en jaune clair, les paramètres en jaune foncé : utilisez-les dans vos formules plutôt que de taper les nombres. La feuille <strong>Contrôle</strong> vous dit, mission par mission, si c'est juste (✓) ou à revoir (✗).</p>
+
+<h4>Mission 1 – La prime des commerciaux (feuille Primes)</h4>
+<p><strong>Le besoin :</strong> chaque commercial touche la <strong>prime pleine</strong> s'il atteint son objectif de CA <strong>et</strong> le taux de signature minimum ; la <strong>prime partielle</strong> s'il n'en atteint <strong>qu'un des deux</strong> ; rien sinon.</p>
+<p><strong>Où :</strong> colonne E « Prime ».</p>
+<details><summary>Un indice</summary><p>Deux SI emboîtés : le premier teste ET(les deux conditions) ; sinon, le second teste OU(l'une des deux). Comme ET a déjà été écarté, OU ne peut plus être vrai que pour une seule condition.</p></details>
+
+<h4>Mission 2 – Les pénalités de retard (feuille Chantiers)</h4>
+<p><strong>Le besoin :</strong> le nombre de jours de retard de chaque chantier (0 s'il a fini à l'heure ou en avance), puis la pénalité : rien jusqu'aux jours de tolérance, sinon tant d'euros par jour de retard, sans jamais dépasser le plafond.</p>
+<p><strong>Où :</strong> colonnes D « Retard (jours) » et E « Pénalité ».</p>
+<details><summary>Un indice</summary><p>Retard : fin réelle − fin prévue, avec MAX(0;…) pour ne jamais descendre sous 0 (leçon 17). Pénalité : SI(retard ≤ tolérance ; 0 ; …), et pour le plafond, MIN(retard × tarif ; plafond).</p></details>
+
+<h4>Mission 3 – Catégories et marges des clients (feuille Clients)</h4>
+<p><strong>Le besoin :</strong> la catégorie de chaque client selon son CA (règle écrite sur la feuille), puis sa marge en % : (CA − coûts) ÷ CA. Deux clients n'ont pas encore de CA : au lieu d'une erreur #DIV/0!, leur marge doit afficher « Nouveau client ».</p>
+<p><strong>Où :</strong> colonnes D « Catégorie » et E « Marge ».</p>
+<details><summary>Un indice</summary><p>Quatre catégories, c'est trois SI emboîtés… ou une seule fonction SI.CONDITIONS(test1;valeur1;test2;valeur2;…), plus lisible (Excel 2019 et Microsoft 365). Pour la marge : SIERREUR(calcul;"Nouveau client") remplace toute erreur par le texte voulu.</p></details>
+
+<h4>Vérifier et se corriger</h4>
+<p>Ouvrez la feuille <strong>Contrôle</strong> : 5 ✓ sur 5, c'est gagné. Le <strong>corrigé</strong>, sous cette page, contient toutes les formules. Ouvrez-le seulement après avoir vraiment essayé.</p>

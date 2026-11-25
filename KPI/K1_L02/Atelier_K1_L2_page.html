@@ -1,0 +1,36 @@
+<h3>Atelier 02 – Construire un bon KPI, à vous de jouer (20 min)</h3>
+<p>Hélène veut savoir si l'entrepôt est bien servi. Vous allez corriger des objectifs flous, rédiger la fiche d'identité du KPI « Entrepôt servi à temps », le calculer mois par mois sur les données de Valdor, puis découvrir pourquoi un même nom de KPI peut cacher deux chiffres.</p>
+<p><strong>Fichier :</strong> votre copie de <em>K1_L2_Atelier_Valdor.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Objectifs</strong>, <strong>Fiche KPI</strong>, <strong>Incidents</strong> (856 incidents, table T_Incidents), <strong>KPI entrepôt</strong> et <strong>Deux MTTR</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie chaque étape. Chaque erreur vous renvoie à la diapositive de la leçon à revoir.</p>
+
+<h4>Étape 1 – Rendre les objectifs SMART</h4>
+<p><strong>Faites :</strong> feuille Objectifs, pour chacun des 6 objectifs, choisissez en colonne C le critère SMART qui fait le plus défaut.</p>
+<p><strong>Vous devez voir :</strong> au moins une fois chacun des cinq critères ; « Temporel » revient deux fois.</p>
+<p><strong>Si ça ne marche pas :</strong> posez les cinq questions de la diapositive 5 : quoi précisément ? avec quel chiffre ? est-ce possible ? cela répond-il au besoin ? pour quand ?</p>
+
+<h4>Étape 2 – Rédiger la fiche d'identité</h4>
+<p><strong>Faites :</strong> feuille Fiche KPI, complétez les rubriques en jaune en vous aidant de la diapositive 6.</p>
+<p><strong>Vous devez voir :</strong> une fiche où un collègue pourrait recalculer le même chiffre que vous sans vous poser de question : périmètre précis (site, catégorie, priorité), date de fin retenue, responsable et décision.</p>
+
+<h4>Étape 3 – Compter le périmètre</h4>
+<p><strong>Faites :</strong> feuille KPI entrepôt, en C5, tapez :<br><code>=NB.SI.ENS(T_Incidents[Site];"SIT-02";T_Incidents[Catégorie];"Applications métier &gt; WMS";T_Incidents[Priorité];"P2 - Haute";T_Incidents[Mois];B5)</code><br>puis recopiez jusqu'en C10.</p>
+<p><strong>Vous devez voir :</strong> 9 en mai, 15 en juin, 14 en juillet, 16 en août, 13 en septembre et 0 en octobre.</p>
+<p><strong>Si ça ne marche pas :</strong> vous voyez 0 partout ? Vérifiez l'orthographe exacte des critères, espaces et « &gt; » compris : copiez-les depuis la feuille Incidents.</p>
+
+<h4>Étape 4 – Calculer et lire le KPI</h4>
+<p><strong>Faites :</strong> en D5, reprenez la formule de C5 en ajoutant le critère <code>;T_Incidents[SLA résolution respecté];"Oui"</code> avant la parenthèse finale. En E5, tapez <code>=SI(C5=0;"";D5/C5)</code>. En F5, tapez <code>=SI(C5=0;"Aucun incident";SI(E5&gt;=$J$4;"Cible atteinte";SI(E5&gt;=$J$5;"Sous la cible";"Alerte")))</code>. Recopiez D5:F5 jusqu'à la ligne 10.</p>
+<p><strong>Vous devez voir :</strong> 89 % en mai, 80 % en juin, 71 % en juillet, 63 % en août (alerte), 100 % en septembre.</p>
+<p><strong>Pourquoi :</strong> le KPI confirme la plainte de l'entrepôt : il est sous le seuil d'alerte en juillet et en août.</p>
+
+<h4>Étape 5 – Vérifier un 100 % trop beau</h4>
+<p><strong>Faites :</strong> en G5, tapez <code>=SIERREUR(MOYENNE.SI.ENS(T_Incidents[Temps en attente (min)];T_Incidents[Site];"SIT-02";T_Incidents[Catégorie];"Applications métier &gt; WMS";T_Incidents[Priorité];"P2 - Haute";T_Incidents[Mois];B5);"")</code> et recopiez jusqu'en G10.</p>
+<p><strong>Vous devez voir :</strong> environ 40 minutes en attente en mai et en juin, mais près de 790 minutes en septembre.</p>
+<p><strong>Pourquoi :</strong> le chrono du SLA s'arrête pendant l'attente. Le 100 % de septembre vient surtout de tickets mis en attente : la fiche doit dire si le temps en attente compte, et quelqu'un doit le surveiller.</p>
+
+<h4>Étape 6 – Même nom, deux chiffres</h4>
+<p><strong>Faites :</strong> feuille Incidents, en N1, tapez l'en-tête <code>Durée 1re (h)</code> ; en N2, tapez <code>=([@[Date 1re résolution]]-[@[Date ouverture]])*24</code>. En O1, tapez <code>Durée finale (h)</code> ; en O2, <code>=([@[Date résolution finale]]-[@[Date ouverture]])*24</code>. Le tableau recopie les formules tout seul.<br>Feuille Deux MTTR, en B5, tapez <code>=MOYENNE.SI.ENS(T_Incidents[Durée 1re (h)];T_Incidents[Technicien];A5;T_Incidents[Niveau de résolution];"N1")</code>, en C5 la même formule avec <code>T_Incidents[Durée finale (h)]</code>, puis recopiez jusqu'à la ligne 7.</p>
+<p><strong>Vous devez voir :</strong> Kevin Dubois 3,4 h puis 23,7 h ; Inès Morel 6,4 h puis 9,6 h ; Lucas Bernard 9,5 h puis 13,6 h.</p>
+<p><strong>Pourquoi :</strong> avec la 1re résolution, Kevin est le plus rapide ; avec la résolution finale, le plus lent, à cause de ses tickets rouverts. La fiche d'identité doit préciser la date de fin.</p>
+
+<h4>Pour aller plus loin</h4>
+<p>Octobre n'a aucun incident dans le périmètre : le problème du lundi a été corrigé le 1er octobre. Que devrait afficher le KPI dans ce cas, et que diriez-vous à Hélène ? Notez votre réponse sous le tableau.</p>

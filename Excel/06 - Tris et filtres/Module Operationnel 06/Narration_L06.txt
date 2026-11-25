@@ -1,0 +1,46 @@
+Excel Opérationnel · Leçon 06 – Les 500 lignes
+
+Diapositive 1 – Les 500 lignes
+  NARRATEUR : Cinq cents dépenses de chantier, et une question précise à laquelle répondre dans la demi-heure. Dans cette leçon, vous allez apprendre à retrouver exactement les lignes qu'on vous demande, rangées dans le bon ordre, avec leur total, sans rien recopier ni rien supprimer.
+
+Diapositive 2 – Mardi, 14 h : le comptable rappelle
+  SOPHIE : Le comptable veut la liste de nos dépenses de sous-traitance du premier trimestre, de la plus grosse à la plus petite, avec le total. Il rappelle dans une demi-heure. Et regarde le chantier Leroy à Creil, il me semble qu'on dérape.
+  KARIM : Cinq cents lignes. À la ligne quarante, je ne sais déjà plus si la quatrième colonne, c'est le fournisseur ou le chantier.
+
+Diapositive 3 – Deux conditions, un ordre, un total
+  NARRATEUR : Décomposons la demande du comptable. Deux conditions : la catégorie est Sous-traitance, et la date est entre le premier janvier et le trente et un mars. Un ordre : du plus gros montant au plus petit. Et un total. Le fichier contient cinq cents dépenses, saisies dans l'ordre d'arrivée, dix-huit chantiers, trois catégories, treize fournisseurs. Un écran en montre trente : il faut faire défiler plus de seize écrans.
+
+Diapositive 4 – Solution 1 : défiler, chercher, recopier
+  NARRATEUR : Sans l'outil, deux méthodes. Faire défiler et surligner à l'œil : cent soixante-dix lignes à lire jusqu'à fin mars, les titres perdus dès la ligne trente, une ligne sautée en changeant d'écran, et la liste toujours pas rangée. Ou Rechercher, puis copier chaque ligne dans une autre feuille : soixante-dix-neuf résultats à examiner, vingt et un copier-coller, puis tout remettre dans l'ordre à la main. Vingt à vingt-cinq minutes. Et la copie s'éloigne du fichier d'origine : si Karim corrige une dépense, elle est fausse.
+
+Diapositive 5 – Trier, filtrer, figer : trois gestes
+  NARRATEUR : Trois gestes à distinguer. Trier, c'est changer l'ordre des lignes : chaque ligne déménage en entier, avec sa date, son chantier, son fournisseur. Attention, le tri modifie vraiment le fichier. Filtrer, c'est cacher provisoirement les lignes qui ne nous intéressent pas, comme une passoire : rien n'est supprimé. Figer les volets, c'est bloquer la ligne des titres, pour qu'elle reste visible quand on fait défiler.
+
+Diapositive 6 – 21 lignes, 65 480 €, en 2 minutes
+  NARRATEUR : Cliquez en A2. Affichage, Figer les volets, Figer la ligne supérieure. Données, Filtrer : une flèche apparaît sur chaque titre. Flèche de Catégorie : ne cochez que Sous-traitance. Flèche de Date : ne cochez que janvier, février et mars. Flèche de Montant : Trier du plus grand au plus petit. Sélectionnez la colonne des montants : la barre d'état affiche vingt et une lignes et soixante-cinq mille quatre cent quatre-vingts euros. Deux minutes, et les cinq cents lignes sont toujours là.
+
+Diapositive 7 – Plus de 3 000 €, entre deux montants, « Duval »
+  NARRATEUR : Les filtres vont plus loin que les cases à cocher. Filtres numériques : Supérieur à, puis 3000, sans espace ni symbole euro : soixante-dix-sept lignes. Pour un montant compris entre deux valeurs : Filtres numériques, Entre, puis supérieur ou égal à la première valeur, ET inférieur ou égal à la seconde. Filtres textuels, Contient Duval : cinquante-cinq lignes, chez Échafaudages Duval comme chez Duval Plomberie. Et Filtres numériques, Dix premiers, pour les plus grosses dépenses.
+
+Diapositive 8 – Trier par chantier, puis par montant
+  NARRATEUR : Sophie veut toute la liste rangée par chantier, et dans chaque chantier, de la plus grosse dépense à la plus petite. Données, Effacer pour retrouver les cinq cents lignes, puis Données, Trier. Vérifiez que Mes données ont des en-têtes est coché. Trier par Chantier, de A à Z. Ajouter un niveau : puis par Montant HT, du plus grand au plus petit. Le second critère ne sert qu'à départager les lignes qui ont le même chantier.
+
+Diapositive 9 – Un total écrit, qui suit le filtre
+  NARRATEUR : La barre d'état affiche le total, mais il ne s'imprime pas. Pour l'écrire dans le fichier, placez-vous sous la colonne des montants, filtre actif, et cliquez sur Somme automatique. Excel n'écrit pas SOMME, mais SOUS point TOTAL, neuf, et la plage. SOUS point TOTAL ne calcule que sur les lignes visibles. Le neuf veut dire somme. Une SOMME classique, elle, donne toujours le total des cinq cents lignes, même filtrée.
+
+Diapositive 10 – Figer la ligne, ou les volets
+  NARRATEUR : Figer la ligne supérieure garde les titres visibles quand on descend. Mais quand on va vers la droite, on perd les dates. Libérez les volets, cliquez en B2, puis Affichage, Figer les volets, Figer les volets. Tout ce qui est au-dessus et à gauche de la cellule choisie reste fixe : ici, la ligne 1 et la colonne A. Piège : si vous êtes en E250, la moitié de l'écran se bloque.
+
+Diapositive 11 – Supprimer les doublons
+  NARRATEUR : Après la fusion de deux fichiers, certaines lignes apparaissent deux fois. Données, Supprimer les doublons. Cochez les colonnes qui définissent un doublon : toutes les colonnes, si la ligne entière doit être identique, ou seulement le numéro, si un même numéro ne doit apparaître qu'une fois. Excel garde la première occurrence et annonce combien de lignes il a supprimées. Contrairement au filtre, cette suppression est réelle : travaillez sur une copie, ou gardez Contrôle Z sous la main.
+
+Diapositive 12 – Les pièges à éviter
+  NARRATEUR : Le piège le plus grave : trier une seule colonne sélectionnée et choisir Continuer avec la sélection en cours. Les montants changent de ligne et ne correspondent plus à leur chantier, sans aucun message d'erreur. Contrôle Z immédiatement. Autres pièges : le filtre oublié, qui fait croire qu'il manque des lignes ; une ligne vide au milieu de la liste, où Excel croit qu'elle s'arrête ; des dates ou des montants saisis en texte, qui échappent aux filtres ; et le filtre Dix premiers, qui se calcule toujours sur toute la colonne.
+
+Diapositive 13 – À retenir
+  NARRATEUR : Retenez. Une seule cellule cliquée, jamais une colonne. Figer la ligne supérieure avant de défiler. Données, Filtrer, puis une condition par colonne : les filtres se cumulent. Les filtres numériques, textuels et chronologiques pour les conditions précises. Données, Trier avec Ajouter un niveau pour plusieurs critères. SOUS point TOTAL pour un total qui suit le filtre. Et Données, Effacer pour tout réafficher.
+
+Diapositive 14 – Prêt avant que le comptable rappelle
+  SOPHIE : Et le chantier Leroy ?
+  KARIM : Deux clics : quarante-trois lignes, et le total en bas de l'écran.
+  NARRATEUR : Bravo. Passez maintenant à l'atelier : les cinq cents dépenses de chantier.

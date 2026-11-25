@@ -1,0 +1,41 @@
+<h3>Atelier 16 – Un classeur, plusieurs feuilles, à vous de jouer (20 min)</h3>
+<p>Sophie veut les ventes du premier trimestre, par commercial et par métier, dans la feuille Récap T1. Vous allez la relier aux feuilles des trois mois pour qu'elle se mette à jour seule, mettre en forme deux feuilles d'un coup, puis préparer avril.</p>
+<p><strong>Fichier :</strong> votre copie de <em>Excel_16_Ventes_T1.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Récap T1</strong> (vide), <strong>Janvier</strong>, <strong>Février</strong> et <strong>Mars</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie que vous avez compris chaque geste.</p>
+
+<h4>Étape 1 – Mettre en forme deux feuilles d'un coup</h4>
+<p><strong>Faites :</strong> cliquez sur l'onglet <strong>Février</strong>, maintenez <strong>Ctrl</strong> et cliquez sur l'onglet <strong>Mars</strong>. Sélectionnez B4:E8 et appliquez le format <strong>Monétaire</strong> sans décimales ; mettez A3:E3 et A8:E8 en gras. Puis clic droit sur un onglet → <strong>Dissocier les feuilles</strong>.</p>
+<p><strong>Vous devez voir :</strong> pendant le groupe, « [Groupe] » dans la barre de titre. Ensuite, Février et Mars affichent les montants en euros, comme Janvier.</p>
+<p><strong>Pourquoi :</strong> en groupe, chaque geste s'applique à toutes les feuilles sélectionnées, une saisie aussi. D'où la dissociation dès que c'est fini.</p>
+
+<h4>Étape 2 – Un premier lien</h4>
+<p><strong>Faites :</strong> feuille Récap T1, cliquez en B4 et tapez <code>=</code>. Cliquez sur l'onglet Janvier, puis sur B4, et appuyez sur Entrée.</p>
+<p><strong>Vous devez voir :</strong> 4 200 € en B4 de Récap T1, et <code>=Janvier!B4</code> dans la barre de formule.</p>
+<p><strong>Si ça ne marche pas :</strong> vous êtes revenu cliquer sur Récap T1 avant Entrée ? La formule pointe vers la mauvaise feuille : effacez et recommencez, en appuyant sur Entrée tant que vous êtes sur Janvier.</p>
+
+<h4>Étape 3 – Additionner les trois mois</h4>
+<p><strong>Faites :</strong> en B4 de Récap T1, remplacez la formule : tapez <code>=SOMME(</code>, cliquez sur l'onglet Janvier, maintenez <strong>Maj</strong> et cliquez sur l'onglet Mars, cliquez sur B4, tapez <code>)</code> et Entrée.</p>
+<p><strong>Vous devez voir :</strong> <code>=SOMME(Janvier:Mars!B4)</code> et 13 950 € : les ventes de peinture de Julie sur le trimestre.</p>
+
+<h4>Étape 4 – Recopier dans tout le tableau</h4>
+<p><strong>Faites :</strong> recopiez B4 vers la droite jusqu'en D4, puis B4:D4 vers le bas jusqu'en ligne 7.</p>
+<p><strong>Vous devez voir :</strong> 31 750 € en E4 (total de Julie) et <strong>115 800 €</strong> en E8, le total du trimestre.</p>
+<p><strong>Pourquoi :</strong> la référence B4 est relative : elle devient C4, D5… à la recopie, sur les trois feuilles à la fois.</p>
+
+<h4>Étape 5 – Une correction qui suit</h4>
+<p><strong>Faites :</strong> feuille Février, en B4, remplacez 4 650 par 5 650. Revenez sur Récap T1.</p>
+<p><strong>Vous devez voir :</strong> B4 passe à 14 950 € et E8 à 116 800 €, sans rien toucher. Remettez 4 650 dans Février.</p>
+
+<h4>Étape 6 – Préparer avril</h4>
+<p><strong>Faites :</strong> maintenez <strong>Ctrl</strong> et faites glisser l'onglet Mars vers la droite, après Mars. Double-cliquez sur le nouvel onglet « Mars (2) » et renommez-le <strong>Avril</strong>. En A1, écrivez « Ventes d'avril 2026 ».</p>
+<p><strong>Vous devez voir :</strong> une feuille Avril identique à Mars, mise en forme et formules comprises. Récap T1 affiche toujours 115 800 €.</p>
+
+<h4>Étape 7 – Le piège de l'ordre des onglets</h4>
+<p><strong>Faites :</strong> faites glisser l'onglet Avril (sans Ctrl) entre Février et Mars. Regardez E8 de Récap T1. Puis remettez Avril après Mars et effacez ses ventes, B4:D7.</p>
+<p><strong>Vous devez voir :</strong> E8 saute à 157 200 € quand Avril est entre Février et Mars, puis revient à 115 800 €. Les totaux d'Avril passent à 0 € une fois les ventes effacées.</p>
+<p><strong>Pourquoi :</strong> <code>Janvier:Mars</code> prend toutes les feuilles placées entre les deux onglets, quel que soit leur nom.</p>
+
+<h4>Étape 8 – Un lien vers un autre classeur</h4>
+<p><strong>Faites :</strong> enregistrez votre fichier, puis ouvrez un nouveau classeur (Ctrl+N). En A1, tapez <code>=</code>, revenez dans votre fichier (Affichage → Changer de fenêtre), cliquez sur E8 de Récap T1, puis Entrée.</p>
+<p><strong>Vous devez voir :</strong> 115 800 dans le nouveau classeur et, dans la barre de formule, <code>='[Excel_16_Ventes_T1.xlsx]Récap T1'!$E$8</code> : le nom du fichier entre crochets, des apostrophes à cause de l'espace dans « Récap T1 », et des $.</p>
+<p><strong>Pourquoi :</strong> ce lien suit le fichier source tant qu'il n'est ni renommé ni déplacé. Fermez le nouveau classeur sans l'enregistrer.</p>

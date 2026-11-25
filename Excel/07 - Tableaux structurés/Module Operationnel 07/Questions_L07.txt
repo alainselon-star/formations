@@ -1,0 +1,31 @@
+MC
+10
+Karim transforme sa liste de devis avec Accueil > Mettre sous forme de tableau. Quel est le principal avantage ?
+*Le tableau s'agrandit tout seul : formules, totaux et mise en forme suivent les nouvelles lignes | Exact : Excel reconnaît la liste comme un tout et lui donne un nom.
+Le tableau prend des couleurs alternées | Non : ce n'est que la partie visible ; le vrai changement, c'est qu'Excel reconnaît la liste.
+Les montants sont convertis au format Monétaire | Non : la mise sous forme de tableau ne change pas les formats de nombre.
+Les doublons sont supprimés | Non : il faut Données → Supprimer les doublons.
+
+MC
+10
+Karim ajoute une colonne « TTC » à son tableau structuré et saisit une formule uniquement dans la première ligne. Que se passe-t-il ?
+*Excel recopie la formule sur toutes les lignes du tableau, y compris les futures | Exact : c'est une colonne calculée.
+Seule la première ligne est calculée | Non : dans un tableau, la formule se propage à toute la colonne.
+Il faut tirer la poignée de recopie jusqu'en bas | Non : c'était nécessaire dans une plage ordinaire.
+Excel affiche une erreur | Non : la formule est acceptée et recopiée.
+
+MC
+10
+Sophie veut le total des montants sous son tableau structuré, qui s'adapte automatiquement aux lignes ajoutées et aux filtres. Que faut-il faire ?
+*Cocher Ligne Total dans l'onglet Création de tableau | Exact : la Ligne Total reste en bas, suit les ajouts et tient compte des filtres.
+Taper =SOMME(H2:H208) sous le tableau | Non : la plage resterait figée à la ligne 208 et ignorerait les filtres.
+Écrire TOTAL dans une ligne tapée à la main | Non : elle ne suit ni les ajouts ni les filtres.
+Insérer un segment | Non : un segment filtre, il ne totalise pas.
+
+MC
+10
+Dans une formule, que désigne Factures[Montant HT] ?
+*Toute la colonne Montant HT du tableau Factures, quelle que soit sa longueur | Exact : c'est une référence structurée.
+La cellule Montant HT de la ligne en cours | Non : ce serait [@[Montant HT]], avec l'arobase.
+La feuille nommée Factures | Non : une feuille se désigne avec un point d'exclamation.
+Le titre de la colonne seulement | Non : la référence désigne les données de la colonne.

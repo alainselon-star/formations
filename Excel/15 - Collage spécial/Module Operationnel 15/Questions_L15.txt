@@ -1,0 +1,31 @@
+MC
+10
+Sophie copie les totaux de son tableau de bord, calculés par des formules, vers un nouveau classeur destiné au comptable. Il doit pouvoir retravailler les montants, sans formules ni lien vers le fichier de Sophie. Quel collage choisit-elle ?
+*Collage spécial > Valeurs | Exact : seuls les résultats sont collés, sans formules ni liaison.
+Coller normalement avec Ctrl+V | Non : les formules seraient collées, avec une liaison vers le fichier de Sophie.
+Collage spécial > Coller avec liaison | Non : la liaison garde un lien vers le fichier de Sophie.
+Collage spécial > Image | Non : une image ne peut pas être retravaillée.
+
+MC
+10
+Karim a la liste des mois en colonne, de A2 à A13. Il veut les mêmes mois en ligne, de B1 à M1, sans les retaper. Quelle méthode utilise-t-il ?
+*Copier A2:A13, puis Collage spécial > Transposé en B1 | Exact : Transposé échange lignes et colonnes.
+Copier A2:A13, puis Collage spécial > Valeurs en B1 | Non : les mois resteraient en colonne.
+Tirer la poignée de recopie de A2 vers la droite jusqu'en M2 | Non : la recopie répète ou prolonge, elle ne transpose pas.
+Trier la colonne A de A à Z | Non : le tri ne change pas l'orientation.
+
+MC
+10
+Les prix du catalogue sont en C2:C80. Sophie veut les augmenter tous de 5 %, directement dans ces cellules, sans colonne intermédiaire ni formule. Que fait-elle ?
+*Copier une cellule contenant 1,05, puis Collage spécial > Multiplication sur C2:C80 | Exact : chaque prix est multiplié sur place.
+Écrire =C2*1,05 en C2, puis recopier jusqu'en C80 | Non : une formule qui utilise sa propre cellule crée une référence circulaire.
+Appliquer le format Pourcentage à C2:C80 | Non : le format change l'affichage, pas la valeur.
+Ctrl+H : remplacer chaque prix par le prix + 5 % | Non : Rechercher-remplacer ne calcule pas.
+
+MC
+10
+Après un Collage spécial > Valeurs, les montants ont perdu leur symbole €. Quel choix aurait gardé les euros, toujours sans formules ?
+*Collage spécial > Valeurs et formats des nombres | Exact : les chiffres et leur format, sans les formules.
+Collage spécial > Formules | Non : les formules seraient collées.
+Collage spécial > Coller avec liaison | Non : cela crée des liens vers l'origine.
+Collage spécial > Largeurs de colonnes | Non : seules les largeurs seraient collées.

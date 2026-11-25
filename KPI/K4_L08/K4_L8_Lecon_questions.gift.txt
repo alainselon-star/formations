@@ -1,0 +1,29 @@
+$CATEGORY: $course$/K4-L8 Leçon
+
+::K4-L8 Leçon Q1::Quelle chaîne relie les trois processus ?{
+=Changement → incidents → problème → changement correctif#Exact \: CHG-0036, PRB-0001, CHG-0049. Revoyez la diapositive 3.
+~Incident → changement → SLA#Non \: le SLA n'est pas un processus. Revoyez la diapositive 3.
+~Problème → incident → clôture#Non \: un problème ne crée pas d'incident. Revoyez la diapositive 3.
+~Il n'y a pas de lien entre eux#Non \: 41 % des incidents ont une origine connue. Revoyez la diapositive 3.
+}
+
+::K4-L8 Leçon Q2::Que faut-il pour calculer la part des incidents causés par un changement ?{
+=Que le lien incident – changement soit saisi dans l'outil#Exact \: sans lien, pas de KPI croisé. Revoyez la diapositive 5.
+~Que tous les changements soient en urgence#Non \: le type ne crée pas de lien. Revoyez la diapositive 5.
+~Que le MTTR soit calculé en heures ouvrées#Non \: le calendrier ne crée pas de lien. Revoyez la diapositive 5.
+~Rien \: l'outil le calcule toujours seul#Non \: le lien doit être saisi. Revoyez la diapositive 5.
+}
+
+::K4-L8 Leçon Q3::Le graphique des incidents WMS montre un pic chaque lundi. Quel rôle est concerné en premier ?{
+=Le Problem Manager#Exact \: un incident récurrent révèle un problème. Revoyez la diapositive 7.
+~Le Change Manager#Non \: le pic du lundi n'est pas lié à un changement. Revoyez la diapositive 7.
+~Le Delivery Manager#Non \: il n'agit pas sur la cause. Revoyez la diapositive 7.
+~Le technicien seul#Non \: il éteint le feu, sans chercher la cause commune. Revoyez la diapositive 6.
+}
+
+::K4-L8 Leçon Q4::En septembre, le SLA est au plus haut et la satisfaction au plus bas. Qui est concerné en premier ?{
+=Le Delivery Manager, avec l'Incident Manager#Exact \: c'est un effet pastèque, à expliquer au client. Revoyez la diapositive 8.
+~Le Change Manager#Non \: ce n'est pas un effet des changements. Revoyez la diapositive 8.
+~Le Problem Manager#Non \: aucun incident récurrent ici. Revoyez la diapositive 8.
+~Personne \: le SLA est vert#Non \: c'est justement le piège. Revoyez la diapositive 8.
+}

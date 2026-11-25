@@ -1,0 +1,30 @@
+<h3>Atelier 03 – Les SLA, à vous de jouer (20 min)</h3>
+<p>Hélène hésite entre 98,5 % et 90 % pour son comité. Vous allez calculer les deux SLA de Valdor, les suivre mois par mois et par équipe, puis mesurer de combien les incidents en retard dépassent leur cible.</p>
+<p><strong>Fichier :</strong> votre copie de <em>K4_L3_Atelier_Valdor.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Incidents</strong> (856 incidents, table T_Incidents), <strong>SLA global</strong>, <strong>Par mois</strong>, <strong>Par groupe</strong> et <strong>Dépassements</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie chaque étape. Chaque erreur vous renvoie à la diapositive de la leçon à revoir.</p>
+
+<h4>Étape 1 – Les deux SLA de Valdor</h4>
+<p><strong>Faites :</strong> feuille SLA global, en B5, tapez <code>=NB.SI(T_Incidents[SLA prise en charge respecté];"Oui")/NBVAL(T_Incidents[SLA prise en charge respecté])</code>. En B6, la même formule avec la colonne <em>SLA résolution respecté</em>. En B7, comptez les « Non » de cette colonne avec <code>NB.SI</code>.</p>
+<p><strong>Vous devez voir :</strong> 98,5 % de prise en charge dans les délais, 90,4 % de résolution, et 82 incidents résolus hors délai.</p>
+<p><strong>Pourquoi :</strong> ce sont deux promesses différentes. Les 90,4 % représentent 82 utilisateurs qui ont attendu plus que promis.</p>
+<p><strong>Si ça ne marche pas :</strong> vous voyez 0,985 ? Appliquez le format Pourcentage. Revoyez les deux SLA (leçon, diapositive 3).</p>
+
+<h4>Étape 2 – Les SLA mois par mois</h4>
+<p><strong>Faites :</strong> feuille Par mois, en C5, tapez <code>=NB.SI(T_Incidents[Mois];B5)</code>. En D5, <code>=NB.SI.ENS(T_Incidents[Mois];B5;T_Incidents[SLA prise en charge respecté];"Oui")/C5</code>. En E5, la même formule avec la colonne <em>SLA résolution respecté</em>. En F5, <code>=NB.SI.ENS(T_Incidents[Mois];B5;T_Incidents[SLA résolution respecté];"Non")</code>. Recopiez C5:F5 jusqu'à la ligne 10.</p>
+<p><strong>Vous devez voir :</strong> la prise en charge reste entre 97 % et 100 % ; la résolution tombe à 82 % en août (28 incidents hors délai) et remonte à 96 % en septembre (6 hors délai).</p>
+<p><strong>Pourquoi :</strong> la prise en charge varie trop peu pour piloter, c'est une alarme. La résolution, elle, réagit aux congés d'août : c'est elle qui se pilote.</p>
+<p><strong>Si ça ne marche pas :</strong> le nombre d'incidents vaut 0 ? Le critère doit être le numéro du mois (colonne B), pas son nom. Revoyez la prise en charge et la résolution (leçon, diapositives 5 et 6).</p>
+
+<h4>Étape 3 – Le SLA de résolution par groupe</h4>
+<p><strong>Faites :</strong> feuille Par groupe, en B5, tapez <code>=NB.SI(T_Incidents[Groupe final];A5)</code>. En C5, <code>=NB.SI.ENS(T_Incidents[Groupe final];A5;T_Incidents[SLA résolution respecté];"Oui")/B5</code>. Recopiez jusqu'à la ligne 8.</p>
+<p><strong>Vous devez voir :</strong> Service Desk 97 %, Infra &amp; réseau 93 %, Poste de travail 89 %, Applications métier 80 % (240 incidents).</p>
+<p><strong>Pourquoi :</strong> un SLA global de 90 % cache une équipe à 80 %. C'est là que Romain doit agir, par exemple en vérifiant l'OLA qui le lie à l'équipe Applications métier.</p>
+
+<h4>Étape 4 – De combien dépasse-t-on ?</h4>
+<p><strong>Faites :</strong> feuille Dépassements, en B5, comptez les incidents de la priorité avec <code>NB.SI</code>. En C5, <code>=NB.SI.ENS(T_Incidents[Priorité];A5;T_Incidents[SLA résolution respecté];"Non")</code>. En D5, <code>=MOYENNE.SI.ENS(T_Incidents[Dépassement (min)];T_Incidents[Priorité];A5;T_Incidents[SLA résolution respecté];"Non")/60</code>. Recopiez jusqu'à la ligne 8.</p>
+<p><strong>Vous devez voir :</strong> P1 : 27 incidents, 5 hors délai, 12,9 h de dépassement moyen ; P2 : 199, 42 et 7,7 h ; P3 : 420, 30 et 14,3 h ; P4 : 210, 5 et 11,1 h.</p>
+<p><strong>Pourquoi :</strong> le pourcentage dit combien d'incidents sont en retard, le dépassement dit à quel point. Les 5 P1 en retard ont dépassé leur cible de 4 h de près de 13 h : c'est grave, même si 81 % des P1 sont dans les délais.</p>
+<p><strong>Si ça ne marche pas :</strong> vous obtenez un dépassement très faible ? Vous avez fait la moyenne de tous les incidents, dont les dépassements à 0 : ajoutez le critère « Non ». Revoyez l'ampleur des retards (leçon, diapositive 8).</p>
+
+<h4>Pour aller plus loin</h4>
+<p>Feuille Par mois, en G5, calculez la satisfaction moyenne du mois : <code>=MOYENNE.SI(T_Incidents[Mois];B5;T_Incidents[Satisfaction])</code>, puis recopiez. Comparez septembre et octobre au printemps : que diriez-vous à Hélène, qui voit un SLA de résolution à 96 % en septembre ?</p>

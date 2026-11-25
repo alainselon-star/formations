@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Atelier 10
+
+::J1 Total::Étape 1 – Une barre géante écrase toutes les autres. Quelle est la cause probable ?{
+=La ligne Total a été sélectionnée avec les mois#Exact \: on s'arrête au dernier mois.
+~Le graphique n'a pas de titre#Non \: le titre ne change pas les barres.
+~Les étiquettes de données sont activées#Non \: elles affichent les valeurs sans les modifier.
+}
+
+::J2 Serie1::Étape 1 – La légende affiche « Série1 ». Pourquoi ?{
+=La ligne des titres n'a pas été sélectionnée#Exact \: Excel n'a pas trouvé le nom de la série.
+~Le graphique est en secteurs#Non \: le type n'y est pour rien.
+~Le tableau est trié#Non \: le tri ne change pas le nom des séries.
+}
+
+::J3 Barres::Étape 2 – Pourquoi choisir des barres horizontales pour les types de travaux ?{
+=Elles laissent la place aux noms et facilitent la comparaison#Exact \: les noms longs restent lisibles.
+~Parce que les barres montrent une évolution dans le temps#Non \: le temps se montre en histogramme ou en courbe.
+~Parce que les barres font 100 %#Non \: ce sont les secteurs.
+}
+
+::J4 Secteurs::Étape 3 – Quand un graphique en secteurs convient-il ?{
+=Pour peu de parts qui font 100 % ensemble#Exact \: par exemple deux commerciaux.
+~Pour une évolution sur 9 mois#Non \: c'est une courbe ou un histogramme.
+~Pour comparer 15 villes#Non \: trop de parts, illisible.
+}
+
+::J5 Combine::Étape 4 – Qu'est-ce qu'un graphique combiné ?{
+=Un seul graphique qui mélange deux types, par exemple des colonnes et une courbe#Exact \: le réel en colonnes, l'objectif en ligne.
+~Deux graphiques posés côte à côte#Non \: c'est un seul graphique.
+~Un graphique copié dans PowerPoint#Non \: cela n'a rien à voir.
+}
+
+::J6 Axe secondaire::Étape 4 – Quand faut-il un axe secondaire ?{
+=Quand les deux séries ont des échelles très différentes, comme des euros et des %#Exact \: chaque série a sa propre règle.
+~Quand il y a plus de 9 catégories#Non \: le nombre de catégories n'y change rien.
+~Toujours dans un graphique combiné#Non \: seulement si les échelles diffèrent.
+}
+
+::J7 Intervertir::Étape 5 – Les mois apparaissent en légende au lieu d'être sous les barres. Que faire ?{
+=Création de graphique → Intervertir les lignes/colonnes#Exact \: séries et catégories sont échangées.
+~Trier le tableau par mois#Non \: le tri ne change pas l'orientation.
+~Supprimer la légende#Non \: les mois resteraient des séries.
+}
+
+::J8 Source::Étape 7 – Une nouvelle ligne est ajoutée sous un tableau ordinaire. Le graphique la montre-t-il ?{
+=Non, il faut étendre la source ou travailler sur un tableau structuré#Exact \: un graphique suit les changements de valeurs, pas les lignes ajoutées.
+~Oui, toujours#Non \: la source s'arrête à la plage choisie.
+~Oui, si on appuie sur F9#Non \: F9 recalcule les formules, il n'étend pas la source.
+}

@@ -1,0 +1,47 @@
+﻿MC
+10
+Entraînement 1 – Dans votre tableau croisé, combien vaut la case Plomberie × février ?
+*37 900 € | Bravo, c'est le bon résultat : votre tableau est correct.
+31 260 € | Ce montant est celui de la peinture en février. Vérifiez que Type de travaux est bien en Lignes et lisez la ligne Plomberie.
+14 920 € | C'est la peinture en janvier. Lisez la ligne Plomberie et la colonne févr.
+323 410 € | C'est le total annuel de la plomberie (colonne Total général). Lisez la colonne févr.
+
+MC
+10
+Entraînement 2 – Quel type de travaux a rapporté le plus sur l'année, et combien ?
+*Plomberie, 323 410 € | Exact : lisez la colonne Total général, la plus grande valeur est celle de la plomberie.
+Peinture, 271 330 € | La peinture est deuxième. Comparez les valeurs de la colonne Total général.
+Électricité, 1 176 350 € | 1 176 350 € est le total général de toutes les factures, pas celui d'un type de travaux.
+Carrelage, 37 900 € | 37 900 € est une seule case (plomberie en février). Regardez la colonne Total général.
+
+MC
+10
+Les factures de mars ont été corrigées dans la liste. Que faites-vous pour que le tableau croisé en tienne compte ?
+*Clic droit dans le tableau croisé, puis Actualiser | Exact : dynamique ne veut pas dire automatique. Après une modification des données, on actualise.
+Rien, il se met à jour tout seul | Non : le tableau croisé ne se recalcule pas seul. Il faut cliquer sur Actualiser.
+Supprimer le tableau croisé et le recréer | Inutile : un clic sur Actualiser suffit.
+Retaper les montants corrigés dans le tableau croisé | Non : on ne tape jamais dans un tableau croisé. On corrige la liste, puis on actualise.
+
+MC
+10
+Sophie veut le chiffre d'affaires par commercial et par mois. Où placez-vous le champ Commercial ?
+*Dans la zone Lignes | Exact : « je veux le Montant (Valeurs) par Commercial (Lignes) et par mois (Colonnes) ».
+Dans la zone Valeurs | Non : Valeurs reçoit ce que l'on additionne, ici le Montant HT.
+Dans la zone Filtres | Non : un filtre limite le tableau à un seul commercial, il ne crée pas une ligne par commercial.
+Nulle part, Excel le devine | Non : c'est vous qui rangez les champs dans les zones.
+
+MC
+10
+Votre tableau affiche « Nombre de Montant HT » au lieu de la somme. Quelle est la cause la plus probable ?
+*La colonne Montant contient une cellule vide ou du texte | Exact : Excel compte au lieu d'additionner. Clic droit sur une valeur, Synthétiser les valeurs par, Somme.
+Le tableau croisé n'a pas été actualisé | Non : actualiser reprend les données, cela ne change pas le calcul utilisé.
+La date n'est pas regroupée par mois | Non : le regroupement des dates concerne les colonnes, pas le calcul.
+Le tableau croisé est sur une nouvelle feuille | Non : l'emplacement du tableau n'a aucun effet sur le calcul.
+
+MC
+10
+Pourquoi la formule SOMME.SI.ENS copiée dans la case de février affichait-elle encore 14 920 € ?
+*Les dates de janvier étaient écrites dans la formule | Exact : il aurait fallu modifier chaque formule à la main. Le tableau croisé évite ce piège.
+Excel ne sait pas additionner des dates | Non : la formule était juste pour janvier, le problème vient des dates écrites en dur.
+Il manquait un filtre sur la liste | Non : SOMME.SI.ENS ne dépend pas des filtres.
+Le montant de février est le même que celui de janvier | Non : en février, la peinture vaut 31 260 €.

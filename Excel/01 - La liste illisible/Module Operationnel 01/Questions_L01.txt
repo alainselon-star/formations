@@ -1,0 +1,31 @@
+MC
+10
+Dans une colonne de montants, certaines cellules sont calées à gauche et la barre d'état affiche une Somme bien trop petite. Que se passe-t-il ?
+*Ces cellules contiennent du texte, qu'Excel ignore dans la Somme | Exact : un nombre se cale à droite ; un texte, à gauche, et il n'est pas additionné.
+La colonne est trop étroite | Non : une colonne trop étroite affiche des dièses, elle ne change pas la Somme.
+Les montants n'ont pas le format Monétaire | Non : le format ne change que l'affichage, pas la Somme.
+La barre d'état n'additionne que les cellules visibles à l'écran | Non : elle additionne toute la sélection, mais seulement les vrais nombres.
+
+MC
+10
+La colonne Montant contient « 4230 EUR » et « 2540 euros ». Quelle est la bonne méthode pour obtenir des nombres sans rien retaper ?
+*Sélectionner la colonne, remplacer «  euros » par rien, puis «  EUR » par rien | Exact : la colonne d'abord, et « euros » avant « EUR ».
+Remplacer «  EUR » par rien, puis «  euros », sans rien sélectionner | Non : sans sélection, toute la feuille est modifiée, et « EUR » en premier laisse « 2540os ».
+Appliquer le format Monétaire à la colonne | Non : un format ne transforme pas du texte en nombre.
+Taper « € » à la fin de chaque montant | Non : on ne tape jamais l'unité, c'est le format qui l'affiche.
+
+MC
+10
+Une cellule affiche « 1 851 € ». La barre de formule affiche 1850,5. Quelle valeur Excel utilise-t-il dans un total ?
+*1850,5 | Exact : le format change l'affichage, jamais la valeur.
+1851 | Non : réduire les décimales n'arrondit pas la valeur. Pour arrondir vraiment, il faut ARRONDI.
+1850 | Non : la valeur n'est ni tronquée ni arrondie.
+Cela dépend de la largeur de la colonne | Non : la largeur ne change que l'affichage.
+
+MC
+10
+Une date s'affiche « 46030 » au lieu d'une date. Que faut-il faire ?
+*Lui appliquer un format Date : c'est une vraie date qui a perdu son habillage | Exact : une date est un nombre de jours depuis le 1er janvier 1900.
+La retaper : elle est cassée | Non : la valeur est juste, seul l'affichage manque.
+Élargir la colonne | Non : une colonne trop étroite affiche des dièses, pas un nombre.
+Lui appliquer le format Texte | Non : elle ne serait plus une date calculable.

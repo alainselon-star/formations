@@ -1,0 +1,31 @@
+﻿MC
+10
+Sophie veut la facture moyenne de chaque type de travaux. Que faites-vous dans le tableau croisé ?
+*Clic droit sur un nombre, Synthétiser les valeurs par, Moyenne | Exact : Synthétiser les valeurs par change le calcul de la zone Valeurs.
+Clic droit sur un nombre, Afficher les valeurs, % du total général | Non : Afficher les valeurs change la présentation, pas le calcul. Vous obtiendriez des parts, pas des moyennes.
+Taper les moyennes à la main dans le tableau croisé | Non : on ne tape jamais dans un tableau croisé. On change le calcul.
+Remplacer Montant HT par Client dans la zone Valeurs | Non : Client est du texte, Excel compterait les lignes au lieu de faire une moyenne.
+
+MC
+10
+Votre colonne de pourcentages affiche 100 % sur toutes les lignes. Quelle est la cause ?
+*Vous avez choisi % du total de la ligne | Exact : chaque ligne est comparée à elle-même. Choisissez % du total général.
+Le tableau croisé n'a pas été actualisé | Non : actualiser reprend les données, cela ne change pas le pourcentage choisi.
+La colonne Montant HT contient du texte | Non : un montant en texte donne « Nombre de Montant HT », pas 100 % partout.
+Le tableau n'est pas trié | Non : le tri change l'ordre des lignes, pas les valeurs.
+
+MC
+10
+Vous faites glisser Client dans la zone Valeurs. Le total général affiche 300. Que représente ce nombre ?
+*Le nombre de lignes, donc de factures | Exact : un champ texte ne s'additionne pas, Excel compte les lignes. Il y a 300 factures.
+Le nombre de clients différents | Non : Karim n'a que 34 clients. Excel ne compte pas les clients différents, il compte les lignes.
+La somme des montants HT | Non : la somme des montants fait 1 176 350 €.
+Une erreur de la liste | Non : le résultat est juste, c'est seulement ce qu'il mesure qui surprend.
+
+MC
+10
+Karim veut savoir quelle part de son chiffre d'affaires vient de chaque commercial. Le champ Commercial est en lignes et Montant HT en valeurs. Que fait-il ?
+Clic droit sur un montant, Synthétiser les valeurs par, Somme | Non : la somme donne des montants en euros, pas la part de chacun dans le total.
+Clic droit sur un montant, Afficher les valeurs, % du total de la ligne | Non : chaque ligne serait comparée à elle-même, la colonne afficherait 100 % partout.
+*Clic droit sur un montant, Afficher les valeurs, % du total général | Exact : chaque commercial est comparé au total de tous les commerciaux, et le total fait 100 %.
+Clic droit sur un montant, Synthétiser les valeurs par, Max. | Non : Max. donne la plus grosse facture de chaque commercial, pas sa part du chiffre d'affaires.

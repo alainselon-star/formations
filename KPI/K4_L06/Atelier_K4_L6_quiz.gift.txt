@@ -1,0 +1,57 @@
+$CATEGORY: $course$/K4-L6 Atelier
+
+::K4L6-A1 Part liée::Étape 1 – Quelle part des incidents de Valdor est rattachée à un problème, sur six mois ?{
+=25,9 %#Exact \: 222 incidents sur 856.
+~11 %#Non \: c'est le taux d'octobre seulement. Revoyez la diapositive 5 (K4-L6-S1).
+~52 %#Non \: 52 est le nombre d'incidents de PRB-0001. Revoyez la diapositive 5 (K4-L6-S1).
+~78 %#Non \: c'est la part de problèmes avec erreur connue. Revoyez la diapositive 7 (K4-L6-S3).
+}
+
+::K4L6-A2 Octobre::Étape 1 – Pourquoi la part des incidents liés tombe-t-elle à 11 % en octobre ?{
+=La cause du WMS du lundi a été corrigée le 1er octobre#Exact \: ses incidents ont disparu.
+~Il y a eu moins d'incidents en octobre#Non \: le mois compte 143 incidents, comme les autres. Revoyez la diapositive 5 (K4-L6-S1).
+~Les techniciens ont cessé de rattacher les incidents#Non \: rien ne l'indique. Revoyez la diapositive 5 (K4-L6-S1).
+~Les problèmes ont été supprimés de l'outil#Non \: ils sont toujours là, au statut Résolu. Revoyez la diapositive 8 (K4-L6-S4).
+}
+
+::K4L6-A3 Formule délai::Étape 2 – Pourquoi la formule du délai commence-t-elle par SI([@[Date cause racine]]\="";"";…) ?{
+=Pour laisser vide le délai des problèmes dont la cause n'est pas encore trouvée#Exact \: sinon, Excel calculerait un délai négatif ou absurde.
+~Pour exclure les problèmes résolus#Non \: les problèmes résolus ont bien une cause.
+~Pour convertir le délai en heures#Non \: le délai reste en jours.
+~Pour ne garder que les récidives#Non \: le test porte sur la date de cause racine.
+}
+
+::K4L6-A4 Médiane::Étape 2 – Délai moyen 21,6 jours, médian 14,9 jours, maximum 98,2. Que faut-il en conclure ?{
+=La plupart des causes sont trouvées en deux semaines, mais quelques problèmes, dont le WMS, traînent très longtemps#Exact \: le maximum tire la moyenne vers le haut.
+~Toutes les causes sont trouvées en 21,6 jours#Non \: c'est une moyenne, pas un délai fixe. Revoyez la diapositive 6 (K4-L6-S2).
+~Le Problem Management de Valdor ne fonctionne pas#Non \: la médiane de 15 jours est raisonnable. Revoyez la diapositive 6 (K4-L6-S2).
+~La médiane est fausse#Non \: moyenne et médiane mesurent deux choses (voir K4-L2). Revoyez la diapositive 6 (K4-L6-S2).
+}
+
+::K4L6-A5 Sans cause::Étape 3 – Combien de problèmes n'ont pas encore de cause identifiée, et combien d'incidents leur sont liés ?{
+=9 problèmes (Nouveau et En analyse), avec 38 incidents#Exact \: ce sont eux qu'il faut analyser en priorité.
+~12 problèmes, avec 57 incidents#Non \: ce sont les erreurs connues, qui ont une cause. Revoyez la diapositive 8 (K4-L6-S4).
+~19 problèmes, avec 127 incidents#Non \: ce sont les problèmes résolus. Revoyez la diapositive 8 (K4-L6-S4).
+~Aucun#Non \: 6 sont nouveaux et 3 en analyse. Revoyez la diapositive 8 (K4-L6-S4).
+}
+
+::K4L6-A6 Erreur connue::Étape 3 – 78 % des problèmes sont des erreurs connues. Qu'est-ce que cela apporte au premier niveau ?{
+=Un contournement documenté, qu'il peut appliquer sans escalader#Exact \: l'incident se résout plus vite.
+~La garantie que l'incident ne reviendra pas#Non \: la cause n'est pas encore corrigée. Revoyez la diapositive 7 (K4-L6-S3).
+~Un SLA plus long#Non \: le SLA ne dépend pas du problème. Revoyez la diapositive 7 (K4-L6-S3).
+~Rien, c'est une information pour le Change Management#Non \: c'est d'abord une aide au N1. Revoyez la diapositive 7 (K4-L6-S3).
+}
+
+::K4L6-A7 Récidive::Étape 4 – NB.SI(T_Problemes[Titre];"*récidive*") renvoie 19. Que signifie ce résultat ?{
+=19 problèmes sur 40 sont revenus après avoir été déclarés corrigés#Exact \: le signe de corrections incomplètes.
+~19 incidents se sont répétés#Non \: on compte des problèmes, pas des incidents. Revoyez la diapositive 8 (K4-L6-S4).
+~19 problèmes ont le mot récidive au début du titre seulement#Non \: les astérisques acceptent n'importe quel texte avant ou après.
+~19 problèmes sont des erreurs connues#Non \: il y en a 31. Revoyez la diapositive 7 (K4-L6-S3).
+}
+
+::K4L6-A8 Coûteux::Étape 4 – Quel problème a le plus d'incidents liés ?{
+=PRB-0001, la synchronisation WMS du lundi, avec 52 incidents#Exact \: un seul problème, près d'un quart des incidents liés.
+~PRB-0022, les plantages Excel, avec 7 incidents#Non \: 7 est loin du maximum. Revoyez la diapositive 3 (K4-L6).
+~PRB-0019, le Wifi de l'entrepôt#Non \: il compte 6 incidents. Revoyez la diapositive 3 (K4-L6).
+~Tous les problèmes ont le même nombre d'incidents#Non \: le maximum est de 52. Revoyez la diapositive 3 (K4-L6).
+}

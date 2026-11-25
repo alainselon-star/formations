@@ -1,0 +1,46 @@
+Excel Opérationnel · Leçon 04 – Le tableau qui réfléchit
+
+Diapositive 1 – Le tableau qui réfléchit
+  NARRATEUR : Cent vingt devis, et pour chacun une décision à prendre : acompte ou pas, relance ou pas, petit ou gros chantier. Dans cette leçon, vous allez apprendre à faire décider Excel à votre place, ligne par ligne, avec la fonction SI, et à combiner plusieurs conditions.
+
+Diapositive 2 – Mercredi, 14 h : la règle de la banque
+  SOPHIE : À partir de maintenant, on demande un acompte de trente pour cent sur tous les devis de trois mille euros ou plus. En dessous, pas d'acompte. Je veux le montant en face de chaque devis du trimestre. Et marque-moi les devis à relancer.
+  KARIM : Cent vingt devis. Pour chacun, je dois regarder le montant, décider, puis calculer. Et Julie va réviser trois devis la semaine prochaine.
+
+Diapositive 3 – Si… alors… sinon…
+  NARRATEUR : Le vrai problème n'est pas de calculer trente pour cent : Karim sait écrire H4 fois 30 pour cent. Le problème, c'est que ce calcul ne s'applique qu'à certaines lignes. Reformulons la règle de Sophie : si le montant est de trois mille euros ou plus, alors l'acompte vaut trente pour cent du montant ; sinon, il vaut zéro. Et un devis de trois mille euros pile ? La règle dit ou plus : il a un acompte.
+
+Diapositive 4 – Solution 1 : décider à la main
+  NARRATEUR : Sans l'outil, deux méthodes. Ligne par ligne : lire le montant, comparer de tête, calculer, taper. Vingt secondes par ligne, quarante minutes pour cent vingt devis, avec le risque de lire deux mille neuf cent quatre-vingt-dix comme trois mille. Avec les filtres : filtrer les montants de trois mille ou plus, taper une multiplication, filtrer les autres, taper zéro. Cinq à huit minutes. Mais dans les deux cas, la règle n'est écrite nulle part, et la décision est figée : au premier devis révisé, le fichier est faux, sans que personne ne le voie.
+
+Diapositive 5 – Une question qui répond VRAI ou FAUX
+  NARRATEUR : Tout part d'un test logique : une question à laquelle Excel répond VRAI ou FAUX. Tapez dans une cellule libre égale H4 supérieur ou égal à 3000 : Excel affiche FAUX pour le premier devis. Les opérateurs de comparaison sont : égal, différent, qui s'écrit inférieur supérieur, strictement supérieur, supérieur ou égal, strictement inférieur, inférieur ou égal. Attention : supérieur ou égal s'écrit avec deux touches, le chevron puis le signe égal. Le symbole tout fait et l'ordre inverse ne fonctionnent pas.
+
+Diapositive 6 – La fonction SI et ses trois arguments
+  NARRATEUR : La fonction SI pose la question et choisit entre deux réponses. Elle attend trois arguments, toujours dans cet ordre, séparés par des points-virgules : le test, la valeur si vrai, la valeur si faux. Pour débuter, cliquez en J4, puis Formules, Logique, SI. La fenêtre Arguments de la fonction affiche trois zones, et le résultat de chaque morceau à droite. Test logique : H4 supérieur ou égal à 3000. Valeur si vrai : H4 fois 30 pour cent. Valeur si faux : zéro.
+
+Diapositive 7 – Le tableau réfléchit
+  NARRATEUR : Recopiez la formule sur les cent vingt lignes : deux minutes en tout. Le devis à trois mille euros pile affiche bien neuf cents euros. Maintenant, la démonstration qui donne son titre à la leçon : passez le devis de deux mille neuf cent quatre-vingt-dix euros à trois mille deux cents. L'acompte passe de zéro à neuf cent soixante euros, sans rien faire. Et si les seuils viennent des cellules jaunes, avec des dollars, Sophie peut changer le seuil ou le taux en une seule cellule.
+
+Diapositive 8 – Décider avec du texte
+  NARRATEUR : Sophie veut une colonne qui dise Relancer pour les devis en attente, et rien pour les autres. Le test porte sur du texte, la réponse aussi : tout texte s'écrit entre guillemets droits. Et deux guillemets collés veulent dire rien : la cellule paraît vide. Égale SI, I4 égal En attente entre guillemets, point-virgule, Relancer entre guillemets, point-virgule, deux guillemets. Les nombres, eux, s'écrivent sans guillemets.
+
+Diapositive 9 – Plusieurs conditions : ET, OU
+  NARRATEUR : Sophie précise : l'acompte ne concerne que les devis acceptés. Il faut donc deux conditions en même temps : le montant est de trois mille euros ou plus, ET le devis est accepté. La fonction ET répond VRAI seulement si toutes ses conditions sont vraies. On la place dans le test du SI. La fonction OU, elle, répond VRAI si au moins une condition est vraie : par exemple, à suivre si le devis est en attente OU s'il dépasse cinq mille euros. Attention : ET et OU ne font que répondre VRAI ou FAUX. C'est le SI autour qui choisit la réponse.
+
+Diapositive 10 – Trois réponses : des SI imbriqués
+  NARRATEUR : Sophie veut classer les devis : petit sous mille cinq cents euros, moyen sous cinq mille, gros au-delà. Trois réponses, donc deux questions. On construit en deux temps. D'abord un SI simple : si moins de mille cinq cents, Petit, sinon Pas petit. Puis on remplace Pas petit par un second SI : si moins de cinq mille, Moyen, sinon Gros. Deux SI ouverts, deux parenthèses à la fin. Le second test ne vérifie pas mille cinq cents ou plus : Excel ne le lit que si le premier a répondu non. L'ordre des questions compte. Dans Microsoft 365, SI point CONDITIONS évite d'empiler les parenthèses.
+
+Diapositive 11 – Quand la formule ne répond pas
+  NARRATEUR : Trois erreurs reviennent souvent. Dièse NOM point d'interrogation : un texte sans guillemets, ou SI mal écrit. Une formule refusée : des virgules au lieu des points-virgules. Une colonne Relance vide alors qu'il y a des devis en attente : un écart dans les données, souvent une espace en trop à la fin du mot. Pour voir ce qui se passe, Formules, Évaluation de formule, puis Évaluer plusieurs fois : Excel montre chaque étape. Et attention aux guillemets typographiques copiés depuis Word : retapez-les dans Excel.
+
+Diapositive 12 – Ce que SI ne fait pas
+  NARRATEUR : Deux confusions fréquentes. SI ne colorie pas les cellules : pour mettre en rouge les gros montants, c'est la mise en forme conditionnelle. Et SI ne compte pas : pour savoir combien de devis sont à relancer, et pour quel montant, ce sont NB point SI et SOMME point SI, la leçon suivante. SI décide ligne par ligne, sur la ligne où il est écrit.
+
+Diapositive 13 – À retenir
+  NARRATEUR : Retenez. SI attend trois arguments : le test, la valeur si vrai, la valeur si faux, séparés par des points-virgules. Supérieur ou égal s'écrit chevron puis égal. Le texte va entre guillemets, deux guillemets veulent dire rien. Les seuils et les taux vont dans des cellules jaunes, visées avec des dollars. Deux conditions à la fois : ET ou OU dans le test. Trois réponses : deux SI imbriqués, dans le bon ordre.
+
+Diapositive 14 – 120 décisions, zéro oubli
+  SOPHIE : Et quand Julie révisera ses devis ?
+  KARIM : Rien à faire. Le tableau réfléchit tout seul.
+  NARRATEUR : Bravo. Passez maintenant à l'atelier : les cent vingt devis du premier trimestre.

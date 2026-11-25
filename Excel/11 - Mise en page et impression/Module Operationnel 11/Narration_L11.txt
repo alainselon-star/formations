@@ -1,0 +1,46 @@
+Excel Opérationnel · Leçon 11 – L'impression ratée
+
+Diapositive 1 – L'impression ratée
+  NARRATEUR : À l'écran, la liste est parfaite. Sur papier, c'est une vingtaine de pages, des colonnes orphelines et des titres disparus. Dans cette leçon, vous allez apprendre à préparer une impression propre, et un PDF que l'on peut envoyer sans honte.
+
+Diapositive 2 – Vendredi : le PDF pour la banque
+  SOPHIE : La banque veut la liste de nos trois cents clients, et le récapitulatif par ville, en PDF. Propre, lisible, sans les calculs de Karim.
+  KARIM : J'ai cliqué sur Imprimer. Une vingtaine de pages. Les titres ne sont que sur la première, les téléphones et les e-mails partent sur d'autres pages, et le récap imprime aussi mes calculs intermédiaires.
+
+Diapositive 3 – Ce que l'imprimante a sorti
+  NARRATEUR : Voici l'aperçu. Page un : les titres sont là. Page deux : plus de titres, impossible de savoir ce qu'est chaque colonne. Et plus loin, les colonnes qui ne tenaient pas en largeur : la ville, le téléphone, l'e-mail, imprimés sur d'autres pages, sans le numéro ni le nom du client. Excel imprime d'abord vers le bas, puis passe aux colonnes suivantes.
+
+Diapositive 4 – Solution 1 : bricoler le fichier
+  NARRATEUR : Sans l'outil, on bricole. Recopier la ligne des titres toutes les quarante lignes : le fichier est truffé de fausses lignes qui faussent tris, filtres et calculs. Réduire la police à six points pour tout faire tenir : illisible. Supprimer les colonnes de trop avant d'imprimer, puis les remettre. Ou copier le récapitulatif dans un nouveau fichier à chaque envoi. Chaque méthode abîme le fichier ou oblige à tout refaire la fois suivante.
+
+Diapositive 5 – Préparer la page, pas les données
+  NARRATEUR : La mise en page ne modifie jamais les données. Ce sont des réglages enregistrés avec chaque feuille, qui disent comment l'imprimer : les lignes à répéter en haut de chaque page, la largeur à faire tenir, l'orientation, les marges, et la zone à imprimer. Ils se trouvent dans l'onglet Mise en page, et se contrôlent dans l'aperçu : Fichier, Imprimer. Attention : figer les volets n'a aucun effet sur l'impression, c'est seulement pour l'écran.
+
+Diapositive 6 – Les titres sur chaque page
+  NARRATEUR : Onglet Mise en page, Imprimer les titres. Dans l'onglet Feuille, zone Lignes à répéter en haut, cliquez sur le numéro de la ligne 1 : Excel écrit dollar 1 deux-points dollar 1. OK. Dans l'aperçu, chaque page commence maintenant par la ligne des titres. Les données n'ont pas bougé : aucune ligne n'a été ajoutée.
+
+Diapositive 7 – Toutes les colonnes sur la largeur
+  NARRATEUR : Pour que toutes les colonnes tiennent sur la largeur d'une page, quel que soit le nombre de lignes : onglet Mise en page, groupe Mise à l'échelle, Largeur une page, Hauteur Automatique. Excel calcule seul le pourcentage de réduction. Passez aussi en orientation Paysage : une liste de onze colonnes est plus large que haute. Résultat : quelques pages, chacune avec toutes les colonnes et ses titres.
+
+Diapositive 8 – N'imprimer que le récapitulatif
+  NARRATEUR : Dans la feuille Récap, le récapitulatif occupe A1 à F17, et en dessous se trouvent les calculs intermédiaires de Karim. Sélectionnez A1 à F17, puis Mise en page, Zone d'impression, Définir. Désormais, seule cette plage s'imprime, à chaque fois, sans refaire de réglage. Imprimer la sélection, dans Fichier Imprimer, fait la même chose, mais une seule fois : il faudra recommencer la prochaine fois.
+
+Diapositive 9 – Vérifier, puis envoyer en PDF
+  NARRATEUR : Avant tout envoi, Fichier, Imprimer, ou Contrôle P : l'aperçu montre exactement les pages, avec le nombre de pages en bas. Pour la banque, Fichier, Exporter, Créer un document PDF, ou Enregistrer sous, type PDF. Le PDF reprend tous les réglages : titres répétés, largeur, zone d'impression. Et un en-tête ou un pied de page ajoute le numéro de page et la date : Insertion, En-tête et pied de page.
+
+Diapositive 10 – Voir les pages à l'écran
+  NARRATEUR : Deux affichages aident à préparer l'impression. Affichage, Aperçu des sauts de page : les pages sont dessinées en bleu, et l'on peut faire glisser les sauts de page à la souris. Affichage, Mise en page : on voit la feuille comme sur papier, avec ses marges, son en-tête et son pied de page. Revenir ensuite en Affichage Normal pour travailler.
+
+Diapositive 11 – Les pièges à éviter
+  NARRATEUR : Les pièges les plus fréquents. Figer les volets pour répéter les titres : sans effet sur le papier. Taper les titres dans l'en-tête de page : ils ne s'aligneront jamais avec les colonnes. Zoomer à cinquante pour cent : le zoom ne change que l'écran. Choisir Ajuster la feuille sur une page pour trois cents lignes : tout est réduit à une taille illisible. Et oublier qu'une zone d'impression est définie : on se demande pourquoi le reste ne sort pas.
+
+Diapositive 12 – Des réglages qui restent
+  NARRATEUR : Bonne nouvelle : tous ces réglages sont enregistrés avec la feuille. La semaine prochaine, quand Karim ajoutera des clients, il lui suffira de cliquer sur Imprimer ou Exporter : titres, largeur et zone d'impression seront toujours là. Attention, ils sont propres à chaque feuille : la feuille Récap et la feuille Clients ont chacune les leurs.
+
+Diapositive 13 – À retenir
+  NARRATEUR : Retenez. Imprimer les titres, Lignes à répéter en haut, pour les titres sur chaque page. Mise à l'échelle, Largeur une page, Hauteur Automatique, pour toutes les colonnes. Paysage pour une liste large. Zone d'impression, Définir, pour n'imprimer qu'une partie, à chaque fois. Contrôle P pour l'aperçu, et Exporter en PDF pour l'envoi.
+
+Diapositive 14 – Un PDF dont on est fier
+  SOPHIE : Quelques pages, des titres partout, et pas un seul brouillon. Parfait pour la banque.
+  KARIM : Et la semaine prochaine, je n'aurai qu'à cliquer sur Exporter.
+  NARRATEUR : Bravo. Passez maintenant à l'atelier : préparez l'impression des clients et du récapitulatif.

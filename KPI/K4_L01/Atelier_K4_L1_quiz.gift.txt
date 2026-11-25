@@ -1,0 +1,57 @@
+$CATEGORY: $course$/K4-L1 Atelier
+
+::K4L1-A1 Réouverture::Étape 1 – Dans l'historique trié de INC-00625, quel statut suit immédiatement la réouverture par l'utilisatrice ?{
+=En cours#Exact \: la réouverture remet le ticket en traitement, de Résolu vers En cours.
+~Résolu#Non \: Résolu, c'est le statut juste avant la réouverture. Revoyez la diapositive 5 (K4-L1-S1).
+~Nouveau#Non \: un ticket ne redevient jamais Nouveau. Revoyez la diapositive 5 (K4-L1-S1).
+~En attente#Non \: En attente sert quand on attend l'utilisateur, pas quand le travail est à refaire. Revoyez la diapositive 5 (K4-L1-S1).
+}
+
+::K4L1-A2 Tri::Étape 1 – Pourquoi trier l'historique par ticket, puis par date ?{
+=Pour lire la vie de chaque ticket dans l'ordre chronologique#Exact \: chaque incident devient une histoire lisible, avec ses retours en arrière.
+~Pour compter le nombre d'événements par statut#Non \: un tri ne compte rien. Revoyez la diapositive 6 (K4-L1-S1).
+~Pour supprimer les événements en double#Non \: le tri ne supprime aucune ligne. Revoyez la diapositive 6 (K4-L1-S1).
+~Parce que MIN.SI.ENS ne fonctionne que sur une table triée#Non \: MIN.SI.ENS fonctionne quel que soit l'ordre des lignes.
+}
+
+::K4L1-A3 Formule finale::Étape 2 – Quelle formule donne la date de résolution finale d'un ticket ?{
+=MAX.SI.ENS(Date;Ticket;$A5;Statut après;"Résolu")#Exact \: la résolution finale est le dernier passage à Résolu.
+~MIN.SI.ENS(Date;Ticket;$A5;Statut après;"Résolu")#Non \: celle-ci donne la 1re résolution. Revoyez la diapositive 6 (K4-L1-S1).
+~MAX.SI.ENS(Date;Ticket;$A5;Statut après;"Clos")#Non \: celle-ci donne la clôture. Revoyez la diapositive 6 (K4-L1-S1).
+~MAX.SI.ENS(Date;Ticket;$A5)#Non \: celle-ci donne le dernier événement, c'est-à-dire la clôture. Revoyez la diapositive 6 (K4-L1-S1).
+}
+
+::K4L1-A4 Premier En cours::Étape 2 – Pour la prise en charge, pourquoi utiliser MIN.SI.ENS sur le statut « En cours » plutôt que MAX.SI.ENS ?{
+=Parce qu'un ticket repasse En cours après une reprise ou une réouverture \: c'est le premier passage qui compte#Exact \: la prise en charge, c'est le premier technicien qui commence à traiter le ticket.
+~Parce que MAX.SI.ENS ne fonctionne pas avec du texte#Non \: le critère « En cours » fonctionne avec les deux fonctions.
+~Parce que la prise en charge est toujours la dernière date du ticket#Non \: c'est la clôture qui est la dernière date. Revoyez la diapositive 6 (K4-L1-S1).
+~Les deux donnent toujours le même résultat#Non \: dès qu'un ticket est rouvert ou mis en attente, les deux diffèrent. Revoyez la diapositive 5 (K4-L1-S1).
+}
+
+::K4L1-A5 INC-00276::Étape 3 – INC-00276 est un incident critique. Combien d'heures (de pendule) s'écoulent entre son ouverture et sa résolution finale ?{
+=51,7 h#Exact \: le premier « Résolu » arrive après 12 minutes, mais l'utilisateur rouvre le ticket.
+~0,2 h#Non \: c'est le délai jusqu'à la 1re résolution. Revoyez la diapositive 8 (K4-L1-S2).
+~168 h#Non \: c'est l'intervalle entre la résolution et la clôture. Revoyez la diapositive 7 (K4-L1-S2).
+~219,7 h#Non \: c'est l'ouverture jusqu'à la clôture. Revoyez la diapositive 7 (K4-L1-S2).
+}
+
+::K4L1-A6 Week-end::Étape 3 – INC-00125 affiche 82,9 h de prise en charge. Pourquoi ce chiffre est-il trompeur ?{
+=Le ticket a été ouvert un vendredi soir, avant un week-end de trois jours \: en heures ouvrées, il a été pris en charge presque tout de suite#Exact \: c'est pour cela qu'un délai de KPI se compte en heures ouvrées.
+~Le technicien a oublié le ticket pendant trois jours#Non \: il l'a pris en charge à 8 h 26, dès la réouverture du support. Revoyez la diapositive 9 (K4-L1-S2).
+~L'utilisateur a mis le ticket en attente#Non \: aucune attente sur ce ticket. Revoyez la diapositive 9 (K4-L1-S2).
+~La date d'ouverture est fausse#Non \: elle est juste, mais le support était fermé. Revoyez la diapositive 9 (K4-L1-S2).
+}
+
+::K4L1-A7 Clôture::Étape 3 – Pour INC-00625, 168 heures s'écoulent entre la résolution finale et la clôture. Que faut-il en conclure sur le support ?{
+=Rien \: cet intervalle mesure la validation par l'utilisateur, ici une clôture automatique#Exact \: la résolution → clôture n'entre dans aucun KPI de délai du support.
+~Que le support a mis une semaine à clore ses tickets#Non \: le support avait fini à la résolution. Revoyez la diapositive 7 (K4-L1-S2).
+~Que le SLA de résolution n'est pas respecté#Non \: le SLA s'arrête à la résolution, pas à la clôture. Revoyez la diapositive 7 (K4-L1-S2).
+~Que le ticket a été rouvert pendant cette semaine#Non \: une réouverture aurait créé un nouveau passage à Résolu. Revoyez la diapositive 5 (K4-L1-S1).
+}
+
+::K4L1-A8 Combien rouverts::Étape 4 – Combien des dix tickets ont été rouverts ?{
+=3#Exact \: INC-00276, INC-00625 et INC-00725 ont une résolution finale postérieure à leur 1re résolution.
+~1#Non \: comparez la 1re résolution et la résolution finale de chaque ticket. Revoyez la diapositive 8 (K4-L1-S2).
+~0#Non \: trois tickets ont deux passages à Résolu. Revoyez la diapositive 8 (K4-L1-S2).
+~10#Non \: la plupart des tickets n'ont qu'un passage à Résolu. Revoyez la diapositive 8 (K4-L1-S2).
+}

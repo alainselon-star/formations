@@ -1,0 +1,29 @@
+<h3>Atelier 05 – Volume et incidents majeurs, à vous de jouer (20 min)</h3>
+<p>Hélène se demande si 856 incidents, c'est beaucoup. Vous allez lire le volume de Valdor par jour et par site, le rendre comparable, puis isoler les 27 incidents majeurs et calculer leurs KPI.</p>
+<p><strong>Fichier :</strong> votre copie de <em>K4_L5_Atelier_Valdor.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Incidents</strong> (856 incidents, table T_Incidents), <strong>Volume</strong> et <strong>Incidents majeurs</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie chaque étape. Chaque erreur vous renvoie à la diapositive de la leçon à revoir.</p>
+
+<h4>Étape 1 – Le volume par jour de la semaine</h4>
+<p><strong>Faites :</strong> feuille Volume, en B5, tapez <code>=NB.SI(T_Incidents[Jour];A5)</code> et recopiez jusqu'à B9.</p>
+<p><strong>Vous devez voir :</strong> lundi 250, mardi 113, mercredi 133, jeudi 154, vendredi 206.</p>
+<p><strong>Pourquoi :</strong> le lundi et le vendredi dépassent largement les autres jours. Ce sont des indices : un problème récurrent le lundi (leçon 6) et des mises en production le jeudi (leçon 7).</p>
+
+<h4>Étape 2 – Rendre le volume comparable</h4>
+<p><strong>Faites :</strong> en D13, tapez <code>=NB.SI(T_Incidents[Site];A13)</code>. En E13, rapportez au nombre d'utilisateurs, par mois : <code>=D13/C13/6*100</code>. Recopiez jusqu'à la ligne 15.</p>
+<p><strong>Vous devez voir :</strong> Siège 343 incidents, soit 52 par mois pour 100 utilisateurs ; Entrepôt 372, soit 65 ; Agence 141, soit 52.</p>
+<p><strong>Pourquoi :</strong> en volume brut, le siège et l'entrepôt se ressemblent. Rapporté aux utilisateurs, l'entrepôt sort du lot : chacun de ses utilisateurs subit 25 % d'incidents de plus.</p>
+<p><strong>Si ça ne marche pas :</strong> le critère est le code du site (colonne A), pas son nom. Revoyez le volume normalisé (leçon, diapositive 5).</p>
+
+<h4>Étape 3 – Les incidents majeurs</h4>
+<p><strong>Faites :</strong> feuille Incidents majeurs, en B5, tapez <code>=NB.SI(T_Incidents[Priorité];"P1 - Critique")</code>. En B6, la part des P1 : <code>=B5/NBVAL(T_Incidents[Priorité])</code>. En B7, le délai moyen : <code>=MOYENNE.SI(T_Incidents[Priorité];"P1 - Critique";T_Incidents[Résolution (min)])/60</code>. En B8, le délai médian : <code>=MEDIANE(SI(T_Incidents[Priorité]="P1 - Critique";T_Incidents[Résolution (min)]))/60</code>. En B9, le respect du SLA : <code>=NB.SI.ENS(T_Incidents[Priorité];"P1 - Critique";T_Incidents[SLA résolution respecté];"Oui")/B5</code>.</p>
+<p><strong>Vous devez voir :</strong> 27 incidents P1, soit 3,2 % des incidents ; 4,4 h en moyenne, 1,8 h en médiane ; 81 % dans le SLA de 4 h.</p>
+<p><strong>Pourquoi :</strong> la plupart des incidents majeurs sont vite réglés, mais 5 ont dépassé le SLA, dont un VPN resté en panne 38 h. Ces cas-là se traitent un par un, en revue post-incident.</p>
+<p><strong>Si ça ne marche pas :</strong> la médiane renvoie une erreur ? Validez avec <em>Ctrl+Maj+Entrée</em> dans les anciennes versions d'Excel. Revoyez les KPI des incidents majeurs (leçon, diapositive 8).</p>
+
+<h4>Étape 4 – D'où viennent les incidents majeurs ?</h4>
+<p><strong>Faites :</strong> en B10, comptez les P1 liés à un changement : <code>=NB.SI.ENS(T_Incidents[Priorité];"P1 - Critique";T_Incidents[Changement lié];"&lt;&gt;")</code>. En B11, la même formule avec la colonne <em>Problème lié</em>.</p>
+<p><strong>Vous devez voir :</strong> 10 P1 liés à un changement, 7 liés à un problème.</p>
+<p><strong>Pourquoi :</strong> le critère "&lt;&gt;" compte les cellules non vides. Plus d'un incident majeur sur trois suit un changement : c'est une piste d'action pour le Change Management, que vous verrez dans la leçon 7.</p>
+
+<h4>Pour aller plus loin</h4>
+<p>Filtrez la table sur les P1 hors SLA. Quel changement apparaît deux fois, et quels incidents a-t-il causés ? Écrivez en deux phrases ce que la revue post-incident devrait en conclure.</p>

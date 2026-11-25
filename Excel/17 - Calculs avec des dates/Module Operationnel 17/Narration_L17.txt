@@ -1,0 +1,46 @@
+Excel Opérationnel · Leçon 17 – Calculer avec des dates
+
+Diapositive 1 – Calculer avec des dates
+  NARRATEUR : Combien de jours entre un devis et sa signature ? Quand une facture doit-elle être payée ? Combien de jours reste-t-il ? Dans cette leçon, vous allez calculer avec des dates, et comprendre pourquoi Excel affiche parfois une date de 1900, ou un nombre à cinq chiffres, à la place du résultat attendu.
+
+Diapositive 2 – Mercredi : combien de temps pour signer ?
+  SOPHIE : Combien de temps nos clients mettent-ils à signer un devis ? Et pour les factures, je veux l'échéance de chacune, et voir tout de suite celles qui sont en retard.
+  KARIM : J'ai écrit date de signature moins date du devis. Excel m'affiche deux février mille neuf cent. Je n'ose pas montrer ça.
+
+Diapositive 3 – Une formule juste, un affichage absurde
+  NARRATEUR : Voici le tableau de Karim. Sa formule, égale C2 moins B2, est juste. Mais la colonne Délai était au format Date : le résultat, trente-trois jours, s'affiche comme la trente-troisième journée depuis le début du calendrier d'Excel, le deux février mille neuf cent. Le calcul est bon, c'est l'habillage qui trompe.
+
+Diapositive 4 – Solution 1 : compter sur le calendrier
+  NARRATEUR : Sans l'outil, on compte. Ouvrir un calendrier, compter les jours entre le deux janvier et le quatre février, attention au mois de février et aux années bissextiles. Quarante devis, quarante comptages. Pour les échéances, ajouter trente ou quarante-cinq jours à la main, et changer de mois au bon moment. Et chaque matin, recompter les jours restants avant chaque échéance. Une heure de travail, et des erreurs d'un jour un peu partout.
+
+Diapositive 5 – Une date est un nombre de jours
+  NARRATEUR : Le secret : pour Excel, une date est un nombre. Le premier janvier mille neuf cent vaut un. Le premier janvier deux mille vingt-six vaut quarante-six mille vingt-trois. Chaque jour ajoute un. Le format Date habille ce nombre en jour, mois, année. Conséquence : on peut soustraire deux dates pour obtenir un nombre de jours, et ajouter des jours à une date pour obtenir une nouvelle date. Il faut seulement que le résultat porte le bon habillage : Standard pour un nombre de jours, Date pour une date.
+
+Diapositive 6 – L'écart entre deux dates
+  NARRATEUR : En D2, égale C2 moins B2 : la date la plus récente moins la plus ancienne. Puis Accueil, groupe Nombre, Standard. Le deux février mille neuf cent devient trente-trois : trente-trois jours entre le devis et la signature. Recopiez, sélectionnez la colonne : la barre d'état affiche une moyenne de treize virgule soixante-quinze jours. Si le résultat est négatif, vous avez inversé les deux dates.
+
+Diapositive 7 – L'échéance : une date plus des jours
+  NARRATEUR : Pour les factures, l'échéance est la date de facture plus le délai de paiement. En D2, égale B2 plus C2. Excel ajoute quarante-cinq jours au premier novembre et trouve le seize décembre, en changeant de mois tout seul. Si le résultat s'affiche comme un nombre à cinq chiffres, appliquez le format Date courte : la valeur est juste, il manque l'habillage.
+
+Diapositive 8 – AUJOURDHUI : la date qui avance toute seule
+  NARRATEUR : Pour savoir combien de jours il reste avant chaque échéance, il faut la date du jour. La fonction AUJOURDHUI, sans rien entre les parenthèses, renvoie la date du jour et se met à jour à chaque ouverture du fichier. En E2 : égale D2 moins AUJOURDHUI, au format Standard. Un résultat négatif veut dire que l'échéance est dépassée. Attention : Contrôle point-virgule tape la date du jour une fois pour toutes, figée. Pratique pour noter la date d'un paiement, pas pour un compte à rebours.
+
+Diapositive 9 – Quelques fonctions de date utiles
+  NARRATEUR : Quelques fonctions complètent la boîte à outils. ANNEE, MOIS et JOUR extraient une partie d'une date : MOIS de C2 donne deux pour février, pratique pour regrouper par mois. JOURSEM donne le jour de la semaine. MOIS point DECALER ajoute des mois entiers : l'échéance à un mois exact. Et NB point JOURS point OUVRES compte les jours ouvrés entre deux dates, sans les week-ends.
+
+Diapositive 10 – Quand le calcul refuse : des dates en texte
+  NARRATEUR : Si la soustraction renvoie dièse VALEUR, l'une des dates n'en est pas une : c'est du texte, souvent collé depuis un autre logiciel, avec des points ou une année à deux chiffres. Le signe : la date est calée à gauche. Solution : la leçon zéro un, Rechercher et remplacer les points par des barres obliques. Et à l'inverse, une date qui s'affiche quarante-six mille trente n'est pas cassée : elle a seulement perdu son format.
+
+Diapositive 11 – Les pièges à éviter
+  NARRATEUR : Les pièges les plus fréquents. Mettre le résultat au format Texte pour se débarrasser de la date : la formule ne calcule plus. Utiliser ANNEE moins ANNEE pour un délai : on obtient des années, pas des jours. Inverser l'ordre de la soustraction : résultat négatif. Utiliser Contrôle point-virgule au lieu d'AUJOURDHUI pour un compte à rebours. Et taper une date sans l'année : Excel prend l'année en cours.
+
+Diapositive 12 – Délai, échéance, retard : le trio
+  NARRATEUR : Récapitulons avec les deux demandes de Sophie. Le délai de signature : date moins date, au format Standard. L'échéance : date plus délai de paiement, au format Date. Les jours restants : échéance moins AUJOURDHUI, au format Standard. La situation : un SI sur les jours restants. Quatre formules, recopiées vers le bas, et un tableau qui se met à jour chaque matin.
+
+Diapositive 13 – À retenir
+  NARRATEUR : Retenez. Une date est un nombre de jours. Date moins date donne des jours, au format Standard. Date plus jours donne une date, au format Date. Une date de mille neuf cent dans un délai, ou un nombre à cinq chiffres à la place d'une date : c'est le format, pas le calcul. AUJOURDHUI se met à jour, Contrôle point-virgule fige la date. Et MOIS, JOURSEM, MOIS point DECALER ou NB point JOURS point OUVRES pour aller plus loin.
+
+Diapositive 14 – Les dates n'ont plus de secret
+  SOPHIE : Treize jours en moyenne pour signer. Et je vois chaque matin les factures en retard.
+  KARIM : Et plus de mille neuf cent dans mes délais.
+  NARRATEUR : Bravo. Passez maintenant à l'atelier.

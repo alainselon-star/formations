@@ -1,0 +1,31 @@
+MC
+10
+Dans la feuille Récap, Karim veut afficher en B4 la valeur de la cellule B4 de la feuille Janvier, et qu'elle suive les corrections. Que tape-t-il ?
+*=Janvier!B4 | Exact : le nom de la feuille, un point d'exclamation, puis la cellule.
+=B4 | Non : cette formule désigne B4 de la feuille Récap elle-même.
+=Janvier(B4) | Non : Janvier n'est pas une fonction.
+Le chiffre lu dans la feuille Janvier | Non : un chiffre recopié ne suit pas les corrections.
+
+MC
+10
+Les feuilles Janvier, Février et Mars sont côte à côte. Quelle formule additionne la cellule B4 de ces trois feuilles ?
+*=SOMME(Janvier:Mars!B4) | Exact : la somme porte sur toutes les feuilles placées entre Janvier et Mars.
+=SOMME(Janvier!B4:Mars!B4) | Non : cette écriture n'est pas valide.
+=SOMME(B4;B4;B4) | Non : cela additionne trois fois la cellule de la feuille active.
+=Janvier!B4:Mars!B4 | Non : il manque la fonction SOMME.
+
+MC
+10
+Le récapitulatif utilise =SOMME(Janvier:Mars!B4). Karim insère une feuille Avril entre Février et Mars. Que se passe-t-il ?
+*Le récapitulatif compte aussi Avril | Exact : toutes les feuilles placées entre Janvier et Mars sont additionnées.
+Rien, la formule ne lit que Janvier, Février et Mars | Non : la formule ne lit pas les noms, elle prend tout ce qui est entre les bornes.
+La formule affiche #REF! | Non : il n'y a pas d'erreur, seulement un total faux.
+Excel demande s'il faut inclure Avril | Non : Excel ne pose aucune question.
+
+MC
+10
+Sophie sélectionne les onglets Février et Mars avec Ctrl, met les en-têtes en gras, puis tape 5000 en B4 sans rien faire d'autre. Que se passe-t-il ?
+*5000 est écrit en B4 des deux feuilles | Exact : tant que les feuilles sont groupées, une saisie s'applique à toutes. Il fallait dissocier.
+5000 est écrit seulement dans Février | Non : le groupe n'était pas dissocié.
+Excel refuse la saisie dans un groupe | Non : la saisie est acceptée, dans toutes les feuilles.
+Le groupe se dissocie tout seul après la mise en forme | Non : il faut le dissocier soi-même.

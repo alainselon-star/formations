@@ -1,0 +1,46 @@
+Excel Opérationnel · Leçon 05 – Compter et totaliser par critère
+
+Diapositive 1 – Compter et totaliser par critère
+  NARRATEUR : Trois cents devis, trois commerciaux, et une réunion à onze heures. Dans cette leçon, vous allez apprendre à compter et à additionner seulement les lignes qui vous intéressent, avec une formule par case, qui se met à jour toute seule.
+
+Diapositive 2 – Vendredi, 8 h 30 : la réunion de 11 h
+  SOPHIE : Pour la réunion, il me faut, pour chacun, le nombre de devis envoyés depuis janvier, combien ont été acceptés et pour quel montant. Et le taux de transformation, que je puisse comparer.
+  KARIM : Trois cents lignes, trois commerciaux, trois statuts. Je sais faire une somme et un SI. Mais là, il faut compter seulement certaines lignes.
+
+Diapositive 3 – 300 devis, une synthèse à remplir
+  NARRATEUR : La feuille Devis contient trois cents lignes, une par devis, de janvier à septembre. La feuille Synthèse attend douze chiffres : pour chaque commercial, le nombre de devis et leur montant, puis le nombre de devis acceptés et leur montant. Pour les deux premières colonnes, un seul critère : le commercial. Pour les deux suivantes, deux critères à la fois : le commercial et le statut. Le taux, lui, est une simple division.
+
+Diapositive 4 – Solution 1 : filtrer ou ajouter des colonnes
+  NARRATEUR : Sans l'outil, deux méthodes. Avec les filtres : filtrer sur Julie, sélectionner les montants, lire le nombre et la somme dans la barre d'état, recopier, puis recommencer avec le statut, et pour chaque commercial. Quinze minutes, avec le risque de compter l'en-tête, d'oublier un filtre actif, d'inverser deux chiffres. Et les chiffres recopiés sont figés. Avec des colonnes de SI : un, ou zéro, par ligne, puis une somme. C'est juste et ça se recalcule, mais il faut douze colonnes et trois mille six cents formules. Un fichier lourd, illisible, et chaque nouvelle question ajoute des colonnes.
+
+Diapositive 5 – NB.SI : compter selon un critère
+  NARRATEUR : NB.SI compte les cellules qui remplissent une condition. NB veut dire nombre. Deux arguments : où chercher, et quoi chercher. En B4 de la Synthèse : égale NB.SI, la colonne Commercial de la feuille Devis, bloquée avec F4, point-virgule, A4, la cellule qui contient Julie. Cent quarante et un. A4 n'a pas de dollar : en recopiant, il devient A5, Thomas, puis A6, Sophie. La plage, elle, est bloquée, sinon elle glisserait.
+
+Diapositive 6 – SOMME.SI : additionner selon un critère
+  NARRATEUR : SOMME.SI additionne les montants des lignes qui remplissent la condition. Trois arguments : où chercher, quoi chercher, et ce qu'il faut additionner. Excel lit les deux colonnes ligne par ligne : chaque fois que le commercial est Julie, il ajoute le montant de la même ligne. Julie : sept cent vingt-sept mille cent quatre-vingt-dix euros. Attention : dans SOMME.SI, la plage à additionner vient en dernier.
+
+Diapositive 7 – Plusieurs critères : NB.SI.ENS, SOMME.SI.ENS
+  NARRATEUR : Pour les devis acceptés de Julie, il faut deux critères en même temps. NB point SI point ENS accepte un ensemble de conditions, qui doivent toutes être remplies : la colonne Commercial et A4, puis la colonne Statut et Accepté entre guillemets. Quatre-vingt-trois. SOMME point SI point ENS fait de même pour les montants, mais attention : la plage à additionner vient cette fois en premier. C'est l'erreur la plus fréquente quand on passe de l'une à l'autre.
+
+Diapositive 8 – 15 cases en 5 minutes, qui se mettent à jour
+  NARRATEUR : Quatre formules, recopiées vers le bas, et la synthèse est complète en cinq minutes. Le vrai gain arrive ensuite : Karim passe un devis de En attente à Accepté dans la feuille Devis, et tous les chiffres de la synthèse se recalculent instantanément. Avec les filtres, il aurait fallu tout refaire.
+
+Diapositive 9 – Plus de 5 000 € : opérateurs et &
+  NARRATEUR : Sophie demande les gros devis, au-dessus de cinq mille euros. Le critère s'écrit avec l'opérateur entre guillemets, collé au nombre : guillemet, supérieur, 5000, guillemet. Et si Sophie veut changer le seuil sans toucher aux formules ? On tape le seuil dans une cellule, B9, et on colle l'opérateur à la cellule avec l'esperluette : guillemet supérieur guillemet, esperluette, dollar B dollar 9. Piège classique : supérieur B9 entre guillemets cherche le texte B9, et donne zéro.
+
+Diapositive 10 – Une période, un mot dans le nom
+  NARRATEUR : Pour un trimestre, on pose deux critères sur la même colonne Date : supérieur ou égal à la date de début, et inférieur ou égal à la date de fin, chacune rangée dans une cellule et collée avec l'esperluette. Julie, au troisième trimestre : vingt devis acceptés. Pour retrouver les sociétés en SARL, les caractères génériques : l'astérisque remplace n'importe quelle suite de caractères. Étoile SARL étoile trouve Coiffure Joly SARL comme Leroy SARL.
+
+Diapositive 11 – ET, oui ; OU, non
+  NARRATEUR : Attention à la confusion numéro un. Point ENS veut dire ensemble : toutes les conditions doivent être vraies à la fois. NB point SI point ENS ne compte jamais les devis de Julie OU de Thomas : une ligne ne peut pas être à la fois de Julie et de Thomas, le résultat serait zéro. Pour un OU, on additionne deux NB point SI.
+
+Diapositive 12 – Quand le résultat est faux ou nul
+  NARRATEUR : Un zéro inattendu vient presque toujours du critère : une faute de frappe, Acceptée au lieu d'Accepté, ou une espace en trop dans les données. Les majuscules, elles, ne comptent pas. Un total faux sans message : des dollars oubliés, la plage a glissé en recopiant. Dièse VALEUR : deux plages de tailles différentes dans une fonction point ENS. Et un texte tapé dans la formule va entre guillemets, une adresse de cellule jamais.
+
+Diapositive 13 – À retenir
+  NARRATEUR : Retenez. NB point SI compte, SOMME point SI additionne. Point ENS pour plusieurs conditions, toutes vraies à la fois. Dans SOMME point SI, les montants en dernier ; dans SOMME point SI point ENS, en premier. Les plages bloquées avec des dollars, le critère libre pour la recopie. Un opérateur entre guillemets, collé à une cellule avec l'esperluette. Et pour un OU, deux NB point SI additionnés.
+
+Diapositive 14 – Prêt pour la réunion de 11 h
+  SOPHIE : Et si un client signe pendant la réunion ?
+  KARIM : Je change son statut, et toute la synthèse suit.
+  NARRATEUR : Bravo. Passez maintenant à l'atelier : la synthèse et les questions de Sophie.

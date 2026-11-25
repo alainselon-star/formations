@@ -1,0 +1,46 @@
+Excel Opérationnel · Leçon 07 – La liste qui grandit
+
+Diapositive 1 – La liste qui grandit
+  NARRATEUR : Chaque semaine, la liste des factures s'allonge. Et chaque semaine, une formule risque de s'arrêter une ligne trop tôt, sans aucun message. Dans cette leçon, vous allez transformer une liste en tableau structuré : un tableau qui s'agrandit tout seul, avec ses formules et ses totaux.
+
+Diapositive 2 – Jeudi, 17 h : les factures de la semaine
+  SOPHIE : Demain matin, j'appelle la banque. Il me faut le chiffre d'affaires facturé à jour, par type de travaux, et ce qui reste à encaisser. Avec les factures de cette semaine.
+  KARIM : Le mois dernier, le total donné à l'expert-comptable oubliait huit factures. La formule s'arrêtait une ligne trop tôt, et Excel n'a rien dit. Depuis, je vérifie toutes mes formules une par une.
+
+Diapositive 3 – Des formules bloquées à la ligne 208
+  NARRATEUR : Voici le fichier : deux cent sept factures, une ligne vide, puis une ligne TOTAL tapée à la main, qui additionne H2 à H208. Si Karim colle les nouvelles factures en dessous, elles sont hors de la plage : le total ne bouge pas, le montant TTC n'est pas calculé, et le récap de Sophie les ignore. Cinq endroits doivent suivre à chaque ajout : la colonne TTC, la ligne TOTAL, les treize formules du récap, les filtres et la mise en forme.
+
+Diapositive 4 – Solution 1 : tout corriger à chaque ajout
+  NARRATEUR : Sans l'outil, trois méthodes. Insérer des lignes au-dessus du total, puis corriger le total, recopier la formule TTC, et modifier les treize formules du récap : dix à quinze minutes chaque semaine, plus de dix heures par an, et une seule formule oubliée donne un chiffre faux. Coller sous la ligne TOTAL : trente secondes, mais tout est faux. Ou prévoir large, jusqu'à la ligne mille : des lignes vides qui affichent zéro, et le jour où la liste dépasse mille, tout redevient faux.
+
+Diapositive 5 – Une plage ou un tableau ?
+  NARRATEUR : Une plage, c'est une simple adresse : H2 à H208. Comme une liste d'invités sur une feuille volante : la deux cent neuvième personne n'y est pas. Un tableau structuré, c'est une liste qu'Excel reconnaît comme un tout : il sait où elle commence et où elle finit, il connaît le nom de chaque colonne, et il lui donne un nom. Comme un trieur accordéon, qui s'élargit quand on y glisse un document. Attention : Mettre sous forme de tableau ne veut pas dire mettre en couleurs. Le test : si l'onglet Création de tableau apparaît quand on clique dedans, c'est un vrai tableau.
+
+Diapositive 6 – Préparer, convertir, nommer
+  NARRATEUR : D'abord, préparer la liste : supprimer la ligne TOTAL et la ligne vide. Un tableau est une liste continue, avec une seule ligne de titres. Ensuite, cliquer dans la liste, puis Accueil, Mettre sous forme de tableau, et choisir un style. Vérifiez la plage proposée et la case Mon tableau comporte des en-têtes. Raccourci : Contrôle L. Enfin, dans l'onglet Création de tableau, zone Nom du tableau, remplacez Tableau1 par Factures.
+
+Diapositive 7 – Une formule, toutes les lignes
+  NARRATEUR : Tapez Montant TTC en K1 : le tableau s'élargit tout seul. En K2, tapez égale, cliquez sur H2, fois, parenthèse, 1 plus, cliquez sur I2. Excel écrit des références structurées, avec le nom des colonnes, et remplit toutes les lignes d'un coup : c'est une colonne calculée. Le signe arobase veut dire sur cette ligne. Et chaque nouvelle ligne recevra la formule automatiquement.
+
+Diapositive 8 – Coller dessous, et tout suit
+  NARRATEUR : Copiez les douze factures d'octobre et collez-les juste sous le tableau, sans ligne vide. Le tableau s'agrandit à deux cent dix-neuf lignes : rayures, formats et montant TTC suivent. Cochez ensuite Ligne Total dans l'onglet Création de tableau, ou Contrôle Majuscule T. Sous Montant HT, choisissez Somme ; sous N° facture, Nombre. Deux cent dix-neuf factures, un million cent quatre-vingt-treize mille cent quatre-vingts euros. Excel écrit SOUS point TOTAL : le total suit aussi les filtres.
+
+Diapositive 9 – Un récap qui ne vise plus la ligne 208
+  NARRATEUR : Le récap de Sophie vise encore F2 à F208. On le réécrit une dernière fois avec le nom du tableau : SOMME point SI, Factures crochet Type de travaux, A5, Factures crochet Montant HT. Factures crochet Montant HT veut dire toute la colonne Montant HT du tableau Factures, quelle que soit sa longueur. Inutile de taper les crochets : sélectionnez les cellules à la souris, Excel écrit le nom tout seul. Peinture passe de soixante-huit à soixante-treize factures. Et la semaine prochaine, plus rien à retoucher.
+
+Diapositive 10 – Filtrer, segmenter, changer de style
+  NARRATEUR : Le tableau a ses flèches de filtre. Ne gardez que le statut En attente : la Ligne Total recalcule sur les lignes visibles, trente-quatre factures, cent soixante-treize mille quatre cent trente euros à encaisser. Pour Julie, sur sa tablette, Insérer un segment, Commercial : des boutons qui filtrent d'un clic. Et pour changer les couleurs, Styles de tableau. Convertir en plage le ramène à une plage ordinaire : les couleurs restent, l'agrandissement automatique disparaît.
+
+Diapositive 11 – Les pièges à éviter
+  NARRATEUR : Quelques pièges. La ligne TOTAL laissée dans la liste au moment de la conversion : elle devient une facture comme les autres et double le total. Une ligne vide : Excel ne convertit que le haut de la liste. La case en-têtes décochée : Excel ajoute des titres Colonne1, Colonne2. Et des lignes collées avec une ligne vide entre elles et le tableau, ou sous la Ligne Total : elles n'en font pas partie.
+
+Diapositive 12 – Ce qu'un tableau structuré n'est pas
+  NARRATEUR : Deux confusions à éviter. Un tableau structuré n'est pas une simple mise en couleurs : une liste coloriée à la main n'agrandit rien. Et ce n'est pas un tableau croisé dynamique : le tableau structuré range les données, le tableau croisé les résume. Le second se construit d'ailleurs souvent à partir du premier.
+
+Diapositive 13 – À retenir
+  NARRATEUR : Retenez. Préparer une liste continue, sans total ni ligne vide. Contrôle L pour convertir, puis nommer le tableau. Une formule écrite une fois devient une colonne calculée. Coller juste dessous : tout suit. La Ligne Total avec Contrôle Majuscule T. Et dans les formules, Factures crochet colonne, au lieu d'une adresse figée.
+
+Diapositive 14 – Plus jamais une facture oubliée
+  SOPHIE : Et la semaine prochaine ?
+  KARIM : Je colle les factures sous le tableau. Le reste suit tout seul.
+  NARRATEUR : Bravo. Passez maintenant à l'atelier : transformez la liste des factures en tableau.

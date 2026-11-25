@@ -1,0 +1,43 @@
+<h3>Atelier 01 – Du classeur de Karim au premier rapport, à vous de jouer (25 min)</h3>
+<p>Sophie veut son point du lundi sans attendre deux heures : le chiffre d'affaires des devis, le CA de chaque commercial, la tendance mois par mois et un filtre par commune. Vous allez construire ce tableau de bord dans Power BI Desktop, à partir du classeur de Karim.</p>
+<p><strong>Logiciel :</strong> Power BI Desktop (gratuit, pour Windows), à installer depuis le Microsoft Store. Pas de Windows ? Faites l'atelier interactif, juste au-dessus : il reprend les mêmes étapes dans le navigateur.</p>
+<p><strong>Fichier :</strong> <em>PowerBI_01_Atelier_Martin_Ventes.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Devis</strong> (188 devis), <strong>Clients</strong> (45 clients) et <strong>Notes</strong>. <strong>Durée :</strong> 25 minutes.</p>
+
+<h4>Étape 1 – Faire entrer les données</h4>
+<p><strong>Faites :</strong> ouvrez Power BI Desktop, créez un rapport vide, puis Accueil → <strong>Classeur Excel</strong>. Choisissez le fichier. Dans le Navigateur, cochez <strong>Devis</strong> et <strong>Clients</strong>, puis cliquez sur <strong>Charger</strong>.</p>
+<p><strong>Vous devez voir :</strong> les tables Clients et Devis dans le volet <strong>Données</strong>, à droite (il s'appelait « Champs » dans les anciennes versions).</p>
+<p><strong>Pourquoi :</strong> la feuille Notes ne contient que du texte libre. Les données sont propres : pas besoin de passer par Transformer les données.</p>
+
+<h4>Étape 2 – Le CA en un chiffre</h4>
+<p><strong>Faites :</strong> cliquez sur une zone vide de la page, choisissez le visuel <strong>Carte</strong> dans le volet Visualisations, puis cochez <strong>Montant HT</strong> dans la table Devis.</p>
+<p><strong>Vous devez voir :</strong> <strong>2,14 M</strong>, sous-titré « Somme de Montant HT ».</p>
+<p><strong>Si ça ne marche pas :</strong> vous voyez un nombre de lignes ? La colonne a été lue comme du texte. Rouvrez le fichier d'origine fourni, sans le modifier.</p>
+
+<h4>Étape 3 – Qui vend combien ?</h4>
+<p><strong>Faites :</strong> cliquez sur le fond de la page, choisissez <strong>Graphique à barres groupées</strong>, puis cochez <strong>Commercial</strong> et <strong>Montant HT</strong>.</p>
+<p><strong>Vous devez voir :</strong> trois barres : Julie (994 380 €), Thomas (754 820 €), Sophie (387 190 €). Survolez une barre pour lire le montant.</p>
+
+<h4>Étape 4 – Mois après mois</h4>
+<p><strong>Faites :</strong> nouveau visuel <strong>Graphique en courbes</strong>, avec <strong>Date du devis</strong> et <strong>Montant HT</strong>. Puis, en haut du visuel, cliquez deux fois sur <strong>Développer tout d'un niveau dans la hiérarchie</strong> (la double flèche).</p>
+<p><strong>Vous devez voir :</strong> d'abord deux points (2025, 2026), puis les trimestres, puis une valeur par mois.</p>
+<p><strong>Pourquoi :</strong> Power BI découpe chaque date en hiérarchie : Année, Trimestre, Mois, Jour.</p>
+
+<h4>Étape 5 – Un segment par commune</h4>
+<p><strong>Faites :</strong> nouveau visuel <strong>Segment</strong>, puis cochez <strong>Commune</strong> dans la table <strong>Clients</strong>. Cochez Compiègne dans le segment, puis décochez-la.</p>
+<p><strong>Vous devez voir :</strong> la carte, les barres et la courbe ne montrent plus que les devis des clients de Compiègne.</p>
+
+<h4>Étape 6 – Ce qui relie les tables</h4>
+<p><strong>Faites :</strong> ouvrez la vue <strong>Modèle</strong> (troisième icône, à gauche). Cliquez sur le trait entre Clients et Devis.</p>
+<p><strong>Vous devez voir :</strong> une relation sur <strong>Code client</strong>, côté 1 sur Clients, côté * sur Devis, filtrage croisé Unique.</p>
+<p><strong>Pourquoi :</strong> Power BI détecte cette relation au chargement, car les deux tables ont une colonne Code client. C'est elle qui transmet le filtre de la commune aux devis.</p>
+
+<h4>Étape 7 – Un clic qui filtre</h4>
+<p><strong>Faites :</strong> ajoutez un graphique à barres <strong>Type de travaux</strong> + <strong>Montant HT</strong>. Cliquez sur la barre <strong>Salle de bain</strong>, puis survolez la barre de Julie dans le graphique des commerciaux.</p>
+<p><strong>Vous devez voir :</strong> la partie foncée de chaque barre : la part des salles de bain. Julie : 293 170 €.</p>
+<p><strong>Si ça ne marche pas :</strong> un montant plus faible ? Une commune est encore cochée dans le segment.</p>
+
+<h4>Étape 8 – Actualiser</h4>
+<p><strong>Faites :</strong> enregistrez le rapport. Ouvrez le classeur dans Excel, ajoutez un devis à la fin de la feuille Devis (par exemple D-2026-093, daté d'aujourd'hui, client C001, Julie, Peinture, 3 000 €, En attente), enregistrez et fermez Excel. Dans Power BI, cliquez sur Accueil → <strong>Actualiser</strong>.</p>
+<p><strong>Vous devez voir :</strong> la carte et la barre de Julie augmenter de 3 000 €.</p>
+<p><strong>Si ça ne marche pas :</strong> message d'erreur à l'actualisation ? Le classeur est encore ouvert dans Excel : fermez-le, puis recommencez.</p>
+<p>Gardez le rapport : le quiz de contrôle, en bas de la section, reprend chaque geste.</p>

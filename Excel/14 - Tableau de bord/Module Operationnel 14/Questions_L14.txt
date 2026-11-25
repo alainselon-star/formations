@@ -1,0 +1,31 @@
+MC
+10
+Sophie veut que tous les indicateurs de son tableau de bord changent quand elle choisit un autre commercial en B3. Comment écrire les formules ?
+*Avec un critère qui renvoie à la cellule du choix, par exemple $B$4 | Exact : le tableau de bord suit le sélecteur.
+Avec le nom du commercial écrit dans chaque formule | Non : il faudrait réécrire toutes les formules à chaque choix.
+Avec un filtre automatique sur la feuille des devis | Non : un filtre ne change pas les résultats de SOMME.SI.ENS.
+En copiant les chiffres de chaque commercial à la main | Non : le tableau ne se mettrait jamais à jour.
+
+MC
+10
+Le sélecteur propose « Tous ». Quelle valeur de critère permet à NB.SI.ENS de compter les devis de tous les commerciaux ?
+*"*" | Exact : l'étoile accepte n'importe quel texte.
+"Tous" | Non : aucun devis n'a « Tous » comme commercial : le résultat serait 0.
+"" | Non : un critère vide ne compte que les cellules vides.
+"?" | Non : ? remplace un seul caractère.
+
+MC
+10
+Le taux de transformation affiche #DIV/0! quand un commercial n'a aucun devis. Que faire ?
+*Entourer la division par SIERREUR(…;0) | Exact : le tableau affiche 0 au lieu d'une erreur.
+Supprimer le commercial de la liste | Non : le problème reviendrait avec un autre choix.
+Mettre la cellule au format Pourcentage | Non : le format ne corrige pas l'erreur.
+Remplacer la formule par un nombre | Non : le tableau ne suivrait plus le choix.
+
+MC
+10
+Pour le chiffre d'affaires de mars 2026, quels critères de date faut-il ajouter à SOMME.SI.ENS, si A15 contient le 01/03/2026 ?
+*">="&A15 et "<="&FIN.MOIS(A15;0) | Exact : du 1er au 31 mars.
+"mars" | Non : la colonne contient des dates, pas des noms de mois.
+">="&A15 seulement | Non : tous les mois suivants seraient comptés aussi.
+"="&A15 | Non : seuls les devis du 1er mars seraient comptés.

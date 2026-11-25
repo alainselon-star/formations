@@ -1,0 +1,30 @@
+<h3>Pour aller plus loin – Les devis à réparer (facultatif, 30 min)</h3>
+<p>Vous avez réussi l'atelier ? Ce défi se fait dans le <strong>vrai Excel</strong>, sur un fichier à télécharger. Il est <strong>moins guidé</strong>. Karim a importé les 400 devis de l'année depuis le logiciel de facturation, et l'import a laissé trois défauts qui faussent les filtres et les tris, sans que rien ne le signale. À vous de les trouver avant de répondre à Sophie.</p>
+<p><strong>Le fichier :</strong> <em>Excel_6_avance_devis_a_reparer.xlsx</em>, juste sous cette page. Feuille <strong>Devis 2026</strong> : les 400 devis. Feuille <strong>Réponses</strong> : vos réponses, dans les cellules jaunes. La feuille <strong>Contrôle</strong> vous dit, mission par mission, si c'est juste (✓) ou à revoir (✗).</p>
+
+<h4>Mission 1 – Réparer la liste (feuille Devis 2026)</h4>
+<p><strong>Le besoin :</strong> trois défauts se cachent dans la liste. Une <strong>ligne vide</strong> au milieu, des <strong>montants enregistrés comme du texte</strong>, et des <strong>prénoms suivis d'une espace invisible</strong>, qui font de « Julie » et de « Julie + espace » deux commerciaux différents. Réparez-les sans retaper aucune donnée.</p>
+<details><summary>Un indice</summary><p>Posez un filtre (Données → Filtrer) et ouvrez la flèche de Commercial : « Julie » et « Thomas » apparaissent deux fois. Faites Ctrl+Fin : la liste va plus loin que là où le filtre s'arrête. Regardez la colonne Montant HT : certains montants sont alignés à gauche, avec un petit triangle vert.</p></details>
+<details><summary>Un deuxième indice</summary><p>La ligne vide : clic droit sur son numéro → <strong>Supprimer</strong>. Les montants en texte : sélectionnez-les, cliquez sur le losange ⚠ → <strong>Convertir en nombre</strong>. Les espaces : sélectionnez la colonne G seulement, puis Rechercher et remplacer (Ctrl+H) : une espace par rien.</p></details>
+
+<h4>Mission 2 – Les questions de Sophie (feuille Réponses)</h4>
+<p><strong>Le besoin :</strong> quatre réponses, à trouver avec les filtres, sans formule :</p>
+<ol>
+<li>combien de devis <strong>acceptés</strong> pour <strong>Julie</strong> au <strong>2e trimestre</strong> (avril à juin) ;</li>
+<li>le montant total des devis <strong>« En attente »</strong> d'<strong>au moins 3 000 €</strong> ;</li>
+<li>combien de devis pour des clients dont le nom contient <strong>« Garage » ou « Hôtel »</strong> ;</li>
+<li>le montant du <strong>plus gros devis refusé de Thomas</strong>.</li>
+</ol>
+<p><strong>Où :</strong> feuille Réponses, de B4 à B7.</p>
+<details><summary>Un indice</summary><p>Effacez les filtres entre deux questions (Données → Effacer). Question 2 : Filtres numériques → <strong>Supérieur ou égal à…</strong>. Question 3 : Filtres textuels → Contient… : la boîte accepte deux conditions, reliées par <strong>Ou</strong>. Question 4 : filtrez, puis triez la colonne Montant HT du plus grand au plus petit.</p></details>
+
+<h4>Mission 3 – Trier la liste</h4>
+<p><strong>Le besoin :</strong> la liste rangée par <strong>commercial</strong> (de A à Z) puis, pour chaque commercial, du <strong>plus gros devis au plus petit</strong>.</p>
+<details><summary>Un indice</summary><p>Effacez d'abord les filtres : sur une liste filtrée, Excel ne trie que les lignes visibles. Puis Données → <strong>Trier</strong>, avec deux niveaux.</p></details>
+
+<h4>Mission 4 – Un total qui suit le filtre</h4>
+<p><strong>Le besoin :</strong> sous la liste, en <strong>H403</strong>, un total des montants qui ne compte que les lignes visibles. Laissez la ligne 402 vide, pour qu'un tri ou un filtre n'embarque pas le total avec les données.</p>
+<details><summary>Un indice</summary><p>SOMME additionne aussi les lignes masquées. Il faut <strong>SOUS.TOTAL</strong>, avec 9 pour « somme », sur H2:H401. Filtrez ensuite le statut sur « Accepté » : le total doit changer.</p></details>
+
+<h4>Vérifier et se corriger</h4>
+<p>Ouvrez la feuille <strong>Contrôle</strong> : 4 ✓ sur 4, c'est gagné. Si la mission 1 n'est pas réparée, les réponses de la mission 2 seront fausses, même avec les bons filtres : c'est le but du défi. Le <strong>corrigé</strong>, sous cette page, contient la liste réparée, triée, et le total. Ouvrez-le seulement après avoir vraiment essayé.</p>

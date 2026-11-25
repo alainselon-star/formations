@@ -1,0 +1,30 @@
+<h3>Atelier 04 – La qualité du traitement, à vous de jouer (20 min)</h3>
+<p>Le chef d'entrepôt se plaint d'un ticket Wifi passé entre six mains, et Kevin voit revenir ses tickets. Vous allez mesurer le taux de réouverture de Valdor, son effet sur les délais et la satisfaction, puis traquer le ping-pong des réassignations.</p>
+<p><strong>Fichier :</strong> votre copie de <em>K4_L4_Atelier_Valdor.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Incidents</strong> (856 incidents, table T_Incidents), <strong>Réouverture</strong> et <strong>Réassignations</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie chaque étape. Chaque erreur vous renvoie à la diapositive de la leçon à revoir.</p>
+
+<h4>Étape 1 – Le taux de réouverture</h4>
+<p><strong>Faites :</strong> feuille Réouverture, en B5, tapez <code>=NB.SI(T_Incidents[Réouvert];"Oui")/NBVAL(T_Incidents[Réouvert])</code>.<br>En B9, <code>=NB.SI(T_Incidents[Technicien];A9)</code> ; en C9, <code>=NB.SI.ENS(T_Incidents[Technicien];A9;T_Incidents[Réouvert];"Oui")/B9</code>. Recopiez B9:C9 jusqu'à la ligne 11.</p>
+<p><strong>Vous devez voir :</strong> 10,5 % pour l'ensemble de Valdor ; Inès Morel 6 % (107 incidents), Lucas Bernard 9 % (112), Kevin Dubois 30 % (142).</p>
+<p><strong>Pourquoi :</strong> le taux global est moyen, mais un technicien concentre presque la moitié des réouvertures. C'est en le lisant par personne qu'on trouve sur quoi agir.</p>
+<p><strong>Si ça ne marche pas :</strong> vous voyez 0,105 ? Appliquez le format Pourcentage. Revoyez le taux de réouverture (leçon, diapositive 5).</p>
+
+<h4>Étape 2 – Ce que coûte une réouverture</h4>
+<p><strong>Faites :</strong> en B15, tapez <code>=MOYENNE.SI(T_Incidents[Réouvert];"Oui";T_Incidents[Résolution (min)])/60</code>, et en C15 la même formule avec "Non". En B16 et C16, faites de même avec la colonne <em>Satisfaction</em>, sans diviser par 60.</p>
+<p><strong>Vous devez voir :</strong> 24,1 h de résolution pour les incidents rouverts, contre 6,6 h ; une satisfaction de 2,0 sur 5, contre 3,7.</p>
+<p><strong>Pourquoi :</strong> un ticket fermé trop tôt se paie deux fois, en délai et en satisfaction. C'est pourquoi un KPI de vitesse se lit toujours avec le taux de réouverture.</p>
+<p><strong>Si ça ne marche pas :</strong> MOYENNE.SI ignore les cellules vides de la colonne Satisfaction : c'est voulu, seuls les utilisateurs qui ont répondu comptent. Revoyez la paire vitesse – qualité (leçon, diapositive 6).</p>
+
+<h4>Étape 3 – Les réassignations par catégorie</h4>
+<p><strong>Faites :</strong> feuille Réassignations, en B5, tapez <code>=MOYENNE(T_Incidents[Nb réassignations])</code>.<br>En B9, <code>=NB.SI(T_Incidents[Catégorie];A9)</code> ; en C9, <code>=MOYENNE.SI(T_Incidents[Catégorie];A9;T_Incidents[Nb réassignations])</code> ; en D9, <code>=NB.SI.ENS(T_Incidents[Catégorie];A9;T_Incidents[Nb réassignations];"&gt;=2")</code>. Recopiez jusqu'à la ligne 12.</p>
+<p><strong>Vous devez voir :</strong> 0,80 réassignation en moyenne ; Wifi 2,0 (22 incidents réassignés 2 fois ou plus sur 54) ; VPN 1,9 (22 sur 56) ; Comptes et mots de passe 0,1 ; Matériel 0,9.</p>
+<p><strong>Pourquoi :</strong> une réassignation est souvent une escalade normale. Mais le Wifi et le VPN tournent deux fois plus que la moyenne : le signe d'une frontière floue entre équipes.</p>
+<p><strong>Si ça ne marche pas :</strong> le critère "&gt;=2" doit être écrit entre guillemets. Revoyez les réassignations (leçon, diapositive 7).</p>
+
+<h4>Étape 4 – Traquer le ping-pong</h4>
+<p><strong>Faites :</strong> en B16, comptez les incidents réassignés 2 fois ou plus : <code>=NB.SI(T_Incidents[Nb réassignations];"&gt;=2")</code>. En B17, ceux réassignés 4 fois ou plus. En B18 et B19, ajoutez le critère de catégorie avec <code>NB.SI.ENS</code> (Wifi, puis VPN). En B20, le MTTR moyen des incidents sans réassignation : <code>=MOYENNE.SI(T_Incidents[Nb réassignations];0;T_Incidents[Résolution (min)])/60</code> ; en B21, la même chose avec "&gt;=2".</p>
+<p><strong>Vous devez voir :</strong> 94 incidents réassignés 2 fois ou plus ; 27 réassignés 4 fois ou plus, dont 15 Wifi et 12 VPN, soit tous ; MTTR de 3,8 h sans réassignation, contre 17,1 h à partir de deux.</p>
+<p><strong>Pourquoi :</strong> le ping-pong n'est pas une affaire de personnes, mais d'organisation. La réponse de Romain : une règle d'affectation écrite pour le Wifi et le VPN, et un OLA entre Infra &amp; réseau et Poste de travail.</p>
+
+<h4>Pour aller plus loin</h4>
+<p>Valdor ne trace pas les corrections de catégorie ou de priorité. Écrivez en deux phrases ce que Romain devrait activer dans l'outil pour calculer le taux de requalification, et quel lien vous attendez entre ce taux et les réassignations du Wifi.</p>

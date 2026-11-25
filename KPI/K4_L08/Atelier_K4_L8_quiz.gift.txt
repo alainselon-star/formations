@@ -1,0 +1,57 @@
+$CATEGORY: $course$/K4-L8 Atelier
+
+::K4L8-A1 Août::Étape 1 – En août, le MTTR médian monte à 6,4 h et le SLA tombe à 82 %. Quelle est la cause principale ?{
+=La charge \: deux techniciens en congés et des appels abandonnés#Exact \: le team leader est concerné en premier.
+~Un problème récurrent#Non \: la part liée à un problème n'explique pas le ralentissement général. Revoyez la diapositive 6 (K4-L8-S2).
+~Les changements non autorisés#Non \: ils n'expliquent que quelques incidents. Revoyez la diapositive 5 (K4-L8-S1).
+~Une erreur de calcul#Non \: les chiffres sont justes. Revoyez la diapositive 9 (K4-L8).
+}
+
+::K4L8-A2 Septembre::Étape 1 – En septembre, SLA 96 %, satisfaction 2,9, réouvertures 16 %. Comment lire ce mois ?{
+=Un service rapide sur le papier, mais de mauvaise qualité pour les utilisateurs#Exact \: effet pastèque et tickets qui reviennent.
+~Le meilleur mois du semestre#Non \: la satisfaction et les réouvertures disent l'inverse. Revoyez la diapositive 8 (K4-L8-S3).
+~Un mois de surcharge#Non \: le volume est normal, 144 incidents. Revoyez la diapositive 8 (K4-L8-S3).
+~Un mois sans incident majeur#Non \: le tableau ne mesure pas les P1. Revoyez la diapositive 9 (K4-L8).
+}
+
+::K4L8-A3 Octobre problème::Étape 2 – La part des incidents liés à un problème tombe de 34 % en septembre à 11 % en octobre. Pourquoi ?{
+=Le problème du WMS du lundi a été corrigé par le changement CHG-0049, le 1er octobre#Exact \: c'est la chaîne problème → changement correctif.
+~Les techniciens ont cessé de rattacher les incidents#Non \: rien ne l'indique. Revoyez la diapositive 3 (K4-L8).
+~Il y a eu moins d'incidents#Non \: octobre compte 143 incidents. Revoyez la diapositive 3 (K4-L8).
+~Les problèmes ont été supprimés#Non \: ils sont résolus, pas supprimés. Revoyez la diapositive 3 (K4-L8).
+}
+
+::K4L8-A4 Origine::Étape 2 – Quelle part des incidents de Valdor a une origine connue, problème ou changement ?{
+=41 %#Exact \: quatre incidents sur dix ont une cause qu'on peut supprimer.
+~26 %#Non \: c'est la part liée à un problème seulement. Revoyez la diapositive 5 (K4-L8-S1).
+~15 %#Non \: c'est la part causée par un changement seulement. Revoyez la diapositive 5 (K4-L8-S1).
+~100 %#Non \: la majorité des incidents n'a pas de lien saisi. Revoyez la diapositive 5 (K4-L8-S1).
+}
+
+::K4L8-A5 Addition::Étape 2 – Pourquoi peut-on additionner les deux comptages pour obtenir les incidents d'origine connue ?{
+=Parce qu'aucun incident n'est lié à la fois à un problème et à un changement#Exact \: sinon, on compterait certains incidents deux fois.
+~Parce que NB.SI additionne toujours sans doublon#Non \: NB.SI compte chaque colonne séparément.
+~Parce que les problèmes sont des changements#Non \: ce sont deux processus distincts. Revoyez la diapositive 3 (K4-L8).
+~Parce que le total fait toujours 100 %#Non \: il fait 41 %.
+}
+
+::K4L8-A6 Lundi::Étape 3 – « 52 incidents WMS, tous un lundi, avec la même cause. » Qui agit en premier ?{
+=Le Problem Manager#Exact \: un incident récurrent révèle un problème à corriger.
+~Le Change Manager#Non \: aucun changement n'est en cause. Revoyez la diapositive 7 (K4-L8-S3).
+~Le Delivery Manager#Non \: il rend compte au client, il n'analyse pas la cause. Revoyez la diapositive 6 (K4-L8-S2).
+~Le Team leader#Non \: ce n'est pas un problème de charge. Revoyez la diapositive 6 (K4-L8-S2).
+}
+
+::K4L8-A7 Vendredi::Étape 3 – « Vendredi : 36 incidents P2 liés aux mises en production du jeudi. » Qui agit en premier ?{
+=Le Change Manager#Exact \: il doit imposer une recette avant le jeudi.
+~Le Problem Manager#Non \: la cause est connue, ce sont les mises en production. Revoyez la diapositive 6 (K4-L8-S2).
+~Le Technicien#Non \: il relie les incidents, mais n'agit pas sur les changements. Revoyez la diapositive 6 (K4-L8-S2).
+~L'Incident Manager#Non \: il pilote les incidents majeurs, pas la cause. Revoyez la diapositive 6 (K4-L8-S2).
+}
+
+::K4L8-A8 Pastèque::Étape 3 – « Septembre : SLA à 96 %, satisfaction à 2,9, le client se plaint. » Qui agit en premier ?{
+=Le Delivery Manager#Exact \: il rend des comptes au client, avec l'Incident Manager.
+~Le Change Manager#Non \: aucun changement n'est en cause. Revoyez la diapositive 8 (K4-L8-S3).
+~Le Problem Manager#Non \: aucun incident récurrent ici. Revoyez la diapositive 8 (K4-L8-S3).
+~Personne, le SLA est vert#Non \: c'est justement le piège. Revoyez la diapositive 8 (K4-L8-S3).
+}

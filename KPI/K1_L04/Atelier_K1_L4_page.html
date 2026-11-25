@@ -1,0 +1,27 @@
+<h3>Atelier 04 – Les pièges des KPI, à vous de jouer (20 min)</h3>
+<p>Hélène trouve le tableau de bord trop vert pour être vrai. Vous allez comparer moyenne, médiane et centile 90 des délais, démasquer un technicien « trop rapide » grâce à une paire de KPI, puis vérifier sur combien de réponses repose la satisfaction.</p>
+<p><strong>Fichier :</strong> votre copie de <em>K1_L4_Atelier_Valdor.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Incidents</strong> (856 incidents, table T_Incidents), <strong>Moyenne ou médiane</strong>, <strong>Paire de KPI</strong> et <strong>Qualité</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie chaque étape. Chaque erreur vous renvoie à la diapositive de la leçon à revoir.</p>
+
+<h4>Étape 1 – La moyenne</h4>
+<p><strong>Faites :</strong> feuille Moyenne ou médiane, en B5, tapez <code>=NB.SI(T_Incidents[Priorité];A5)</code>. En C5, <code>=MOYENNE.SI(T_Incidents[Priorité];A5;T_Incidents[Délai de résolution (h ouvrées)])</code>. Recopiez B5:C5 jusqu'à la ligne 8.</p>
+<p><strong>Vous devez voir :</strong> P1 : 27 incidents, 7,9 h ; P2 : 199, 8,9 h ; P3 : 420, 13,4 h ; P4 : 210, 14,2 h.</p>
+
+<h4>Étape 2 – La médiane, le centile 90 et le maximum</h4>
+<p><strong>Faites :</strong> en D5, tapez <code>=MEDIANE(SI(T_Incidents[Priorité]=A5;T_Incidents[Délai de résolution (h ouvrées)]))</code>. En E5, <code>=CENTILE.INCLURE(SI(T_Incidents[Priorité]=A5;T_Incidents[Délai de résolution (h ouvrées)]);0,9)</code>. En F5, <code>=MAX.SI.ENS(T_Incidents[Délai de résolution (h ouvrées)];T_Incidents[Priorité];A5)</code>. Recopiez jusqu'à la ligne 8.</p>
+<p><strong>Vous devez voir :</strong> P2 : médiane 5,0 h, centile 90 22,6 h, maximum 53,3 h. P1 : médiane 3,1 h, centile 90 23,9 h.</p>
+<p><strong>Si ça ne marche pas :</strong> avec une ancienne version d'Excel, validez les formules des colonnes D et E par Ctrl+Maj+Entrée, car ce sont des formules matricielles.</p>
+<p><strong>Pourquoi :</strong> la moyenne est tirée vers le haut par quelques incidents très longs. La médiane donne le cas typique ; le centile 90 dit ce que vivent les 10 % les plus mal servis.</p>
+
+<h4>Étape 3 – Une paire de KPI</h4>
+<p><strong>Faites :</strong> feuille Paire de KPI, en B5, tapez <code>=NB.SI.ENS(T_Incidents[Technicien];A5;T_Incidents[Niveau de résolution];"N1")</code>. En C5, <code>=MEDIANE(SI((T_Incidents[Technicien]=A5)*(T_Incidents[Niveau de résolution]="N1");T_Incidents[Délai 1re résolution (h ouvrées)]))*60</code>. En D5, <code>=NB.SI.ENS(T_Incidents[Technicien];A5;T_Incidents[Niveau de résolution];"N1";T_Incidents[Réouvert];"Oui")/B5</code>. Recopiez jusqu'à la ligne 7.</p>
+<p><strong>Vous devez voir :</strong> Kevin Dubois : 22 minutes, 30 % de réouverture ; Inès Morel : 48 minutes, 6 % ; Lucas Bernard : 46 minutes, 9 %.</p>
+<p><strong>Pourquoi :</strong> regardé seul, le délai fait de Kevin le meilleur. La réouverture, placée à côté, montre qu'il ferme trop vite : c'est la loi de Goodhart à l'œuvre.</p>
+
+<h4>Étape 4 – La qualité des données</h4>
+<p><strong>Faites :</strong> feuille Qualité, en C5, tapez <code>=NB.SI(T_Incidents[Mois];B5)</code>. En D5, <code>=NB.SI.ENS(T_Incidents[Mois];B5;T_Incidents[Satisfaction (1-5)];"&lt;&gt;")</code>. En E5, <code>=D5/C5</code>. En F5, <code>=MOYENNE.SI(T_Incidents[Mois];B5;T_Incidents[Satisfaction (1-5)])</code>. Recopiez jusqu'à la ligne 10.</p>
+<p><strong>Vous devez voir :</strong> un taux de réponse entre 27 % et 33 % selon les mois ; en septembre, 41 réponses sur 144 incidents (28 %) et une moyenne de 2,9.</p>
+<p><strong>Pourquoi :</strong> la satisfaction repose sur moins d'un tiers des utilisateurs : on l'affiche toujours avec son nombre de réponses.</p>
+
+<h4>Pour aller plus loin</h4>
+<p>Proposez à Romain la paire de KPI qu'il devrait suivre pour le statut En attente : quel indicateur placer à côté du SLA pour éviter l'effet pastèque de septembre ?</p>

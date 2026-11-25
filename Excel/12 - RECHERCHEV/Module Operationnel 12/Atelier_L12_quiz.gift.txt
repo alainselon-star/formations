@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Atelier 12
+
+::J1 Arguments::Mission 1 – Dans \=RECHERCHEV(A5;Catalogue!$A$2\:$D$31;2;FAUX), que représente le 2 ?{
+=Le numéro de la colonne de la table à renvoyer#Exact \: ici la 2e colonne, l'article.
+~La ligne où se trouve le code#Non \: RECHERCHEV trouve la ligne toute seule.
+~Le nombre de résultats à afficher#Non \: RECHERCHEV renvoie une seule valeur.
+}
+
+::J2 Colonne::Mission 1 – Où RECHERCHEV cherche-t-elle la valeur A5 ?{
+=Dans la première colonne de la table#Exact \: la colonne des codes doit être à gauche.
+~Dans toutes les colonnes de la table#Non \: seulement dans la première.
+~Dans la colonne indiquée par le numéro#Non \: le numéro désigne la colonne renvoyée.
+}
+
+::J3 Dollars::Mission 2 – Pourquoi écrire Catalogue!$A$2\:$D$31 avec des $ ?{
+=Pour que la table ne glisse pas quand on recopie la formule#Exact \: A5 doit changer, la table non.
+~Pour que la formule cherche dans toutes les feuilles#Non \: les $ bloquent une référence.
+~Pour afficher les prix en euros#Non \: c'est le format monétaire.
+}
+
+::J4 Prix::Mission 3 – La table est Code, Article, Catégorie, Prix HT. Quel numéro de colonne renvoie le prix ?{
+=4#Exact \: on compte à partir de la première colonne de la table.
+~3#Non \: c'est la catégorie.
+~D#Non \: on donne un numéro, pas une lettre.
+}
+
+::J5 NA::Mission 4 – Une formule affiche \#N/A. Que signifie ce message ?{
+=La valeur cherchée n'a pas été trouvée dans la première colonne#Exact \: code mal saisi ou absent du catalogue.
+~La formule contient une faute de syntaxe#Non \: une faute de syntaxe empêche de valider la formule.
+~Le prix est égal à zéro#Non \: un prix nul s'afficherait 0,00 €.
+}
+
+::J6 SIERREUR::Mission 4 – Que fait \=SIERREUR(RECHERCHEV(…);"Code inconnu") ?{
+=Il affiche « Code inconnu » quand la recherche échoue, et le résultat sinon#Exact \: il habille l'erreur sans la corriger.
+~Il corrige automatiquement le code mal saisi#Non \: il faut toujours vérifier le code.
+~Il ajoute le code manquant au catalogue#Non \: le catalogue ne change pas.
+}
+
+::J7 FAUX::Mission 5 – Karim a oublié FAUX à la fin de sa formule. Quel est le risque ?{
+=Un prix faux, sans aucun message d'erreur#Exact \: Excel cherche une valeur approchée dans un catalogue non trié.
+~Une erreur #NOM?#Non \: la formule reste valide.
+~Aucun risque, FAUX est la valeur par défaut#Non \: par défaut, RECHERCHEV cherche une valeur approchée.
+}
+
+::J8 VRAI::Mission 6 – Pour le barème de remises, pourquoi utiliser VRAI ?{
+=Pour trouver la tranche \: le plus grand seuil inférieur ou égal au total#Exact \: 9 320 € tombe dans la tranche « à partir de 8 000 € ».
+~Pour trouver seulement les totaux égaux à un seuil#Non \: c'est FAUX.
+~Parce que le barème n'est pas trié#Non \: avec VRAI, le barème doit être trié par ordre croissant.
+}

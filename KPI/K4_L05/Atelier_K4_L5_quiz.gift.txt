@@ -1,0 +1,57 @@
+$CATEGORY: $course$/K4-L5 Atelier
+
+::K4L5-A1 Jours::Étape 1 – Quels jours concentrent le plus d'incidents ?{
+=Le lundi (250) et le vendredi (206)#Exact \: deux pics qui annoncent un problème récurrent et un effet des mises en production.
+~Le mardi et le mercredi#Non \: ce sont les jours les plus calmes. Revoyez la diapositive 6 (K4-L5-S1).
+~Le jeudi, jour des mises en production#Non \: les incidents arrivent le lendemain. Revoyez la diapositive 6 (K4-L5-S1).
+~Tous les jours se valent#Non \: le lundi compte plus du double du mardi. Revoyez la diapositive 6 (K4-L5-S1).
+}
+
+::K4L5-A2 Normaliser::Étape 2 – Pourquoi diviser le nombre d'incidents par le nombre d'utilisateurs et par 6 ?{
+=Pour comparer des sites de tailles différentes, sur une même durée#Exact \: on obtient un taux par mois pour 100 utilisateurs.
+~Pour obtenir un délai moyen#Non \: on reste sur un volume. Revoyez la diapositive 5 (K4-L5-S1).
+~Pour faire baisser le chiffre de l'entrepôt#Non \: au contraire, l'entrepôt ressort au-dessus. Revoyez la diapositive 5 (K4-L5-S1).
+~Parce que chaque site a 6 techniciens#Non \: 6 est le nombre de mois. Revoyez la diapositive 5 (K4-L5-S1).
+}
+
+::K4L5-A3 Entrepôt::Étape 2 – Quel site a le plus d'incidents par mois pour 100 utilisateurs ?{
+=L'entrepôt, avec 65#Exact \: ses utilisateurs subissent 25 % d'incidents de plus que ceux du siège.
+~Le siège, avec 343 incidents#Non \: 343 est un volume brut. Revoyez la diapositive 5 (K4-L5-S1).
+~L'agence, avec 52#Non \: l'agence est au niveau du siège. Revoyez la diapositive 5 (K4-L5-S1).
+~Les trois sites sont égaux#Non \: l'entrepôt est nettement au-dessus. Revoyez la diapositive 5 (K4-L5-S1).
+}
+
+::K4L5-A4 Métrique::Le nombre brut d'incidents du mois est-il un KPI ?{
+=Non, c'est une métrique \: il devient un KPI rapporté à une base, avec une cible, pour décider#Exact \: métrique, indicateur, KPI (voir K1-L1).
+~Oui, puisqu'on le suit chaque mois#Non \: suivre ne suffit pas, il faut une base et une cible. Revoyez la diapositive 5 (K4-L5-S1).
+~Oui, s'il est affiché en rouge ou en vert#Non \: la couleur suppose une cible, absente ici. Revoyez la diapositive 5 (K4-L5-S1).
+~Non, c'est un SLA#Non \: un SLA est une promesse de délai. Revoyez la diapositive 5 (K4-L5-S1).
+}
+
+::K4L5-A5 Nombre P1::Étape 3 – Combien d'incidents majeurs (P1) Valdor a-t-il eus en six mois ?{
+=27, soit 3,2 % des incidents#Exact \: peu nombreux, mais ils arrêtent l'activité.
+~856#Non \: c'est le total des incidents. Revoyez la diapositive 7 (K4-L5-S2).
+~5#Non \: 5 est le nombre de P1 hors SLA. Revoyez la diapositive 8 (K4-L5-S2).
+~10#Non \: 10 est le nombre de P1 liés à un changement. Revoyez la diapositive 8 (K4-L5-S2).
+}
+
+::K4L5-A6 Délai P1::Étape 3 – Délai moyen des P1 4,4 h, médian 1,8 h. Que faut-il en conclure ?{
+=La plupart sont vite réglés, mais quelques cas très longs tirent la moyenne au-dessus de 4 h#Exact \: ces cas se traitent un par un, en revue post-incident.
+~Les P1 sont tous traités en plus de 4 h#Non \: la médiane est de 1,8 h. Revoyez la diapositive 8 (K4-L5-S2).
+~Le SLA des P1 est respecté à 100 %#Non \: il l'est à 81 %. Revoyez la diapositive 8 (K4-L5-S2).
+~La médiane est fausse#Non \: les deux chiffres sont justes (voir K4-L2). Revoyez la diapositive 8 (K4-L5-S2).
+}
+
+::K4L5-A7 Critère vide::Étape 4 – Que compte le critère "<>" dans NB.SI.ENS(…;T_Incidents[Changement lié];"<>") ?{
+=Les cellules non vides, c'est-à-dire les incidents liés à un changement#Exact \: "<>" seul signifie « différent de vide ».
+~Les cellules vides#Non \: ce serait le critère "" (vide).
+~Les changements différents du premier#Non \: le critère ne compare pas à une valeur.
+~Les incidents hors SLA#Non \: le critère porte sur la colonne Changement lié.
+}
+
+::K4L5-A8 Origine::Étape 4 – 10 des 27 incidents majeurs sont liés à un changement. Quelle piste d'action en découle ?{
+=Renforcer la maîtrise des changements \: plus d'un incident majeur sur trois en vient#Exact \: c'est l'objet de la leçon 7.
+~Embaucher un technicien de plus#Non \: le problème vient des changements, pas de la charge. Revoyez la diapositive 8 (K4-L5-S2).
+~Passer tous les changements en urgence#Non \: les changements d'urgence sont plus risqués. Revoyez la diapositive 8 (K4-L5-S2).
+~Ne rien faire, 10 sur 27 est normal#Non \: 37 % est une part importante. Revoyez la diapositive 8 (K4-L5-S2).
+}

@@ -1,0 +1,33 @@
+$CATEGORY: $course$/Atelier 13.1
+
+::A1 Total général::[html]Étape 3 – Quel est le <strong>total général</strong> de votre tableau croisé ? <br><em>Tapez le nombre sans espace et sans €, par exemple 12345.</em>{#1176350:0
+####Le total général doit être égal à la somme de la colonne Montant HT de la liste \: 1 176 350 €. Si vous trouvez moins, vérifiez qu'aucun filtre n'est actif (étape 6 \: remettre « (Tous) »).}
+
+::A2 Plomberie::[html]Étape 3 – Combien a rapporté la <strong>plomberie</strong> sur l'année ?<br><em>Sans espace et sans €.</em>{#323410:0
+####Plomberie \: 323 410 €, c'est le type de travaux qui rapporte le plus. Lisez la ligne Plomberie, colonne Total général.}
+
+::A3 Peinture janvier::[html]Étape 4 – Que vaut la case <strong>Peinture × janvier</strong> ?<br><em>Sans espace et sans €.</em>{#14920:0
+####14 920 € \: le même chiffre que Karim trouvait à la main avec les filtres, en quelques secondes au lieu de plusieurs minutes.}
+
+::A4 Plomberie février::[html]Étape 4 – Que vaut la case <strong>Plomberie × février</strong> ?<br><em>Sans espace et sans €.</em>{#37900:0
+####37 900 €. Si vous lisez un autre chiffre, vérifiez que vous croisez bien la ligne Plomberie et la colonne févr.}
+
+::A5 Case vide::Étape 4 – Une seule des 60 cases est vide. Laquelle ?{
+=Électricité × février#Exact \: aucune facture d'électricité en février. Une case vide n'est pas une erreur, c'est une information.
+~Carrelage × août#Non, regardez la ligne Électricité.
+~Menuiserie × décembre#Non \: avec toutes les factures, cette case est remplie. Elle ne devient vide qu'avec le filtre « Payée ».
+~Aucune, toutes les cases sont remplies#Regardez la ligne Électricité, colonne févr.
+}
+
+::A6 Encaissé::[html]Étape 6 – Avec le filtre <strong>Statut = Payée</strong>, quel est le total général ?<br><em>Sans espace et sans €.</em>{#1022530:0
+####1 022 530 € encaissés sur 1 176 350 € facturés. La différence correspond aux 40 factures en attente.}
+
+::A7 Compiègne::[html]Étape 7 – Combien a rapporté <strong>Compiègne</strong> ?<br><em>Sans espace et sans €.</em>{#507550:0
+####Compiègne \: 507 550 €, près de la moitié du chiffre d'affaires.}
+
+::A8 Classement::[html]Étape 8 – Après le tri, quelle ville arrive en <strong>deuxième</strong> position ?{
+=Creil#Exact \: Compiègne (507 550 €), puis Creil (170 490 €), Senlis (162 150 €), Noyon, Margny-lès-Compiègne et Pierrefonds.
+~Senlis#Presque \: Senlis est troisième (162 150 €), juste derrière Creil (170 490 €).
+~Noyon#Non \: Noyon est quatrième. Vérifiez que vous avez trié du plus grand au plus petit.
+~Pierrefonds#Pierrefonds est dernière \: vous avez sans doute trié du plus petit au plus grand.
+}

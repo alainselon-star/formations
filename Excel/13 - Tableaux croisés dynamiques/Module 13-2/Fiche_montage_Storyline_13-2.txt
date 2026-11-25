@@ -1,0 +1,47 @@
+Module 13.2 - D'autres chiffres - Fiche de montage Storyline 360
+(même méthode que le 13.1)
+
+1. IMPORT ET ENREGISTREMENT
+- Storyline > Nouveau projet > Importer > Importer PowerPoint > Module_13-2_Autres_chiffres.pptx.
+- Toutes les diapositives (14) > une seule scène > Importer.
+- Fichier > Enregistrer sous : Module_13-2_Autres_chiffres.story, dans le dossier Module 13-2.
+
+2. VOIX (Narration_13-2.txt)
+- Pour chaque diapositive : INSERTION > Médias > Audio > Synthèse vocale... (voix classiques, PAS « Insérer Audio » de l'assistant IA).
+- Une réplique = un clip. Narrateur : Léa. Sophie : Isabelle (Français Belgique). Karim : Rémi.
+- Diapositives à deux voix : 2 et 14 (et 14 en a trois).
+  Dans la chronologie, faites glisser chaque clip pour qu'il démarre à la fin du précédent.
+- Vérifiez que la durée de la diapositive couvre le dernier clip (fin de la chronologie).
+
+3. PERSONNAGES
+- Diapositive 2 : supprimez le texte gris « [Personnages…] ».
+  Insérer > Personnage > Illustré : Lily = Sophie, Andrew = Karim. Placez-les dans le cadre gris.
+- Diapositive 14 (fin) : mêmes personnages si vous voulez, à droite du texte.
+- Option : changez l'expression (Lily souriante en 14).
+
+4. QUIZ (Questions_13-2.txt)
+- Insérer > Nouvelle diapositive > Importer > Questions à partir d'un fichier > Questions_13-2.txt.
+- Les 4 questions arrivent en choix multiple, 10 points chacune, avec leurs messages.
+- Vue d'histoire : faites glisser les 4 questions entre la diapositive 13 (« Un résultat étrange ? ») et la diapositive 14 (« Sophie a ses réponses »).
+- Pour chaque question : Essais = 1, mélanger les réponses = Oui.
+
+5. RÉSULTATS
+- Insérer > Nouvelle diapositive > Quiz > Diapositive de résultats > Résultats notés.
+- Calculer les résultats pour : les 4 questions. Score de réussite : 75 %.
+- Placez-la juste après la 4e question.
+- Calque Réussite : bouton Continuer > aller à la diapositive 14.
+- Calque Échec : message « Pas encore : revoyez les diapositives 5 à 11, puis réessayez. » + bouton Réessayer (Réinitialiser les résultats + aller à la question 1).
+
+6. BOUTON « PASSER À L'ATELIER »
+- Diapositive 14 : sélectionnez le bouton orange.
+- Déclencheur : Ouvrir l'URL / le fichier, quand l'utilisateur clique,
+  URL : https://academie-numerique.moodlecloud.com/course/section.php?id=37
+  Ouverture : dans une nouvelle fenêtre (navigateur).
+
+7. PUBLICATION
+- Lecteur : titre « Module 13.2 - D'autres chiffres ».
+- Publier > LMS > SCORM 1.2.
+- Suivi : selon le résultat du quiz (diapositive de résultats).
+- Rapports et suivi > Signaler l'état à LMS : Complet / Incomplet.
+- Publier, puis ZIP. Renommez le zip sans espace : Module_13-2_v1.zip.
+- Je dépose le zip dans la section 13.2 du cours Moodle (activité SCORM).

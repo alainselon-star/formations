@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Atelier 01
+
+::J1 Diagnostic::Étape 1 – Dans une colonne, des montants sont calés à gauche. Que vous dit cet alignement ?{
+=Ce sont des textes, qu'Excel ne calcule pas#Exact \: un nombre se cale à droite.
+~Ce sont des nombres négatifs#Non \: un négatif se cale à droite comme tout nombre.
+~La colonne est trop étroite#Non \: une colonne trop étroite affiche des dièses.
+}
+
+::J2 Barre etat::Étape 1 – Vous sélectionnez une colonne de montants et la barre d'état n'affiche aucune Somme, seulement « Nombre ». Pourquoi ?{
+=Aucune cellule sélectionnée ne contient un vrai nombre#Exact \: la Somme ignore le texte.
+~La barre d'état n'additionne jamais une colonne entière#Non \: elle additionne toute la sélection.
+~Les montants n'ont pas encore le format Monétaire#Non \: le format ne change pas la Somme.
+}
+
+::J3 Ordre::Étape 2 – Dans quel ordre faut-il remplacer les unités «  euros » et «  EUR » ?{
+=« euros » d'abord, puis « EUR »#Exact \: la recherche ignore les majuscules par défaut ; « EUR » en premier transforme « 2540 euros » en « 2540os ».
+~« EUR » d'abord, puis « euros »#Non \: « EUR » trouverait aussi le début de « euros ».
+~L'ordre n'a pas d'importance#Non \: la recherche ignore les majuscules par défaut.
+}
+
+::J4 Selection::Étape 3 – Vous remplacez « . » par « / » sans avoir sélectionné la colonne des dates. Quel est le risque ?{
+=Toute la feuille est modifiée, y compris les adresses e-mail et les décimales#Exact \: sélectionnez toujours la colonne d'abord ; sinon Ctrl+Z.
+~Aucun, Excel ne remplace que dans les dates#Non \: Excel remplace partout où il trouve le texte cherché.
+~Excel refuse de faire le remplacement#Non \: il le fait, dans toute la feuille.
+}
+
+::J5 Dieses::Étape 3 – Une cellule de date affiche « ##### ». Que faut-il faire ?{
+=Élargir la colonne#Exact \: double-clic sur la séparation entre les lettres de colonnes.
+~Retaper la date#Non \: elle n'est pas abîmée.
+~Appliquer le format Texte#Non \: elle ne serait plus une date calculable.
+}
+
+::J6 Valeur format::Étape 4 – Après « Réduire les décimales », une cellule affiche 1 851 € pour une valeur de 1850,5. Que compte Excel dans un total ?{
+=1850,5#Exact \: le format change l'affichage, jamais la valeur. Pour arrondir vraiment, utilisez ARRONDI.
+~1851#Non \: réduire les décimales n'arrondit pas la valeur.
+~1850#Non \: la valeur n'est pas modifiée.
+}
+
+::J7 Format perso::Étape 4 – Quel format personnalisé affiche une date comme « lun. 02/02/2026 » ?{
+=jjj jj/mm/aaaa#Exact \: jjj donne le jour abrégé, jjjj le jour en entier.
+~jj/mm/aaaa#Non \: ce format n'affiche pas le jour de la semaine.
+~jjjj mmmm aaaa#Non \: il affiche « lundi février 2026 ».
+}
+
+::J8 Monetaire texte::Étape 4 – Vous appliquez le format Monétaire et rien ne change dans certaines cellules. Pourquoi ?{
+=Elles contiennent encore du texte#Exact \: on nettoie d'abord, on habille ensuite.
+~Le format Monétaire ne fonctionne que sur les colonnes larges#Non \: la largeur n'y est pour rien.
+~Il faut d'abord appliquer le format Comptabilité#Non \: les deux formats s'appliquent directement à un nombre.
+}

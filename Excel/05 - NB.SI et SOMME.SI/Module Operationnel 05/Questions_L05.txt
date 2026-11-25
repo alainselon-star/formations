@@ -1,0 +1,31 @@
+MC
+10
+La plage D2:D50 indique le statut de chaque devis : « Accepté », « Refusé » ou « En attente ». Quelle formule compte les devis acceptés ?
+*=NB.SI(D2:D50;"Accepté") | Exact : NB.SI compte les cellules qui remplissent le critère.
+=SOMME.SI(D2:D50;"Accepté") | Non : SOMME.SI additionne des montants, il ne compte pas.
+=NB(D2:D50;"Accepté") | Non : NB compte les nombres, sans critère.
+=SI(D2:D50="Accepté";1;0) | Non : SI décide ligne par ligne, il ne compte pas une plage.
+
+MC
+10
+Les commerciaux sont en G2:G301 et les montants en H2:H301. Quelle formule additionne les montants de Julie ?
+*=SOMME.SI(G2:G301;"Julie";H2:H301) | Exact : où chercher, quoi chercher, puis ce qu'il faut additionner.
+=SOMME.SI(H2:H301;"Julie";G2:G301) | Non : la plage du critère vient en premier, les montants en dernier.
+=NB.SI(G2:G301;"Julie") | Non : NB.SI compte les devis, il n'additionne pas les montants.
+=SOMME(G2:G301;"Julie") | Non : SOMME n'accepte pas de critère.
+
+MC
+10
+Le seuil des « gros devis » est en B9. Quel critère compte les montants supérieurs à ce seuil ?
+*">"&B9 | Exact : l'esperluette colle l'opérateur et la valeur de B9.
+">B9" | Non : Excel chercherait le texte « B9 » et renverrait 0.
+>B9 | Non : un opérateur dans un critère s'écrit entre guillemets.
+"B9>" | Non : l'opérateur se place avant la valeur.
+
+MC
+10
+Sophie veut le nombre de devis de Julie OU de Thomas, dont les noms sont en G2:G301. Que faut-il écrire ?
+*=NB.SI(G2:G301;"Julie")+NB.SI(G2:G301;"Thomas") | Exact : un OU s'obtient en additionnant deux NB.SI.
+=NB.SI.ENS(G2:G301;"Julie";G2:G301;"Thomas") | Non : .ENS exige que toutes les conditions soient vraies ; le résultat serait 0.
+=NB.SI(G2:G301;"Julie";"Thomas") | Non : NB.SI n'accepte qu'un seul critère.
+=NB.SI(G2:G301;"Julie OU Thomas") | Non : Excel chercherait ce texte exact.

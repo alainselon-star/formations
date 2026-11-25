@@ -1,0 +1,129 @@
+$CATEGORY: $course$/Banque Opérationnel
+
+$CATEGORY: $course$/Banque Opérationnel/L12 Le prix qui se trouve tout seul
+
+::L12-1::Karim saisit le code L-318 en A5 du devis. Le catalogue (codes, articles, catégories, prix) est en Catalogue!A2\:D31. Quelle formule affiche le prix de l'article ?{
+~\=RECHERCHEV(Catalogue!$A$2\:$D$31;A5;4;FAUX)#Non \: on donne d'abord la valeur cherchée, puis la table. À travailler → Leçon 12 – Le prix qui se trouve tout seul.
+~\=RECHERCHEV(A5;Catalogue!$A$2\:$D$31;D;FAUX)#Non \: le troisième argument est un numéro de colonne, pas une lettre. À travailler → Leçon 12 – Le prix qui se trouve tout seul.
+~\=RECHERCHEV(A5;Catalogue!$A$2\:$D$31;2;FAUX)#Non \: la 2e colonne contient l'article, pas le prix. À travailler → Leçon 12 – Le prix qui se trouve tout seul.
+=\=RECHERCHEV(A5;Catalogue!$A$2\:$D$31;4;FAUX)#Exact \: le prix est la 4e colonne de la table, et FAUX demande le code exact.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 12 – Le prix qui se trouve tout seul.
+}
+
+::L12-2::Après recopie de la formule vers le bas, les dernières lignes du devis affichent \#N/A alors que les codes existent bien. Quelle est la cause la plus probable ?{
+~Le format des prix n'est pas Monétaire#Non \: le format ne change pas le résultat d'une recherche. À travailler → Leçon 12 – Le prix qui se trouve tout seul.
+~Le catalogue n'est pas trié par code#Non \: avec FAUX, le tri n'a aucune importance. À travailler → Leçon 12 – Le prix qui se trouve tout seul.
+~Il manque SIERREUR#Non \: SIERREUR masquerait l'erreur sans la corriger. À travailler → Leçon 12 – Le prix qui se trouve tout seul.
+=La table du catalogue n'est pas bloquée avec des $ et a glissé vers le bas#Exact \: Catalogue!A2\:D31 est devenu A9\:D38 ; il faut $A$2\:$D$31.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 12 – Le prix qui se trouve tout seul.
+}
+
+::L12-3::Une formule RECHERCHEV écrite sans quatrième argument renvoie parfois le prix d'un autre article, sans message d'erreur. Pourquoi ?{
+~Le numéro de colonne est faux#Non \: il renverrait une autre colonne pour tous les codes. À travailler → Leçon 12 – Le prix qui se trouve tout seul.
+=Sans quatrième argument, Excel cherche une valeur approchée dans une table supposée triée#Exact \: il faut ajouter FAUX pour une correspondance exacte.
+~Le code cherché n'existe pas#Non \: avec FAUX, ce serait \#N/A. À travailler → Leçon 12 – Le prix qui se trouve tout seul.
+~La table contient des doublons#Non \: le problème vient de la valeur approchée. À travailler → Leçon 12 – Le prix qui se trouve tout seul.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 12 – Le prix qui se trouve tout seul.
+}
+
+::L12-4::Sophie veut la remise de chaque client selon un barème trié \: 0 % à partir de 0 €, 3 % à partir de 1 000 €, 5 % à partir de 3 000 €. Un client a 2 450 € de devis. Quelle formule et quel résultat ?{
+~\=RECHERCHEV(B4;$E$4\:$F$6;2;VRAI), qui renvoie 5 %#Non \: 2 450 € n'atteint pas le seuil de 3 000 €. À travailler → Leçon 12 – Le prix qui se trouve tout seul.
+~\=RECHERCHEV(B4;$E$4\:$F$6;2;FAUX), qui renvoie 3 %#Non \: avec FAUX, 2 450 n'est pas trouvé \: \#N/A. À travailler → Leçon 12 – Le prix qui se trouve tout seul.
+=\=RECHERCHEV(B4;$E$4\:$F$6;2;VRAI), qui renvoie 3 %#Exact \: VRAI s'arrête sur le plus grand seuil inférieur ou égal à 2 450 €, soit 1 000 €.
+~\=SIERREUR(B4;"3 %")#Non \: SIERREUR ne cherche rien dans un barème. À travailler → Leçon 12 – Le prix qui se trouve tout seul.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 12 – Le prix qui se trouve tout seul.
+}
+
+::L12-5::Dans un autre catalogue, le nom de l'article est en colonne A et le code en colonne C. Karim veut retrouver le nom à partir du code. Pourquoi RECHERCHEV ne convient-elle pas ?{
+=Elle cherche toujours dans la première colonne de la table et ne renvoie que des colonnes situées à droite#Exact \: ici le code est à droite du nom. RECHERCHEX (leçon 12 bis) cherche dans n'importe quelle colonne.
+~Elle exige une table triée par code#Non \: avec FAUX, le tri n'a aucune importance. À travailler → Leçon 12 – Le prix qui se trouve tout seul.
+~Elle ne peut pas chercher dans une autre feuille#Non \: la table peut être sur une autre feuille. À travailler → Leçon 12 – Le prix qui se trouve tout seul.
+~Elle ne fonctionne qu'avec des nombres#Non \: elle cherche aussi bien du texte. À travailler → Leçon 12 – Le prix qui se trouve tout seul.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 12 – Le prix qui se trouve tout seul.
+}
+
+
+$CATEGORY: $course$/Banque Opérationnel/L12 bis Le catalogue à l'envers
+
+::L12bis-1::Dans le catalogue du fournisseur, les articles sont en A2\:A31 et les codes en D2\:D31. Quelle formule affiche l'article du code saisi en A5 ?{
+~\=RECHERCHEX(Catalogue!$D$2\:$D$31;A5;Catalogue!$A$2\:$A$31)#Non \: on donne d'abord la valeur cherchée. À travailler → Leçon 12 bis – Le catalogue à l'envers.
+~\=RECHERCHEV(A5;Catalogue!$A$2\:$D$31;1;FAUX)#Non \: RECHERCHEV chercherait le code dans la colonne des articles. À travailler → Leçon 12 bis – Le catalogue à l'envers.
+~\=RECHERCHEX(A5;Catalogue!$A$2\:$A$31;Catalogue!$D$2\:$D$31)#Non \: les deux plages sont inversées. À travailler → Leçon 12 bis – Le catalogue à l'envers.
+=\=RECHERCHEX(A5;Catalogue!$D$2\:$D$31;Catalogue!$A$2\:$A$31)#Exact \: on cherche dans les codes, on renvoie les articles, même s'ils sont à gauche.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 12 bis – Le catalogue à l'envers.
+}
+
+::L12bis-2::Le code saisi n'existe pas dans le catalogue. Sophie veut afficher « Code inconnu », sans SIERREUR. Que fait-elle ?{
+~Ce n'est pas possible sans SIERREUR#Non \: RECHERCHEX a un argument prévu pour ça. À travailler → Leçon 12 bis – Le catalogue à l'envers.
+~Elle ajoute FAUX en 4e argument#Non \: c'est la syntaxe de RECHERCHEV. À travailler → Leçon 12 bis – Le catalogue à l'envers.
+=Elle ajoute "Code inconnu" en 4e argument de RECHERCHEX#Exact \: c'est la valeur renvoyée si rien n'est trouvé.
+~Elle ajoute -1 en 6e argument#Non \: -1 change le sens de recherche. À travailler → Leçon 12 bis – Le catalogue à l'envers.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 12 bis – Le catalogue à l'envers.
+}
+
+::L12bis-3::Le code L-342 apparaît quatre fois dans l'historique des prix, du plus ancien au plus récent. Comment obtenir le prix le plus récent ?{
+~Avec VRAI en 4e argument#Non \: le 4e argument est la valeur si non trouvé. À travailler → Leçon 12 bis – Le catalogue à l'envers.
+=Avec -1 en 6e argument \: la recherche part de la dernière ligne#Exact \: \=RECHERCHEX(E2;codes;prix;;;-1).
+~Avec -1 en 5e argument#Non \: le 5e argument règle la correspondance (exacte ou inférieure). À travailler → Leçon 12 bis – Le catalogue à l'envers.
+~Avec RECHERCHEV et FAUX#Non \: RECHERCHEV renvoie toujours la première ligne trouvée. À travailler → Leçon 12 bis – Le catalogue à l'envers.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 12 bis – Le catalogue à l'envers.
+}
+
+::L12bis-4::Karim envoie un classeur rempli de RECHERCHEX à un client équipé d'Excel 2016. Que voit le client ?{
+=\#NOM? \: la fonction n'existe pas dans sa version#Exact \: RECHERCHEX existe dans Microsoft 365, Excel 2021, 2024 et pour le web.
+~Les formules sont automatiquement converties en RECHERCHEV#Non \: Excel ne convertit pas les fonctions. À travailler → Leçon 12 bis – Le catalogue à l'envers.
+~\#N/A sur toutes les lignes#Non \: \#N/A signale une valeur non trouvée, pas une fonction inconnue. À travailler → Leçon 12 bis – Le catalogue à l'envers.
+~Les bons résultats, sans problème#Non \: Excel 2016 ne connaît pas RECHERCHEX. À travailler → Leçon 12 bis – Le catalogue à l'envers.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 12 bis – Le catalogue à l'envers.
+}
+
+::L12bis-5::Le barème des remises est écrit du plus haut au plus bas \: 3 000 € → 5 %, 1 000 € → 3 %, 0 € → 0 %. Un client totalise 2 450 €. Quelle formule renvoie 3 % ?{
+~\=RECHERCHEX(B4;Seuils;Taux;;1)#Non \: 1 prend la valeur immédiatement supérieure \: 3 000 €, donc 5 %. À travailler → Leçon 12 bis – Le catalogue à l'envers.
+~\=RECHERCHEV(B4;Barème;2;VRAI)#Non \: avec VRAI, RECHERCHEV exige un barème trié du plus petit au plus grand. À travailler → Leçon 12 bis – Le catalogue à l'envers.
+=\=RECHERCHEX(B4;Seuils;Taux;;-1)#Exact \: -1 en 5e argument prend la valeur exacte ou immédiatement inférieure, quel que soit l'ordre du barème.
+~\=RECHERCHEX(B4;Seuils;Taux;;;-1)#Non \: le 6e argument change le sens de recherche, pas le type de correspondance. À travailler → Leçon 12 bis – Le catalogue à l'envers.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 12 bis – Le catalogue à l'envers.
+}
+
+
+$CATEGORY: $course$/Banque Opérationnel/L14 Le tableau de bord de Sophie
+
+::L14-1::Sophie veut que tous les indicateurs de son tableau de bord changent quand elle choisit un autre commercial en B3. Comment écrire les formules ?{
+~Avec un filtre automatique sur la feuille des devis#Non \: un filtre ne change pas les résultats de SOMME.SI.ENS. À travailler → Leçon 14 – Le tableau de bord de Sophie.
+=Avec un critère qui renvoie à la cellule du choix, par exemple $B$4#Exact \: le tableau de bord suit le sélecteur.
+~Avec le nom du commercial écrit dans chaque formule#Non \: il faudrait réécrire toutes les formules à chaque choix. À travailler → Leçon 14 – Le tableau de bord de Sophie.
+~En copiant les chiffres de chaque commercial à la main#Non \: le tableau ne se mettrait jamais à jour. À travailler → Leçon 14 – Le tableau de bord de Sophie.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 14 – Le tableau de bord de Sophie.
+}
+
+::L14-2::Le sélecteur propose « Tous ». Quelle valeur de critère permet à NB.SI.ENS de compter les devis de tous les commerciaux ?{
+="*"#Exact \: l'étoile accepte n'importe quel texte.
+~""#Non \: un critère vide ne compte que les cellules vides. À travailler → Leçon 14 – Le tableau de bord de Sophie.
+~"Tous"#Non \: aucun devis n'a « Tous » comme commercial \: le résultat serait 0. À travailler → Leçon 14 – Le tableau de bord de Sophie.
+~"?"#Non \: ? remplace un seul caractère. À travailler → Leçon 14 – Le tableau de bord de Sophie.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 14 – Le tableau de bord de Sophie.
+}
+
+::L14-3::Le taux de transformation affiche \#DIV/0! quand un commercial n'a aucun devis. Que faire ?{
+~Supprimer le commercial de la liste#Non \: le problème reviendrait avec un autre choix. À travailler → Leçon 14 – Le tableau de bord de Sophie.
+~Mettre la cellule au format Pourcentage#Non \: le format ne corrige pas l'erreur. À travailler → Leçon 14 – Le tableau de bord de Sophie.
+~Remplacer la formule par un nombre#Non \: le tableau ne suivrait plus le choix. À travailler → Leçon 14 – Le tableau de bord de Sophie.
+=Entourer la division par SIERREUR(…;0)#Exact \: le tableau affiche 0 au lieu d'une erreur.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 14 – Le tableau de bord de Sophie.
+}
+
+::L14-4::Pour le chiffre d'affaires de mars 2026, quels critères de date faut-il ajouter à SOMME.SI.ENS, si A15 contient le 01/03/2026 ?{
+=">\="&A15 et "<\="&FIN.MOIS(A15;0)#Exact \: du 1er au 31 mars.
+~"\="&A15#Non \: seuls les devis du 1er mars seraient comptés. À travailler → Leçon 14 – Le tableau de bord de Sophie.
+~"mars"#Non \: la colonne contient des dates, pas des noms de mois. À travailler → Leçon 14 – Le tableau de bord de Sophie.
+~">\="&A15 seulement#Non \: tous les mois suivants seraient comptés aussi. À travailler → Leçon 14 – Le tableau de bord de Sophie.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 14 – Le tableau de bord de Sophie.
+}
+
+::L14-5::Le CA de chaque mois est en B13\:B24, les mois en A13\:A24, et le meilleur CA en B27 (\=MAX(B13\:B24)). Quelle formule affiche le mois correspondant ?{
+~\=RECHERCHEX(B27;A13\:A24;B13\:B24)#Non \: les deux plages sont inversées. À travailler → Leçon 14 – Le tableau de bord de Sophie.
+~\=MAX(A13\:A24)#Non \: cela renvoie le dernier mois de la liste, pas le meilleur. À travailler → Leçon 14 – Le tableau de bord de Sophie.
+~\=RECHERCHEV(B27;A13\:B24;1;FAUX)#Non \: RECHERCHEV chercherait le montant dans la colonne des mois. À travailler → Leçon 14 – Le tableau de bord de Sophie.
+=\=RECHERCHEX(B27;B13\:B24;A13\:A24)#Exact \: on cherche le montant dans les CA et on renvoie le mois, situé à gauche.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 14 – Le tableau de bord de Sophie.
+}

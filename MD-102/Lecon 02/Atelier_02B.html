@@ -1,0 +1,68 @@
+<h3>Atelier 02B – Observer l'inscription Apple et Android</h3>
+<p class="lead"><strong>🎯 Mission :</strong> repérer dans votre tenant ce qu'il faut pour gérer les iPhone, les iPad et les téléphones Android de l'Atelier Martin.</p>
+<p><span class="badge bg-primary">⏱ 15 min</span> <span class="badge bg-primary">🔑 Admin Intune ou Admin général</span> <span class="badge bg-secondary">👀 Observer seulement</span></p>
+<p><small>Leçon associée : <strong>Leçon 02B</strong>. Les repères <strong>B3, B7…</strong> renvoient à ses diapositives (bouton <em>☰ Sommaire</em> du lecteur).</small></p>
+
+<div class="alert alert-warning"><p class="mb-0">⚠️ Ne configurez <strong>ni</strong> le certificat Apple <strong>ni</strong> Google Play managé : il faut un identifiant Apple ou un compte Google d'entreprise. On observe seulement.</p></div>
+
+<div class="alert alert-info">
+<p><strong>📝 À relever pour le quiz</strong></p>
+<table class="table table-sm table-bordered mb-0" style="background:#fff;">
+<tbody>
+<tr><td>Étape 1 : condition préalable de l'onglet Apple</td><td style="width:40%;">…</td></tr>
+<tr><td>Étape 2 : les 2 méthodes d'inscription en bloc Apple</td><td>…</td></tr>
+<tr><td>Étape 4 : condition préalable de l'onglet Android</td><td>…</td></tr>
+<tr><td>Étape 5 : nombre de profils d'inscription Android Enterprise</td><td>…</td></tr>
+</tbody>
+</table>
+</div>
+
+<p>Toutes les étapes partent de <strong>intune.microsoft.com › Appareils › Intégration de l'appareil › Inscription</strong>.</p>
+
+<div class="card mb-3"><div class="card-body">
+<h4>① Apple : la condition préalable</h4>
+<p><code>onglet Apple › Conditions préalables</code></p>
+<p>✅ <strong>Vous devez voir :</strong> « Certificat Push MDM Apple ». 📝 <strong>Notez-la.</strong></p>
+<details><summary>🛠 Ça coince ?</summary><p>Elle est tout en haut de l'onglet Apple, avant les méthodes en bloc.<br>↩ <strong>Revoir B3 · Certificat Apple</strong></p></details>
+<details><summary>💡 Pourquoi ?</summary><p>Valable 1 an. À renouveler avec le même identifiant Apple, sinon tous les appareils Apple sont à réinscrire.<br>↩ <strong>Revoir B3 · Certificat Apple</strong></p></details>
+</div></div>
+
+<div class="card mb-3"><div class="card-body">
+<h4>② Apple : les méthodes en bloc</h4>
+<p><code>onglet Apple › Méthodes d'inscription en bloc</code></p>
+<p>✅ <strong>Vous devez voir :</strong> 2 méthodes, grisées tant que le certificat n'est pas configuré. 📝 <strong>Notez leurs noms.</strong></p>
+<details><summary>🛠 Ça coince ?</summary><p>Elles sont grisées ? C'est normal sans certificat Push.<br>↩ <strong>Revoir B4 · Apple en bloc</strong></p></details>
+</div></div>
+
+<div class="card mb-3"><div class="card-body">
+<h4>③ Apple : l'iPhone personnel de Julie</h4>
+<p><code>onglet Apple › Options d'inscription › Types d'inscription</code></p>
+<p>✅ <strong>Vous devez voir :</strong> l'écran des profils de types d'inscription. Fermez sans rien créer.</p>
+<details><summary>💡 Pourquoi ?</summary><p>C'est ici qu'on choisit l'inscription utilisateur pour les iPhone personnels : seules les données pro sont gérées.<br>↩ <strong>Revoir B5 · Apple perso</strong></p></details>
+</div></div>
+
+<div class="card mb-3"><div class="card-body">
+<h4>④ Android : la condition préalable</h4>
+<p><code>onglet Android › Android Enterprise › Conditions préalables</code></p>
+<p>✅ <strong>Vous devez voir :</strong> « Google Play managé ». 📝 <strong>Notez-la.</strong></p>
+<details><summary>🛠 Ça coince ?</summary><p>Ne la confondez pas avec la condition préalable Apple.<br>↩ <strong>Revoir B6 · Google Play</strong></p></details>
+</div></div>
+
+<div class="card mb-3"><div class="card-body">
+<h4>⑤ Android : les profils d'inscription</h4>
+<p><code>onglet Android › Android Enterprise › Profils d'inscription</code></p>
+<p>✅ <strong>Vous devez voir :</strong> les profils Android Enterprise. 📝 <strong>Comptez-les</strong> et associez chacun à un appareil de l'Atelier Martin.</p>
+<details><summary>🛠 Ça coince ?</summary><p>Ne comptez pas ceux de la section AOSP, plus bas.<br>↩ <strong>Revoir B7 · 4 profils</strong></p></details>
+</div></div>
+
+<div class="card mb-3"><div class="card-body">
+<h4>⑥ Android : les autres cas</h4>
+<p><code>onglet Android</code>, faites défiler jusqu'en bas</p>
+<p>✅ <strong>Vous devez voir :</strong> Zero-Touch et Samsung Knox Mobile (en bloc), la section AOSP, puis la section « Administrateur d'appareil Android ».</p>
+<details><summary>💡 Pourquoi ?</summary><p>AOSP = appareils sans services Google. Administrateur d'appareil = ancienne méthode, à éviter.<br>↩ <strong>Revoir B8 · Autres cas Android</strong></p></details>
+</div></div>
+
+<div class="alert alert-success">
+<p><strong>🏁 Pour finir</strong></p>
+<p>☐ Faites le <strong>quiz de la leçon 02B</strong><br>☐ Puis le <strong>quiz final de la leçon 02</strong> (leçons A et B)</p>
+</div>

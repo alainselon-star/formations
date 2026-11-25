@@ -1,0 +1,31 @@
+MC
+10
+En J4, la formule =H4*P3 donne la bonne TVA. Recopiée en J5, elle donne un résultat faux. Que contient J5 ?
+*=H5*P4 : le taux a glissé d'une ligne | Exact : une référence relative suit la formule. Le montant devait suivre, pas le taux.
+=H5*P3 : la formule est juste, c'est Excel qui s'est trompé | Non : sans $, la référence au taux bouge aussi.
+=H4*P3 : rien n'a bougé | Non : recopiée, une formule relative s'adapte à sa nouvelle place.
+=H5*$P$3 : Excel pose les $ tout seul | Non : c'est à vous de bloquer la référence, avec F4.
+
+MC
+10
+Le taux de TVA est saisi une seule fois en F1. Quelle formule écrire en C2 pour la recopier vers le bas ?
+*=B2*$F$1 | Exact : le montant suit la ligne, le taux reste sur F1.
+=B2*F1 | Non : recopiée, elle irait chercher F2, F3…
+=$B$2*$F$1 | Non : toutes les lignes utiliseraient le montant de B2.
+=B2*F$1$ | Non : le $ se place devant ce qu'il bloque, pas après.
+
+MC
+10
+Dans une grille, les quantités sont en colonne A et les taux de remise en ligne 2. Quelle formule écrire en B3 pour la recopier dans toute la grille ?
+*=$A3*B$2 | Exact : la colonne des quantités et la ligne des taux sont bloquées, le reste suit.
+=A3*B2 | Non : les deux références glisseraient.
+=$A$3*$B$2 | Non : toutes les cases donneraient le même résultat.
+=A$3*$B2 | Non : les cadenas sont inversés.
+
+MC
+10
+Le taux de TVA est en B1 d'une feuille nommée Paramètres. Quelle formule l'utilise dans une autre feuille, en restant fixe à la recopie ?
+*=H4*Paramètres!$B$1 | Exact : le nom de la feuille, un point d'exclamation, puis la cellule bloquée.
+=H4*$B$1 | Non : sans nom de feuille, Excel cherche B1 dans la feuille de la formule.
+=H4*Paramètres.$B$1 | Non : la feuille se sépare de la cellule par un point d'exclamation.
+=H4*[Paramètres]$B$1 | Non : les crochets désignent un autre classeur, pas une feuille.

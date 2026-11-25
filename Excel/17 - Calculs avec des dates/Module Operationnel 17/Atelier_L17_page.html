@@ -1,0 +1,45 @@
+<h3>Atelier 17 – Calculer avec des dates, à vous de jouer (20 min)</h3>
+<p>Sophie veut deux choses : le délai entre chaque devis et sa signature, et, pour les factures, l'échéance, les jours restants et les factures en retard. Vous allez tout calculer avec des formules, sans calendrier.</p>
+<p><strong>Fichier :</strong> votre copie de <em>Excel_17_Dates_devis_factures.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Devis signés</strong> (40 devis) et <strong>Factures</strong> (30 factures). <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie que vous avez compris chaque geste.</p>
+
+<h4>Étape 1 – Le piège de 1900</h4>
+<p><strong>Faites :</strong> feuille Devis signés, en D2, tapez <code>=C2-B2</code> puis Entrée.</p>
+<p><strong>Vous devez voir :</strong> 02/02/1900. La colonne D est au format Date.</p>
+<p><strong>Pourquoi :</strong> le calcul est juste : 33 jours. Mais au format Date, 33 s'affiche comme le 33e jour du calendrier d'Excel.</p>
+
+<h4>Étape 2 – Le bon format</h4>
+<p><strong>Faites :</strong> sélectionnez la colonne D, puis Accueil → groupe Nombre → <strong>Standard</strong>.</p>
+<p><strong>Vous devez voir :</strong> 33 en D2 : le devis D-2026-001 a été signé 33 jours après son envoi.</p>
+<p><strong>Si ça ne marche pas :</strong> vous voyez -33 ? Vous avez tapé <code>=B2-C2</code> : la date la plus récente doit venir en premier.</p>
+
+<h4>Étape 3 – Recopier et lire les chiffres</h4>
+<p><strong>Faites :</strong> double-cliquez sur la poignée de recopie de D2. Sélectionnez D2:D41 et lisez la barre d'état.</p>
+<p><strong>Vous devez voir :</strong> Moyenne 13,75 ; Nombre 40 ; Somme 550. Les clients mettent en moyenne près de 14 jours à signer.</p>
+
+<h4>Étape 4 – Les signatures lentes</h4>
+<p><strong>Faites :</strong> en I2, tapez <code>=NB.SI(D2:D41;"&gt;=15")</code>. En I3, <code>=MAX(D2:D41)</code>, en I4, <code>=MIN(D2:D41)</code>.</p>
+<p><strong>Vous devez voir :</strong> 15 devis signés en 15 jours ou plus ; un délai maximal de 33 jours et minimal de 2 jours.</p>
+
+<h4>Étape 5 – Les jours ouvrés</h4>
+<p><strong>Faites :</strong> en I6, tapez <code>=NB.JOURS.OUVRES(B2;C2)</code>.</p>
+<p><strong>Vous devez voir :</strong> 24 : entre le 02/01/2026 et le 04/02/2026, il y a 24 jours ouvrés (sans les samedis et dimanches), contre 33 jours calendaires.</p>
+
+<h4>Étape 6 – Les échéances</h4>
+<p><strong>Faites :</strong> feuille Factures, en D2, tapez <code>=B2+C2</code>, puis recopiez jusqu'en D31.</p>
+<p><strong>Vous devez voir :</strong> 16/12/2026 en D2 (01/11/2026 + 45 jours). En D23, la facture F-2026-321 passe à l'année suivante : 14/01/2027.</p>
+<p><strong>Si ça ne marche pas :</strong> vous voyez 46372 ? La date a perdu son habillage : Accueil → Nombre → <strong>Date courte</strong>.</p>
+
+<h4>Étape 7 – Les jours restants</h4>
+<p><strong>Faites :</strong> en E2, tapez <code>=D2-AUJOURDHUI()</code>, puis recopiez jusqu'en E31.</p>
+<p><strong>Vous devez voir :</strong> des nombres positifs (jours avant l'échéance) et négatifs (échéance dépassée). Les valeurs dépendent du jour où vous faites l'atelier : demain, elles auront toutes baissé de 1.</p>
+<p><strong>Si ça ne marche pas :</strong> vous voyez des dates en 1900 ? Excel a habillé le résultat en date : appliquez le format <strong>Standard</strong> à la colonne E.</p>
+
+<h4>Étape 8 – La situation</h4>
+<p><strong>Faites :</strong> en F2, tapez <code>=SI(E2&lt;0;"En retard";"À venir")</code>, puis recopiez jusqu'en F31.</p>
+<p><strong>Vous devez voir :</strong> « En retard » pour F-2026-319 (échéance 03/10/2026) ; « À venir » pour F-2026-321 (échéance 14/01/2027).</p>
+
+<h4>Étape 9 – Date figée ou date qui avance</h4>
+<p><strong>Faites :</strong> en I1, appuyez sur <strong>Ctrl+;</strong> (point-virgule) puis Entrée. En I2, tapez <code>=AUJOURDHUI()</code>. Cliquez sur I1, puis sur I2, en regardant la barre de formule.</p>
+<p><strong>Vous devez voir :</strong> la même date dans les deux cellules ; mais I1 contient la date tapée, I2 la formule. Demain, seule I2 changera.</p>
+<p><strong>Pourquoi :</strong> Ctrl+; sert à noter la date d'un événement (un paiement reçu) ; AUJOURDHUI sert aux comptes à rebours.</p>

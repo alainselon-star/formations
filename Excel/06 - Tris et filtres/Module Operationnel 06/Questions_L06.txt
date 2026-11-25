@@ -1,0 +1,31 @@
+MC
+10
+La liste des devis est filtrée. Sophie veut afficher uniquement les devis dont le montant est compris entre 5 000 € et 10 000 €. Que faut-il utiliser ?
+*Flèche de la colonne Montant → Filtres numériques → Entre | Exact : deux conditions sur la même colonne, supérieur ou égal ET inférieur ou égal.
+Flèche de la colonne Montant → Trier du plus petit au plus grand | Non : le tri range les lignes, il n'en cache aucune.
+Accueil → Rechercher (Ctrl+F) → 5000 | Non : la recherche va de cellule en cellule, elle ne filtre pas.
+Flèche de la colonne Montant → Filtres numériques → 10 premiers | Non : ce filtre garde les plus gros montants, pas une fourchette.
+
+MC
+10
+Après un filtre, les numéros de ligne sont bleus et sautent (2, 5, 9…). Que s'est-il passé ?
+*Des lignes sont masquées par le filtre, mais toujours présentes | Exact : filtrer ne supprime rien. Données → Effacer pour tout réafficher.
+Des lignes ont été supprimées | Non : un filtre cache, il ne supprime pas.
+Le fichier est trié | Non : un tri renumérote dans l'ordre, sans sauts.
+Les volets sont figés | Non : figer les volets ne masque aucune ligne.
+
+MC
+10
+On veut ranger la liste par chantier, et dans chaque chantier du plus gros montant au plus petit. Que faut-il faire ?
+*Données → Trier : Chantier de A à Z, puis Ajouter un niveau : Montant du plus grand au plus petit | Exact : le second niveau départage les lignes du même chantier.
+Trier la colonne Montant, puis la colonne Chantier, chacune sélectionnée seule | Non : en triant une colonne seule, les montants changent de ligne.
+Filtrer sur chaque chantier l'un après l'autre | Non : le filtre ne range pas les lignes.
+Figer les volets sur la colonne Chantier | Non : figer garde les titres visibles, sans trier.
+
+MC
+10
+Une liste est filtrée. Quelle formule écrite sous la colonne des montants donne le total des seules lignes visibles ?
+*=SOUS.TOTAL(9;E2:E501) | Exact : SOUS.TOTAL ignore les lignes masquées par le filtre ; 9 = somme.
+=SOMME(E2:E501) | Non : SOMME additionne toutes les lignes, même masquées.
+=SOMME.SI(E2:E501;"visible") | Non : « visible » n'est pas un critère qu'Excel comprend.
+=NB(E2:E501) | Non : NB compte des nombres, il n'additionne pas.

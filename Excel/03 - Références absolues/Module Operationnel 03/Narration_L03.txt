@@ -1,0 +1,46 @@
+Excel Opérationnel · Leçon 03 – La formule qui se dérègle
+
+Diapositive 1 – La formule qui se dérègle
+  NARRATEUR : Une formule juste sur la première ligne, recopiée comme d'habitude, et tout devient faux. Parfois avec un message d'erreur, parfois sans rien dire. Dans cette leçon, vous allez apprendre à bloquer une référence pour qu'une formule tienne, où que vous la recopiiez.
+
+Diapositive 2 – Mardi, 16 h : le point de vendredi
+  SOPHIE : Pour vendredi, il me faut les trente devis de février avec la TVA, le TTC, la part de chaque devis dans le total, et la commission de Julie et Thomas. Les taux sont dans le fichier.
+  KARIM : J'ai écrit la formule sur la première ligne, elle est juste. Je l'ai recopiée comme d'habitude, et tout est faux. Excel s'est déréglé ?
+
+Diapositive 3 – 68 € au lieu de 136 €, sans aucun message
+  NARRATEUR : En J4, Karim écrit égale H4 fois P3 : le montant fois le taux de TVA, rangé dans la cellule jaune P3. Quatre-vingt-cinq euros, c'est juste. Il recopie vers le bas. Le devis Leroy affiche soixante-huit euros au lieu de cent trente-six, puis des zéros. La part du total donne des dièse DIV zéro. Cliquez sur J5 : la formule est devenue H5 fois P4. Le montant a suivi la ligne, c'est bien. Mais le taux a glissé vers P4, le taux de commission. Le plus dangereux, c'est le soixante-huit euros : un chiffre plausible, faux, sans aucun message.
+
+Diapositive 4 – Solution 1 : contourner le problème
+  NARRATEUR : Sans l'outil, trois contournements. La calculatrice : cent vingt calculs, trente minutes, et des résultats tapés qui ne bougent pas si un montant change. Retaper la formule à chaque ligne : quatre-vingt-dix formules, et une faute de frappe donne un résultat plausible et faux. Ou mettre le taux en dur, égale H4 fois 10 pour cent : rapide, mais le taux est caché dans trente formules. Quand Sophie annonce que la commission passe à 6 pour cent, il faut tout reprendre, et le total tapé à la main devient faux au premier devis ajouté.
+
+Diapositive 5 – Un itinéraire ou une adresse ?
+  NARRATEUR : Pour comprendre, une image. Quand Karim écrit H4 et P3 dans J4, Excel ne retient pas des adresses, mais des itinéraires : la cellule deux colonnes à gauche, la cellule six colonnes à droite et une ligne au-dessus. Recopiée en J5, la formule suit le même itinéraire et arrive en P4. C'est une référence relative : c'est le comportement normal, et le plus souvent celui qu'on veut. Le dollar P dollar 3, lui, est une adresse postale : la cellule P3, et nulle part ailleurs. C'est une référence absolue. Le dollar n'a rien à voir avec la monnaie : c'est un cadenas.
+
+Diapositive 6 – Poser le cadenas avec F4
+  NARRATEUR : Inutile de taper les dollars. Dans J4, tapez égale H4 fois P3, laissez le curseur juste après P3, et appuyez sur F4. Chaque appui fait tourner les quatre formes : dollar P dollar 3, puis P dollar 3, puis dollar P 3, puis retour à P3. Sur un portable, il faut souvent Fn plus F4. Attention : F4 s'applique à la référence où se trouve le curseur.
+
+Diapositive 7 – La formule tient
+  NARRATEUR : En J4, égale H4 fois dollar P dollar 3. Recopiez : le devis Leroy affiche maintenant cent trente-six euros. Cliquez sur J5 : H5 fois dollar P dollar 3. Le montant a suivi la ligne, le taux est resté sur P3. Même logique pour la part du total, H4 divisé par dollar H dollar 34, au format pourcentage, et pour la commission, H4 fois dollar P dollar 4. Le TTC, lui, n'a pas besoin de dollar : H4 plus J4 doivent suivre la ligne. Trois minutes pour les quatre colonnes, que le fichier ait trente ou trois mille devis.
+
+Diapositive 8 – La commission passe à 6 %
+  NARRATEUR : Voici le geste qui convainc. Sophie annonce que la commission passe à 6 pour cent. Karim change une seule cellule, P4. Les trente commissions se recalculent instantanément. Avec le taux en dur, il aurait fallu reprendre trente formules. Retenez la règle : un taux, un objectif, une hypothèse qui peut changer, se range dans une cellule à part, bien visible, et les formules vont le chercher avec un dollar.
+
+Diapositive 9 – Une grille avec une seule formule
+  NARRATEUR : Le banquier veut une grille : les montants de mille à dix mille euros en lignes, les taux de TVA en colonnes. Une formule par case ? Non, une seule, avec des références mixtes. En B5 : égale dollar A 5, fois, parenthèse, 1 plus B dollar 4. Dollar A bloque la colonne des montants, mais laisse la ligne bouger. Dollar 4 bloque la ligne des taux, mais laisse la colonne bouger. Recopiez à droite puis vers le bas : toute la grille est juste.
+
+Diapositive 10 – Un taux sur une autre feuille, un nom clair
+  NARRATEUR : Souvent, les taux sont rangés sur une feuille à part, appelée par exemple Paramètres. Pour l'utiliser, tapez égale, cliquez sur la cellule du montant, tapez fois, puis allez cliquer sur la cellule du taux dans l'autre feuille, et appuyez sur F4. Excel écrit le nom de la feuille, un point d'exclamation, puis la cellule : Paramètres point d'exclamation dollar B dollar 1. Autre solution : nommer la cellule. Cliquez sur le taux, tapez TauxTVA dans la zone Nom, à gauche de la barre de formule. La formule devient H4 fois TauxTVA. Un nom est toujours absolu : pas besoin de dollar.
+
+Diapositive 11 – Contrôler ses formules
+  NARRATEUR : Pour ne plus jamais laisser passer un soixante-huit euros, prenez le réflexe de contrôler. Cliquez sur une cellule du bas et lisez la formule. Double-cliquez dans la cellule, ou F2 : chaque référence s'encadre en couleur dans la feuille. Formules, Afficher les formules : toutes les formules apparaissent d'un coup. Et Repérer les antécédents trace des flèches vers les cellules utilisées.
+
+Diapositive 12 – Les pièges à éviter
+  NARRATEUR : Quelques pièges reviennent souvent. Mettre des dollars partout par sécurité : dollar H dollar 4 recopié donne quatre-vingt-cinq euros sur toutes les lignes. On ne bloque que ce qui ne doit pas bouger. Appuyer sur F4 avec le curseur sur la mauvaise référence. Taper 10 au lieu de 10 pour cent dans la cellule du taux : la TVA devient dix fois le montant. Et confondre le dollar avec le format Monétaire : il ne change ni le montant ni l'affichage.
+
+Diapositive 13 – À retenir
+  NARRATEUR : Retenez. Recopiée, une référence relative suit la formule. Le dollar bloque ce qui le suit : la colonne, la ligne, ou les deux. F4 pose les dollars. Un taux se range dans une cellule à part, visée avec dollar P dollar 3. Pour une grille à double entrée, des références mixtes. Pour une autre feuille, le nom de la feuille, un point d'exclamation, puis la cellule. Et toujours, un contrôle sur une cellule du bas.
+
+Diapositive 14 – Une formule, trente lignes justes
+  SOPHIE : Et si je change d'avis sur la commission vendredi matin ?
+  KARIM : Une seule cellule à modifier. Tout le reste suit.
+  NARRATEUR : Bravo. Passez maintenant à l'atelier : les vingt-cinq factures de mars, avec une seule formule par colonne.

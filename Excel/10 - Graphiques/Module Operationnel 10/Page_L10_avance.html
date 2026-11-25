@@ -1,0 +1,22 @@
+<h3>Pour aller plus loin – Le dossier pour la banque (facultatif, 40 min)</h3>
+<p>Vous avez réussi l'atelier ? Ce défi se fait dans le <strong>vrai Excel</strong>, sur un fichier à télécharger. Il est <strong>moins guidé</strong>. Sophie veut un dossier solide pour la banque : un tableau mensuel avec le cumul et le taux de réalisation de l'objectif, un graphique qui montre les deux, ses meilleurs clients, et un dossier qui se met à jour tout seul quand les factures d'octobre arrivent.</p>
+<p><strong>Le fichier :</strong> <em>Excel_10_avance_dossier_banque.xlsx</em>, juste sous cette page. Feuille <strong>Factures</strong> : le tableau structuré Factures (217 factures). Feuille <strong>Banque</strong> : les cellules à remplir sont en jaune. La feuille <strong>Contrôle</strong> vous dit, mission par mission, si c'est juste (✓) ou à revoir (✗).</p>
+
+<h4>Mission 1 – Le tableau mensuel (Banque B5:E13)</h4>
+<p><strong>Le besoin :</strong> pour chaque mois, le CA HT, le cumul depuis janvier et le taux de réalisation de l'objectif (CA ÷ objectif).</p>
+<details><summary>Un indice</summary><p>Les mois en A5:A13 sont de vraies dates (le 1er du mois). CA : <code>=SOMME.SI.ENS(Factures[Montant HT];Factures[Date];"&gt;="&amp;A5;Factures[Date];"&lt;="&amp;FIN.MOIS(A5;0))</code>. Cumul : <code>=SOMME($B$5:B5)</code>. Taux : <code>=B5/C5</code>, au format Pourcentage. Utilisez bien Factures[…] : à la mission 4, les nouvelles factures seront prises automatiquement.</p></details>
+
+<h4>Mission 2 – Le graphique pour la banque (non contrôlé)</h4>
+<p><strong>Le besoin :</strong> un seul graphique avec le CA en histogramme et le taux de réalisation en courbe. Le CA se compte en dizaines de milliers d'euros, le taux en pourcentage : sans réglage, la courbe serait écrasée au ras de l'axe.</p>
+<details><summary>Un indice</summary><p>Sélectionnez A4:B13, puis Ctrl+clic sur E4:E13. Insertion → Graphique combiné → CA HT en Histogramme groupé, Taux de réalisation en Courbe, cochez <strong>Axe secondaire</strong> pour le taux. Ajoutez un titre.</p></details>
+
+<h4>Mission 3 – Les cinq meilleurs clients (Clients B2:B…, puis Banque G5:H9)</h4>
+<p><strong>Le besoin :</strong> le CA de chaque client, puis les cinq plus gros clients de l'année et leur montant, avec un graphique en barres (non contrôlé).</p>
+<details><summary>Un indice</summary><p>Feuille Clients : <code>=SOMME.SI(Factures[Client];A2;Factures[Montant HT])</code>. Feuille Banque : <code>=GRANDE.VALEUR(Clients!$B$2:$B$…;1)</code> en H5 (2, 3, 4, 5 en dessous), et <code>=INDEX(Clients!$A$2:$A$…;EQUIV(H5;Clients!$B$2:$B$…;0))</code> en G5. Pour les barres : le plus gros client en haut, comme dans l'atelier.</p></details>
+
+<h4>Mission 4 – Les factures d'octobre</h4>
+<p><strong>Le besoin :</strong> les 15 factures du début octobre arrivent (feuille <strong>Octobre</strong>). Ajoutez-les, et ajoutez le mois d'octobre au tableau mensuel. Les calculs et le graphique doivent suivre sans retoucher aucune formule.</p>
+<details><summary>Un indice</summary><p>Collez les factures juste sous le tableau Factures. Transformez ensuite A4:E13 en tableau (Ctrl+L) : les formules deviennent des colonnes calculées. Tapez 01/10/2026 en A14 et 115000 en C14 : le tableau s'agrandit, B14, D14 et E14 se calculent, et le graphique s'étend s'il a été construit sur ce tableau.</p></details>
+
+<h4>Vérifier et se corriger</h4>
+<p>Ouvrez la feuille <strong>Contrôle</strong> : 4 ✓ sur 4, c'est gagné. Une formule ne sait pas lire un graphique : comparez vos deux graphiques avec le <strong>corrigé</strong>, sous cette page. Ouvrez-le seulement après avoir vraiment essayé.</p>

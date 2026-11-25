@@ -1,0 +1,29 @@
+$CATEGORY: $course$/K4-L1 Leçon
+
+::K4-L1 Leçon Q1::Quelle transition correspond à une réouverture ?{
+=De Résolu à En cours#Exact \: l'utilisateur signale que le problème est toujours là, le travail reprend. Revoyez la diapositive 5.
+~D'En attente à En cours#Non \: c'est une reprise, après la réponse de l'utilisateur. Revoyez la diapositive 5.
+~De Clos à Nouveau#Non \: un ticket ne redevient jamais Nouveau. Revoyez la diapositive 5.
+~D'En cours à En attente#Non \: c'est une mise en attente, le chrono s'arrête. Revoyez la diapositive 5.
+}
+
+::K4-L1 Leçon Q2::Quel intervalle sert de base au MTTA ?{
+=De l'ouverture à la prise en charge#Exact \: il mesure la réactivité du support. Revoyez la diapositive 7.
+~De l'ouverture à la résolution finale#Non \: celui-ci sert au MTTR. Revoyez la diapositive 7.
+~De la résolution à la clôture#Non \: celui-ci mesure la validation par l'utilisateur. Revoyez la diapositive 7.
+~De la 1re résolution à la résolution finale#Non \: celui-ci mesure le travail à refaire. Revoyez la diapositive 7.
+}
+
+::K4-L1 Leçon Q3::Un incident est résolu mardi, rouvert mercredi, puis de nouveau résolu jeudi. Quelle date d'arrivée retient le MTTR ?{
+=Jeudi, la résolution finale#Exact \: pour l'utilisateur, le service n'est rétabli que jeudi. Revoyez la diapositive 8.
+~Mardi, la 1re résolution#Non \: le problème était toujours là mercredi. Revoyez la diapositive 8.
+~Mercredi, la réouverture#Non \: la réouverture relance le travail, elle ne le termine pas. Revoyez la diapositive 8.
+~La date de clôture#Non \: la clôture mesure la validation, pas la réparation. Revoyez la diapositive 7.
+}
+
+::K4-L1 Leçon Q4::Un ticket passe à Résolu un lundi et à Clos le lundi suivant. Que mesure cette semaine ?{
+=Le temps de validation par l'utilisateur, pas le travail du support#Exact \: Résolu n'est pas Clos. Revoyez la diapositive 7.
+~Le temps de résolution du support#Non \: le support avait fini au statut Résolu. Revoyez la diapositive 7.
+~Le temps passé en attente#Non \: l'attente se situe avant la résolution. Revoyez la diapositive 9.
+~Le non-respect du SLA de résolution#Non \: le SLA s'arrête à la résolution. Revoyez la diapositive 7.
+}

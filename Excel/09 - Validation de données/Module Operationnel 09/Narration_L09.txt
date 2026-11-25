@@ -1,0 +1,46 @@
+Excel Opérationnel · Leçon 09 – Des données propres dès la saisie
+
+Diapositive 1 – Des données propres dès la saisie
+  NARRATEUR : Une faute de frappe dans une cellule, et un total qui devient faux sans prévenir. Dans cette leçon, vous allez apprendre à empêcher les erreurs au moment de la saisie, avec des listes déroulantes et des contrôles, puis à retrouver celles qui se sont déjà glissées dans le fichier.
+
+Diapositive 2 – Lundi : neuf devis ont disparu
+  SOPHIE : Karim, ta synthèse compte cinquante et un devis en janvier. J'en ai signé soixante, j'ai les dossiers sur mon bureau.
+  KARIM : Les formules sont justes, je les ai vérifiées. Mais Julie, Thomas et moi, on tape le statut chacun à notre façon. Acepté, Refuse, En atente : NB point SI ne reconnaît pas ces mots-là.
+
+Diapositive 3 – Une faute de frappe, un devis de moins
+  NARRATEUR : Regardez la colonne Statut. Acepté, avec un seul c. Refuse, sans accent. Ailleurs, accepté suivi d'une espace invisible, Acceptée, ou même OK. Pour vous, c'est le même mot. Pour NB point SI, ce sont des textes différents : ils ne sont pas comptés. Résultat : cinquante et un devis comptés sur soixante, et aucun message d'erreur. Les majuscules, elles, ne comptent pas. Mais une lettre, un accent ou une espace en trop, si.
+
+Diapositive 4 – Solution 1 : relire et corriger à la main
+  NARRATEUR : Sans l'outil, on corrige après coup. Relire les soixante lignes à l'œil : l'espace en trop ne se voit pas. Filtrer la colonne Statut pour voir toutes les variantes, puis les corriger une à une : ça marche, mais il faut recommencer chaque semaine, car rien n'empêche la prochaine faute. Ou afficher une note sur la colonne, « tapez Accepté, Refusé ou En attente » : personne ne la lit. Le problème n'est pas de corriger, c'est d'empêcher l'erreur à la saisie.
+
+Diapositive 5 – La validation des données : un portier
+  NARRATEUR : La validation des données, c'est un portier posé sur des cellules. Il vérifie chaque saisie avant de la laisser entrer. Une liste : seuls les mots prévus passent, choisis dans une liste déroulante. Un nombre : seulement entre telle et telle valeur. Une date : seulement dans une période. Si la saisie ne respecte pas la règle, Excel la refuse avec un message. Le portier ne contrôle que les nouvelles saisies : les erreurs déjà présentes restent, il faudra les retrouver.
+
+Diapositive 6 – Une liste déroulante pour le statut
+  NARRATEUR : Les trois statuts sont rangés dans une feuille Listes, en A2 à A4. Sélectionnez la colonne Statut, I2 à I61. Données, Validation des données. Autoriser : Liste. Source : égale Listes, point d'exclamation, dollar A dollar 2 deux-points dollar A dollar 4. OK. Chaque cellule affiche maintenant une petite flèche : on choisit au lieu de taper. On peut aussi écrire les choix directement dans Source, séparés par des points-virgules, mais une liste rangée dans une feuille est plus facile à faire évoluer.
+
+Diapositive 7 – Prévenir, puis refuser
+  NARRATEUR : Deux onglets complètent la règle. Message de saisie : une bulle qui s'affiche quand on clique dans la cellule, par exemple Choisissez le statut dans la liste. Alerte d'erreur : le message qui s'affiche quand la saisie est refusée. Trois styles : Arrêt refuse la saisie, Avertissement demande confirmation, Information prévient seulement. Pour un statut, choisissez Arrêt.
+
+Diapositive 8 – Retrouver les erreurs déjà présentes
+  NARRATEUR : La règle est posée, mais les neuf fautes sont toujours là. Données, flèche de Validation des données, Entourer les données non valides. Excel dessine un cercle rouge autour de chaque cellule qui ne respecte pas la règle. Corrigez-les avec la liste déroulante : les cercles disparaissent un à un. La synthèse revient à soixante devis : trente-neuf acceptés, dix-sept refusés, quatre en attente.
+
+Diapositive 9 – Des montants et des dates plausibles
+  NARRATEUR : La même méthode protège les nombres et les dates. Colonne Montant HT : Autoriser Décimal, supérieur à zéro. Entourez les données non valides : un devis à moins cinq mille deux cent quatre-vingt-dix euros apparaît, une faute de frappe. Colonne Date : Autoriser Date, comprise entre le premier janvier et le trente et un décembre deux mille vingt-six. Une date tapée 2062 au lieu de 2026 sera refusée.
+
+Diapositive 10 – Ce que la validation n'empêche pas
+  NARRATEUR : Le portier a deux points faibles. Un copier-coller depuis une autre cellule écrase la règle de validation : la saisie entre sans contrôle, et la cellule perd sa règle. Pour coller seulement des valeurs dans une colonne validée, utilisez le collage spécial. Et une règle posée sur I2 à I61 ne s'applique pas à la ligne 62 : posez-la sur toute la colonne, ou mieux, transformez la liste en tableau structuré, la règle suivra les nouvelles lignes.
+
+Diapositive 11 – Valider, filtrer, mettre en forme : qui fait quoi ?
+  NARRATEUR : Trois outils sont souvent confondus. La validation des données contrôle ce qu'on tape. Le filtre cache des lignes pour les examiner. La mise en forme conditionnelle colore des cellules selon leur valeur. Et la protection de la feuille empêche de modifier des cellules. Pour une liste déroulante, c'est toujours la validation des données.
+
+Diapositive 12 – Les pièges à éviter
+  NARRATEUR : Quelques pièges. Oublier les dollars dans la source : la liste glisse et devient vide en bas de la colonne. Sélectionner une seule cellule avant de poser la règle : seule cette cellule est protégée. Choisir le style Information : la mauvaise saisie passe quand même. Et croire que la validation a corrigé l'existant : il faut entourer les données non valides.
+
+Diapositive 13 – À retenir
+  NARRATEUR : Retenez. Données, Validation des données. Liste avec une source rangée dans une feuille, et des dollars. Décimal ou Date pour des valeurs plausibles. Un message de saisie pour guider, une alerte Arrêt pour refuser. Entourer les données non valides pour retrouver l'existant. Et attention au copier-coller, qui contourne la règle.
+
+Diapositive 14 – 60 devis, 60 comptés
+  SOPHIE : Soixante devis, enfin le bon compte.
+  KARIM : Et maintenant, plus personne ne peut taper Acepté.
+  NARRATEUR : Bravo. Passez maintenant à l'atelier : nettoyez et protégez la liste des devis de janvier.

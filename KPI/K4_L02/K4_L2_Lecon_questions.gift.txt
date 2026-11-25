@@ -1,0 +1,29 @@
+$CATEGORY: $course$/K4-L2 Leçon
+
+::K4-L2 Leçon Q1::Que mesure le MTTA ?{
+=Le délai moyen entre l'ouverture et la prise en charge#Exact \: c'est la réactivité du support. Revoyez la diapositive 5.
+~Le délai moyen entre l'ouverture et la résolution#Non \: c'est le MTTR. Revoyez la diapositive 6.
+~Le délai jusqu'au premier message à l'utilisateur#Non \: c'est le délai de 1re réponse. Revoyez la diapositive 7.
+~Le délai entre la résolution et la clôture#Non \: ce délai ne mesure pas le support (leçon 1). Revoyez la diapositive 5.
+}
+
+::K4-L2 Leçon Q2::Un outil envoie un accusé de réception automatique 10 secondes après l'ouverture. Que vaut le délai de 1re réponse ?{
+=Il reste à mesurer \: un message automatique n'est pas une réponse#Exact \: on attend le premier message humain. Revoyez la diapositive 7.
+~10 secondes#Non \: un accusé automatique ne compte pas. Revoyez la diapositive 7.
+~Il est égal au MTTA#Non \: ce sont deux délais distincts. Revoyez la diapositive 7.
+~Il est égal au MTTR#Non \: le MTTR va jusqu'à la résolution. Revoyez la diapositive 7.
+}
+
+::K4-L2 Leçon Q3::MTTR moyen 8,4 h, médian 4,6 h. Que pouvez-vous en conclure ?{
+=Quelques incidents très longs tirent la moyenne vers le haut#Exact \: la médiane décrit l'incident typique. Revoyez la diapositive 8.
+~La médiane est fausse#Non \: les deux chiffres sont justes. Revoyez la diapositive 8.
+~La plupart des incidents prennent plus de 8,4 h#Non \: deux sur trois sont plus rapides. Revoyez la diapositive 3.
+~Le MTTA est trop élevé#Non \: ces chiffres portent sur la résolution. Revoyez la diapositive 6.
+}
+
+::K4-L2 Leçon Q4::En août, le MTTR moyen et le MTTR médian augmentent tous les deux. Que faut-il en déduire ?{
+=C'est tout le service qui ralentit, pas seulement quelques cas#Exact \: quand les deux bougent ensemble, le changement est général. Revoyez la diapositive 9.
+~Quelques incidents extrêmes faussent le mois#Non \: dans ce cas, seule la moyenne bougerait. Revoyez la diapositive 9.
+~Il y a moins d'incidents#Non \: août compte 152 incidents, comme les autres mois. Revoyez la diapositive 9.
+~Le SLA est forcément respecté#Non \: les délais augmentent. Revoyez la diapositive 9.
+}

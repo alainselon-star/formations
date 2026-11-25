@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Power BI Atelier 01
+
+::P1 Importer::Étape 1 – Le classeur contient les feuilles Devis, Clients et Notes. Les données sont propres. Que faites-vous dans le Navigateur ?{
+=Cocher Devis et Clients, puis Charger#Exact \: seules les tables utiles, chargées directement.
+~Cocher les trois feuilles, puis Charger#Non \: Notes ne contient que du texte libre, elle alourdit le modèle pour rien.
+~Cocher Devis et Clients, puis Transformer les données#Possible, mais inutile \: Power Query sert à nettoyer, et les données sont déjà propres.
+}
+
+::P2 Carte::Étape 2 – Quel visuel affiche le CA total en un seul grand chiffre ?{
+=La carte#Exact \: elle met en avant une seule valeur.
+~Le segment#Non \: le segment filtre, il n'affiche pas de résultat.
+~La table#Non \: elle affiche des lignes de détail.
+}
+
+::P3 Somme::Étape 3 – Vous cochez Commercial puis Montant HT. Pourquoi Power BI additionne-t-il les montants sans formule ?{
+=Une colonne de nombres (Σ) est résumée par défaut en Somme#Exact \: c'est une mesure automatique, modifiable dans le volet Visualisations.
+~Parce que le classeur Excel contient déjà les totaux#Non \: Power BI calcule lui-même à partir des lignes.
+~Parce que le visuel est un graphique à barres#Non \: n'importe quel visuel résume une colonne de nombres.
+}
+
+::P4 Hiérarchie::Étape 4 – La courbe n'affiche que deux points, 2025 et 2026. Que faites-vous pour voir les mois ?{
+=Développer tout d'un niveau dans la hiérarchie, deux fois#Exact \: Année, puis Trimestre, puis Mois.
+~Changer le type de la colonne Date du devis en texte#Non \: on perdrait l'ordre chronologique et la hiérarchie.
+~Remplacer la courbe par une carte#Non \: une carte n'affiche qu'un seul chiffre.
+}
+
+::P5 Segment::Étape 5 – La commune n'est pas dans la table Devis. Pourquoi le segment Commune filtre-t-il quand même le CA ?{
+=Les tables Clients et Devis sont reliées par Code client#Exact \: la relation transmet le filtre des clients vers leurs devis.
+~Power BI recopie la commune dans la table Devis#Non \: rien n'est recopié, c'est la relation qui agit.
+~Le segment filtre le classeur Excel#Non \: le classeur n'est jamais modifié.
+}
+
+::P6 Vue Modèle::Étape 6 – Où voyez-vous comment les tables sont reliées ?{
+=Dans la vue Modèle#Exact \: elle dessine les tables et leurs relations.
+~Dans la vue Tableau#Non \: elle montre les lignes chargées d'une table.
+~Dans le volet Visualisations#Non \: il sert à construire les visuels.
+}
+
+::P7 Filtrage croisé::Étape 7 – Vous cliquez sur la barre Salle de bain. Dans le graphique des commerciaux, que signifie la partie foncée de chaque barre ?{
+=La part des salles de bain dans le CA de chaque commercial#Exact \: c'est la mise en surbrillance.
+~Le CA des devis signés#Non \: le statut n'intervient pas ici.
+~Les commerciaux qui n'ont pas vendu de salle de bain#Non \: la partie foncée montre la sélection.
+}
+
+::P8 Actualiser::Étape 8 – Vous avez ajouté un devis dans Excel, mais le rapport ne change pas. Que faites-vous ?{
+=Fermer le classeur, puis Accueil → Actualiser#Exact \: Power BI relit le classeur et recalcule tout.
+~Saisir le devis dans la vue Tableau#Non \: les données importées ne se modifient pas dans Power BI.
+~Recréer le rapport depuis le début#Non \: la connexion existe, il suffit d'actualiser.
+}

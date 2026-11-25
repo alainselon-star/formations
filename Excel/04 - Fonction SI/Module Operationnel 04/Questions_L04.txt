@@ -1,0 +1,31 @@
+MC
+10
+Un acompte de 30 % est demandé pour les devis de 3 000 € ou plus, rien en dessous. Le montant est en H4. Quelle formule écrire ?
+*=SI(H4>=3000;H4*30%;0) | Exact : le test, la valeur si vrai, la valeur si faux, séparés par des points-virgules.
+=SI(H4>3000;H4*30%;0) | Non : un devis de 3 000 € pile n'aurait pas d'acompte. « Ou plus » s'écrit >=.
+=SI(H4=>3000;H4*30%;0) | Non : => n'existe pas, on écrit >=.
+=SI(H4>=3000,H4*30%,0) | Non : dans un Excel français, les arguments se séparent par des points-virgules.
+
+MC
+10
+Thomas touche une prime si son chiffre d'affaires (B2) dépasse 50 000 € et si son taux de devis acceptés (C2) atteint au moins 30 %. Quelle formule affiche « Prime » dans ce cas ?
+*=SI(ET(B2>50000;C2>=30%);"Prime";"") | Exact : ET répond VRAI seulement si les deux conditions sont vraies, et SI choisit la réponse.
+=SI(OU(B2>50000;C2>=30%);"Prime";"") | Non : avec OU, une seule condition suffirait.
+=ET(B2>50000;C2>=30%;"Prime") | Non : ET répond seulement VRAI ou FAUX ; il faut un SI autour.
+=SI(B2>50000;C2>=30%;"Prime") | Non : le deuxième argument n'est pas une seconde condition, c'est la valeur si vrai.
+
+MC
+10
+Une formule affiche #NOM?. Elle s'écrit =SI(I4=En attente;"Relancer";""). Que faut-il corriger ?
+*Mettre En attente entre guillemets | Exact : un texte dans une formule s'écrit toujours entre guillemets droits.
+Remplacer les points-virgules par des virgules | Non : dans un Excel français, ce sont bien des points-virgules.
+Supprimer les deux guillemets "" | Non : "" veut dire « rien », c'est correct.
+Élargir la colonne | Non : #NOM? n'est pas un problème d'affichage.
+
+MC
+10
+Pour classer les devis en Petit (moins de 1 500 €), Moyen (moins de 5 000 €) et Gros, quelle formule est correcte ?
+*=SI(H4<1500;"Petit";SI(H4<5000;"Moyen";"Gros")) | Exact : trois réponses, deux SI, en partant du plus petit seuil.
+=SI(H4<5000;"Moyen";SI(H4<1500;"Petit";"Gros")) | Non : tout montant sous 1 500 € est déjà sous 5 000 € ; « Petit » n'apparaîtrait jamais.
+=SI(H4<1500;"Petit";"Moyen";"Gros") | Non : SI n'accepte que trois arguments.
+=SI(H4<1500;"Petit");SI(H4<5000;"Moyen";"Gros") | Non : le second SI doit se placer à l'intérieur du premier.

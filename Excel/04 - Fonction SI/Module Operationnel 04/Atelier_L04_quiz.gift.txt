@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Atelier 04
+
+::J1 Arguments::Étape 1 – Dans quel ordre la fonction SI attend-elle ses arguments ?{
+=Le test, la valeur si vrai, la valeur si faux#Exact \: toujours dans cet ordre, séparés par des points-virgules.
+~La valeur si vrai, le test, la valeur si faux#Non \: le test vient en premier.
+~Le test, la valeur si faux, la valeur si vrai#Non \: la valeur si vrai vient avant.
+}
+
+::J2 Seuil::Étape 1 – Un devis de 3 000 € pile n'a pas d'acompte alors que la règle dit « 3 000 € ou plus ». Quel signe faut-il corriger ?{
+=Remplacer > par >\=#Exact \: >\= inclut la valeur du seuil.
+~Remplacer > par <#Non \: cela inverserait la règle.
+~Remplacer > par \=>#Non \: cette écriture n'existe pas dans Excel.
+}
+
+::J3 Dollars::Étape 2 – La formule utilise le seuil en O3. Recopiée, elle donne 0 partout sauf sur la première ligne. Pourquoi ?{
+=O3 n'est pas bloqué par des $ et glisse vers des cellules vides#Exact \: il faut $O$3 (touche F4).
+~Le seuil est trop élevé#Non \: la première ligne est juste.
+~SI ne peut pas utiliser une cellule comme seuil#Non \: c'est même recommandé.
+}
+
+::J4 Fige::Étape 3 – Pourquoi une décision écrite avec SI est-elle plus sûre qu'un 0 tapé à la main ?{
+=Elle se refait automatiquement quand un montant change#Exact \: le tableau réfléchit à chaque modification.
+~Elle est plus rapide à imprimer#Non \: l'impression n'y change rien.
+~Elle empêche de modifier les montants#Non \: les montants restent modifiables.
+}
+
+::J5 Texte::Étape 4 – Que signifient les deux guillemets collés "" à la fin de \=SI(I4\="En attente";"Relancer";"") ?{
+=N'affiche rien#Exact \: la cellule paraît vide.
+~Affiche deux guillemets#Non \: "" veut dire « rien ».
+~Recopie le statut#Non \: il faudrait écrire I4.
+}
+
+::J6 ET::Étape 5 – Quand ET(H4>\=$O$3;I4\="Accepté") répond-il VRAI ?{
+=Quand le montant atteint le seuil ET que le devis est accepté#Exact \: toutes les conditions doivent être vraies.
+~Quand l'une des deux conditions est vraie#Non \: c'est le comportement de OU.
+~Quand le montant est inférieur au seuil#Non \: le test demande « supérieur ou égal ».
+}
+
+::J7 Ordre::Étape 6 – Pourquoi \=SI(H4<5000;"Moyen";SI(H4<1500;"Petit";"Gros")) n'affiche-t-elle jamais « Petit » ?{
+=Tout montant sous 1 500 € est déjà sous 5 000 € et reçoit « Moyen »#Exact \: on teste d'abord le plus petit seuil.
+~Parce que « Petit » est entre guillemets#Non \: un texte doit être entre guillemets.
+~Parce qu'il manque un troisième SI#Non \: deux SI suffisent pour trois réponses.
+}
+
+::J8 Erreur::Étape 4 – Une formule SI affiche #NOM?. Quelle est la cause la plus probable ?{
+=Un texte écrit sans guillemets#Exact \: Excel le prend pour un nom qu'il ne connaît pas.
+~Une colonne trop étroite#Non \: elle afficherait des dièses.
+~Un montant égal au seuil#Non \: le test répondrait simplement VRAI.
+}

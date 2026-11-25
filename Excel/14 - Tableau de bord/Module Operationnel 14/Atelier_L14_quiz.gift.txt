@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Atelier 14
+
+::T1 Etoile::Mission 1 – Pourquoi B4 vaut-il * quand Sophie choisit « Tous » ?{
+=Dans un critère NB.SI.ENS ou SOMME.SI.ENS, * accepte n'importe quel texte#Exact \: une seule formule sert pour Tous et pour chaque commercial.
+~Parce que * multiplie les résultats des deux commerciaux#Non \: dans un critère, * est un caractère générique.
+~Parce qu'un commercial s'appelle Tous dans la liste#Non \: aucun devis n'a « Tous » comme commercial.
+}
+
+::T2 Liste::Mission 1 – Comment Sophie choisit-elle le commercial en B3 ?{
+=Avec une liste déroulante (Validation des données, Liste, source \=Listes!$A$2\:$A$4)#Exact \: elle ne peut choisir qu'une valeur prévue.
+~En tapant le nom dans chaque formule#Non \: le tableau de bord ne suivrait pas.
+~Avec un filtre sur la feuille Devis#Non \: le filtre ne change pas les formules du tableau de bord.
+}
+
+::T3 Suivre::Mission 2 – Pourquoi les formules utilisent-elles $B$4 plutôt que "Julie" ?{
+=Pour que les indicateurs suivent le choix fait en B3#Exact \: on change B3, tout se recalcule.
+~Pour que la formule soit plus courte#Non \: l'intérêt est que le résultat suive le sélecteur.
+~Parce que NB.SI.ENS refuse un texte en critère#Non \: un texte est accepté, mais il serait figé.
+}
+
+::T4 Taux::Mission 3 – Comment calcule-t-on le taux de transformation ?{
+=Nombre de devis acceptés ÷ nombre de devis#Exact \: la part des devis qui sont signés.
+~CA accepté ÷ nombre de devis#Non \: ça donne un montant moyen, pas un taux.
+~Nombre de devis ÷ nombre de devis acceptés#Non \: la division est à l'envers.
+}
+
+::T5 SIERREUR::Mission 3 – Pourquoi entourer la division par SIERREUR(…;0) ?{
+=Pour afficher 0 au lieu de #DIV/0! quand il n'y a aucun devis\#Exact \: le tableau reste propre quel que soit le choix.
+~Pour arrondir le taux#Non \: c'est ARRONDI ou le format.
+~Pour que la formule suive le sélecteur#Non \: c'est le rôle de $B$4.
+}
+
+::T6 Mois::Mission 4 – Pour le CA de mars, quels critères de date utilise SOMME.SI.ENS ?{
+=">\="&A15 et "<\="&FIN.MOIS(A15;0), avec A15 \= 01/03/2026#Exact \: du premier au dernier jour du mois.
+~"\=mars"#Non \: la colonne contient des dates, pas des noms de mois.
+~">"&A15 seulement#Non \: il faut aussi une borne de fin, sinon tous les mois suivants sont comptés.
+}
+
+::T7 Ecart::Mission 5 – Comment obtenir « ▲ Objectif atteint » ou « ▼ Sous l'objectif » ?{
+=Avec \=SI(E8>\=0;"▲ Objectif atteint";"▼ Sous l'objectif")#Exact \: l'indicateur dépend du signe de l'écart.
+~Avec \=RECHERCHEX(E8;…)#Non \: RECHERCHEX cherche une valeur dans une liste.
+~En tapant le texte à la main#Non \: il ne suivrait pas le sélecteur.
+}
+
+::T8 Meilleur::Mission 6 – B27 contient \=MAX(B13\:B24). Comment retrouver le mois correspondant ?{
+=Avec \=RECHERCHEX(B27;B13\:B24;A13\:A24)#Exact \: on cherche le montant et on renvoie le mois, à gauche.
+~Avec \=MAX(A13\:A24)#Non \: ça donne le dernier mois de l'année.
+~Avec \=RECHERCHEV(B27;A13\:B24;1;FAUX)#Non \: RECHERCHEV chercherait le montant dans la colonne des mois.
+}

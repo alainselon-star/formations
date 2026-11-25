@@ -1,0 +1,36 @@
+<h3>Atelier 09 – Des données propres dès la saisie, à vous de jouer (20 min)</h3>
+<p>La synthèse de Karim compte 51 devis en janvier, alors que Sophie en a signé 60. Vous allez trouver les fautes de frappe, les corriger, et empêcher qu'elles reviennent.</p>
+<p><strong>Fichier :</strong> votre copie de <em>Excel_9_Validation_donnees_devis.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Devis</strong> (60 devis, lignes 2 à 61), <strong>Listes</strong> (les valeurs autorisées) et <strong>Synthèse</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie que vous avez compris chaque geste.</p>
+
+<h4>Étape 1 – Constater le problème</h4>
+<p><strong>Faites :</strong> ouvrez la feuille Synthèse.</p>
+<p><strong>Vous devez voir :</strong> Accepté 35, Refusé 14, En attente 2 : Total compté 51, alors que la liste contient 60 devis.</p>
+<p><strong>Pourquoi :</strong> NB.SI ne compte que le texte exact (les majuscules exceptées). « Acepté », « Refuse » ou « accepté » suivi d'une espace ne sont pas comptés.</p>
+
+<h4>Étape 2 – La liste déroulante</h4>
+<p><strong>Faites :</strong> feuille Devis, sélectionnez I2:I61. Données → <strong>Validation des données</strong>. Autoriser : <strong>Liste</strong>. Source : <code>=Listes!$A$2:$A$4</code> → OK.</p>
+<p><strong>Vous devez voir :</strong> une petite flèche quand vous cliquez dans une cellule de la colonne Statut, avec les trois statuts.</p>
+<p><strong>Si ça ne marche pas :</strong> la liste est vide plus bas dans la colonne ? Il manque les $ dans la source.</p>
+
+<h4>Étape 3 – Guider et refuser</h4>
+<p><strong>Faites :</strong> I2:I61 toujours sélectionné, rouvrez la Validation des données. Onglet <strong>Message de saisie</strong> : « Choisissez le statut dans la liste ». Onglet <strong>Alerte d'erreur</strong> : style Arrêt, message « Statut inconnu : utilisez la liste » → OK. Tapez « Acepté » en I2.</p>
+<p><strong>Vous devez voir :</strong> la bulle d'aide en cliquant dans la cellule, puis votre message d'erreur : la saisie est refusée. Cliquez sur Annuler.</p>
+
+<h4>Étape 4 – Entourer les erreurs déjà présentes</h4>
+<p><strong>Faites :</strong> Données → flèche de Validation des données → <strong>Entourer les données non valides</strong>.</p>
+<p><strong>Vous devez voir :</strong> 9 cercles rouges dans la colonne Statut (par exemple I5 « Acepté », I10 « Refuse », I49 « OK »).</p>
+<p><strong>Pourquoi :</strong> la règle ne contrôle que les nouvelles saisies ; les fautes déjà présentes restent en place.</p>
+
+<h4>Étape 5 – Corriger avec la liste</h4>
+<p><strong>Faites :</strong> pour chaque cellule entourée, choisissez le bon statut dans la liste (« Acepté », « accepté », « Acceptée » et « OK » → Accepté ; « Refuse » et « Refusé » suivi d'une espace → Refusé ; « En atente » et « en attente » → En attente). Revenez sur Synthèse.</p>
+<p><strong>Vous devez voir :</strong> les cercles disparaissent un à un ; la synthèse affiche Accepté 39, Refusé 17, En attente 4, Total compté 60.</p>
+
+<h4>Étape 6 – Des montants positifs</h4>
+<p><strong>Faites :</strong> sélectionnez H2:H61. Validation des données : Autoriser <strong>Décimal</strong>, Données : supérieure à, Minimum : 0 → OK. Puis Entourer les données non valides.</p>
+<p><strong>Vous devez voir :</strong> un cercle en H31 : le devis D-2026-030 à −5 290 €. Corrigez-le en 5 290.</p>
+
+<h4>Étape 7 – Le point faible</h4>
+<p><strong>Faites :</strong> tapez OK dans une cellule libre (K2), copiez-la, puis collez-la en I3. Cliquez ensuite sur I3.</p>
+<p><strong>Vous devez voir :</strong> le collage est passé sans aucun message, et I3 n'a plus de flèche : elle a perdu sa règle. Même « Entourer les données non valides » ne la signale plus. Annulez avec Ctrl+Z, puis effacez K2.</p>
+<p><strong>Pourquoi :</strong> le copier-coller contourne et écrase la validation. Pour coller dans une colonne validée, utilisez Collage spécial → Valeurs, puis relancez « Entourer les données non valides ».</p>

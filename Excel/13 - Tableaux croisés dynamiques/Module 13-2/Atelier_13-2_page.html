@@ -1,0 +1,37 @@
+<h3>Atelier 13.2 – D'autres chiffres</h3>
+<p>Sophie veut savoir quel type de travaux fait les plus grosses factures, en moyenne et au maximum, puis la part de chacun dans le chiffre d'affaires. Vous allez répondre avec un seul tableau croisé, en changeant ce que calcule la zone Valeurs.</p>
+<p><strong>Fichier :</strong> votre copie de <em>Excel_13_TCD_factures_2026.xlsx</em> (le même fichier qu'au module 13.1, à télécharger juste sous cette page), feuille Factures. <strong>Durée :</strong> 20 minutes.</p>
+<p>Notez vos résultats au fur et à mesure : le quiz de contrôle, en bas de la section, vous les demande.</p>
+
+<h4>Étape 1 – Repartir du tableau des sommes</h4>
+<p><strong>Faites :</strong> cliquez dans la liste, Insertion → Tableau croisé dynamique → OK. Faites glisser Type de travaux dans Lignes et Montant HT dans Valeurs.</p>
+<p><strong>Vous devez voir :</strong> « Somme de Montant HT » : Carrelage 160540, Électricité 175630, Menuiserie 245440, Peinture 271330, Plomberie 323410, Total général 1176350.</p>
+<p><strong>Si ça ne marche pas :</strong> vous lisez « Nombre de Montant HT » ? Vous n'êtes pas sur le bon fichier : reprenez une copie propre de factures_2026.</p>
+
+<h4>Étape 2 – La facture moyenne</h4>
+<p><strong>Faites :</strong> clic droit sur un nombre du tableau → Synthétiser les valeurs par → Moyenne.</p>
+<p><strong>Vous devez voir :</strong> le titre devient « Moyenne de Montant HT ». Total général : 3921,17 (avec beaucoup de décimales pour l'instant). C'est la moyenne de la barre d'état quand vous sélectionnez la colonne G de la liste.</p>
+<p><strong>Si ça ne marche pas :</strong> le menu ne propose pas Synthétiser les valeurs par ? Vous avez fait le clic droit sur un nom (Carrelage…) : refaites-le sur un nombre.</p>
+
+<h4>Étape 3 – La plus grosse facture</h4>
+<p><strong>Faites :</strong> faites glisser une deuxième fois Montant HT dans Valeurs. Clic droit sur un nombre de la nouvelle colonne → Synthétiser les valeurs par → Max.</p>
+<p><strong>Vous devez voir :</strong> deux colonnes côte à côte, « Moyenne de Montant HT » et « Max de Montant HT ». Max : Carrelage 6150, Électricité 6800, Menuiserie 10570, Peinture 5630, Plomberie 8440.</p>
+<p><strong>Si ça ne marche pas :</strong> la première colonne est passée en Max elle aussi ? Vous avez fait le clic droit dans la mauvaise colonne : remettez-la sur Moyenne.</p>
+
+<h4>Étape 4 – Des euros lisibles</h4>
+<p><strong>Faites :</strong> clic droit sur un nombre de chaque colonne → Paramètres des champs de valeurs… → Format de nombre → Monétaire, 2 décimales, symbole € → OK → OK.</p>
+<p><strong>Vous devez voir :</strong> 3 921,17 € et 10 570,00 € sur la ligne Total général.</p>
+<p><strong>Si ça ne marche pas :</strong> vous avez utilisé l'onglet Accueil ? Le format peut disparaître quand le tableau change. Passez par les Paramètres des champs de valeurs.</p>
+
+<h4>Étape 5 – La part de chaque type, en pourcentage</h4>
+<p><strong>Faites :</strong> retirez « Max de Montant HT » de la zone Valeurs (faites-le glisser hors du volet). Remettez la première colonne sur Somme (Synthétiser les valeurs par → Somme). Clic droit sur un montant → Trier → Trier du plus grand au plus petit. Faites glisser encore une fois Montant HT dans Valeurs. Clic droit sur un nombre de cette nouvelle colonne → Afficher les valeurs → % du total général.</p>
+<p><strong>Vous devez voir :</strong> une colonne « Somme de Montant HT2 » : Plomberie 27,49 %, Peinture 23,07 %, Menuiserie 20,86 %, Électricité 14,93 %, Carrelage 13,65 %, Total général 100,00 %.</p>
+<p><strong>Si ça ne marche pas :</strong> toute la colonne affiche 100 % ? Vous avez choisi « % du total de la ligne ». Recommencez avec « % du total général ».</p>
+
+<h4>Étape 6 – Un champ texte dans Valeurs</h4>
+<p><strong>Faites :</strong> faites glisser Client dans la zone Valeurs.</p>
+<p><strong>Vous devez voir :</strong> « Nombre de Client » : Carrelage 43, Électricité 53, Menuiserie 42, Peinture 87, Plomberie 75, Total général 300.</p>
+<p><strong>Si ça ne marche pas :</strong> Client est parti dans Lignes ? Vous l'avez coché au lieu de le faire glisser : déplacez-le de Lignes vers Valeurs.</p>
+<p><strong>Pourquoi :</strong> Karim n'a que 34 clients. Excel ne compte pas les clients différents : il compte les lignes, donc les factures.</p>
+
+<p>Fermez votre copie sans l'enregistrer, puis faites le quiz de contrôle.</p>

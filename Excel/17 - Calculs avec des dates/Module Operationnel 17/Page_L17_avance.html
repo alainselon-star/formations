@@ -1,0 +1,38 @@
+<h3>Pour aller plus loin – Le suivi des factures de Sophie (facultatif, 30 à 45 min)</h3>
+<p>Vous avez réussi l'atelier ? Ce défi combine ce que vous savez sur les dates avec SI, NB.SI et SOMME.SI. Il se fait dans le <strong>vrai Excel</strong>, sur un fichier à télécharger, et il est <strong>moins guidé</strong> : à vous de choisir les formules.</p>
+<p><strong>Le contexte :</strong> Sophie veut suivre les 60 factures de l'été et de l'automne : quand chacune doit être payée, lesquelles sont en retard, et de combien. Pour que la correction soit la même pour tous, la date d'analyse est fixée au <strong>30/11/2026</strong>, dans la feuille Synthèse (cellule C2).</p>
+<p><strong>Le fichier :</strong> <em>Excel_17_avance_suivi_factures.xlsx</em>, juste sous cette page. Les cellules à remplir sont en jaune. La feuille <strong>Contrôle</strong> vous dit, mission par mission, si votre réponse est juste (✓) ou à revoir (✗).</p>
+
+<h4>Mission 1 – Les échéances</h4>
+<p><strong>Le besoin :</strong> chaque facture a ses conditions de paiement (colonne E). La règle de l'Atelier Martin :</p>
+<ul><li>« 30 jours » : date de facture + 30 jours ;</li><li>« 60 jours » : date de facture + 60 jours ;</li><li>« 45 jours fin de mois » : date de facture + 45 jours, puis <strong>dernier jour de ce mois-là</strong>.</li></ul>
+<p><strong>Où :</strong> feuille Factures, colonne F « Échéance ».</p>
+<details><summary>Un indice</summary><p>Deux SI emboîtés pour choisir la règle. Pour le dernier jour d'un mois, une fonction de date : FIN.MOIS(date;0).</p></details>
+
+<h4>Mission 2 – Les jours de retard</h4>
+<p><strong>Le besoin :</strong> à la date d'analyse, de combien de jours chaque facture est-elle en retard ? Une facture pas encore échue affiche 0, pas un nombre négatif.</p>
+<p><strong>Où :</strong> colonne G « Jours de retard ». La date d'analyse est dans une autre feuille, et elle ne doit pas bouger quand vous recopiez.</p>
+<details><summary>Un indice</summary><p>Date d'analyse moins échéance, avec une référence absolue vers Synthèse!$C$2. Pour ne jamais descendre sous 0 : MAX(0;…).</p></details>
+
+<h4>Mission 3 – La tranche de retard</h4>
+<p><strong>Le besoin :</strong> classer chaque facture : « Non échu » (0 jour), « 1 à 30 j », « 31 à 60 j » ou « Plus de 60 j ». Écrivez les textes exactement ainsi.</p>
+<p><strong>Où :</strong> colonne H « Tranche de retard ».</p>
+<details><summary>Un indice</summary><p>Trois SI emboîtés, en testant les seuils dans l'ordre : 0, puis 30, puis 60.</p></details>
+
+<h4>Mission 4 – Le tableau des tranches</h4>
+<p><strong>Le besoin :</strong> pour chaque tranche, le nombre de factures et leur montant TTC total.</p>
+<p><strong>Où :</strong> feuille Synthèse, cellules B5 à C8. Écrivez une formule en B5 et une en C5, puis recopiez-les vers le bas.</p>
+<details><summary>Un indice</summary><p>NB.SI et SOMME.SI, avec le libellé de la tranche en colonne A comme critère. Pensez aux $ sur les plages pour la recopie.</p></details>
+
+<h4>Mission 5 – L'argent attendu en décembre</h4>
+<p><strong>Le besoin :</strong> le montant TTC des factures dont l'échéance tombe en décembre 2026.</p>
+<p><strong>Où :</strong> Synthèse, cellule C11.</p>
+<details><summary>Un indice</summary><p>SOMME.SI.ENS avec deux critères sur la même colonne d'échéances : à partir du 01/12/2026 et jusqu'au 31/12/2026. Un critère de date s'écrit par exemple ">="&amp;DATE(2026;12;1).</p></details>
+
+<h4>Mission 6 – Le retard moyen</h4>
+<p><strong>Le besoin :</strong> le retard moyen, en jours, des seules factures en retard (les factures non échues ne comptent pas).</p>
+<p><strong>Où :</strong> Synthèse, cellule C12.</p>
+<details><summary>Un indice</summary><p>Une moyenne avec une condition : MOYENNE.SI, sur les jours de retard supérieurs à 0.</p></details>
+
+<h4>Vérifier et se corriger</h4>
+<p>Ouvrez la feuille <strong>Contrôle</strong> : 6 ✓ sur 6, c'est gagné. Bloqué ? Le <strong>corrigé</strong>, sous cette page, contient toutes les formules. Ouvrez-le seulement après avoir vraiment essayé.</p>

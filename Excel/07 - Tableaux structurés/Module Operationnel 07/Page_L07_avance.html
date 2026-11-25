@@ -1,0 +1,25 @@
+<h3>Pour aller plus loin – Le journal des encaissements (facultatif, 30 min)</h3>
+<p>Vous avez réussi l'atelier ? Ce défi se fait dans le <strong>vrai Excel</strong>, sur un fichier à télécharger. Il est <strong>moins guidé</strong>. Les factures sont émises, mais sont-elles payées ? Karim tient un journal des encaissements reçus. Sophie veut savoir, facture par facture et commercial par commercial, ce qui reste à encaisser. Vous allez faire travailler <strong>deux tableaux ensemble</strong>.</p>
+<p><strong>Le fichier :</strong> <em>Excel_7_avance_encaissements.xlsx</em>, juste sous cette page. Feuille <strong>Factures</strong> : le tableau Factures de l'atelier, avec ses 219 factures. Feuille <strong>Encaissements</strong> : le journal, encore en plage ordinaire. Feuille <strong>Récap</strong> : les cellules à remplir sont en jaune. La feuille <strong>Contrôle</strong> vous dit, mission par mission, si c'est juste (✓) ou à revoir (✗).</p>
+
+<h4>Mission 1 – Le journal devient un tableau</h4>
+<p><strong>Le besoin :</strong> transformez le journal de la feuille Encaissements en tableau, et nommez-le <strong>Encaissements</strong>.</p>
+<details><summary>Un indice</summary><p>Comme dans l'atelier : un clic dans la liste, Ctrl+L, puis Création de tableau → Nom du tableau. La feuille Contrôle ne peut pas voir si un tableau existe : les missions suivantes le vérifient pour vous.</p></details>
+
+<h4>Mission 2 – Encaissé et reste à encaisser (Factures, colonnes L et M)</h4>
+<p><strong>Le besoin :</strong> dans le tableau Factures, une colonne <strong>Encaissé</strong> (L) avec le total reçu pour chaque facture (certaines ont été payées en deux fois), puis une colonne <strong>Reste à encaisser</strong> (M).</p>
+<details><summary>Un indice</summary><p>Tapez les titres en L1 et M1 : le tableau s'agrandit. En L2, SOMME.SI va chercher dans l'autre tableau : <code>=SOMME.SI(Encaissements[N° facture];[@[N° facture]];Encaissements[Montant])</code>. En M2 : <code>=[@[Montant TTC]]-[@Encaissé]</code>. Une seule formule par colonne : le tableau la recopie.</p></details>
+
+<h4>Mission 3 – Le suivi par commercial (Récap B5:D7)</h4>
+<p><strong>Le besoin :</strong> pour Julie, Thomas et Sophie, le montant facturé TTC, l'encaissé et le reste à encaisser.</p>
+<details><summary>Un indice</summary><p><code>=SOMME.SI(Factures[Commercial];A5;Factures[Montant TTC])</code>, puis la même chose avec <code>Factures[Encaissé]</code> et <code>Factures[Reste à encaisser]</code>. Recopiez vers le bas.</p></details>
+
+<h4>Mission 4 – Les encaissements d'octobre</h4>
+<p><strong>Le besoin :</strong> 8 nouveaux paiements sont arrivés (feuille <strong>À ajouter</strong>). Ajoutez-les au journal. Sans toucher à aucune formule, les colonnes L et M et le récap doivent se mettre à jour.</p>
+<details><summary>Un indice</summary><p>Copiez A4:C11, puis collez <strong>juste sous</strong> la dernière ligne du tableau Encaissements. Si la mission 2 repasse à ✗, des lignes sont restées hors du tableau : une ligne vide les sépare.</p></details>
+
+<h4>Bonus non contrôlé – Un segment</h4>
+<p>Cliquez dans le tableau Factures, puis Création de tableau → <strong>Insérer un segment</strong> → Commercial. Un clic sur un nom filtre le tableau.</p>
+
+<h4>Vérifier et se corriger</h4>
+<p>Ouvrez la feuille <strong>Contrôle</strong> : 4 ✓ sur 4, c'est gagné. Les missions 2 et 3 demandent des références structurées : une formule juste mais écrite avec des adresses comme B2:B220 reste à ✗. Le <strong>corrigé</strong>, sous cette page, contient les deux tableaux et toutes les formules. Ouvrez-le seulement après avoir vraiment essayé.</p>

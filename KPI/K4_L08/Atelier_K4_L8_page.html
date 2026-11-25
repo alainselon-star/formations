@@ -1,0 +1,25 @@
+<h3>Atelier 08 – Synthèse transverse, à vous de jouer (20 min)</h3>
+<p>Hélène veut une seule page pour le comité de direction. Vous allez construire le tableau de bord mensuel du semestre, qui croise incidents, problèmes et changements, puis dire, pour six situations, quel rôle agit en premier.</p>
+<p><strong>Fichier :</strong> votre copie de <em>K4_L8_Atelier_Valdor.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Incidents</strong> (856 incidents, table T_Incidents), <strong>Tableau de bord</strong> et <strong>Rôles</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie chaque étape. Chaque erreur vous renvoie à la diapositive de la leçon à revoir.</p>
+
+<h4>Étape 1 – Le service vécu et la qualité, mois par mois</h4>
+<p><strong>Faites :</strong> feuille Tableau de bord, en B5, <code>=NB.SI(T_Incidents[Mois];A5)</code>. En C5, le MTTR médian : <code>=MEDIANE(SI(T_Incidents[Mois]=A5;T_Incidents[Résolution (min)]))/60</code>. En D5, <code>=NB.SI.ENS(T_Incidents[Mois];A5;T_Incidents[SLA résolution respecté];"Oui")/B5</code>. En E5, la même formule avec <em>Réouvert</em>. En F5, <code>=MOYENNE.SI(T_Incidents[Mois];A5;T_Incidents[Satisfaction])</code>.</p>
+<p><strong>Vous devez voir :</strong> en août, 152 incidents, 6,4 h de MTTR médian, 82 % de SLA ; en septembre, 96 % de SLA mais 2,9 de satisfaction et 16 % de réouvertures.</p>
+<p><strong>Pourquoi :</strong> août est un problème de charge (congés). Septembre et octobre sont un problème de qualité : le SLA est bon, mais les tickets reviennent et les utilisateurs sont mécontents.</p>
+<p><strong>Si ça ne marche pas :</strong> la médiane renvoie une erreur ? Validez avec <em>Ctrl+Maj+Entrée</em> dans les anciennes versions d'Excel. Revoyez la synthèse (leçon, diapositive 9).</p>
+
+<h4>Étape 2 – Les causes, mois par mois</h4>
+<p><strong>Faites :</strong> en G5, <code>=NB.SI.ENS(T_Incidents[Mois];A5;T_Incidents[Problème lié];"&lt;&gt;")/B5</code>. En H5, la même formule avec <em>Changement lié</em>. Recopiez B5:H5 jusqu'à la ligne 10. En H13, la part des incidents d'origine connue : <code>=(NB.SI(T_Incidents[Problème lié];"&lt;&gt;")+NB.SI(T_Incidents[Changement lié];"&lt;&gt;"))/NBVAL(T_Incidents[N° ticket])</code>.</p>
+<p><strong>Vous devez voir :</strong> la part liée à un problème tombe de 34 % en septembre à 11 % en octobre ; la part causée par un changement va de 12 % à 19 % ; 41 % des incidents ont une origine connue.</p>
+<p><strong>Pourquoi :</strong> on peut additionner les deux comptages, car aucun incident de Valdor n'est lié à la fois à un problème et à un changement. Quatre incidents sur dix ont une cause qu'on peut supprimer.</p>
+<p><strong>Si ça ne marche pas :</strong> revoyez les KPI croisés (leçon, diapositive 5).</p>
+
+<h4>Étape 3 – Qui agit en premier ?</h4>
+<p><strong>Faites :</strong> feuille Rôles, pour chacune des six situations, choisissez dans la liste le rôle concerné en premier : Technicien, Team leader, Incident Manager, Problem Manager, Change Manager ou Delivery Manager.</p>
+<p><strong>Vous devez voir :</strong> six coches ✓, avec six rôles différents.</p>
+<p><strong>Pourquoi :</strong> les mêmes chiffres appellent des actions différentes selon le rôle. Un pic récurrent concerne d'abord le Problem Manager, un pic au lendemain des mises en production le Change Manager, et un SLA vert avec des clients mécontents le Delivery Manager.</p>
+<p><strong>Si ça ne marche pas :</strong> revoyez les six rôles et les cas graphiques (leçon, diapositives 6 à 8).</p>
+
+<h4>Pour aller plus loin</h4>
+<p>Rédigez en trois phrases le message d'Hélène au comité de direction, en citant un chiffre de chaque bloc : service vécu, qualité et causes.</p>

@@ -1,0 +1,52 @@
+$CATEGORY: $course$/K1-L2 Atelier
+
+::K1L2-A1 Temporel::Étape 1 – « Atteindre une satisfaction moyenne de 4,2 sur 5 ». Quel critère SMART manque le plus ?{
+=Temporel#Exact \: ni échéance ni rythme de mesure. Pour quand, et vérifié quand ?
+~Mesurable#Non \: 4,2 sur 5 est bien un chiffre mesurable. Revoyez la diapositive 5 (K1-L2-S1).
+~Spécifique#Non \: la satisfaction moyenne est une mesure précise. Revoyez la diapositive 5 (K1-L2-S1).
+~Atteignable#Non \: 4,2 est exigeant mais plausible. Revoyez la diapositive 5 (K1-L2-S1).
+}
+
+::K1L2-A2 Atteignable::Étape 1 – « Résoudre 100 % des incidents en moins de 15 minutes, chaque mois, dès janvier 2027 ». Quel critère SMART manque le plus ?{
+=Atteignable#Exact \: certains incidents demandent des heures ; une cible impossible décourage l'équipe.
+~Temporel#Non \: « chaque mois, dès janvier 2027 » fixe le rythme et l'échéance. Revoyez la diapositive 5 (K1-L2-S1).
+~Mesurable#Non \: 100 % en moins de 15 minutes se mesure. Revoyez la diapositive 5 (K1-L2-S1).
+~Spécifique#Non \: les incidents et le délai sont précisés. Revoyez la diapositive 5 (K1-L2-S1).
+}
+
+::K1L2-A3 Spécifique::Étape 1 – « Améliorer le support avec un taux de 90 %, mesuré chaque mois dès janvier 2027 ». Quel critère SMART manque le plus ?{
+=Spécifique#Exact \: un taux de quoi ? Rien ne dit ce qui est mesuré.
+~Mesurable#Non \: un taux de 90 % est un chiffre ; c'est l'objet du taux qui manque. Revoyez la diapositive 5 (K1-L2-S1).
+~Temporel#Non \: le rythme et l'échéance sont donnés. Revoyez la diapositive 5 (K1-L2-S1).
+~Atteignable#Non \: on ne peut même pas juger, faute de savoir ce qui est mesuré. Revoyez la diapositive 5 (K1-L2-S1).
+}
+
+::K1L2-A4 Pertinent::Étape 1 – « Porter à 95 % le taux d'ouverture des mails d'information du support ». Pourquoi ce n'est pas un bon KPI pour Hélène ?{
+=Il n'est pas pertinent \: il ne dit rien du service rendu à l'entrepôt#Exact \: il est mesurable et daté, mais ne répond pas au besoin.
+~Il n'est pas mesurable#Non \: un taux d'ouverture se mesure très bien. Revoyez la diapositive 5 (K1-L2-S1).
+~Il n'est pas temporel#Non \: dans le fichier, il est mesuré chaque mois dès janvier 2027. Revoyez la diapositive 5 (K1-L2-S1).
+}
+
+::K1L2-A5 Périmètre::Étape 2 – Pourquoi la fiche doit-elle préciser le périmètre (site, catégorie, priorité) ?{
+=Pour que tout le monde calcule le même chiffre à partir des mêmes tickets#Exact \: sans périmètre écrit, deux personnes obtiennent deux résultats.
+~Pour rendre le KPI plus facile à atteindre#Non \: le périmètre sert la cohérence, pas la facilité. Revoyez la diapositive 6 (K1-L2-S2).
+~Parce que l'outil ITSM l'exige#Non \: c'est une exigence de méthode, pas de l'outil. Revoyez la diapositive 6 (K1-L2-S2).
+}
+
+::K1L2-A6 NB.SI.ENS::Étape 3 – Pourquoi utiliser NB.SI.ENS plutôt que NB.SI ?{
+=Pour combiner plusieurs critères \: site, catégorie, priorité et mois#Exact \: NB.SI n'accepte qu'un seul critère.
+~Parce que NB.SI ne fonctionne pas dans un tableau structuré#Non \: NB.SI fonctionne, mais avec un seul critère.
+~Pour obtenir un pourcentage directement#Non \: NB.SI.ENS compte ; le pourcentage vient de la division à l'étape 4.
+}
+
+::K1L2-A7 Septembre::Étape 5 – Le KPI de septembre affiche 100 %, avec un temps moyen en attente de près de 790 minutes. Quelle lecture est la bonne ?{
+=Le résultat est à vérifier \: le chrono du SLA s'arrête pendant l'attente#Exact \: un très bon chiffre peut venir d'un usage abusif du statut En attente.
+~Le service s'est nettement amélioré#Non \: l'attente a explosé, le délai réel s'est allongé. Revoyez la diapositive 10 (K1-L2-S2).
+~Les données de septembre sont fausses#Non \: les données sont justes ; c'est la règle de calcul qui masque l'attente. Revoyez la diapositive 7 (K1-L2-S2).
+}
+
+::K1L2-A8 Deux MTTR::Étape 6 – Kevin \: 3,4 h jusqu'à la 1re résolution, 23,7 h jusqu'à la résolution finale. Que faut-il retenir ?{
+=La fiche d'identité doit préciser la date de fin retenue#Exact \: même nom, deux classements opposés selon la définition.
+~Kevin est le technicien le plus efficace#Non \: ses tickets sont souvent rouverts, le délai réel est le plus long. Revoyez la diapositive 7 (K1-L2-S2).
+~Il faut toujours prendre le chiffre le plus favorable#Non \: on choisit la définition qui reflète le service rendu, pas la plus flatteuse. Revoyez la diapositive 7 (K1-L2-S2).
+}

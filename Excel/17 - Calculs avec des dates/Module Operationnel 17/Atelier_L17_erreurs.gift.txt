@@ -1,0 +1,71 @@
+$CATEGORY: $course$/Atelier 17/Erreurs
+
+::E01 NBSI::La cellule affiche \#NOM?. Sa formule est \=NBSI(G2\:G41;">\=5000"). Quelle est la cause ?{
+~La plage G2\:G41 est trop grande#Non \: la taille de la plage ne provoque pas d'erreur.
+~Les montants sont en texte#Non \: des montants en texte ne seraient pas comptés, sans afficher \#NOM?.
+=Le nom de la fonction est mal écrit \: c'est NB.SI, avec un point#Exact \: \#NOM? signale un mot qu'Excel ne reconnaît pas.
+~Le critère devrait être sans guillemets#Non \: au contraire, le critère va entre guillemets.
+}
+
+::E02 Anglais::Dans un Excel en français, \=COUNTIF(D2\:D41;">\=15") affiche \#NOM?. Pourquoi ?{
+~Il faut une virgule au lieu du point-virgule#Non \: en français, le séparateur est bien le point-virgule.
+~La plage contient des cellules vides#Non \: les cellules vides ne provoquent pas \#NOM?.
+~Le critère est mal écrit#Non \: le critère est juste.
+=La fonction est écrite en anglais \: il faut NB.SI#Exact \: un Excel en français ne reconnaît que les noms français des fonctions.
+}
+
+::E03 Guillemets::\=NB.SI(D2\:D41;>\=15) est refusée ou affiche une erreur. Que faut-il corriger ?{
+=Mettre tout le critère entre guillemets \: ">\=15"#Exact \: pour NB.SI, le critère est un texte \: opérateur et nombre ensemble, entre guillemets.
+~Mettre seulement l'opérateur entre guillemets \: ">\="15#Non \: l'opérateur et le nombre forment un seul critère.
+~Écrire NB.SI.ENS#Non \: NB.SI suffit pour un seul critère.
+~Remplacer >\= par \=>#Non \: l'ordre >\= est le bon.
+}
+
+::E04 Valeur::\=C2-B2 affiche \#VALEUR!. B2 contient 05.06.2026, calé à gauche. Quelle est la cause ?{
+~La formule doit être \=B2-C2#Non \: inverser donnerait un nombre négatif, pas \#VALEUR!.
+=B2 contient du texte, pas une vraie date#Exact \: avec des points, la date est restée du texte ; il faut la retaper avec des barres obliques.
+~La colonne est trop étroite#Non \: une colonne trop étroite affiche des dièses \#\#\#\#.
+~Il faut le format Standard#Non \: le format ne change pas une valeur texte en date.
+}
+
+::E05 Div0::Le taux de signature \=F5/F4 affiche \#DIV/0!. Que se passe-t-il ?{
+~F5 est vide#Non \: diviser zéro par un nombre donne 0, pas une erreur.
+~Il faut le format Pourcentage#Non \: le format n'empêche pas la division par zéro.
+~La formule doit être \=F4/F5#Non \: inverser ne donne pas le taux de signature.
+=F4 est vide ou vaut zéro \: on divise par zéro#Exact \: une cellule vide vaut 0 dans un calcul ; il faut saisir le nombre de devis envoyés.
+}
+
+::E06 Ref::Après la suppression de la feuille « Devis 2025 », une formule affiche \#REF!. Pourquoi ?{
+~La feuille a été renommée#Non \: un renommage met à jour les formules automatiquement.
+=Elle pointait vers une feuille ou une cellule qui n'existe plus#Exact \: \#REF! signale une référence disparue \: il faut repointer vers la bonne feuille.
+~Les valeurs sont en texte#Non \: ce serait plutôt \#VALEUR!.
+~Le nom de la fonction est faux#Non \: ce serait \#NOM?.
+}
+
+::E07 Nombre::\=DATEDIF(AUJOURDHUI();F6;"y") affiche \#NOMBRE!. F6 contient la date d'embauche. Que corriger ?{
+~Mettre F6 au format Standard#Non \: le format n'est pas en cause.
+=Inverser les dates \: la plus ancienne en premier, \=DATEDIF(F6;AUJOURDHUI();"y")#Exact \: DATEDIF refuse une date de début postérieure à la date de fin.
+~Remplacer "y" par "a"#Non \: l'unité « y » (années) est la bonne.
+~Remplacer AUJOURDHUI() par Ctrl+;#Non \: la date figée ne corrigerait pas l'ordre des dates.
+}
+
+::E08 Nom ou valeur::Quelle phrase résume la différence entre \#NOM? et \#VALEUR! ?{
+~Les deux signifient la même chose#Non \: ce sont deux causes différentes.
+~\#NOM? \: une référence disparue ; \#VALEUR! \: une division par zéro#Non \: ce sont \#REF! et \#DIV/0!.
+~\#NOM? \: une cellule vide ; \#VALEUR! \: un texte#Non \: une cellule vide ne provoque pas \#NOM?.
+=\#NOM? \: Excel ne comprend pas le mot ; \#VALEUR! \: il comprend la fonction, pas la donnée#Exact \: c'est la règle à retenir.
+}
+
+::E09 Deux-points::Excel refuse \=NB.JOURS.OUVRES(B2\:C2) \: « trop peu d'arguments ». Pourquoi ?{
+=B2\:C2 est une plage, donc un seul argument \: il faut B2;C2#Exact \: le point-virgule sépare les arguments ; les deux-points relient le début et la fin d'une plage.
+~La fonction n'existe pas en français#Non \: elle existe \: NB.JOURS.OUVRES.
+~Les dates sont inversées#Non \: l'ordre donnerait un résultat négatif, pas ce message.
+~Il manque les jours fériés#Non \: ils sont facultatifs.
+}
+
+::E10 Virgule::Excel refuse \=NB.SI(D2\:D41,">\=15") avec « Il y a un problème avec cette formule ». Pourquoi ?{
+~Le critère doit être sans guillemets#Non \: les guillemets sont justes.
+=En français, les arguments se séparent par un point-virgule, pas par une virgule#Exact \: la virgule sert aux décimales dans un Excel en français.
+~La plage doit être D2;D41#Non \: le point-virgule ne sert pas à écrire une plage.
+~NB.SI n'accepte pas de critère texte#Non \: le critère est justement un texte.
+}

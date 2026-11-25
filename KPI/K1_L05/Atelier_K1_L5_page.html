@@ -1,0 +1,25 @@
+<h3>Atelier 05 – Bien saisir un ticket, à vous de jouer (20 min)</h3>
+<p>Le KPI de l'entrepôt d'août était faux à cause de trois saisies. Vous allez relire douze tickets avant leur clôture, retrouver les incidents mal classés, recalculer le KPI d'août, puis écrire votre propre check-list de technicien.</p>
+<p><strong>Fichier :</strong> votre copie de <em>K1_L5_Atelier_Valdor.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Relecture</strong> (12 tickets), <strong>Août entrepôt</strong> (66 incidents, table T_Aout) et <strong>Check-list</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie chaque étape. Chaque erreur vous renvoie à la diapositive de la leçon à revoir.</p>
+
+<h4>Étape 1 – Relire 12 tickets</h4>
+<p><strong>Faites :</strong> feuille Relecture, lisez chaque ticket et choisissez en colonne L l'erreur repérée (ou « Aucune erreur »). En colonne M, écrivez la correction.</p>
+<p><strong>Vous devez voir :</strong> dans le contrôle, 2 erreurs de catégorie, 2 de priorité, 1 lien de changement manquant, 2 solutions absentes, 1 incohérence de dates, 1 attente abusive et 3 tickets sans erreur.</p>
+<p><strong>Si ça ne marche pas :</strong> pour chaque ticket, déroulez les 6 points de la diapositive 8 : catégorie, priorité, solution, lien, attente, confirmation. Regardez aussi les dates : la prise en charge peut-elle précéder l'ouverture ? Et la date du 28 août : que s'est-il passé la veille au soir ?</p>
+
+<h4>Étape 2 – Le KPI d'août, tel que calculé</h4>
+<p><strong>Faites :</strong> feuille Août entrepôt, en I3, tapez <code>=NB.SI.ENS(T_Aout[Catégorie];"Applications métier &gt; WMS";T_Aout[Priorité];"P2 - Haute")</code>. En I4, ajoutez le critère <code>;T_Aout[SLA résolution respecté];"Oui"</code>. En I5, tapez <code>=I4/I3</code>.</p>
+<p><strong>Vous devez voir :</strong> 16 incidents, 10 résolus dans le SLA, un KPI de 63 %.</p>
+
+<h4>Étape 3 – Retrouver les incidents mal classés</h4>
+<p><strong>Faites :</strong> filtrez la colonne Titre avec le filtre textuel « Contient » <em>WMS</em>, puis regardez la colonne Catégorie. Corrigez en « Applications métier &gt; WMS » les incidents classés ailleurs. Copiez ensuite I3:I5 en J3:J5.</p>
+<p><strong>Vous devez voir :</strong> 3 incidents classés dans « Imprimantes » (INC-08801, INC-08802, INC-08803). Après correction : 19 incidents, 10 résolus dans le SLA, un KPI de 53 %.</p>
+<p><strong>Pourquoi :</strong> ces trois incidents n'avaient pas été résolus à temps. Mal classés, ils embellissaient le KPI de 10 points.</p>
+
+<h4>Étape 4 – Votre check-list</h4>
+<p><strong>Faites :</strong> feuille Check-list, écrivez pour chaque point la question que vous vous poserez avant de résoudre un ticket.</p>
+<p><strong>Vous devez voir :</strong> six questions courtes, par exemple « La catégorie décrit-elle le problème réel, et pas le symptôme ? ».</p>
+
+<h4>Pour aller plus loin</h4>
+<p>Romain veut relire chaque semaine un échantillon de tickets. Combien en choisiriez-vous, comment les tireriez-vous au hasard, et quel indicateur de qualité de saisie suivriez-vous ?</p>

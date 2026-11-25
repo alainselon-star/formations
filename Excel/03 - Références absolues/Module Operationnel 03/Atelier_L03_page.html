@@ -1,0 +1,39 @@
+<h3>Atelier 03 – La formule qui se dérègle, à vous de jouer (25 min)</h3>
+<p>Sophie veut les 25 factures de mars avec la TVA, le TTC, la part de chaque facture et la commission. Règle du jeu : <strong>une seule formule par colonne</strong>, écrite en ligne 4 puis recopiée.</p>
+<p><strong>Fichier :</strong> votre copie de <em>Excel_3_References_absolues_exercices.xlsx</em> (à télécharger juste sous cette page), feuilles <strong>Pratique</strong> et <strong>Pratique grille</strong>. Les taux sont dans les cellules jaunes : Q3 = 10 % (TVA), Q4 = 5 % (commission). <strong>Durée :</strong> 25 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie que vous avez compris chaque geste.</p>
+
+<h4>Étape 1 – La TVA, avec le taux bloqué</h4>
+<p><strong>Faites :</strong> en J4, tapez <code>=H4*Q3</code>, laissez le curseur juste après Q3 et appuyez sur <strong>F4</strong> (Fn+F4 sur un portable) : la formule devient <code>=H4*$Q$3</code>. Validez, puis double-cliquez sur la poignée de recopie.</p>
+<p><strong>Vous devez voir :</strong> 380,00 € en J4 (facture Lefèvre, 3 800 €). Cliquez sur J20 : la barre de formule affiche <code>=H20*$Q$3</code>.</p>
+<p><strong>Si ça ne marche pas :</strong> des 0 ou des montants bizarres plus bas ? Le taux a glissé : cliquez sur J5, lisez la formule, et refaites J4 avec F4. F4 change le volume ? Utilisez Fn+F4.</p>
+<p><strong>Pourquoi :</strong> le montant doit suivre la ligne, le taux doit rester sur Q3. Le $ bloque ce qui le suit.</p>
+
+<h4>Étape 2 – Le TTC, sans $</h4>
+<p><strong>Faites :</strong> en K4, tapez <code>=H4+J4</code> et recopiez.</p>
+<p><strong>Vous devez voir :</strong> 4 180,00 € en K4. Sélectionnez K4:K28 : la barre d'état affiche <strong>Somme : 193 237</strong>.</p>
+<p><strong>Pourquoi :</strong> ici, les deux cellules doivent suivre la ligne : on ne bloque rien.</p>
+
+<h4>Étape 3 – La part du total</h4>
+<p><strong>Faites :</strong> en L4, tapez <code>=H4/H29</code>, F4 sur H29 pour obtenir <code>=H4/$H$29</code>. Accueil → Nombre → Style de pourcentage, puis Ajouter une décimale. Recopiez.</p>
+<p><strong>Vous devez voir :</strong> 2,2 % en L4, plus aucun #DIV/0!, et une Somme de 100 % sur L4:L28.</p>
+<p><strong>Si ça ne marche pas :</strong> des #DIV/0! ? Le total a glissé vers des cellules vides : bloquez H29.</p>
+
+<h4>Étape 4 – La commission, et le passage à 6 %</h4>
+<p><strong>Faites :</strong> en M4, tapez <code>=H4*$Q$4</code> et recopiez. Notez la Somme de M4:M28. Puis tapez 6 % dans Q4.</p>
+<p><strong>Vous devez voir :</strong> 8 783,50 € à 5 %, puis 10 540,20 € à 6 %, sans avoir touché à une seule formule. Remettez 5 %.</p>
+<p><strong>Pourquoi :</strong> un taux rangé dans une cellule à part se change une seule fois. Avec <code>=H4*5%</code>, il aurait fallu reprendre toutes les formules.</p>
+
+<h4>Étape 5 – Le chiffre d'affaires cumulé</h4>
+<p><strong>Faites :</strong> en N4, tapez <code>=SOMME($H$4:H4)</code> et recopiez.</p>
+<p><strong>Vous devez voir :</strong> en N5, la somme des deux premières factures ; en N28, le total du mois, 175 670.</p>
+<p><strong>Pourquoi :</strong> le début de la plage est bloqué, la fin suit la ligne : la plage s'allonge à chaque ligne.</p>
+
+<h4>Étape 6 – La grille du banquier</h4>
+<p><strong>Faites :</strong> feuille Pratique grille, en B5, tapez <code>=$A5*(1+B$4)</code>. Recopiez vers la droite jusqu'en D5, puis vers le bas jusqu'à la ligne 14.</p>
+<p><strong>Vous devez voir :</strong> 1 055 € en B5 et 12 000 € en D14 (10 000 € avec 20 %).</p>
+<p><strong>Si ça ne marche pas :</strong> toute la grille affiche le même nombre ? Vous avez bloqué trop de choses : seulement la colonne A et la ligne 4.</p>
+
+<h4>Étape 7 – Contrôler</h4>
+<p><strong>Faites :</strong> feuille Pratique, Formules → Vérification des formules → <strong>Afficher les formules</strong>. Cliquez de nouveau pour revenir aux résultats. Puis cliquez sur M12 → <strong>Repérer les antécédents</strong>, et Supprimer les flèches.</p>
+<p><strong>Vous devez voir :</strong> dans chaque colonne, la même formule, avec le numéro de ligne qui change et le taux bloqué. Les flèches relient M12 à H12 et à Q4.</p>

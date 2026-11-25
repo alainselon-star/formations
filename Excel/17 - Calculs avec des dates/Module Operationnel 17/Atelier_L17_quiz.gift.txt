@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Atelier 17
+
+::J1 1900::Étapes 1-2 – Une soustraction de deux dates affiche 02/02/1900. Que faut-il faire ?{
+=Appliquer le format Standard#Exact \: le résultat est un nombre de jours, habillé en date.
+~Inverser la formule#Non \: la formule était juste ; on obtiendrait un nombre négatif.
+~Appliquer le format Texte#Non \: au format Texte, la formule ne calcule plus.
+}
+
+::J2 Ordre::Étape 2 – Un délai s'affiche -33. Quelle est la cause la plus probable ?{
+=La date la plus ancienne a été placée en premier dans la soustraction#Exact \: il faut la date la plus récente moins la plus ancienne.
+~La colonne est au format Date#Non \: le format ne change pas le signe.
+~Une des dates est en texte#Non \: une date en texte provoque \#VALEUR!.
+}
+
+::J3 Barre d'état::Étape 3 – Comment lire rapidement le délai moyen de 40 devis, sans formule ?{
+=Sélectionner les délais et lire la Moyenne dans la barre d'état#Exact \: Moyenne, Nombre et Somme s'y affichent.
+~Trier la colonne du plus petit au plus grand#Non \: le tri ne calcule pas la moyenne.
+~Appliquer le format Date#Non \: le format ne calcule rien.
+}
+
+::J4 NB.SI::Étape 4 – Quelle formule compte les délais de 15 jours ou plus en D2\:D41 ?{
+=\=NB.SI(D2\:D41;">\=15")#Exact \: le critère s'écrit entre guillemets.
+~\=SOMME(D2\:D41;">\=15")#Non \: SOMME additionne, elle ne compte pas selon un critère.
+~\=NB(D2\:D41)>\=15#Non \: NB compte toutes les valeurs, puis compare le total à 15.
+}
+
+::J5 Échéance::Étape 6 – Une facture est datée en B2, son délai de paiement en jours est en C2. Quelle formule donne l'échéance ?{
+=\=B2+C2#Exact \: une date plus des jours donne une date.
+~\=C2-B2#Non \: on ne retranche pas une date d'un nombre de jours.
+~\=B2*C2#Non \: multiplier une date n'a pas de sens.
+}
+
+::J6 Nombre::Étape 6 – Une échéance s'affiche 46372. Que faut-il faire ?{
+=Appliquer le format Date courte#Exact \: la valeur est juste, il manque l'habillage de date.
+~Retaper la date#Non \: la date est bonne, seul l'affichage manque.
+~Élargir la colonne#Non \: une colonne trop étroite afficherait des dièses.
+}
+
+::J7 Retard::Étapes 7-8 – En E2, =D2-AUJOURDHUI() renvoie -12. Que signifie ce résultat ?{
+=L'échéance est dépassée depuis 12 jours#Exact \: un résultat négatif signale un retard, et SI l'affiche « En retard ».
+~Il reste 12 jours avant l'échéance#Non \: ce serait un résultat positif.
+~La formule contient une erreur#Non \: un nombre négatif n'est pas une erreur.
+}
+
+::J8 Ctrl+;::Étape 9 – Quelle différence entre Ctrl+; et \=AUJOURDHUI() ?{
+=Ctrl+; tape une date figée ; AUJOURDHUI() se met à jour à chaque ouverture#Exact \: l'un pour noter un événement, l'autre pour un compte à rebours.
+~Aucune, les deux se mettent à jour#Non \: Ctrl+; tape une date qui ne bouge plus.
+~Ctrl+; se met à jour, AUJOURDHUI() est figée#Non \: c'est l'inverse.
+}

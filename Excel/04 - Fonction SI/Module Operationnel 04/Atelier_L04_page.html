@@ -1,0 +1,35 @@
+<h3>Atelier 04 – Le tableau qui réfléchit, à vous de jouer (25 min)</h3>
+<p>Sophie veut, pour les 120 devis du 1er trimestre, l'acompte à demander, les devis à relancer et la taille de chaque chantier. Vous allez faire décider Excel à votre place.</p>
+<p><strong>Fichier :</strong> votre copie de <em>Excel_4_Fonction_SI_devis_T1.xlsx</em> (à télécharger juste sous cette page), feuille <strong>Devis T1</strong>. Les colonnes grises J, K et L sont à remplir. Paramètres en jaune : O3 = 3 000 € (seuil d'acompte), O4 = 30 % (taux d'acompte). <strong>Durée :</strong> 25 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie que vous avez compris chaque geste.</p>
+
+<h4>Étape 1 – L'acompte, avec la fenêtre Arguments</h4>
+<p><strong>Faites :</strong> cliquez en J4, puis Formules → Logique → <strong>SI</strong>. Test_logique : <code>H4&gt;=3000</code> ; Valeur_si_vrai : <code>H4*30%</code> ; Valeur_si_faux : <code>0</code> → OK. Double-cliquez sur la poignée de recopie.</p>
+<p><strong>Vous devez voir :</strong> la barre de formule affiche <code>=SI(H4&gt;=3000;H4*30%;0)</code>. J7 (devis à 3 000 € pile) : 900 € ; J21 (5 000 €) : 1 500 €.</p>
+<p><strong>Si ça ne marche pas :</strong> J7 affiche 0 ? Vous avez écrit &gt; au lieu de &gt;= : un devis de 3 000 € pile doit avoir un acompte.</p>
+<p><strong>Pourquoi :</strong> SI pose la question pour chaque ligne et choisit entre les deux réponses.</p>
+
+<h4>Étape 2 – Seuil et taux dans les cellules jaunes</h4>
+<p><strong>Faites :</strong> modifiez J4 en <code>=SI(H4&gt;=$O$3;H4*$O$4;0)</code> (F4 sur O3 et sur O4) et recopiez. En J124, tapez <code>=SOMME(J4:J123)</code>.</p>
+<p><strong>Vous devez voir :</strong> 105 351 € en J124. Tapez 2500 en O3 : le total passe à 109 536 €. Remettez 3000.</p>
+<p><strong>Si ça ne marche pas :</strong> la première ligne est juste et les autres donnent 0 ? Les $ manquent : O3 et O4 ont glissé (leçon 03).</p>
+
+<h4>Étape 3 – Le tableau change d'avis tout seul</h4>
+<p><strong>Faites :</strong> en H29 (devis D-2026-026), remplacez 2 990 par 3 200.</p>
+<p><strong>Vous devez voir :</strong> l'acompte de la ligne passe de 0 à 960 €, et le total augmente d'autant. Remettez 2 990.</p>
+<p><strong>Pourquoi :</strong> une décision écrite en formule se refait à chaque modification. Un 0 tapé à la main serait resté faux.</p>
+
+<h4>Étape 4 – Les devis à relancer</h4>
+<p><strong>Faites :</strong> en K4, tapez <code>=SI(I4="En attente";"Relancer";"")</code> et recopiez. Puis Données → Filtrer, et filtrez la colonne Relance sur « Relancer ».</p>
+<p><strong>Vous devez voir :</strong> en bas à gauche, la barre d'état indique 44 lignes trouvées sur 120. Effacez le filtre.</p>
+<p><strong>Si ça ne marche pas :</strong> #NOM? ? Un texte est écrit sans guillemets. Rien ne s'affiche ? Vérifiez l'orthographe exacte de « En attente » dans la colonne I.</p>
+
+<h4>Étape 5 – Deux conditions : ET</h4>
+<p><strong>Faites :</strong> Sophie précise que l'acompte ne concerne que les devis acceptés. En M3, tapez « Acompte accepté ». En M4, tapez <code>=SI(ET(H4&gt;=$O$3;I4="Accepté");H4*$O$4;0)</code> et recopiez jusqu'en M123. Sélectionnez M4:M123.</p>
+<p><strong>Vous devez voir :</strong> dans la barre d'état, Somme : 44 274.</p>
+<p><strong>Pourquoi :</strong> ET répond VRAI seulement si les deux conditions sont vraies ; le SI autour choisit le calcul ou 0. Avec OU, une seule condition aurait suffi.</p>
+
+<h4>Étape 6 – Petit, moyen ou gros</h4>
+<p><strong>Faites :</strong> en L4, tapez <code>=SI(H4&lt;1500;"Petit";SI(H4&lt;5000;"Moyen";"Gros"))</code> et recopiez. Filtrez la colonne Taille sur « Gros ».</p>
+<p><strong>Vous devez voir :</strong> 26 lignes trouvées sur 120 (en bas à gauche). Vérifiez les cas limites : 1 500 € pile (D-2026-011) donne Moyen, 5 000 € pile (D-2026-018) donne Gros.</p>
+<p><strong>Si ça ne marche pas :</strong> aucun « Petit » ? Vous avez commencé par le test &lt;5000 : l'ordre des questions compte. Excel refuse la formule ? Comptez les parenthèses : deux SI, deux parenthèses fermantes.</p>

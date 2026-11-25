@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Atelier 05
+
+::J1 NBSI::Étape 1 – Que fait NB.SI ?{
+=Il compte les cellules qui remplissent un critère#Exact \: NB veut dire « nombre ».
+~Il additionne les montants qui remplissent un critère#Non \: c'est SOMME.SI.
+~Il affiche un résultat différent selon une condition#Non \: c'est SI.
+}
+
+::J2 Dollars::Étape 1 – La formule de B4 est juste, mais le total des trois commerciaux n'est pas 300. Quelle est la cause probable ?{
+=La plage n'est pas bloquée par des $ et a glissé en recopiant#Exact \: Devis!$G$2\:$G$301 doit rester fixe.
+~Le critère A4 devrait être bloqué#Non \: A4 doit devenir A5 puis A6.
+~NB.SI ne compte pas plus de 100 lignes#Non \: il n'a pas cette limite.
+}
+
+::J3 Ordre SOMMESI::Étape 2 – Dans SOMME.SI, où se place la plage à additionner ?{
+=En dernier#Exact \: où chercher ; quoi chercher ; quoi additionner.
+~En premier#Non \: c'est le cas de SOMME.SI.ENS.
+~Au milieu#Non \: le critère est au milieu.
+}
+
+::J4 Ordre ENS::Étape 3 – Dans SOMME.SI.ENS, où se place la plage à additionner ?{
+=En premier#Exact \: c'est l'inverse de SOMME.SI, l'erreur la plus fréquente.
+~En dernier#Non \: c'est le cas de SOMME.SI.
+~Où l'on veut#Non \: l'ordre des arguments compte.
+}
+
+::J5 VALEUR::Étape 3 – NB.SI.ENS renvoie \#VALEUR!. Quelle est la cause probable ?{
+=Les plages n'ont pas la même taille#Exact \: par exemple G2\:G301 et I2\:I300.
+~Le critère est entre guillemets#Non \: un texte doit être entre guillemets.
+~Il y a trop de critères#Non \: on peut en mettre de nombreux.
+}
+
+::J6 Mise a jour::Étape 4 – Un statut change dans la feuille Devis. Que fait la synthèse ?{
+=Elle se recalcule automatiquement#Exact \: les formules relisent les données.
+~Rien, il faut refaire les formules#Non \: c'était le défaut des chiffres recopiés à la main.
+~Elle affiche une erreur#Non \: aucune erreur.
+}
+
+::J7 Esperluette::Étape 5 – Pourquoi écrit-on ">"&$B$9 et pas ">$B$9" ?{
+=Pour coller l'opérateur à la valeur contenue dans B9#Exact \: entre guillemets, $B$9 serait un simple texte.
+~Parce que & bloque la cellule#Non \: ce sont les $ qui bloquent.
+~Parce que les guillemets sont interdits#Non \: l'opérateur reste entre guillemets.
+}
+
+::J8 Periode::Étape 6 – Comment compter les lignes dont la date est comprise entre E9 et E10 ?{
+=Deux critères sur la colonne Date \: ">\="&$E$9 et "<\="&$E$10#Exact \: les deux doivent être vrais en même temps.
+~Un seul critère \: "E9\:E10"#Non \: Excel chercherait ce texte.
+~Deux NB.SI additionnés#Non \: cela ferait un OU, pas un ET.
+}

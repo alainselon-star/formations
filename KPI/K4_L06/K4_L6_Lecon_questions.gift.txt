@@ -1,0 +1,29 @@
+$CATEGORY: $course$/K4-L6 Leçon
+
+::K4-L6 Leçon Q1::Quelle est la différence entre un incident et un problème ?{
+=L'incident se résout en rétablissant le service, le problème se corrige en supprimant la cause#Exact. Revoyez la diapositive 3.
+~Un problème est un incident de priorité P1#Non \: c'est un incident majeur. Revoyez la diapositive 3.
+~Un problème est un incident rouvert#Non \: la réouverture concerne un seul ticket. Revoyez la diapositive 3.
+~Il n'y a pas de différence#Non \: un problème regroupe la cause de plusieurs incidents. Revoyez la diapositive 3.
+}
+
+::K4-L6 Leçon Q2::En octobre, la part des incidents liés à un problème tombe à 11 %. Pourquoi ?{
+=Le problème du WMS du lundi a été corrigé le 1er octobre#Exact \: ses incidents ont disparu. Revoyez la diapositive 5.
+~Les techniciens ont oublié de rattacher les incidents#Non \: rien ne l'indique. Revoyez la diapositive 5.
+~Il y a eu moins d'incidents en octobre#Non \: octobre compte 143 incidents, comme les autres mois. Revoyez la diapositive 5.
+~Le SLA a changé#Non \: le SLA ne joue pas sur le rattachement. Revoyez la diapositive 5.
+}
+
+::K4-L6 Leçon Q3::Qu'est-ce qu'une erreur connue ?{
+=Un problème dont la cause est identifiée et le contournement documenté#Exact \: le N1 peut l'appliquer sans escalader. Revoyez la diapositive 7.
+~Un incident déjà vu une fois#Non \: c'est au niveau du problème. Revoyez la diapositive 7.
+~Une erreur de saisie dans un ticket#Non \: c'est un sujet de qualité des données. Revoyez la diapositive 7.
+~Un problème définitivement corrigé#Non \: une erreur connue n'est pas encore corrigée. Revoyez la diapositive 7.
+}
+
+::K4-L6 Leçon Q4::19 problèmes sur 40 sont des récidives. Que mesure ce KPI ?{
+=La solidité des corrections \: une cause « corrigée » est revenue#Exact. Revoyez la diapositive 8.
+~La rapidité de l'analyse#Non \: c'est le délai de cause racine. Revoyez la diapositive 6.
+~Le nombre d'incidents majeurs#Non \: ce sont des problèmes, pas des P1. Revoyez la diapositive 8.
+~La qualité des contournements#Non \: c'est la correction elle-même qui a échoué. Revoyez la diapositive 8.
+}

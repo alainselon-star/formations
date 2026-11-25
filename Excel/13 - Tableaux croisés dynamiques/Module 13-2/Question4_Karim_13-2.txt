@@ -1,0 +1,7 @@
+﻿MC
+10
+Karim veut savoir quelle part de son chiffre d'affaires vient de chaque commercial. Le champ Commercial est en lignes et Montant HT en valeurs. Que fait-il ?
+Clic droit sur un montant, Synthétiser les valeurs par, Somme | Non : la somme donne des montants en euros, pas la part de chacun dans le total.
+Clic droit sur un montant, Afficher les valeurs, % du total de la ligne | Non : chaque ligne serait comparée à elle-même, la colonne afficherait 100 % partout.
+*Clic droit sur un montant, Afficher les valeurs, % du total général | Exact : chaque commercial est comparé au total de tous les commerciaux, et le total fait 100 %.
+Clic droit sur un montant, Synthétiser les valeurs par, Max. | Non : Max. donne la plus grosse facture de chaque commercial, pas sa part du chiffre d'affaires.

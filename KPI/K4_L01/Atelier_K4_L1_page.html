@@ -1,0 +1,30 @@
+<h3>Atelier 01 – Le cycle de vie d'un incident, à vous de jouer (20 min)</h3>
+<p>Hélène veut savoir combien de temps il faut pour réparer un incident. Romain vous confie l'historique de dix incidents de Valdor. Vous allez remettre cet historique dans l'ordre, retrouver les dates clés de chaque ticket, calculer ce que mesure chaque intervalle, puis repérer les tickets rouverts.</p>
+<p><strong>Fichier :</strong> votre copie de <em>K4_L1_Atelier_Valdor.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Historique</strong> (57 événements, table T_Historique), <strong>Statuts</strong> et <strong>Dates clés</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie chaque étape. Chaque erreur vous renvoie à la diapositive de la leçon à revoir.</p>
+
+<h4>Étape 1 – Remettre l'historique dans l'ordre</h4>
+<p><strong>Faites :</strong> feuille Historique, cliquez dans la table, puis <em>Données &gt; Trier</em> : triez par <em>Ticket</em> (de A à Z), puis ajoutez un niveau <em>Date et heure</em> (du plus ancien au plus récent).<br>Feuille Statuts, recopiez dans l'ordre, en B5:B12, le statut après chaque événement du ticket INC-00625.</p>
+<p><strong>Vous devez voir :</strong> huit coches ✓ dans la colonne Contrôle. INC-00625 commence par Nouveau et finit par Clos ; il passe deux fois par Résolu.</p>
+<p><strong>Pourquoi :</strong> trié par ticket puis par date, l'historique raconte la vie de chaque incident. Les retours en arrière apparaissent : la reprise après une attente, et la réouverture après une résolution.</p>
+<p><strong>Si ça ne marche pas :</strong> vérifiez l'ordre des niveaux de tri : d'abord le ticket, ensuite la date. Revoyez les statuts (leçon, diapositive 5).</p>
+
+<h4>Étape 2 – Retrouver les dates clés</h4>
+<p><strong>Faites :</strong> feuille Dates clés, en C5 (ouverture), tapez <code>=MIN.SI.ENS(T_Historique[Date et heure];T_Historique[Ticket];$A5)</code>.<br>En D5 (prise en charge) : <code>=MIN.SI.ENS(T_Historique[Date et heure];T_Historique[Ticket];$A5;T_Historique[Statut après];"En cours")</code>.<br>En E5 (1re résolution), la même formule avec <code>"Résolu"</code>.<br>En F5 (résolution finale) : <code>=MAX.SI.ENS(T_Historique[Date et heure];T_Historique[Ticket];$A5;T_Historique[Statut après];"Résolu")</code>.<br>En G5 (clôture), MAX.SI.ENS avec <code>"Clos"</code>. Recopiez C5:G5 jusqu'à la ligne 14.</p>
+<p><strong>Vous devez voir :</strong> une coche ✓ sur chaque ligne de la colonne <em>Contrôle des dates</em>. Par exemple, INC-00625 : 11/08 11:55, 11/08 12:32, 11/08 15:19, 13/08 14:04, 20/08 14:04.</p>
+<p><strong>Pourquoi :</strong> un ticket peut repasser plusieurs fois En cours ou Résolu. MIN.SI.ENS prend le premier passage (prise en charge, 1re résolution), MAX.SI.ENS le dernier (résolution finale, clôture).</p>
+<p><strong>Si ça ne marche pas :</strong> vous voyez un nombre comme 46245,5 ? Appliquez le format <em>jj/mm/aaaa hh:mm</em>. Vous voyez 00/01/1900 ? Le statut est mal orthographié (« Résolu » avec un accent). Revoyez les dates (leçon, diapositive 6).</p>
+
+<h4>Étape 3 – Calculer ce que mesure chaque intervalle</h4>
+<p><strong>Faites :</strong> en I5, tapez <code>=(D5-C5)*24</code> (prise en charge). En J5, <code>=(E5-C5)*24</code> (jusqu'à la 1re résolution). En K5, <code>=(F5-C5)*24</code> (jusqu'à la résolution finale). En L5, <code>=(G5-F5)*24</code> (résolution → clôture). Recopiez jusqu'à la ligne 14, puis tapez en I15 <code>=MOYENNE(I5:I14)</code> et recopiez jusqu'à L15.</p>
+<p><strong>Vous devez voir :</strong> moyennes de 8,6 h (prise en charge), 36,8 h (1re résolution), 48,7 h (résolution finale) et 70,5 h (résolution → clôture). INC-00125 affiche 82,9 h de prise en charge.</p>
+<p><strong>Pourquoi :</strong> ici, toutes les heures comptent. INC-00125 a été ouvert un vendredi à 21 h 32, avant un week-end prolongé par le lundi de Pentecôte : en heures ouvrées, sa prise en charge est presque immédiate. Et la colonne L ne dit rien du support : c'est le temps de validation, souvent 168 h, soit la clôture automatique.</p>
+<p><strong>Si ça ne marche pas :</strong> le résultat s'affiche comme une date ? Appliquez le format <em>Nombre</em> avec une décimale. Revoyez les intervalles (leçon, diapositives 7 et 9).</p>
+
+<h4>Étape 4 – Repérer les tickets rouverts</h4>
+<p><strong>Faites :</strong> en M5, tapez <code>=SI(F5&gt;E5;"Oui";"Non")</code>, en N5 <code>=(F5-E5)*24</code>, puis recopiez jusqu'à la ligne 14. En N16, comptez les « Oui » : <code>=NB.SI(M5:M14;"Oui")</code>.</p>
+<p><strong>Vous devez voir :</strong> 3 tickets rouverts : INC-00276 (écart de 51,5 h), INC-00625 (46,8 h) et INC-00725 (20,2 h).</p>
+<p><strong>Pourquoi :</strong> INC-00276, un incident critique, paraît résolu en 12 minutes. Mais l'utilisateur l'a rouvert : il a attendu plus de deux jours la vraie réparation. Seule la résolution finale le montre.</p>
+
+<h4>Pour aller plus loin</h4>
+<p>Hélène veut un seul chiffre pour son comité : quelle date d'arrivée retiendriez-vous pour le MTTR de Valdor, et pourquoi ? Écrivez votre réponse en deux phrases sous le tableau, en citant INC-00276.</p>

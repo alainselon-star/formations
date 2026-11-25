@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Atelier 06
+
+::J1 Une cellule::Étape 1 – Avant de filtrer ou de trier, que faut-il sélectionner ?{
+=Une seule cellule de la liste#Exact \: Excel détecte seul toute la liste.
+~La colonne à trier#Non \: trier une colonne seule fait changer les montants de ligne.
+~Toute la feuille avec Ctrl+A#Non \: inutile, et risqué si la feuille contient autre chose.
+}
+
+::J2 Cumul::Étape 2 – Vous filtrez Chantier sur Leroy, mais il reste un filtre Catégorie. Que voyez-vous ?{
+=Seulement les lignes qui respectent les deux filtres#Exact \: les filtres se cumulent ; effacez les anciens d'abord.
+~Toutes les lignes de Leroy#Non \: le filtre Catégorie reste actif.
+~Un message d'erreur#Non \: Excel cumule les filtres sans prévenir.
+}
+
+::J3 Entre::Étape 3 – Quel filtre affiche les montants compris entre 2 000 € et 4 000 € ?{
+=Filtres numériques → Entre#Exact \: supérieur ou égal à 2000 ET inférieur ou égal à 4000.
+~Filtres numériques → 10 premiers#Non \: il garde les plus gros montants.
+~Filtres textuels → Contient#Non \: il cherche un texte.
+}
+
+::J4 Saisie::Étape 3 – Un filtre « Supérieur à 3 000 € » ne trouve rien. Pourquoi ?{
+=Il faut taper 3000, sans espace ni symbole €#Exact \: le filtre attend un nombre.
+~Il faut d'abord trier la colonne#Non \: le tri n'est pas nécessaire.
+~Les filtres numériques ne marchent pas au-delà de 1 000#Non \: ils n'ont pas cette limite.
+}
+
+::J5 Contient::Étape 4 – Quelle différence entre « Contient » et « Commence par » ?{
+=« Contient » trouve le mot n'importe où, « Commence par » seulement au début#Exact \: « Contient Duval » trouve aussi Échafaudages Duval.
+~Aucune#Non \: « Commence par Duval » ne trouverait pas Échafaudages Duval.
+~« Contient » respecte les majuscules#Non \: aucun des deux n'en tient compte.
+}
+
+::J6 Niveaux::Étape 5 – Dans un tri Chantier puis Montant, à quoi sert le second niveau ?{
+=À départager les lignes qui ont le même chantier#Exact \: il ne joue qu'à l'intérieur de chaque chantier.
+~À trier toute la liste par montant#Non \: le premier niveau reste prioritaire.
+~À filtrer les montants#Non \: un tri ne masque aucune ligne.
+}
+
+::J7 SOUSTOTAL::Étape 6 – Pourquoi la Somme automatique écrit-elle SOUS.TOTAL sous une liste filtrée ?{
+=Parce que SOUS.TOTAL ne compte que les lignes visibles#Exact \: SOMME compterait aussi les lignes masquées.
+~Parce que SOMME ne fonctionne pas avec plus de 500 lignes#Non \: SOMME n'a pas cette limite.
+~Parce que la colonne contient du texte#Non \: ce n'est pas la raison.
+}
+
+::J8 Volets::Étape 7 – Cellule B2 active, que bloque « Figer les volets » ?{
+=La ligne 1 et la colonne A#Exact \: tout ce qui est au-dessus et à gauche de la cellule active.
+~La ligne 2 et la colonne B#Non \: la cellule active elle-même n'est pas figée.
+~Seulement la ligne 1#Non \: c'est « Figer la ligne supérieure ».
+}

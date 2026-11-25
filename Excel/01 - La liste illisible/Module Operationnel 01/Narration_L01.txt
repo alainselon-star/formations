@@ -1,0 +1,46 @@
+Excel Opérationnel · Leçon 01 – La liste illisible
+
+Diapositive 1 – La liste illisible
+  NARRATEUR : Trente devis saisis à la va-vite, des dièses à la place des dates, des montants écrits en toutes lettres, et un total faux. Dans cette leçon, vous allez apprendre à faire comprendre vos données à Excel, sans rien retaper, puis à les rendre lisibles d'un coup d'œil.
+
+Diapositive 2 – Lundi, 9 h : la banque à 14 h
+  SOPHIE : Karim, j'ai rendez-vous à la banque à quatorze heures. Imprime-moi la liste des devis de janvier, et donne-moi le montant total. Je veux une liste que je peux lire, pas un rébus.
+  KARIM : Julie l'a remplie le soir, à l'hôtel, et Thomas a complété. Je regarde le total en bas de l'écran : trente-trois mille euros ? Impossible, Julie a signé plus que ça à elle seule.
+
+Diapositive 3 – Ce que Karim a sous les yeux
+  NARRATEUR : Voici le fichier. Des dièses dans la colonne Date, des noms de villes coupés, et des montants écrits 4230 EUR ou 2540 euros. Karim sélectionne la colonne H. En bas, la barre d'état affiche Somme : 33320. Or le vrai total dépasse cent quarante-six mille euros. Excel n'a additionné que sept montants sur trente.
+
+Diapositive 4 – Le diagnostic : texte ou nombre ?
+  NARRATEUR : Le premier réflexe, c'est de regarder l'alignement. Un nombre se cale à droite de la cellule : Excel peut le calculer. Un texte se cale à gauche : Excel l'ignore dans les calculs. 4120 est à droite, c'est un nombre. 4230 EUR est à gauche, à cause des lettres : c'est du texte. Même chose pour les dates : 02 point 01 point 2026, avec des points, n'est pas une date pour un Excel français. Et les dièses ? Ce sont de vraies dates, dans une colonne trop étroite.
+
+Diapositive 5 – Solution 1 : tout faire à la main
+  NARRATEUR : Sans l'outil, Karim a trois méthodes. Retaper les vingt-trois montants et les vingt dates : quarante-trois cellules, une dizaine de minutes, avec le risque de taper 4320 au lieu de 4230. Additionner les trente montants à la calculatrice, deux fois pour vérifier. Puis présenter à l'œil : élargir chaque colonne à la souris, ajouter des espaces pour centrer, des tirets pour séparer. Au total, entre trente et quarante-cinq minutes, un total jamais sûr, et tout à refaire le mois prochain.
+
+Diapositive 6 – La clé : la valeur et le format
+  NARRATEUR : Avant la solution, une notion clé. La valeur, c'est ce qui est vraiment enregistré dans la cellule : 4230. Le format, c'est l'habillage : 4 230 euros, ou 4 230 avec un séparateur. Comme une personne qui change de tenue : la tenue change, la personne reste la même. Changer le format ne change jamais la valeur, donc jamais les calculs. Et une date ? C'est un nombre de jours depuis le premier janvier 1900. Le 8 janvier 2026 est le jour 46030. Si une date s'affiche 46030, elle n'est pas cassée : elle a perdu son habillage.
+
+Diapositive 7 – Étape 1 : des montants en vrais nombres
+  NARRATEUR : Première étape : enlever les unités, sans rien retaper. Sélectionnez la colonne H. Ouvrez Rechercher et remplacer avec Contrôle H. Dans Rechercher, tapez espace euros, avec l'espace devant. Laissez Remplacer par vide. Cliquez sur Remplacer tout. Recommencez avec espace EUR. Attention à l'ordre : la recherche ignore les majuscules. Si vous remplacez EUR en premier, 2540 euros devient 2540 os. Faites euros d'abord.
+
+Diapositive 8 – Étape 2 : des dates en vraies dates
+  NARRATEUR : Même geste pour les dates. Sélectionnez la colonne B, Contrôle H, remplacez le point par une barre oblique, Remplacer tout. Excel relit chaque cellule comme si vous veniez de la taper : 02 barre 01 barre 2026 devient une vraie date. Tout passe à droite, et la barre d'état affiche enfin Somme : 146240. Attention : sélectionnez toujours la colonne d'abord. Sans sélection, Excel remplace dans toute la feuille, y compris les adresses e-mail.
+
+Diapositive 9 – Étape 3 : habiller les nombres
+  NARRATEUR : Les données sont justes, il faut maintenant les habiller. Colonne H : Accueil, groupe Nombre, Monétaire. Colonne B : Date courte. Les dièses ? Double-cliquez sur la séparation à droite de la lettre de colonne : elle prend la bonne largeur. Retenez l'ordre : on nettoie d'abord, on habille ensuite. Un format appliqué à du texte ne fait rien, et on croit qu'Excel bugue.
+
+Diapositive 10 – Étape 4 : une liste qu'on lit d'un coup d'œil
+  NARRATEUR : Dernière étape, la présentation. Les en-têtes en gras, avec un remplissage bleu clair, centrés et renvoyés à la ligne. Toutes les bordures sur la liste. Les colonnes A à I sélectionnées, double-clic sur une séparation : chaque colonne prend la bonne largeur. En A1, le style de cellule Titre 1. Évitez Fusionner et centrer : il gêne ensuite pour trier et filtrer. Sélectionnez H4 à H33 : la barre d'état affiche 146 240 euros. Cinq minutes en tout, sans retaper un chiffre.
+
+Diapositive 11 – Ce qu'on voit n'est pas ce qu'on calcule
+  NARRATEUR : Sophie ne veut pas de centimes. Karim clique deux fois sur Réduire les décimales : 1850,50 s'affiche 1 851 euros. Mais la valeur n'a pas changé : le total compte toujours 1850,50. C'est pourquoi des montants affichés arrondis ne tombent pas toujours juste avec le total affiché. Pour changer vraiment la valeur, il faut une formule ARRONDI. Le format personnalisé, avec Contrôle 1, va plus loin : jjj jj/mm/aaaa affiche le jour de la semaine, et un format comme 0 suivi de m² affiche 12 m² tout en gardant un nombre calculable.
+
+Diapositive 12 – Les pièges à éviter
+  NARRATEUR : Cinq pièges reviennent souvent. Remplacer tout sans sélection modifie toute la feuille. Oublier l'espace devant euros laisse une espace qui garde le texte. Le point décimal : 1850 point 50 reste du texte dans un Excel français. Le zéro du téléphone disparaît : formatez la colonne en Texte avant de taper, ou utilisez le format Spécial. Et la date tapée sans l'année est prise dans l'année en cours.
+
+Diapositive 13 – Les règles d'une bonne saisie
+  NARRATEUR : Retenez les règles qui évitent tout ce nettoyage. Un nombre se tape sans unité : l'unité, c'est le format. Les décimales avec une virgule. Une date avec des barres obliques et l'année. Une information par cellule, une ligne par devis, une seule ligne d'en-têtes. Et toujours : on tape les données, puis on les habille. Pour vérifier, l'alignement à droite et la Somme de la barre d'état.
+
+Diapositive 14 – Une liste lisible, un total juste
+  SOPHIE : Enfin une liste que je peux lire. Et le total, cette fois, je peux le donner au banquier.
+  KARIM : Cinq minutes, sans retaper un chiffre. Le mois prochain, ce sera deux.
+  NARRATEUR : Bravo. Passez maintenant à l'atelier : Sophie veut la liste des factures de février pour l'expert-comptable.

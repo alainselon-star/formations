@@ -1,0 +1,37 @@
+<h3>Atelier 01 – La liste illisible, à vous de jouer (20 min)</h3>
+<p>Sophie veut la liste des factures de février pour l'expert-comptable. Karim les a saisies dans l'urgence, avec les mêmes défauts que les devis de janvier : des dates avec des points, des montants en « euros » ou « EUR ». Vous allez la rendre juste et lisible, sans retaper un seul chiffre.</p>
+<p><strong>Fichier :</strong> votre copie de <em>Excel_1_Liste_illisible_exercices.xlsx</em> (à télécharger juste sous cette page), feuille <strong>Pratique</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie que vous avez compris chaque geste.</p>
+
+<h4>Étape 1 – Diagnostiquer</h4>
+<p><strong>Faites :</strong> cliquez sur la lettre <strong>H</strong> pour sélectionner la colonne Montant HT, puis regardez la barre d'état, en bas de la fenêtre. Faites de même avec la colonne <strong>A</strong> (Date).</p>
+<p><strong>Vous devez voir :</strong> tous les montants et toutes les dates sont calés à gauche. La barre d'état affiche « Nombre : 26 » mais <strong>aucune Somme</strong> : pour Excel, il n'y a aucun nombre dans la colonne.</p>
+<p><strong>Si ça ne marche pas :</strong> la barre d'état n'affiche rien ? Clic droit sur la barre d'état, cochez Nombre, Moyenne et Somme.</p>
+<p><strong>Pourquoi :</strong> un nombre se cale à droite, un texte à gauche. La Somme de la barre d'état ignore le texte : c'est votre détecteur de faux nombres.</p>
+
+<h4>Étape 2 – Des montants en vrais nombres</h4>
+<p><strong>Faites :</strong> colonne H sélectionnée, <strong>Ctrl+H</strong>. Rechercher : «  euros » (une espace devant), Remplacer par : laissez vide → <strong>Remplacer tout</strong>. Recommencez avec «  EUR ».</p>
+<p><strong>Vous devez voir :</strong> les montants passent à droite. La barre d'état affiche maintenant une Somme : notez-la.</p>
+<p><strong>Si ça ne marche pas :</strong> vous voyez « 2540os » ? Vous avez remplacé « EUR » en premier : Ctrl+Z, puis refaites dans l'ordre. Un montant reste à gauche ? Vous avez oublié l'espace devant « euros » : recommencez avec l'espace.</p>
+<p><strong>Pourquoi :</strong> après le remplacement, Excel relit chaque cellule comme si vous veniez de la taper. « 4120 » devient un nombre.</p>
+
+<h4>Étape 3 – Des dates en vraies dates</h4>
+<p><strong>Faites :</strong> sélectionnez la colonne A, <strong>Ctrl+H</strong>. Rechercher : « . », Remplacer par : « / » → Remplacer tout.</p>
+<p><strong>Vous devez voir :</strong> les dates passent à droite. Si une cellule affiche « ##### », la colonne est trop étroite : double-cliquez sur la séparation entre les lettres A et B.</p>
+<p><strong>Si ça ne marche pas :</strong> d'autres cellules de la feuille ont changé ? Vous n'aviez pas sélectionné la colonne : Ctrl+Z et recommencez.</p>
+
+<h4>Étape 4 – Habiller les nombres</h4>
+<p><strong>Faites :</strong> colonne H : Accueil → groupe Nombre → <strong>Monétaire</strong>, puis deux fois <strong>Réduire les décimales</strong>. Colonne A : <strong>Ctrl+1</strong> → Nombre → Personnalisée → Type : <code>jjj jj/mm/aaaa</code> → OK.</p>
+<p><strong>Vous devez voir :</strong> des montants comme « 6 370 € » et des dates comme « lun. 02/02/2026 ». Cliquez sur un montant : la barre de formule affiche toujours le nombre sans habillage.</p>
+<p><strong>Si ça ne marche pas :</strong> le format Monétaire ne change rien ? La cellule contient encore du texte : revenez à l'étape 2.</p>
+<p><strong>Pourquoi :</strong> le format habille la valeur, il ne la modifie jamais. On nettoie d'abord, on habille ensuite.</p>
+
+<h4>Étape 5 – Présenter la liste</h4>
+<p><strong>Faites :</strong> en-têtes A3:I3 : Gras, couleur de remplissage bleu clair, Centrer, Renvoyer à la ligne. Plage A3:I28 : Bordures → Toutes les bordures. Colonnes A à I sélectionnées : double-clic sur une séparation de colonnes. A1 : Styles de cellules → <strong>Titre 1</strong>, et corrigez le texte en « Factures de février 2026 ».</p>
+<p><strong>Vous devez voir :</strong> une liste lisible, sans texte coupé ni dièses.</p>
+<p><strong>Si ça ne marche pas :</strong> évitez Fusionner et centrer pour le titre : il gêne ensuite pour trier et filtrer.</p>
+
+<h4>Étape 6 – Lire le total</h4>
+<p><strong>Faites :</strong> sélectionnez les montants, de H4 à H28.</p>
+<p><strong>Vous devez voir :</strong> dans la barre d'état, <strong>Somme : 120 920 €</strong>. Si vous trouvez moins, un montant est resté du texte : cherchez la cellule calée à gauche.</p>
+<p><strong>Pourquoi :</strong> le total est juste parce que les 25 montants sont maintenant de vrais nombres. À la leçon suivante, vous l'écrirez dans une cellule avec SOMME, pour qu'il s'imprime et se mette à jour seul.</p>

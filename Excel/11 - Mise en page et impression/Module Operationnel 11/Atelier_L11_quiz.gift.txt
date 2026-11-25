@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Atelier 11
+
+::J1 Ordre::Étape 1 – Dans quel ordre Excel imprime-t-il une liste trop large et trop longue ?{
+=D'abord vers le bas, puis les colonnes qui ne tenaient pas en largeur#Exact \: d'où des pages sans le nom du client.
+~Colonne par colonne#Non \: il imprime par blocs de lignes et de colonnes.
+~Uniquement la première page#Non \: il imprime toutes les pages.
+}
+
+::J2 Titres::Étape 2 – Quel réglage répète la ligne 1 en haut de chaque page imprimée ?{
+=Mise en page → Imprimer les titres → Lignes à répéter en haut#Exact \: $1\:$1.
+~Affichage → Figer les volets#Non \: cela n'agit que sur l'écran.
+~Insertion → En-tête et pied de page#Non \: les titres ne s'aligneraient pas avec les colonnes.
+}
+
+::J3 Largeur::Étape 3 – Comment faire tenir toutes les colonnes sur la largeur d'une page, quel que soit le nombre de lignes ?{
+=Mise à l'échelle → Largeur \: 1 page, Hauteur \: Automatique#Exact \: Excel calcule la réduction.
+~Largeur \: 1 page et Hauteur \: 1 page#Non \: 300 lignes sur une page seraient illisibles.
+~Affichage → Zoom à 50 %#Non \: le zoom ne change que l'écran.
+}
+
+::J4 Paysage::Étape 3 – Pourquoi passer une liste de 11 colonnes en orientation Paysage ?{
+=Elle est plus large que haute \: la réduction est moindre et le texte plus lisible#Exact \: la page offre plus de largeur.
+~Pour imprimer plus de lignes par page#Non \: le paysage offre moins de hauteur.
+~Parce que le PDF l'exige#Non \: le PDF accepte les deux orientations.
+}
+
+::J5 Pied::Étape 4 – Où ajouter « Page 1 sur 5 » en bas de chaque page ?{
+=Insertion → En-tête et pied de page#Exact \: avec Numéro de page et Nombre de pages.
+~Dans une cellule tout en bas de la liste#Non \: elle ne s'imprimerait que sur la dernière page.
+~Mise en page → Imprimer les titres#Non \: cela répète des lignes de la feuille.
+}
+
+::J6 Zone::Étape 5 – Quelle différence entre « Zone d'impression → Définir » et « Imprimer la sélection » ?{
+=La zone est enregistrée avec la feuille, la sélection ne vaut qu'une fois#Exact \: la prochaine impression reprendra la zone.
+~Aucune#Non \: seule la zone d'impression est conservée.
+~La sélection s'enregistre, la zone non#Non \: c'est l'inverse.
+}
+
+::J7 Sauts::Étape 6 – À quoi sert l'affichage « Aperçu des sauts de page » ?{
+=À voir les pages et déplacer les sauts de page à la souris#Exact \: les limites sont des traits bleus.
+~À figer les titres#Non \: c'est Figer les volets, pour l'écran.
+~À créer le PDF#Non \: c'est Fichier → Exporter.
+}
+
+::J8 PDF::Étape 7 – Le PDF exporté reprend-il les réglages de mise en page ?{
+=Oui \: titres répétés, largeur, orientation et zone d'impression#Exact \: ce que montre l'aperçu, c'est ce que contient le PDF.
+~Non, il faut tout régler à nouveau#Non \: le PDF suit la mise en page.
+~Seulement l'orientation#Non \: il reprend tous les réglages.
+}

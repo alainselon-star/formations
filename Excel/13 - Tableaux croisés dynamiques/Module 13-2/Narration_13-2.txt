@@ -1,0 +1,67 @@
+﻿Module 13.2 - D'autres chiffres - Narration diapositive par diapositive
+Voix (Insérer > Audio > Synthèse vocale) : Léa = narrateur, Isabelle (Français Belgique) = Sophie, Rémi = Karim.
+Un clip audio par réplique. Sur une même diapositive, placez chaque clip après le précédent sur la chronologie.
+
+=== Diapositive 1 - D'autres chiffres ===
+[Léa (Français France) — narrateur]
+Dix heures. La réunion a commencé. Le tableau de Karim est prêt, mais Sophie a d'autres questions. Dans ce module, vous allez faire calculer autre chose qu'une somme à votre tableau croisé.
+
+=== Diapositive 2 - 10 h 05, dans la salle de réunion ===
+[Isabelle (Français Belgique) — Sophie]
+Quel type de travaux fait les plus grosses factures ? En moyenne, et la plus grosse de toutes ? Et en pourcentage, qu'est-ce qui rapporte le plus ?
+[Rémi (Français France) — Karim]
+Je repars de mon tableau. Ça va aller vite.
+
+=== Diapositive 3 - Le tableau de 9 h ne fait que des sommes ===
+[Léa (Français France) — narrateur]
+Voici le tableau de neuf heures : la somme des montants par type de travaux. Sophie ne veut plus seulement des totaux. Elle veut une moyenne, un maximum et des pourcentages. Bonne nouvelle : on ne recommence rien. On change seulement ce que calcule la zone Valeurs.
+
+=== Diapositive 4 - Excel choisit le calcul tout seul ===
+[Léa (Français France) — narrateur]
+Quand vous déposez un champ dans Valeurs, Excel choisit le calcul tout seul. Une colonne qui ne contient que des nombres, comme Montant HT : il additionne. Une colonne de texte, comme Client : il ne peut pas additionner, alors il compte les lignes. Si vous lisez « Nombre de Montant HT », c'est un signal : un montant est tapé en texte, ou une case est vide.
+
+=== Diapositive 5 - Changer le calcul ===
+[Léa (Français France) — narrateur]
+Pour changer le calcul, faites un clic droit sur un nombre du tableau. Choisissez Synthétiser les valeurs par, puis Moyenne. Vous y trouvez aussi NB pour compter, Max. pour le plus grand et Min. pour le plus petit. Le titre de la colonne change : Moyenne de Montant HT.
+
+=== Diapositive 6 - La facture moyenne par type de travaux ===
+[Léa (Français France) — narrateur]
+Voici la facture moyenne de chaque type de travaux. Contrôlez la ligne Total général : trois mille neuf cent vingt et un euros dix-sept, la même moyenne que dans la barre d'état. Remarquez la peinture : c'est elle qui fait le plus de factures, mais sa facture moyenne est la plus petite.
+
+=== Diapositive 7 - Deux fois Montant HT : moyenne et maximum ===
+[Léa (Français France) — narrateur]
+Et la plus grosse facture ? Faites glisser une deuxième fois Montant HT dans la zone Valeurs. Sur cette nouvelle colonne : clic droit, Synthétiser les valeurs par, Max. Les deux calculs s'affichent côte à côte. La menuiserie a la plus forte moyenne, cinq mille huit cent quarante-trois euros, et la plus grosse facture de l'année : dix mille cinq cent soixante-dix euros.
+
+=== Diapositive 8 - Afficher les valeurs en pourcentage ===
+[Léa (Français France) — narrateur]
+Passons aux pourcentages. Repartez du tableau des sommes, trié du plus grand au plus petit. Faites glisser encore une fois Montant HT dans Valeurs. Clic droit sur un nombre de cette nouvelle colonne, Afficher les valeurs, puis pour cent du total général. Le calcul reste une somme : seule la présentation change.
+
+=== Diapositive 9 - Ce qui rapporte le plus, en pourcentage ===
+[Léa (Français France) — narrateur]
+La réponse saute aux yeux. La plomberie fait vingt-sept virgule quarante-neuf pour cent du chiffre d'affaires, devant la peinture, la menuiserie, l'électricité et le carrelage. Le total fait cent pour cent. La peinture fait le plus de factures, mais c'est la plomberie qui rapporte le plus.
+
+=== Diapositive 10 - Piège : toute la colonne affiche 100 % ===
+[Léa (Français France) — narrateur]
+Attention au piège. Si toute la colonne affiche cent pour cent, vous avez choisi pour cent du total de la ligne : chaque type de travaux est comparé à lui-même. Refaites : Afficher les valeurs, pour cent du total général.
+
+=== Diapositive 11 - Compter des lignes, pas des clients ===
+[Léa (Français France) — narrateur]
+Une dernière expérience. Faites glisser Client dans la zone Valeurs. Excel affiche Nombre de Client : trois cents au total. Pourtant, Karim n'a que trente-quatre clients. Excel ne compte pas les clients différents : il compte les lignes, donc les factures. Pratique pour compter des factures, trompeur si l'on croit compter des clients.
+
+=== Diapositive 12 - Calcul ou présentation ? ===
+[Léa (Français France) — narrateur]
+Retenez deux menus. Synthétiser les valeurs par change le calcul : somme, nombre, moyenne, maximum, minimum. Afficher les valeurs change la présentation, par exemple en pourcentage du total général. Et un même champ peut aller plusieurs fois dans Valeurs, avec un calcul différent à chaque fois.
+
+=== Diapositive 13 - Un résultat étrange ? ===
+[Léa (Français France) — narrateur]
+Voici les trois surprises les plus fréquentes, et leur solution.
+
+=== Diapositive 14 - Sophie a ses réponses ===
+[Isabelle (Français Belgique) — Sophie]
+La plomberie, vingt-sept pour cent… C'est exactement ce que je voulais montrer.
+[Rémi (Français France) — Karim]
+Et je n'ai rien recalculé à la main.
+[Léa (Français France) — narrateur]
+Bravo, vous savez changer le calcul d'un tableau croisé et afficher des pourcentages. Passez maintenant à l'atelier pour le faire vous-même.
+
+Diapositives de quiz et de résultats : pas de narration.

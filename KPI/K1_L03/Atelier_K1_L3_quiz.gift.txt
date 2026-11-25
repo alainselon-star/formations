@@ -1,0 +1,50 @@
+$CATEGORY: $course$/K1-L3 Atelier
+
+::K1L3-A1 OLA::Étape 1 – « L'équipe Infra & réseau s'engage à répondre aux questions du Service Desk sous 2 heures ouvrées. » De quel engagement s'agit-il ?{
+=D'un OLA#Exact \: deux équipes internes s'engagent l'une envers l'autre.
+~D'un SLA#Non \: le SLA est une promesse faite aux utilisateurs. Revoyez la diapositive 5 (K1-L3-S1).
+~D'un contrat de sous-traitance#Non \: l'équipe Infra & réseau est interne à Valdor. Revoyez la diapositive 5 (K1-L3-S1).
+}
+
+::K1L3-A2 Contrat::Étape 1 – « L'opérateur télécom garantit une disponibilité de la ligne internet de 99,9 % par mois. » De quel engagement s'agit-il ?{
+=D'un contrat de sous-traitance#Exact \: un fournisseur externe s'engage envers Valdor.
+~D'un SLA#Non \: ce n'est pas le support qui promet aux utilisateurs. Revoyez la diapositive 5 (K1-L3-S1).
+~D'un OLA#Non \: l'opérateur n'est pas une équipe interne. Revoyez la diapositive 5 (K1-L3-S1).
+}
+
+::K1L3-A3 Férié::Étape 2 – Ticket E-3 \: incident P2 (8 h ouvrées) ouvert le lundi 13 juillet à 15 h. Quelle est son échéance ?{
+=Le mercredi 15 juillet à 13 h#Exact \: 3 h le lundi, le 14 juillet est férié, puis 5 h le mercredi.
+~Le mardi 14 juillet à 13 h#Non \: le 14 juillet est férié, le chrono ne court pas. Revoyez la diapositive 7 (K1-L3-S2).
+~Le lundi 13 juillet à 23 h#Non \: le délai ne court que de 8 h à 18 h. Revoyez la diapositive 7 (K1-L3-S2).
+}
+
+::K1L3-A4 Week-end::Étape 2 – Ticket E-6 \: incident P2 ouvert par le portail le samedi 20 juin à 10 h. Quand le chrono démarre-t-il ?{
+=Le lundi 22 juin à 8 h#Exact \: hors horaires, le délai ne commence qu'à l'ouverture du support ; échéance lundi 16 h.
+~Le samedi 20 juin à 10 h#Non \: le samedi ne compte pas. Revoyez la diapositive 7 (K1-L3-S2).
+~Le dimanche 21 juin à minuit#Non \: le dimanche ne compte pas non plus. Revoyez la diapositive 7 (K1-L3-S2).
+}
+
+::K1L3-A5 SERIE.JOUR.OUVRE::Étape 2 – À quoi sert le dernier argument de SERIE.JOUR.OUVRE.INTL(ENT(B5);1;1;T_Feries[Jour férié]) ?{
+=À sauter les jours fériés du calendrier#Exact \: sans lui, la fonction ne saute que les week-ends.
+~À ajouter un jour supplémentaire#Non \: c'est le 2e argument (1) qui donne le nombre de jours.
+~À choisir les jours de week-end#Non \: c'est le 3e argument (1 \= samedi et dimanche).
+}
+
+::K1L3-A6 Priorité::Étape 3 – D'après vos calculs, quelle priorité a le plus faible taux de résolution à temps ?{
+=P2 – Haute, avec 79 %#Exact \: les incidents urgents sont les plus difficiles à résoudre dans le délai.
+~P4 – Basse#Non \: 98 % des P4 sont résolus à temps. Revoyez la diapositive 9 (K1-L3-S2).
+~P3 – Moyenne#Non \: 93 % des P3 sont résolus à temps. Revoyez la diapositive 9 (K1-L3-S2).
+~P1 – Critique#Non \: 81 %, c'est bas, mais P2 fait moins bien. Revoyez la diapositive 9 (K1-L3-S2).
+}
+
+::K1L3-A7 Pause::Étape 4 – En septembre, le SLA passe de 96 % (chrono hors attente) à 74 % (attente comptée). Qu'en conclure ?{
+=Le statut En attente masque des délais que les utilisateurs ont réellement subis#Exact \: il faut encadrer son usage et le suivre.
+~Le support s'est amélioré en septembre#Non \: le délai réel s'est allongé. Revoyez la diapositive 8 (K1-L3-S2).
+~Il faut toujours compter le temps en attente#Non \: la pause est légitime quand on attend l'utilisateur. Revoyez la diapositive 8 (K1-L3-S2).
+}
+
+::K1L3-A8 XLA::Étapes 3 et 4 – Quel engagement aiderait Hélène à vérifier que l'entrepôt vit vraiment le service promis ?{
+=Un XLA, qui porte sur l'expérience vécue#Exact \: il complète le SLA en mesurant ce que ressent l'utilisateur.
+~Un OLA plus strict#Non \: l'OLA aligne les équipes internes, il ne mesure pas l'expérience. Revoyez la diapositive 10 (K1-L3-S3).
+~Un SLA avec un délai plus court#Non \: le SLA mesure toujours la promesse, pas le ressenti. Revoyez la diapositive 10 (K1-L3-S3).
+}

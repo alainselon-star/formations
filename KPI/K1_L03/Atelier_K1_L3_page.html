@@ -1,0 +1,28 @@
+<h3>Atelier 03 – SLA et engagements, à vous de jouer (20 min)</h3>
+<p>L'entrepôt conteste un délai et Hélène veut des règles claires. Vous allez classer les engagements de Valdor, calculer des échéances en heures ouvrées, mesurer le respect du SLA par priorité, puis voir ce que devient le SLA quand on compte le temps en attente.</p>
+<p><strong>Fichier :</strong> votre copie de <em>K1_L3_Atelier_Valdor.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Engagements</strong>, <strong>Échéances</strong>, <strong>Fériés</strong> (table T_Feries), <strong>Incidents</strong> (856 incidents, table T_Incidents), <strong>SLA par priorité</strong> et <strong>Chrono en pause</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie chaque étape. Chaque erreur vous renvoie à la diapositive de la leçon à revoir.</p>
+
+<h4>Étape 1 – SLA, OLA ou contrat ?</h4>
+<p><strong>Faites :</strong> feuille Engagements, choisissez pour chaque ligne SLA, OLA ou Contrat de sous-traitance dans la colonne C.</p>
+<p><strong>Vous devez voir :</strong> dans le contrôle, 3 SLA, 2 OLA et 3 contrats.</p>
+<p><strong>Si ça ne marche pas :</strong> demandez-vous qui s'engage envers qui. Envers les utilisateurs : SLA. Entre deux équipes internes : OLA. Un fournisseur envers le support : contrat. (Leçon, diapositive 5.)</p>
+
+<h4>Étape 2 – Calculer une échéance en heures ouvrées</h4>
+<p><strong>Faites :</strong> feuille Échéances, en F5, tapez <code>=SI(JOURSEM(B5;2)&gt;5;0;MAX(0;18-(B5-ENT(B5))*24))</code> : les heures ouvrées qui restent le jour de l'ouverture.<br>En G5, tapez <code>=SERIE.JOUR.OUVRE.INTL(ENT(B5);1;1;T_Feries[Jour férié])</code> : le prochain jour ouvré, en sautant les week-ends et les jours fériés.<br>En H5, tapez <code>=SI(E5&lt;=F5;B5+E5/24;G5+(8+E5-F5)/24)</code>. Recopiez F5:H5 jusqu'à la ligne 10.</p>
+<p><strong>Vous devez voir :</strong> E-1 le 09/06 à 18:00 ; E-2 le 15/06 à 14:00 ; E-3 le 15/07 à 13:00 (le 14 juillet est férié) ; E-4 le 07/05 à 15:30 ; E-5 le 11/05 à 11:00 (le 8 mai est férié) ; E-6 le 22/06 à 16:00.</p>
+<p><strong>Pourquoi :</strong> si le délai tient dans la journée, on l'ajoute à l'heure d'ouverture ; sinon, on reporte le reste au prochain jour ouvré à partir de 8 h. Cette méthode simple suffit quand le délai ne dépasse pas une journée de 10 h.</p>
+<p><strong>Si ça ne marche pas :</strong> vous voyez un nombre comme 46193,6 ? Appliquez un format Date et heure (jj/mm/aaaa hh:mm).</p>
+
+<h4>Étape 3 – Le SLA devient un KPI</h4>
+<p><strong>Faites :</strong> feuille SLA par priorité, en B5, tapez <code>=NB.SI(T_Incidents[Priorité];A5)</code>. En C5, <code>=NB.SI.ENS(T_Incidents[Priorité];A5;T_Incidents[SLA prise en charge respecté];"Oui")</code> et en D5, <code>=C5/B5</code>. Faites de même en E5 et F5 avec la colonne <em>SLA résolution respecté</em>. Recopiez jusqu'à la ligne 8.</p>
+<p><strong>Vous devez voir :</strong> P1 : 27 incidents, 100 % de prise en charge à temps, 81 % de résolution à temps ; P2 : 199, 97 %, 79 % ; P3 : 420, 98 %, 93 % ; P4 : 210, 100 %, 98 %.</p>
+<p><strong>Pourquoi :</strong> la prise en charge est presque toujours tenue ; la résolution l'est moins, surtout pour les incidents les plus urgents.</p>
+
+<h4>Étape 4 – Compter le temps en attente</h4>
+<p><strong>Faites :</strong> feuille Incidents, en I1, tapez l'en-tête <code>Dans le délai, attente comptée</code>, puis en I2 : <code>=SI([@[Durée ouvrée totale (min)]]&lt;=[@[SLA résolution (min)]];"Oui";"Non")</code>. Le tableau recopie la formule.<br>Feuille Chrono en pause, en C5, <code>=NB.SI(T_Incidents[Mois];B5)</code> ; en D5, <code>=NB.SI.ENS(T_Incidents[Mois];B5;T_Incidents[SLA résolution respecté];"Oui")/C5</code> ; en E5, la même formule avec la nouvelle colonne ; en F5, <code>=(D5-E5)*100</code>. Recopiez jusqu'à la ligne 10.</p>
+<p><strong>Vous devez voir :</strong> de mai à août, un écart de 1 à 4 points ; en septembre, 96 % contre 74 % (22 points) ; en octobre, 92 % contre 73 %.</p>
+<p><strong>Pourquoi :</strong> à partir de septembre, beaucoup de tickets passent en attente : le chrono s'arrête et le SLA affiché reste vert, alors que les utilisateurs attendent plus longtemps.</p>
+
+<h4>Pour aller plus loin</h4>
+<p>Rédigez en deux phrases la règle d'usage du statut « En attente » que Romain devrait ajouter au SLA de Valdor : quand est-il permis, et qui le contrôle ?</p>

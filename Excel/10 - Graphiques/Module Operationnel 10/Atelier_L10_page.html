@@ -1,0 +1,36 @@
+<h3>Atelier 10 – Comprendre en 10 secondes, à vous de jouer (25 min)</h3>
+<p>Jeudi, Sophie présente l'atelier à la banque. Vous allez construire les graphiques qu'elle montrera, à partir de la synthèse déjà calculée.</p>
+<p><strong>Fichier :</strong> votre copie de <em>Excel_10_Graphiques_ca_2026.xlsx</em> (à télécharger juste sous cette page) : feuille <strong>Factures</strong> (217 factures) et feuille <strong>Synthèse</strong> (5 petits tableaux calculés). <strong>Durée :</strong> 25 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie que vous avez compris chaque geste.</p>
+
+<h4>Étape 1 – Le CA par mois</h4>
+<p><strong>Faites :</strong> feuille Synthèse, sélectionnez A5:B14 (sans la ligne Total). Insertion → <strong>Graphiques recommandés</strong> → Histogramme groupé → OK. Titre : « Chiffre d'affaires HT par mois — 2026 ». Bouton <strong>+</strong> → Étiquettes de données.</p>
+<p><strong>Vous devez voir :</strong> mai, le plus haut (155 890), août, le plus bas (72 880).</p>
+<p><strong>Si ça ne marche pas :</strong> une barre géante écrase les autres ? Vous avez pris la ligne Total. La légende dit « Série1 » ? Vous n'avez pas pris la ligne des titres.</p>
+
+<h4>Étape 2 – Le métier qui fait vivre l'atelier</h4>
+<p><strong>Faites :</strong> sélectionnez E5:F10 (sans le Total), Données → Trier → par CA HT, du plus petit au plus grand. Gardez E5:F10 sélectionné, puis Insertion → Histogramme ou graphique à barres → <strong>Barres groupées</strong>. Ajoutez les étiquettes de données.</p>
+<p><strong>Vous devez voir :</strong> la menuiserie en haut (265 530 €), l'électricité en bas.</p>
+<p><strong>Pourquoi :</strong> les barres horizontales laissent la place aux noms ; Excel dessine la première ligne du tableau en bas.</p>
+
+<h4>Étape 3 – La part de chaque commercial</h4>
+<p><strong>Faites :</strong> sélectionnez K5:L7 (sans le Total), Insertion → <strong>Secteurs</strong>. Clic droit → Ajouter des étiquettes de données, puis clic droit sur les étiquettes → Mettre en forme → cochez Pourcentage, décochez Valeur.</p>
+<p><strong>Vous devez voir :</strong> Julie 56 %, Thomas 44 %.</p>
+
+<h4>Étape 4 – Le réel et l'objectif</h4>
+<p><strong>Faites :</strong> sélectionnez A5:C14. Insertion → Graphiques recommandés → onglet Tous les graphiques → <strong>Graphique combiné</strong> : CA HT en Histogramme groupé, Objectif en Courbe → OK. Titre : « CA réel et objectif — 2026 ».</p>
+<p><strong>Vous devez voir :</strong> une seule barre sous la courbe : mars (104 660 € pour 110 000 € d'objectif).</p>
+<p><strong>Pourquoi :</strong> si les deux séries avaient des échelles très différentes (des euros et des %), on cocherait Axe secondaire pour la seconde.</p>
+
+<h4>Étape 5 – Deux métiers dans le temps, puis intervertir</h4>
+<p><strong>Faites :</strong> sélectionnez A19:C28, Insertion → <strong>Courbes</strong>. Puis Création de graphique → <strong>Intervertir les lignes/colonnes</strong>, regardez, et intervertissez à nouveau.</p>
+<p><strong>Vous devez voir :</strong> deux courbes, Peinture et Plomberie, avec les mois en bas. Après l'inversion, les mois deviennent des séries : illisible. Revenez à la première version.</p>
+
+<h4>Étape 6 – Les sparklines</h4>
+<p><strong>Faites :</strong> sélectionnez B20:F28, Insertion → Graphiques sparkline → <strong>Courbes</strong> → Plage d'emplacements : B29:F29 → OK. Onglet Sparkline → cochez Point haut.</p>
+<p><strong>Vous devez voir :</strong> une petite courbe sous chaque métier, ligne « Tendance ».</p>
+
+<h4>Étape 7 – Le graphique suit les données</h4>
+<p><strong>Faites :</strong> feuille Factures, en H44 (facture F-2026-043), remplacez 3 540 par 13 540. Revenez sur Synthèse.</p>
+<p><strong>Vous devez voir :</strong> la barre de mars monte à 114 660 € et passe au-dessus de l'objectif ; la sparkline de la plomberie bouge aussi. Annulez avec Ctrl+Z.</p>
+<p><strong>Pourquoi :</strong> un graphique reste relié aux cellules. En revanche, une ligne ajoutée sous un tableau ordinaire n'est pas prise : il faut étendre la source, ou travailler sur un tableau structuré.</p>

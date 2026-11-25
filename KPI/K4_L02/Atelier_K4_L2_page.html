@@ -1,0 +1,30 @@
+<h3>Atelier 02 – Les délais, à vous de jouer (20 min)</h3>
+<p>Hélène doit présenter un délai en comité, et le MTTR de 8,4 h ne colle pas avec ce que disent les utilisateurs. Vous allez calculer le MTTA et le MTTR des 856 incidents de Valdor, par canal et par priorité, puis comparer moyenne, médiane et 90e centile.</p>
+<p><strong>Fichier :</strong> votre copie de <em>K4_L2_Atelier_Valdor.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Incidents</strong> (856 incidents, table T_Incidents), <strong>MTTA</strong>, <strong>MTTR</strong>, <strong>Distribution</strong> et <strong>Niveaux</strong>. Les délais sont déjà calculés en minutes ouvrées, hors temps en attente pour la résolution. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie chaque étape. Chaque erreur vous renvoie à la diapositive de la leçon à revoir.</p>
+
+<h4>Étape 1 – Le MTTA de Valdor</h4>
+<p><strong>Faites :</strong> feuille MTTA, en B5, tapez <code>=MOYENNE(T_Incidents[Prise en charge (min)])</code>. En B6, <code>=MEDIANE(T_Incidents[Prise en charge (min)])</code>.</p>
+<p><strong>Vous devez voir :</strong> 21,5 minutes en moyenne, 4 minutes en médiane, et deux coches ✓.</p>
+<p><strong>Pourquoi :</strong> la moitié des incidents sont pris en charge en moins de 4 minutes, mais quelques-uns attendent longtemps et tirent la moyenne vers le haut.</p>
+
+<h4>Étape 2 – Le MTTA par canal</h4>
+<p><strong>Faites :</strong> en B10, tapez <code>=NB.SI(T_Incidents[Source];A10)</code>. En C10, <code>=MOYENNE.SI(T_Incidents[Source];A10;T_Incidents[Prise en charge (min)])</code>. En D10, <code>=MEDIANE(SI(T_Incidents[Source]=A10;T_Incidents[Prise en charge (min)]))</code>. Recopiez B10:D10 jusqu'à la ligne 12.</p>
+<p><strong>Vous devez voir :</strong> Téléphone : 427 incidents, 2,4 min en moyenne, 2 min en médiane ; Mail : 236, 41,0 et 29 ; Portail : 193, 39,6 et 31.</p>
+<p><strong>Pourquoi :</strong> au téléphone, le technicien prend l'incident pendant l'appel. Par mail et par le portail, il faut attendre qu'il ouvre la file. C'est là qu'on peut gagner du temps.</p>
+<p><strong>Si ça ne marche pas :</strong> la formule MEDIANE(SI(…)) renvoie une erreur ? Dans les anciennes versions d'Excel, validez-la avec <em>Ctrl+Maj+Entrée</em>. Revoyez le MTTA (leçon, diapositive 5).</p>
+
+<h4>Étape 3 – Le MTTR par priorité</h4>
+<p><strong>Faites :</strong> feuille MTTR, en B5, tapez <code>=NB.SI(T_Incidents[Priorité];A5)</code>. En C5, <code>=MOYENNE.SI(T_Incidents[Priorité];A5;T_Incidents[Résolution (min)])/60</code>. En D5, <code>=MEDIANE(SI(T_Incidents[Priorité]=A5;T_Incidents[Résolution (min)]))/60</code>. Recopiez jusqu'à la ligne 8.</p>
+<p><strong>Vous devez voir :</strong> P1 : 27 incidents, 4,4 h de moyenne, 1,8 h de médiane ; P2 : 199, 5,4 h et 3,2 h ; P3 : 420, 9,2 h et 5,4 h ; P4 : 210, 10,3 h et 5,3 h.</p>
+<p><strong>Pourquoi :</strong> seul le MTTR moyen des P1 dépasse sa cible (4,4 h pour 4 h). La médiane, elle, est bien en dessous : quelques incidents critiques très longs suffisent à faire déraper la moyenne.</p>
+<p><strong>Si ça ne marche pas :</strong> vous obtenez des nombres 60 fois trop grands ? Vous avez oublié de diviser par 60. Revoyez le MTTR (leçon, diapositive 6).</p>
+
+<h4>Étape 4 – Moyenne, médiane ou 90e centile ?</h4>
+<p><strong>Faites :</strong> feuille Distribution, avec la colonne <em>Résolution (min)</em> divisée par 60 : en B5 la moyenne (<code>MOYENNE</code>), en B6 la médiane (<code>MEDIANE</code>), en B7 le 90e centile <code>=CENTILE.INCLURE(T_Incidents[Résolution (min)];0,9)/60</code>, en B8 le maximum (<code>MAX</code>). En B9, la part des incidents sous la moyenne : <code>=NB.SI(T_Incidents[Résolution (min)];"&lt;"&amp;B5*60)/NB(T_Incidents[Résolution (min)])</code>.</p>
+<p><strong>Vous devez voir :</strong> moyenne 8,4 h, médiane 4,6 h (4,55), 90e centile 22,1 h, maximum 96,2 h, et 67 % des incidents sous la moyenne.</p>
+<p><strong>Pourquoi :</strong> c'est la réponse à Hélène. L'incident typique est réparé en 4,6 h, ce que disent les utilisateurs ; un incident sur dix dépasse 22 h, et ce sont ces incidents qui tirent la moyenne à 8,4 h.</p>
+<p><strong>Si ça ne marche pas :</strong> le pourcentage s'affiche 0,67 ? Appliquez le format Pourcentage. Revoyez la distribution (leçon, diapositive 8).</p>
+
+<h4>Pour aller plus loin</h4>
+<p>Feuille Niveaux, calculez le MTTR moyen et médian des niveaux N1, N2 et N3 avec la même méthode. Où Romain doit-il agir en priorité pour réduire les incidents de plus de 22 h ? Répondez en deux phrases sous le tableau.</p>

@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Atelier 09
+
+::J1 Cause::Étape 1 – Pourquoi NB.SI ne compte-t-il pas « Acepté » ni « accepté » suivi d'une espace ?{
+=Il ne compte que le texte exact, une lettre ou une espace en trop suffit à l'écarter#Exact \: seules les majuscules ne comptent pas.
+~Parce que NB.SI ne compte que les nombres#Non \: NB.SI compte aussi du texte.
+~Parce que la colonne n'est pas triée#Non \: le tri n'y change rien.
+}
+
+::J2 Outil::Étape 2 – Quel outil propose une liste déroulante dans une cellule ?{
+=Données → Validation des données → Liste#Exact \: on choisit au lieu de taper.
+~Données → Filtrer#Non \: le filtre cache des lignes.
+~Accueil → Mise en forme conditionnelle#Non \: elle colore selon la valeur.
+}
+
+::J3 Source::Étape 2 – Pourquoi écrire la source =Listes!$A$2\:$A$4 avec des $ ?{
+=Pour que la liste ne glisse pas d'une cellule à l'autre de la plage validée#Exact \: sans $, elle se décale et devient vide.
+~Pour afficher des montants en euros#Non \: le $ n'a rien à voir avec la monnaie.
+~Pour protéger la feuille Listes#Non \: les $ ne protègent rien.
+}
+
+::J4 Style::Étape 3 – Quel style d'alerte refuse vraiment une mauvaise saisie ?{
+=Arrêt#Exact \: la saisie est refusée.
+~Avertissement#Non \: Excel demande confirmation, et l'utilisateur peut accepter.
+~Information#Non \: la saisie passe après un simple message.
+}
+
+::J5 Existant::Étape 4 – Après avoir posé la règle, les fautes déjà présentes sont-elles corrigées ?{
+=Non, il faut les retrouver avec « Entourer les données non valides »#Exact \: la règle ne contrôle que les nouvelles saisies.
+~Oui, automatiquement#Non \: Excel ne corrige rien tout seul.
+~Oui, si on enregistre le fichier#Non \: l'enregistrement ne change pas les données.
+}
+
+::J6 Decimal::Étape 6 – Quelle règle refuse un montant négatif ?{
+=Autoriser Décimal, supérieure à 0#Exact \: les nombres négatifs et les textes sont refusés.
+~Autoriser Liste, source 0#Non \: seule la valeur 0 serait acceptée.
+~Format Monétaire#Non \: un format ne refuse aucune saisie.
+}
+
+::J7 Coller::Étape 7 – Que fait un copier-coller dans une cellule validée ?{
+=Il passe sans contrôle et la cellule perd sa règle#Exact \: c'est le point faible de la validation.
+~Il est refusé comme une saisie au clavier#Non \: la règle ne contrôle pas le collage.
+~Il est corrigé automatiquement#Non \: Excel ne corrige rien.
+}
+
+::J8 Nouvelles lignes::Étape 7 – La règle est posée sur I2\:I61. Une ligne 62 est ajoutée. Est-elle protégée ?{
+=Non, sauf si la liste est un tableau structuré ou si la règle couvre toute la colonne#Exact \: la règle ne s'applique qu'à sa plage.
+~Oui, toujours#Non \: la plage s'arrête à la ligne 61.
+~Oui, si on appuie sur F9#Non \: F9 recalcule, il n'étend pas la règle.
+}

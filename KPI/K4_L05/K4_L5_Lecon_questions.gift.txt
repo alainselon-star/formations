@@ -1,0 +1,29 @@
+$CATEGORY: $course$/K4-L5 Leçon
+
+::K4-L5 Leçon Q1::Le nombre brut d'incidents du mois, c'est…{
+=Une métrique \: il décrit sans juger#Exact \: il devient indicateur quand on le rapporte à une base. Revoyez la diapositive 5.
+~Un KPI, puisqu'on le suit chaque mois#Non \: un KPI a une cible et sert à décider. Revoyez la diapositive 5.
+~Un SLA#Non \: un SLA est une promesse de délai. Revoyez la diapositive 5.
+~Un indicateur de qualité#Non \: un volume ne dit rien de la qualité. Revoyez la diapositive 5.
+}
+
+::K4-L5 Leçon Q2::Pourquoi rapporter le volume à 100 utilisateurs ?{
+=Pour comparer des sites de tailles différentes#Exact \: l'entrepôt, à 65, est au-dessus du siège et de l'agence, à 52. Revoyez la diapositive 5.
+~Pour faire baisser le chiffre#Non \: on cherche à comparer, pas à embellir. Revoyez la diapositive 5.
+~Parce que la norme ITIL l'impose#Non \: c'est un choix de méthode. Revoyez la diapositive 5.
+~Pour calculer le MTTR#Non \: le MTTR est un délai. Revoyez la diapositive 5.
+}
+
+::K4-L5 Leçon Q3::Chez Valdor, qu'est-ce qu'un incident majeur ?{
+=Un incident de priorité P1, qui arrête une activité clé#Exact \: 27 en six mois. Revoyez la diapositive 7.
+~Tout incident hors SLA#Non \: un incident P4 peut dépasser son SLA sans être majeur. Revoyez la diapositive 7.
+~Tout incident rouvert#Non \: la réouverture est un KPI de qualité. Revoyez la diapositive 7.
+~Tout incident du lundi#Non \: le lundi est un pic de volume. Revoyez la diapositive 6.
+}
+
+::K4-L5 Leçon Q4::Quel KPI des incidents majeurs Valdor ne peut-il pas encore calculer ?{
+=La part des incidents majeurs avec revue post-incident#Exact \: l'outil ne la trace pas encore. Revoyez la diapositive 8.
+~Le nombre d'incidents majeurs#Non \: 27. Revoyez la diapositive 8.
+~Le respect du SLA de 4 h#Non \: 81 %. Revoyez la diapositive 8.
+~La part liée à un changement#Non \: 37 %. Revoyez la diapositive 8.
+}

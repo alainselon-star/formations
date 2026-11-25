@@ -1,0 +1,11 @@
+﻿Module 13.1 - captures a faire a la main (Excel ouvert sur une COPIE de Excel_13_TCD_factures_2026.xlsx)
+Outil conseille : Windows + Maj + S (capture d'une zone), puis coller dans Paint et enregistrer en PNG
+dans le dossier "captures" avec le nom indique.
+
+M01.png  - Ecran 3.4 : onglet Insertion du ruban, bouton "Tableau croise dynamique" (cliquer d'abord en C5).
+M02.png  - Ecran 3.4 : la fenetre "Tableau croise dynamique a partir d'un tableau ou d'une plage"
+           (Tableau/Plage = Factures, "Nouvelle feuille de calcul" coche).
+M03.png  - Ecran 3.3 / 3.5 : le volet "Champs de tableau croise dynamique" avec les 4 zones
+           (apres avoir place Type de travaux en Lignes, Date en Colonnes, Montant HT en Valeurs).
+
+Ne pas enregistrer la copie ensuite (ou la supprimer).

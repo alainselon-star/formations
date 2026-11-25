@@ -1,0 +1,49 @@
+$CATEGORY: $course$/K1-L4 Atelier
+
+::K1L4-A1 Moyenne::Étapes 1 et 2 – Incidents P2 \: moyenne 8,9 h, médiane 5,0 h. Quelle phrase est juste ?{
+=La moitié des incidents P2 sont résolus en moins de 5 h ouvrées#Exact \: c'est la définition de la médiane.
+~La moitié des incidents P2 sont résolus en moins de 8,9 h ouvrées#Non \: c'est la médiane qui coupe en deux moitiés, pas la moyenne. Revoyez la diapositive 7 (K1-L4-S3).
+~La plupart des incidents P2 durent environ 8,9 h#Non \: la moyenne est tirée par les cas extrêmes. Revoyez la diapositive 7 (K1-L4-S3).
+}
+
+::K1L4-A2 Centile::Étape 2 – Pour les P2, le centile 90 vaut 22,6 h ouvrées. Que signifie ce chiffre ?{
+=10 % des incidents P2 ont été résolus en plus de 22,6 h ouvrées#Exact \: le centile 90 décrit les plus mal servis.
+~90 % des incidents P2 ont dépassé 22,6 h#Non \: c'est l'inverse, 90 % sont en dessous. Revoyez la diapositive 7 (K1-L4-S3).
+~Le délai moyen des 90 % premiers incidents#Non \: un centile n'est pas une moyenne. Revoyez la diapositive 7 (K1-L4-S3).
+}
+
+::K1L4-A3 Matricielle::Étape 2 – Dans une ancienne version d'Excel, MEDIANE(SI(...)) renvoie une erreur ou un résultat faux. Que faire ?{
+=Valider la formule par Ctrl+Maj+Entrée#Exact \: c'est une formule matricielle.
+~Remplacer MEDIANE par MOYENNE#Non \: on ne mesurerait plus la même chose.
+~Trier la colonne avant le calcul#Non \: le tri ne règle pas le calcul matriciel.
+}
+
+::K1L4-A4 MAX::Étape 2 – Pourquoi regarder aussi le maximum ?{
+=Pour repérer le pire cas, qui mérite souvent une analyse individuelle#Exact \: un incident de 53 h ouvrées est une histoire à comprendre.
+~Pour remplacer la moyenne#Non \: le maximum ne décrit qu'un seul incident. Revoyez la diapositive 7 (K1-L4-S3).
+~Parce qu'il est toujours égal au centile 90#Non \: il est au-delà du centile 90. Revoyez la diapositive 7 (K1-L4-S3).
+}
+
+::K1L4-A5 Goodhart::Étape 3 – Kevin \: 22 minutes de délai médian, 30 % de réouverture. Quel piège illustre-t-il ?{
+=La loi de Goodhart \: on optimise le chiffre, pas le service#Exact \: la rapidité devenue objectif pousse à fermer trop vite.
+~L'effet pastèque#Non \: il s'agit ici du comportement d'une personne face à un objectif. Revoyez la diapositive 6 (K1-L4-S2).
+~Le piège de la moyenne#Non \: le délai est une médiane, et le problème vient de la réouverture. Revoyez la diapositive 6 (K1-L4-S2).
+}
+
+::K1L4-A6 Paire::Étape 3 – Quelle paire de KPI aurait évité de récompenser Kevin à tort ?{
+=Délai de résolution et taux de réouverture#Exact \: l'un surveille l'autre.
+~Délai de résolution et nombre de tickets traités#Non \: les deux poussent à aller vite. Revoyez la diapositive 6 (K1-L4-S2).
+~Délai moyen et délai médian#Non \: ce sont deux mesures du même délai. Revoyez la diapositive 6 (K1-L4-S2).
+}
+
+::K1L4-A7 Réponses::Étape 4 – Pourquoi utiliser "<>" comme critère dans NB.SI.ENS(...;T_Incidents[Satisfaction (1-5)];"<>") ?{
+=Pour ne compter que les cellules non vides, donc les réponses#Exact \: "<>" signifie « différent de vide ».
+~Pour compter les notes différentes de 5#Non \: il faudrait écrire "<>5".
+~Pour exclure les tickets rouverts#Non \: le critère porte sur la colonne Satisfaction.
+}
+
+::K1L4-A8 Échantillon::Étape 4 – En septembre, 41 réponses pour 144 incidents. Comment présenter la satisfaction de 2,9 ?{
+=Avec son nombre de réponses \: 2,9 sur 5 (41 réponses, 28 %)#Exact \: le lecteur sait sur quoi repose le chiffre.
+~Seule, l'échantillon n'a pas d'importance#Non \: moins d'un tiers des utilisateurs ont répondu. Revoyez la diapositive 8 (K1-L4-S4).
+~En la recalculant comme si tous avaient répondu 3#Non \: on inventerait des données. Revoyez la diapositive 8 (K1-L4-S4).
+}

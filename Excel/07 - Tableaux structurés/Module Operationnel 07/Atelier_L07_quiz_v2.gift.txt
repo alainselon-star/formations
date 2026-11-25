@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Atelier 07 v2
+
+::J1 Preparer::Mission 1 – Pourquoi supprimer la ligne TOTAL tapée à la main avant de convertir la liste ?{
+=Sinon elle devient une ligne de données comme les autres et double le total#Exact \: un tableau est une liste continue.
+~Parce qu'Excel refuse de convertir une liste qui contient le mot TOTAL#Non \: il la convertit, mais la compte comme une facture.
+~Pour gagner de la place#Non \: ce n'est pas la raison.
+}
+
+::J2 Test::Mission 2 – Comment savoir si une liste est un vrai tableau structuré ?{
+=En cliquant dedans \: l'onglet Création de tableau apparaît#Exact \: des couleurs seules ne suffisent pas.
+~Elle a des lignes à rayures#Non \: des rayures peuvent être faites à la main.
+~Elle a des flèches de filtre#Non \: une plage ordinaire peut aussi avoir des filtres.
+}
+
+::J3 Nom::Mission 2 – À quoi sert le nom « Factures » donné au tableau ?{
+=À désigner le tableau dans les formules, à la place d'une adresse figée#Exact \: Factures[Montant HT] suit le tableau.
+~À renommer la feuille#Non \: la feuille garde son nom.
+~À protéger le tableau contre les modifications#Non \: un nom ne protège rien.
+}
+
+::J4 Arobase::Mission 3 – Que veut dire l'arobase dans [@[Montant HT]] ?{
+=Sur cette ligne#Exact \: le montant HT de la ligne où se trouve la formule.
+~Toute la colonne#Non \: ce serait [Montant HT] sans arobase.
+~Une cellule bloquée#Non \: ce sont les $ qui bloquent une adresse.
+}
+
+::J5 Ajout::Mission 4 – Les lignes collées sous le tableau ne prennent ni les rayures ni la formule TTC. Pourquoi ?{
+=Une ligne vide les sépare du tableau#Exact \: il faut coller juste dessous.
+~Le tableau est plein#Non \: un tableau n'a pas de limite de lignes.
+~La colonne TTC est bloquée#Non \: elle se propage aux nouvelles lignes.
+}
+
+::J8 Tab::Mission 4 – Comment ajouter une ligne quand la Ligne Total est juste sous le tableau ?{
+=Cliquer dans la dernière cellule des données et appuyer sur Tab#Exact \: ou tirer la poignée de redimensionnement.
+~Taper sous la Ligne Total#Non \: la ligne serait hors du tableau.
+~Convertir en plage puis recommencer#Non \: inutile.
+}
+
+::J7 Reference::Mission 5 – Pourquoi réécrire le récap avec Factures[Type de travaux] au lieu de Factures!$F$2\:$F$208 ?{
+=Pour que les formules suivent le tableau quelle que soit sa longueur#Exact \: plus rien à retoucher la semaine suivante.
+~Parce que les $ ne fonctionnent pas avec un tableau#Non \: ils fonctionnent, mais la plage resterait figée.
+~Pour accélérer le calcul#Non \: ce n'est pas la raison.
+}
+
+::J6 Ligne Total::Mission 6 – Statut filtré sur « En attente », que calcule la Ligne Total ?{
+=Le total des seules lignes visibles#Exact \: elle utilise SOUS.TOTAL.
+~Le total de toutes les lignes#Non \: c'est ce que ferait SOMME.
+~Rien, elle se désactive#Non \: elle suit le filtre.
+}

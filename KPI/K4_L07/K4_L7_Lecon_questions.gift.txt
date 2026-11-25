@@ -1,0 +1,29 @@
+$CATEGORY: $course$/K4-L7 Leçon
+
+::K4-L7 Leçon Q1::Valdor affiche 98 % de changements réussis, mais 70 % réussis sans incident. Quelle définition retenir ?{
+=Installé ET sans incident causé \: 70 %#Exact \: un changement réussi ne doit pas dégrader le service. Revoyez la diapositive 5.
+~Installé, même avec incidents \: 98 %#Non \: cette définition ignore les lendemains. Revoyez la diapositive 5.
+~La moyenne des deux \: 84 %#Non \: on choisit une définition, on ne mélange pas. Revoyez la diapositive 5.
+~Aucune \: le taux de succès n'est pas un KPI#Non \: c'est le premier KPI du Change Management. Revoyez la diapositive 5.
+}
+
+::K4-L7 Leçon Q2::Que faut-il pour mesurer la part des changements qui causent des incidents ?{
+=Relier chaque incident au changement qui l'a causé#Exact \: sans ce lien, le KPI est impossible. Revoyez la diapositive 6.
+~Compter les changements d'urgence#Non \: c'est un autre KPI. Revoyez la diapositive 7.
+~Mesurer le MTTR des incidents#Non \: le MTTR ne dit pas d'où vient l'incident. Revoyez la diapositive 6.
+~Faire passer tous les changements en standard#Non \: cela ne crée aucun lien. Revoyez la diapositive 6.
+}
+
+::K4-L7 Leçon Q3::Pourquoi suivre la part des changements d'urgence ?{
+=Parce qu'ils passent avec moins de contrôle \: une part qui grimpe signale un risque#Exact. Revoyez la diapositive 7.
+~Parce qu'ils sont toujours en échec#Non \: 3 sur 4 ont réussi sans incident. Revoyez la diapositive 7.
+~Parce qu'ils sont interdits#Non \: ils sont parfois nécessaires. Revoyez la diapositive 7.
+~Pour calculer le SLA#Non \: le SLA concerne les incidents. Revoyez la diapositive 7.
+}
+
+::K4-L7 Leçon Q4::Quelle est la cible pour les changements non autorisés ?{
+=Zéro#Exact \: chez Valdor, 2 changements non autorisés ont causé 15 incidents. Revoyez la diapositive 8.
+~Moins de 5 %#Non \: aucun changement ne doit éviter le comité. Revoyez la diapositive 8.
+~Moins de 10 par mois#Non \: la cible est zéro. Revoyez la diapositive 8.
+~Il n'y a pas de cible#Non \: la cible est zéro. Revoyez la diapositive 8.
+}

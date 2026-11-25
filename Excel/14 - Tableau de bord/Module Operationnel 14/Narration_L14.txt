@@ -1,0 +1,46 @@
+Excel Opérationnel · Leçon 14 – Le tableau de bord de Sophie
+
+Diapositive 1 – Le tableau de bord de Sophie
+  NARRATEUR : Les devis, les montants, les statuts : tout est dans Excel. Mais pour piloter l'entreprise, Sophie n'a pas besoin de quatre cents lignes. Elle a besoin de quelques chiffres, toujours à jour, et de pouvoir passer d'un commercial à l'autre en un clic. Dans cette leçon, vous allez construire un tableau de bord avec les outils que vous connaissez déjà.
+
+Diapositive 2 – Chaque lundi, les mêmes questions
+  SOPHIE : Karim, comme chaque lundi : combien de devis, combien de signés, où on en est par rapport à l'objectif. Et la même chose pour Julie, puis pour Thomas.
+  KARIM : Je filtre la liste, je sélectionne les montants, je note les chiffres, et je recommence pour chaque commercial. Une heure, et le temps que je finisse, il y a déjà de nouveaux devis.
+
+Diapositive 3 – Ce que Sophie veut voir
+  NARRATEUR : Voici ce que Sophie veut, sur une seule page. Un choix : l'équipe entière, Julie ou Thomas. Quatre indicateurs : le nombre de devis, le chiffre d'affaires accepté, le taux de transformation, le panier moyen. Le chiffre d'affaires de chaque mois. Et l'objectif de l'année, avec un signal clair : atteint ou pas. Tous ces chiffres doivent changer dès qu'elle change de commercial.
+
+Diapositive 4 – Solution 1 : filtrer et recopier
+  NARRATEUR : Sans tableau de bord, Karim filtre la liste des devis par commercial et par statut, lit la somme dans la barre d'état, et recopie le chiffre dans un mail. Il recommence pour chaque mois, pour chaque commercial. Une heure par semaine. Et le chiffre envoyé est faux dès qu'un nouveau devis arrive.
+
+Diapositive 5 – Trois zones qui ne se mélangent pas
+  NARRATEUR : Un tableau de bord repose sur une séparation simple. Les données d'un côté : la feuille Devis, que l'on complète sans jamais la retoucher. Les paramètres : les cellules de choix, en jaune, en haut du tableau. Et les indicateurs : uniquement des formules, qui lisent les données en fonction des paramètres. On ne tape jamais un résultat à la main.
+
+Diapositive 6 – Le sélecteur et le critère « * »
+  NARRATEUR : En B3, une liste déroulante : Tous, Julie, Thomas. Mais aucun devis n'a « Tous » comme commercial : un critère égal à Tous compterait zéro. L'astuce : en B4, une formule SI. Si B3 vaut Tous, B4 vaut étoile, sinon B4 reprend le nom. Dans un critère, l'étoile veut dire n'importe quel texte. Toutes les formules utiliseront B4 : une seule formule pour l'équipe et pour chaque commercial.
+
+Diapositive 7 – Les quatre indicateurs
+  NARRATEUR : Le nombre de devis : NB.SI.ENS sur la colonne des commerciaux, avec le critère B4. Le chiffre d'affaires accepté : SOMME.SI.ENS sur les montants, avec deux critères, le commercial et le statut Accepté. Le taux de transformation : le nombre de devis acceptés divisé par le nombre de devis. Le panier moyen : le chiffre d'affaires accepté divisé par le nombre de devis acceptés. Et pour éviter dièse DIV zéro si un commercial n'a encore aucun devis : SIERREUR.
+
+Diapositive 8 – Le mois par mois, puis le graphique
+  NARRATEUR : Pour le chiffre d'affaires de chaque mois, la colonne A contient le premier jour du mois. SOMME.SI.ENS reçoit deux critères de date de plus : la date supérieure ou égale au début du mois, et inférieure ou égale à FIN.MOIS du même mois. Une formule, recopiée sur douze lignes. Dans Excel, un graphique en colonnes sur ce tableau rend la tendance visible d'un coup d'œil, et il change, lui aussi, avec le commercial choisi.
+
+Diapositive 9 – L'objectif et le signal
+  NARRATEUR : L'objectif de chaque commercial est rangé sur la feuille Listes. RECHERCHEX va le chercher avec le choix de B3. L'écart, c'est le chiffre d'affaires accepté moins l'objectif. Et pour le lire d'un coup d'œil : une formule SI qui affiche triangle vers le haut, objectif atteint, ou triangle vers le bas, sous l'objectif. Dans Excel, une mise en forme conditionnelle colore aussi l'écart en vert ou en rouge.
+
+Diapositive 10 – Le meilleur mois
+  NARRATEUR : Dernière question de Sophie : quel a été le meilleur mois ? MAX donne le plus grand chiffre d'affaires du tableau mensuel. Puis RECHERCHEX cherche ce montant dans la colonne des chiffres et renvoie le mois, situé à gauche. Pour l'équipe, juin, avec cent cinquante-cinq mille deux cent quatre-vingts euros.
+
+Diapositive 11 – Un tableau de bord lisible
+  NARRATEUR : Quelques règles pour qu'un tableau de bord soit lu. Peu d'indicateurs : quatre ou cinq, pas vingt. Des unités partout : euros, pourcentages. Les cellules de choix en jaune, pour qu'on sache où cliquer. Des couleurs rares et qui ont un sens : vert, c'est bien, rouge, c'est à surveiller. Un titre et une date. Et la protection de la feuille, pour qu'on ne casse pas une formule par erreur.
+
+Diapositive 12 – Les pièges à éviter
+  NARRATEUR : Les pièges. Un nom de commercial écrit dans la formule : le tableau ne suit plus le choix. Le critère Tous : zéro partout. Une division sans SIERREUR : dièse DIV zéro dès qu'un commercial n'a pas de devis. Une seule borne de date : tous les mois suivants s'additionnent. Et des chiffres tapés à la main dans le tableau de bord : ils ne seront jamais mis à jour.
+
+Diapositive 13 – À retenir
+  NARRATEUR : Retenez. Un tableau de bord sépare les données, les paramètres et les indicateurs. Un sélecteur en liste déroulante, et un critère étoile pour Tous. NB.SI.ENS et SOMME.SI.ENS pour les indicateurs, avec SIERREUR pour les divisions. Deux bornes de date pour le mois par mois. RECHERCHEX pour l'objectif et le meilleur mois. Et aucun chiffre tapé à la main.
+
+Diapositive 14 – Un clic, toute l'année
+  SOPHIE : Je choisis Julie, et tout est là. Plus besoin d'attendre lundi.
+  KARIM : Et moi, je n'ai plus rien à recopier.
+  NARRATEUR : Bravo. Passez maintenant à l'atelier.

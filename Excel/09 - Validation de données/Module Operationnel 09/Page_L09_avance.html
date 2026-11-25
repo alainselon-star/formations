@@ -1,0 +1,23 @@
+<h3>Pour aller plus loin – Les bons d'intervention (facultatif, 30 min)</h3>
+<p>Vous avez réussi l'atelier ? Ce défi se fait dans le <strong>vrai Excel</strong>, sur un fichier à télécharger. Il est <strong>moins guidé</strong>. Les techniciens saisissent leurs bons d'intervention dans un tableau partagé, sans aucune règle. Résultat : des villes mal écrites, des durées négatives, des dates dans un autre siècle et des bons saisis deux fois. Vous allez poser les règles, puis nettoyer ce qui est déjà là.</p>
+<p><strong>Le fichier :</strong> <em>Excel_9_avance_bons_intervention.xlsx</em>, juste sous cette page. Feuille <strong>Interventions</strong> : 82 lignes. Feuille <strong>Listes</strong> : les villes autorisées. La feuille <strong>Contrôle</strong> vérifie les données une fois corrigées. Une formule ne peut pas voir si une règle de validation existe : pour les règles elles-mêmes, comparez avec le corrigé.</p>
+<p><strong>La méthode, pour chaque mission :</strong> sélectionnez la colonne, posez la règle (Données → Validation des données), puis Données → Validation des données ▾ → <strong>Entourer les données non valides</strong>, et corrigez chaque cercle.</p>
+
+<h4>Mission 1 – Les villes (colonne C)</h4>
+<p><strong>Le besoin :</strong> seulement les six villes de la feuille Listes, avec une liste déroulante et un refus en cas de faute.</p>
+<details><summary>Un indice</summary><p>Liste, source <code>=Listes!$A$2:$A$7</code>, alerte de style Arrêt. Cinq cercles : des fautes de frappe et une espace invisible après « Senlis ».</p></details>
+
+<h4>Mission 2 – Les durées (colonne E)</h4>
+<p><strong>Le besoin :</strong> un nombre entier d'heures, de 1 à 10.</p>
+<details><summary>Un indice</summary><p>Nombre entier, compris entre 1 et 10. Les cercles montrent des durées négatives : un signe moins tapé par erreur. Retirez-le.</p></details>
+
+<h4>Mission 3 – Les dates (colonne B)</h4>
+<p><strong>Le besoin :</strong> uniquement des dates de 2026.</p>
+<details><summary>Un indice</summary><p>Date, comprise entre le 01/01/2026 et le 31/12/2026. Trois années ont été mal tapées : gardez le jour et le mois, remettez 2026.</p></details>
+
+<h4>Mission 4 – Les doublons (colonne A)</h4>
+<p><strong>Le besoin :</strong> un numéro d'intervention ne doit apparaître qu'une fois. Aucune règle toute faite ne le permet : il faut une règle <strong>personnalisée</strong>, avec une formule.</p>
+<details><summary>Un indice</summary><p>Sélectionnez A2:A83, Autoriser : <strong>Personnalisé</strong>, formule <code>=NB.SI($A$2:$A$83;A2)=1</code> : « ce numéro n'apparaît qu'une fois dans la colonne ». Entourer marque les deux exemplaires de chaque doublon : les lignes sont identiques, supprimez l'une des deux (clic droit sur le numéro de ligne → Supprimer).</p></details>
+
+<h4>Vérifier et se corriger</h4>
+<p>Ouvrez la feuille <strong>Contrôle</strong> : 4 ✓ sur 4, c'est gagné. Testez ensuite vos règles : tapez « Compiegne » dans une ville, ou un numéro qui existe déjà. Le <strong>corrigé</strong>, sous cette page, contient les données propres et les quatre règles en place.</p>

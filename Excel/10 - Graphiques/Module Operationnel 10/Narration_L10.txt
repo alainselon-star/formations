@@ -1,0 +1,46 @@
+Excel Opérationnel · Leçon 10 – Comprendre en 10 secondes
+
+Diapositive 1 – Comprendre en 10 secondes
+  NARRATEUR : Un banquier, vingt minutes, et neuf montants à six chiffres qu'il n'aura pas le temps de lire. Dans cette leçon, vous allez transformer un tableau en graphique qu'on comprend en dix secondes, et choisir le bon type de graphique selon la question posée.
+
+Diapositive 2 – Mardi soir : la banque jeudi
+  SOPHIE : Le banquier me donne vingt minutes. Il veut voir comment marche l'atelier depuis janvier. Ton tableau est juste, mais s'il doit lire neuf montants à six chiffres, je l'ai perdu. Il me faut quelque chose qu'il comprenne en dix secondes.
+  KARIM : Tous les chiffres sont là. Mais la dernière fois, j'avais dessiné des barres au feutre sur une feuille quadrillée.
+
+Diapositive 3 – Une question, un graphique
+  NARRATEUR : Le banquier se posera trois questions. Est-ce que ça monte ou ça baisse ? C'est une évolution : le temps passe, histogramme ou courbe. Qu'est-ce qui pèse le plus ? C'est une comparaison : barres. Quelle part pour chacun ? C'est une répartition : secteurs, le fameux camembert. Avant de cliquer, toujours se demander : quelle question mon graphique doit-il répondre ?
+
+Diapositive 4 – Solution 1 : dessiner à la main
+  NARRATEUR : Sans l'outil, trois méthodes. Le papier quadrillé : arrondir, choisir une échelle, compter les carreaux, tracer, colorier. Trente à quarante minutes, une précision au carreau près, un rendu peu professionnel. Les cellules coloriées dans Excel : deux cents cellules à compter, un dessin mort qui ne bouge pas si un montant change. La fonction REPT, qui répète un caractère : rapide et elle suit le chiffre, mais pas d'axe, pas de titre, pas de comparaison avec l'objectif. Et à la question suivante du banquier, tout est à refaire.
+
+Diapositive 5 – Les mots du graphique
+  NARRATEUR : Quelques mots à connaître. La série de données : un groupe de chiffres dessinés de la même couleur, ici les neuf montants. Les catégories : les étiquettes sous les barres, les mois. L'axe vertical : la règle graduée. La légende : quelle couleur pour quelle série. Les étiquettes de données : le chiffre écrit sur la barre. Et surtout : un graphique reste relié au tableau. Si un chiffre change, la barre change.
+
+Diapositive 6 – Un histogramme en 90 secondes
+  NARRATEUR : Sélectionnez les mois et les montants, avec leurs titres, mais sans la ligne Total. Insertion, Graphiques recommandés, Histogramme groupé. Raccourci : Alt F1. Cliquez sur le titre pour écrire Chiffre d'affaires HT par mois. Le bouton plus, à droite du graphique, ajoute les étiquettes de données. Glissez le graphique à côté du tableau. Une minute trente : le banquier voit d'un regard que mai est le meilleur mois, et qu'août est creux.
+
+Diapositive 7 – Barres pour comparer, secteurs pour répartir
+  NARRATEUR : Quel métier fait vivre l'atelier ? Un graphique en barres, sur le tableau par type de travaux : les barres horizontales laissent la place aux noms. Pour avoir la plus grande barre en haut, triez le tableau par ordre croissant. Quelle part pour Julie et pour Thomas ? Un graphique en secteurs, avec des étiquettes en pourcentage : Julie cinquante-six pour cent, Thomas quarante-quatre. Les secteurs ne conviennent qu'à peu de parts, qui font cent pour cent ensemble.
+
+Diapositive 8 – Le réel et l'objectif sur un seul graphique
+  NARRATEUR : Sophie veut montrer qu'on a tenu nos objectifs. Sélectionnez les mois, le CA et l'objectif. Insertion, Graphiques recommandés, onglet Tous les graphiques, Graphique combiné : le CA en histogramme groupé, l'objectif en courbe. Seul mars passe sous la ligne. Et si les deux séries n'ont pas la même échelle, par exemple un chiffre d'affaires en dizaines de milliers d'euros et un taux en pourcentage, cochez Axe secondaire pour la seconde série : elle aura sa propre règle, à droite.
+
+Diapositive 9 – Quand le graphique ne montre pas tout
+  NARRATEUR : Karim a fait un graphique sur janvier et février, puis il saisit mars en dessous : mars n'apparaît pas. La source du graphique s'arrête à février. Cliquez sur le graphique : le tableau s'encadre en couleur. Tirez le coin du cadre pour inclure mars, ou Création de graphique, Sélectionner des données. Autre surprise : Excel met les mois en légende au lieu de les mettre en bas. Création de graphique, Intervertir les lignes et les colonnes. Et pour que le graphique suive tout seul les nouvelles lignes, construisez-le sur un tableau structuré.
+
+Diapositive 10 – Les sparklines : un graphique par cellule
+  NARRATEUR : Pour voir la tendance de chaque métier sans faire cinq graphiques, les sparklines : des graphiques minuscules, logés dans une cellule. Sélectionnez les montants du tableau par mois et par métier, puis Insertion, Graphiques sparkline, Courbes, et indiquez la ligne Tendance comme emplacement. Dans l'onglet Sparkline, cochez Point haut. Chaque métier a sa petite courbe sous sa colonne.
+
+Diapositive 11 – Un graphique honnête
+  NARRATEUR : Sophie est tentée de masquer août avec le filtre du graphique. Le tableau n'est pas modifié, mais est-ce honnête devant un banquier ? Quelques règles : un titre qui dit ce qu'on montre, un axe qui part de zéro pour un histogramme, pas de camembert à plus de cinq ou six parts, pas d'effet 3D qui déforme les proportions, et pas de mois caché sans le dire.
+
+Diapositive 12 – Les pièges à éviter
+  NARRATEUR : Les pièges les plus fréquents. Sélectionner la ligne Total : une barre géante écrase toutes les autres. Oublier les titres de colonne : la légende affiche Série1. Choisir des secteurs pour une évolution dans le temps : illisible. Et chercher les menus du graphique alors qu'on a cliqué à côté : les onglets Création de graphique et Format n'apparaissent que graphique sélectionné.
+
+Diapositive 13 – À retenir
+  NARRATEUR : Retenez. Une question, un graphique : le temps en histogramme ou en courbe, la comparaison en barres, la répartition en secteurs, le réel face à l'objectif en combiné. Sélectionner les titres, jamais le total. Le bouton plus pour les éléments, le pinceau pour le style, l'entonnoir pour filtrer. Axe secondaire pour deux échelles, Intervertir pour échanger lignes et colonnes, et un tableau structuré pour suivre les ajouts.
+
+Diapositive 14 – Compris en 10 secondes
+  SOPHIE : Le banquier n'a eu besoin que d'un coup d'œil.
+  KARIM : Et si un chiffre change d'ici jeudi, le graphique suivra tout seul.
+  NARRATEUR : Bravo. Passez maintenant à l'atelier : construisez les graphiques de Sophie.

@@ -1,0 +1,31 @@
+MC
+10
+Karim calcule le délai entre une date de devis (B2) et une date de signature (C2) avec =C2-B2. La cellule affiche 02/02/1900. Que doit-il faire ?
+*Appliquer le format Standard à la cellule | Exact : le résultat, 33 jours, était seulement habillé en date.
+Corriger la formule en =B2-C2 | Non : la formule était juste ; inverser donnerait un délai négatif.
+Retaper les deux dates | Non : les dates sont bonnes, c'est le format du résultat qui trompe.
+Appliquer le format Texte à la cellule | Non : au format Texte, la formule ne calcule plus.
+
+MC
+10
+Une facture est datée du 01/11/2026 en B2, avec un délai de paiement de 45 jours en C2. Quelle formule donne la date d'échéance ?
+*=B2+C2 | Exact : une date plus un nombre de jours donne une date, ici le 16/12/2026.
+=B2-C2 | Non : cela donnerait une date 45 jours avant la facture.
+=C2-B2 | Non : on ne retranche pas une date d'un nombre de jours.
+=B2&C2 | Non : & colle du texte, il ne calcule pas.
+
+MC
+10
+Sophie veut, dans un tableau de suivi, une cellule qui affiche la date du jour et se met à jour chaque fois qu'elle ouvre le fichier. Que tape-t-elle ?
+*=AUJOURDHUI() | Exact : la fonction renvoie la date du jour, recalculée à chaque ouverture.
+Ctrl+; (point-virgule) | Non : ce raccourci tape la date du jour une fois pour toutes, elle reste figée.
+La date du jour, à la main | Non : elle ne bougera plus demain.
+=MOIS(C2) | Non : MOIS extrait le numéro du mois d'une date.
+
+MC
+10
+Une cellule censée contenir une date de signature affiche 46057. Que s'est-il passé ?
+*La date a perdu son format : il faut appliquer le format Date courte | Exact : pour Excel, une date est un nombre de jours ; le format Date l'habille.
+La date est en texte et doit être retapée | Non : du texte resterait affiché tel quel, ce nombre est une vraie date.
+La formule est fausse et renvoie une erreur | Non : 46057 n'est pas une erreur, c'est un nombre de jours.
+La colonne est trop étroite | Non : une colonne trop étroite affiche des dièses ####.

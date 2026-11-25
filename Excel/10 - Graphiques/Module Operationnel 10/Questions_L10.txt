@@ -1,0 +1,31 @@
+MC
+10
+Karim a créé un graphique à partir des ventes de janvier et février (A1:B3). Il saisit les ventes de mars en ligne 4. Que se passe-t-il ?
+*Mars n'apparaît pas : il faut étendre la source du graphique | Exact : tirez le cadre coloré ou utilisez Sélectionner des données. Un tableau structuré l'éviterait.
+Mars apparaît automatiquement | Non : la source d'un graphique ordinaire s'arrête à la plage choisie.
+Le graphique est supprimé | Non : il reste en place, sans mars.
+Le graphique affiche une erreur | Non : aucune erreur, mars manque simplement.
+
+MC
+10
+Julie veut montrer sur un même graphique le chiffre d'affaires mensuel (des dizaines de milliers d'euros) et le taux de devis acceptés (en %). Que faut-il faire ?
+*Un graphique combiné, avec le taux sur un axe secondaire | Exact : chaque série a sa propre échelle, euros à gauche et % à droite.
+Un graphique en secteurs | Non : il montre des parts d'un tout, pas deux séries dans le temps.
+Un histogramme simple avec les deux séries | Non : le taux, proche de zéro à l'échelle des euros, serait invisible.
+Deux graphiques côte à côte | Non : cela fonctionne, mais la demande est un seul graphique.
+
+MC
+10
+Thomas voulait un groupe de barres par mois, avec une barre par commercial. Excel a fait l'inverse : un groupe par commercial. Que faire ?
+*Création de graphique → Intervertir les lignes/colonnes | Exact : les séries et les catégories sont échangées en un clic.
+Supprimer le graphique et trier le tableau | Non : le tri ne change pas l'orientation des séries.
+Changer le type de graphique en secteurs | Non : le problème n'est pas le type.
+Modifier les couleurs du graphique | Non : les couleurs ne changent pas le regroupement.
+
+MC
+10
+Sophie veut montrer quelle part du chiffre d'affaires revient à chacun des deux commerciaux. Quel graphique choisir ?
+*Secteurs | Exact : peu de parts, qui font 100 % ensemble.
+Courbe | Non : la courbe montre une évolution dans le temps.
+Histogramme empilé sur 9 mois | Non : il répond à une autre question, l'évolution.
+Sparkline | Non : elle montre une tendance dans une cellule.

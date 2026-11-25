@@ -1,0 +1,23 @@
+<h3>Pour aller plus loin – Les ventes et le fichier clients (facultatif, 30 min)</h3>
+<p>Vous avez réussi l'atelier ? Ce défi se fait dans le <strong>vrai Excel</strong>, sur un fichier à télécharger. Il est <strong>moins guidé</strong>. Karim a exporté les 60 ventes de l'année : chaque vente porte seulement un numéro de client. Sophie veut le nom, la ville et la commission de chaque vente, et une fiche client qui se remplit toute seule.</p>
+<p><strong>Le fichier :</strong> <em>Excel_12_avance_ventes_clients.xlsx</em>, juste sous cette page. Feuilles <strong>Ventes</strong>, <strong>Clients</strong>, <strong>Barème</strong> et <strong>Fiche client</strong>. Les cellules à remplir sont en jaune. La feuille <strong>Contrôle</strong> vous dit, mission par mission, si c'est juste (✓) ou à revoir (✗).</p>
+
+<h4>Mission 1 – Le nom et la ville de chaque vente (feuille Ventes)</h4>
+<p><strong>Le besoin :</strong> en colonne D, le nom du client ; en colonne E, sa ville. Ils sont dans la feuille Clients. Un client n'existe pas encore dans le fichier : il doit afficher « Client inconnu » en D, et rien en E.</p>
+<details><summary>Un indice</summary><p>RECHERCHEV avec le n° client, la table Clients bloquée avec F4, la colonne 2 pour le nom, la colonne 3 pour la ville, et FAUX. Puis SIERREUR pour le client inconnu : <code>"Client inconnu"</code> en D, <code>""</code> (rien) en E.</p></details>
+
+<h4>Mission 2 – Les #N/A qui ne devraient pas exister</h4>
+<p><strong>Le besoin :</strong> une dizaine de ventes affichent « Client inconnu » alors que leur numéro existe bien dans la feuille Clients. Trouvez pourquoi et réparez la colonne B, sans retaper les numéros.</p>
+<details><summary>Un indice</summary><p>Pour Excel, le nombre 1007 et le texte « 1007 » sont différents : RECHERCHEV ne les confond pas. Regardez l'alignement des numéros : les nombres sont à droite, les textes à gauche. Certains ont aussi une espace en trop à la fin.</p></details>
+<details><summary>Un deuxième indice</summary><p>Sélectionnez la colonne B, Rechercher et remplacer (Ctrl+H) : une espace par rien. Puis cliquez sur le losange ⚠ → <strong>Convertir en nombre</strong>. Les « Client inconnu » disparaissent tout seuls, sauf le vrai.</p></details>
+
+<h4>Mission 3 – La commission (feuille Ventes)</h4>
+<p><strong>Le besoin :</strong> en colonne F, le taux de commission de chaque vente selon le barème : 2 % en dessous de 500 €, 3 % à partir de 500 €, 4 % à partir de 1 500 €, 5 % à partir de 3 000 €.</p>
+<details><summary>Un indice</summary><p>Un barème trié : c'est le cas du dernier argument VRAI. La table est Barème!$A$2:$B$5.</p></details>
+
+<h4>Mission 4 – La fiche client (feuille Fiche client)</h4>
+<p><strong>Le besoin :</strong> Sophie tape un numéro de client en B3. La fiche affiche son nom, sa ville, son commercial et le total de ses ventes. Si le numéro n'existe pas : « Client inconnu ».</p>
+<details><summary>Un indice</summary><p>Trois RECHERCHEV sur la feuille Clients (colonnes 2, 3 et 4), avec SIERREUR. Le total, c'est SOMME.SI de la leçon 05 : les montants de la feuille Ventes dont le n° client est égal à B3.</p></details>
+
+<h4>Vérifier et se corriger</h4>
+<p>Ouvrez la feuille <strong>Contrôle</strong> : 4 ✓ sur 4, c'est gagné. Tapez ensuite un autre numéro en B3 de la fiche, par exemple 1031 : la mission 4 doit rester ✓. Le <strong>corrigé</strong>, sous cette page, contient toutes les formules. Ouvrez-le seulement après avoir vraiment essayé.</p>

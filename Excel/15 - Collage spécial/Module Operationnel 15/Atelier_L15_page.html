@@ -1,0 +1,36 @@
+<h3>Atelier 15 – Coller autrement, à vous de jouer (20 min)</h3>
+<p>Sophie a trois demandes : les chiffres du tableau de bord pour le comptable, sans formules ; les mois en ligne dans le planning ; et +5 % sur tout le catalogue. Vous allez tout faire avec le collage spécial, sans retaper un chiffre.</p>
+<p><strong>Fichier :</strong> votre copie de <em>Excel_15_Collage_special.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Ventes</strong>, <strong>Tableau de bord</strong> (formules), <strong>Pour le comptable</strong> (vide), <strong>Planning</strong> et <strong>Catalogue</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie que vous avez compris chaque geste.</p>
+
+<h4>Étape 1 – Voir ce que colle Ctrl+V</h4>
+<p><strong>Faites :</strong> feuille Tableau de bord, copiez A3:C13. Créez un nouveau classeur (Ctrl+N), cliquez en A3 et faites Ctrl+V. Cliquez sur B4.</p>
+<p><strong>Vous devez voir :</strong> dans la barre de formule, <code>=SOMME([Excel_15_Collage_special.xlsx]Ventes!B2:F2)</code> : une liaison vers votre fichier, pas un chiffre. Fermez ce nouveau classeur sans l'enregistrer.</p>
+<p><strong>Pourquoi :</strong> Ctrl+V colle tout : la formule, la valeur et le format.</p>
+
+<h4>Étape 2 – Les valeurs pour le comptable</h4>
+<p><strong>Faites :</strong> recopiez A3:C13 du Tableau de bord. Feuille Pour le comptable, cliquez en A3, puis <strong>Ctrl+Alt+V</strong> → <strong>Valeurs</strong> → OK. Cliquez sur B4.</p>
+<p><strong>Vous devez voir :</strong> 95510 dans la barre de formule, un simple nombre, mais sans le symbole € ni le format %.</p>
+<p><strong>Si ça ne marche pas :</strong> Ctrl+Alt+V ne fait rien ? Passez par Accueil → flèche sous Coller → Collage spécial.</p>
+
+<h4>Étape 3 – Garder les formats</h4>
+<p><strong>Faites :</strong> Ctrl+Z, puis Ctrl+Alt+V → <strong>Valeurs et formats des nombres</strong> → OK. Élargissez les colonnes si des dièses apparaissent.</p>
+<p><strong>Vous devez voir :</strong> 95 510 € en B4, 1 005 130 € en B13 ; dans la barre de formule, des nombres et plus aucune formule.</p>
+
+<h4>Étape 4 – Des valeurs figées</h4>
+<p><strong>Faites :</strong> feuille Ventes, en B2, remplacez 51 350 par 61 350. Regardez le Tableau de bord, puis Pour le comptable.</p>
+<p><strong>Vous devez voir :</strong> le Tableau de bord affiche 105 510 € pour janvier ; Pour le comptable garde 95 510 €. Remettez 51 350.</p>
+<p><strong>Pourquoi :</strong> des valeurs collées ne suivent plus l'origine. C'est voulu pour un envoi ; pour une copie qui suit, il faut une liaison (étape 7).</p>
+
+<h4>Étape 5 – Transposer les mois</h4>
+<p><strong>Faites :</strong> feuille Planning, copiez A8:A19. Cliquez en B1, Ctrl+Alt+V → cochez <strong>Transposé</strong> → OK. Effacez ensuite A7:A19.</p>
+<p><strong>Vous devez voir :</strong> Janvier en B1… Décembre en M1, sur la ligne des commerciaux.</p>
+
+<h4>Étape 6 – +5 % sur le catalogue</h4>
+<p><strong>Faites :</strong> feuille Catalogue, sélectionnez C2:C40 et notez la Somme dans la barre d'état. Copiez F1 (1,05). Sélectionnez C2:C40, Ctrl+Alt+V → Coller : <strong>Valeurs</strong>, Opération : <strong>Multiplication</strong> → OK. Effacez F1.</p>
+<p><strong>Vous devez voir :</strong> la Somme passe de 2 603,00 € à 2 733,15 € ; la peinture acrylique (A001) passe de 89,00 € à 93,45 €. Dans la barre de formule, des nombres, pas des formules.</p>
+<p><strong>Si ça ne marche pas :</strong> les prix ont pris le format de F1 ? Vous aviez laissé « Tout » au lieu de « Valeurs » : Ctrl+Z et recommencez.</p>
+
+<h4>Étape 7 – Une copie qui suit</h4>
+<p><strong>Faites :</strong> Tableau de bord, copiez B13. Feuille Pour le comptable, cliquez en E3, Ctrl+Alt+V → <strong>Coller avec liaison</strong>. Puis refaites le changement de l'étape 4 (61 350 en Ventes!B2).</p>
+<p><strong>Vous devez voir :</strong> en E3, <code>='Tableau de bord'!B13</code>, qui passe de 1 005 130 à 1 015 130. Remettez 51 350.</p>

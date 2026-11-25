@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Atelier 15
+
+::J1 CtrlV::Étape 1 – Que colle Ctrl+V quand on copie des cellules qui contiennent des formules ?{
+=Les formules, les valeurs et les formats#Exact \: tout, y compris des liaisons vers le fichier d'origine.
+~Seulement les valeurs affichées#Non \: c'est Collage spécial → Valeurs.
+~Seulement les formats#Non \: c'est Collage spécial → Formats.
+}
+
+::J2 Raccourci::Étape 2 – Quel raccourci ouvre le collage spécial ?{
+=Ctrl+Alt+V#Exact \: ou Accueil → flèche sous Coller → Collage spécial.
+~Ctrl+Maj+L#Non \: ce raccourci active les filtres.
+~Ctrl+V deux fois#Non \: cela colle deux fois la même chose.
+}
+
+::J3 Valeurs::Étape 2 – Après Collage spécial → Valeurs, que contient la cellule B4 ?{
+=Un simple nombre, sans formule ni format#Exact \: 95510.
+~La formule d'origine#Non \: Valeurs ne colle pas les formules.
+~Une liaison vers le tableau de bord#Non \: c'est Coller avec liaison.
+}
+
+::J4 Formats::Étape 3 – Quel choix colle les chiffres avec leurs euros, mais sans formules ?{
+=Valeurs et formats des nombres#Exact \: le meilleur choix pour un envoi au comptable.
+~Formules et formats des nombres#Non \: les formules seraient collées.
+~Formats#Non \: seuls les formats seraient collés, sans les chiffres.
+}
+
+::J5 Fige::Étape 4 – Les ventes de janvier changent. Que font les valeurs collées pour le comptable ?{
+=Elles ne changent pas#Exact \: des valeurs collées sont figées.
+~Elles se mettent à jour#Non \: seule une liaison suit l'origine.
+~Elles affichent \#REF!#Non \: ce sont de simples nombres.
+}
+
+::J6 Transpose::Étape 5 – Que fait l'option Transposé ?{
+=Elle échange lignes et colonnes#Exact \: la colonne des mois devient une ligne.
+~Elle trie les données#Non \: l'ordre reste le même.
+~Elle supprime les formules#Non \: c'est Valeurs.
+}
+
+::J7 Multiplication::Étape 6 – Comment augmenter 39 prix de 5 % sur place, sans formule ?{
+=Copier 1,05 puis Collage spécial → Valeurs + Opération Multiplication sur les prix#Exact \: chaque prix est multiplié par 1,05.
+~Écrire \=C2*1,05 en C2#Non \: une formule qui utilise sa propre cellule crée une référence circulaire.
+~Appliquer le format Pourcentage#Non \: le format ne change pas la valeur.
+}
+
+::J8 Liaison::Étape 7 – Que colle « Coller avec liaison » ?{
+=Une formule qui renvoie vers la cellule d'origine et suit ses changements#Exact \: par exemple \='Tableau de bord'!B13.
+~Une copie figée des valeurs#Non \: c'est Valeurs.
+~Une image du tableau#Non \: c'est Image.
+}

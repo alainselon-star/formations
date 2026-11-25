@@ -1,0 +1,40 @@
+<h3>Atelier K1-L1 – Mesurer pour piloter, à vous de jouer (20 min)</h3>
+<p>Hélène veut savoir si le support de Valdor « marche ». Romain vous confie les incidents de juin. Vous allez d'abord trier ce qui est une donnée, une métrique, un indicateur ou un KPI, puis construire vous-même le KPI que Romain présentera à Hélène.</p>
+<p><strong>Fichier :</strong> votre copie de <em>K1_L1_Atelier_Valdor.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Classer</strong> (12 éléments), <strong>Incidents juin</strong> (154 incidents, table T_Juin) et <strong>Calculs</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie que vous avez compris chaque étape. Chaque erreur vous renvoie à la diapositive de la leçon à revoir.</p>
+
+<h4>Étape 1 – Classer les 12 éléments</h4>
+<p><strong>Faites :</strong> feuille Classer, pour chaque ligne, choisissez Donnée, Métrique, Indicateur ou KPI dans la liste de la colonne C.</p>
+<p><strong>Vous devez voir :</strong> dans le contrôle (F5:F8), 3 réponses de chaque sorte, et 12 au total.</p>
+<p><strong>Si ça ne marche pas :</strong> posez-vous quatre questions, dans cet ordre. Est-ce un fait unique ? C'est une donnée. Est-ce un comptage ou un calcul ? C'est une métrique. Est-ce rapporté à une référence (un total, un délai promis) ? C'est un indicateur. A-t-il une cible et un usage pour décider ? C'est un KPI. (Leçon, diapositives 5 et 6.)</p>
+
+<h4>Étape 2 – La métrique de départ</h4>
+<p><strong>Faites :</strong> feuille Calculs, en B3, tapez <code>=NBVAL(T_Juin[N° ticket])</code> puis Entrée.</p>
+<p><strong>Vous devez voir :</strong> 154. C'est le nombre d'incidents ouverts en juin : une métrique.</p>
+<p><strong>Si ça ne marche pas :</strong> vous voyez #NOM? ? Vérifiez l'orthographe de la colonne : tapez <code>=NBVAL(T_Juin[</code> et choisissez <em>N° ticket</em> dans la liste proposée.</p>
+
+<h4>Étape 3 – Compter les incidents dans le délai</h4>
+<p><strong>Faites :</strong> en B4, tapez <code>=NB.SI(T_Juin[SLA résolution respecté];"Oui")</code>.</p>
+<p><strong>Vous devez voir :</strong> 142. C'est encore une métrique : un comptage, sans référence.</p>
+
+<h4>Étape 4 – Passer à l'indicateur</h4>
+<p><strong>Faites :</strong> en B5, tapez <code>=B4/B3</code>. La cellule est déjà au format pourcentage.</p>
+<p><strong>Vous devez voir :</strong> 92,2 %. Vous avez rapporté 142 au total de 154 : c'est maintenant un indicateur.</p>
+<p><strong>Si ça ne marche pas :</strong> vous voyez 0,922 ? Appliquez le format Pourcentage (Accueil → groupe Nombre → %).</p>
+
+<h4>Étape 5 – Faire de l'indicateur un KPI</h4>
+<p><strong>Faites :</strong> en B8, tapez <code>=SI(B5&gt;=B6;"Cible atteinte";SI(B5&gt;=B7;"Sous la cible";"Alerte"))</code>.</p>
+<p><strong>Vous devez voir :</strong> « Cible atteinte ». L'indicateur est comparé à la cible (90 %) et au seuil d'alerte (85 %) fixés par la direction : c'est un KPI.</p>
+<p><strong>Pourquoi :</strong> testez en tapant 0,87 en B5 : le KPI passe « Sous la cible ». Tapez 0,80 : « Alerte ». Remettez ensuite la formule <code>=B4/B3</code>.</p>
+
+<h4>Étape 6 – Un indicateur sans cible</h4>
+<p><strong>Faites :</strong> en B10, tapez <code>=NB.SI(T_Juin[Réouvert];"Oui")/B3</code>.</p>
+<p><strong>Vous devez voir :</strong> 9,7 %. C'est un indicateur, mais pas encore un KPI : personne ne lui a fixé de cible ni d'usage pour décider.</p>
+
+<h4>Étape 7 – La satisfaction, un indicateur de résultat</h4>
+<p><strong>Faites :</strong> en B12, tapez <code>=NB(T_Juin[Satisfaction (1-5)])</code>. En B13, tapez <code>=MOYENNE(T_Juin[Satisfaction (1-5)])</code>.</p>
+<p><strong>Vous devez voir :</strong> 42 réponses, et une moyenne de 4,0 sur 5.</p>
+<p><strong>Pourquoi :</strong> la satisfaction constate ce qui s'est passé : c'est un indicateur de résultat. Et seuls 42 utilisateurs sur 154 ont répondu (27 %) : lisez cette moyenne avec prudence.</p>
+
+<h4>Pour aller plus loin</h4>
+<p>Romain veut ajouter le taux de réouverture à ses KPI. Quelle cible lui proposeriez-vous, et quel seuil d'alerte ? Notez votre proposition en C10, avec une phrase pour la justifier.</p>

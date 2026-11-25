@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Atelier 12 bis
+
+::K1 Gauche::Mission 1 – Pourquoi RECHERCHEV ne convient-elle pas pour ce catalogue ?{
+=Le code est à droite de l'article, et RECHERCHEV ne renvoie qu'une colonne située à droite de la colonne cherchée#Exact \: RECHERCHEX n'a pas cette limite.
+~Le catalogue n'est pas trié#Non \: avec FAUX, le tri n'a pas d'importance.
+~Le catalogue est sur une autre feuille#Non \: RECHERCHEV accepte une autre feuille.
+}
+
+::K2 Arguments::Mission 1 – Dans \=RECHERCHEX(A5;Catalogue!$D$2\:$D$31;Catalogue!$A$2\:$A$31), que représente Catalogue!$A$2\:$A$31 ?{
+=La colonne dont on renvoie la valeur#Exact \: ici, les articles.
+~La colonne où l'on cherche le code#Non \: c'est le 2e argument, D2:D31.
+~La table complète du catalogue#Non \: RECHERCHEX travaille avec deux colonnes séparées.
+}
+
+::K3 Taille::Mission 1 – Que faut-il respecter entre le tableau de recherche et le tableau renvoyé ?{
+=Ils doivent avoir le même nombre de lignes#Exact \: D2:D31 et A2:A31, 30 lignes chacun.
+~Ils doivent être côte à côte#Non \: ils peuvent être n'importe où.
+~Le tableau renvoyé doit être à droite#Non \: il peut être à gauche.
+}
+
+::K4 NonTrouve::Mission 2 – Que fait le 4e argument "Code inconnu" ?{
+=Il s'affiche seulement quand le code n'est pas trouvé#Exact \: les autres erreurs restent visibles.
+~Il remplace toutes les erreurs de la formule#Non \: c'est ce que fait SIERREUR.
+~Il ajoute le code au catalogue#Non \: le catalogue ne change pas.
+}
+
+::K5 Prix0::Mission 2 – Pour le prix d'un code inconnu, Sophie veut 0. Quel 4e argument ?{
+=0#Exact \: le total du devis peut alors se calculer.
+~"0 €"#Non \: ce serait un texte, et le total ne pourrait pas l'additionner.
+~FAUX#Non \: FAUX est la syntaxe de RECHERCHEV.
+}
+
+::K6 Dernier::Mission 3 – L-342 apparaît quatre fois dans l'historique. Sans 6e argument, quel prix renvoie RECHERCHEX ?{
+=Le premier trouvé, donc le plus ancien#Exact \: la recherche part du haut.
+~Le dernier, donc le plus récent#Non \: il faut -1 en 6e argument.
+~La moyenne des quatre prix#Non \: RECHERCHEX renvoie une seule valeur.
+}
+
+::K7 Bareme::Mission 4 – Le barème est écrit du plus haut au plus bas. Quel 5e argument pour trouver la tranche ?{
+=-1, exact ou immédiatement inférieur#Exact \: l'ordre du barème n'a pas d'importance.
+~1, exact ou immédiatement supérieur#Non \: on obtiendrait la tranche du dessus.
+~0, exact#Non \: seul un total égal à un seuil serait trouvé.
+}
+
+::K8 Ligne::Mission 5 – Les villes sont en ligne (B1\:G1) et les tarifs dessous (B2\:G2). RECHERCHEX peut-elle trouver le tarif ?{
+=Oui \: \=RECHERCHEX(B2;Livraison!B1\:G1;Livraison!B2\:G2)#Exact \: elle cherche aussi en ligne, comme RECHERCHEH.
+~Non, il faut RECHERCHEV#Non \: RECHERCHEV ne cherche qu'en colonne.
+~Seulement si les villes sont triées#Non \: avec une correspondance exacte, l'ordre est libre.
+}

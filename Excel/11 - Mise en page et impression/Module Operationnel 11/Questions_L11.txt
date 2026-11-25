@@ -1,0 +1,31 @@
+MC
+10
+Karim imprime la liste des 300 clients sur plusieurs pages. Les en-têtes de colonnes (ligne 1) n'apparaissent que sur la première page. Comment les répéter sur chaque page ?
+*Mise en page > Imprimer les titres > Lignes à répéter en haut | Exact : avec $1:$1, chaque page commence par la ligne des titres.
+Affichage > Figer les volets > Figer la ligne supérieure | Non : figer les volets n'agit que sur l'écran.
+Recopier la ligne d'en-têtes toutes les 50 lignes | Non : cela ajoute de fausses lignes dans les données.
+Insertion > En-tête et pied de page, puis y saisir les titres | Non : ils ne s'aligneraient pas avec les colonnes.
+
+MC
+10
+À l'impression, la liste des devis tient sur deux pages en largeur parce que la dernière colonne déborde. Karim veut toutes les colonnes sur la largeur d'une seule page, quel que soit le nombre de lignes. Que fait-il ?
+*Mise en page > Mise à l'échelle > Largeur : 1 page | Exact : avec Hauteur Automatique, Excel réduit juste assez pour la largeur.
+Réduire la police de toutes les cellules à 6 points | Non : illisible, et il faudrait la remettre ensuite.
+Supprimer la dernière colonne avant d'imprimer | Non : on perd une information.
+Affichage > Zoom à 50 % | Non : le zoom ne change que l'écran.
+
+MC
+10
+La feuille de Sophie contient un récapitulatif en A1:F17 et, plus bas, des calculs intermédiaires. Elle veut que seul le récapitulatif s'imprime, à chaque fois et sans refaire de réglage. Que fait-elle ?
+*Sélectionner A1:F17, puis Mise en page > Zone d'impression > Définir | Exact : la zone est enregistrée avec la feuille.
+Sélectionner A1:F17, puis Fichier > Imprimer > Imprimer la sélection | Non : cela ne vaut que pour cette impression.
+Figer les volets sous la ligne 17 | Non : figer les volets n'agit pas sur l'impression.
+Insérer un saut de page sous la ligne 17 | Non : les calculs s'imprimeraient quand même, sur la page suivante.
+
+MC
+10
+Avant d'envoyer la liste à la banque, comment vérifier exactement ce qui sera imprimé ou exporté en PDF ?
+*Fichier > Imprimer (Ctrl+P) : l'aperçu montre chaque page | Exact : le PDF reprend exactement ce que montre l'aperçu.
+Regarder la feuille en affichage Normal | Non : l'affichage Normal ne montre pas les pages.
+Zoomer à 100 % | Non : le zoom ne montre pas les pages.
+Enregistrer le fichier puis le rouvrir | Non : cela ne montre pas la mise en page.

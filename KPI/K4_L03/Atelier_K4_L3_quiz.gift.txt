@@ -1,0 +1,57 @@
+$CATEGORY: $course$/K4-L3 Atelier
+
+::K4L3-A1 Deux SLA::Étape 1 – Vous trouvez 98,5 % pour la prise en charge et 90,4 % pour la résolution. Pourquoi cet écart ?{
+=Ce sont deux promesses différentes \: commencer à temps, et rétablir le service à temps#Exact \: commencer un ticket est plus facile que le résoudre.
+~L'un des deux calculs est faux#Non \: les deux sont justes. Revoyez la diapositive 3 (K4-L3).
+~La résolution compte le temps en attente#Non \: la colonne est calculée hors attente. Revoyez la diapositive 6 (K4-L3-S2).
+~La prise en charge ne concerne que les P1#Non \: elle concerne tous les incidents. Revoyez la diapositive 5 (K4-L3-S1).
+}
+
+::K4L3-A2 NBVAL::Étape 1 – Pourquoi diviser par NBVAL(T_Incidents[SLA prise en charge respecté]) ?{
+=Pour diviser par le nombre total d'incidents, « Oui » et « Non » confondus#Exact \: NBVAL compte toutes les cellules non vides.
+~Pour compter seulement les « Oui »#Non \: c'est le rôle de NB.SI(…;"Oui").
+~Pour obtenir un résultat en heures#Non \: on calcule une part, pas une durée.
+~Pour ignorer les incidents en retard#Non \: ils doivent rester au dénominateur. Revoyez la diapositive 5 (K4-L3-S1).
+}
+
+::K4L3-A3 Août::Étape 2 – Quel mois a le plus faible SLA de résolution ?{
+=Août, avec 82 % et 28 incidents hors délai#Exact \: les congés ralentissent tout le service.
+~Septembre, avec 96 %#Non \: c'est le meilleur mois. Revoyez la diapositive 6 (K4-L3-S2).
+~Juillet, avec 97 %#Non \: 97 % est le SLA de prise en charge de juillet. Revoyez la diapositive 6 (K4-L3-S2).
+~Octobre, avec 100 %#Non \: 100 % est le SLA de prise en charge d'octobre. Revoyez la diapositive 5 (K4-L3-S1).
+}
+
+::K4L3-A4 Alarme::Étape 2 – La prise en charge reste entre 97 % et 100 % tous les mois. Comment l'utiliser ?{
+=Comme une alarme, avec un seuil \: s'il baisse, la file n'est plus surveillée#Exact \: il varie trop peu pour piloter l'amélioration.
+~Comme le KPI principal du comité#Non \: il est presque toujours vert. Revoyez la diapositive 5 (K4-L3-S1).
+~En le supprimant du tableau de bord#Non \: une alarme reste utile. Revoyez la diapositive 5 (K4-L3-S1).
+~En le fusionnant avec la résolution#Non \: ce sont deux promesses distinctes. Revoyez la diapositive 3 (K4-L3).
+}
+
+::K4L3-A5 Groupe::Étape 3 – Quel groupe a le SLA de résolution le plus faible ?{
+=Applications métier, avec 80 %#Exact \: c'est là que Romain doit agir.
+~Service Desk, avec 97 %#Non \: c'est le meilleur. Revoyez la diapositive 6 (K4-L3-S2).
+~Poste de travail, avec 89 %#Non \: un autre groupe fait moins bien. Revoyez la diapositive 6 (K4-L3-S2).
+~Infra & réseau, avec 93 %#Non \: un autre groupe fait moins bien. Revoyez la diapositive 6 (K4-L3-S2).
+}
+
+::K4L3-A6 Critère Non::Étape 4 – Pourquoi ajouter le critère « Non » dans MOYENNE.SI.ENS pour le dépassement moyen ?{
+=Pour ne garder que les incidents en retard \: les autres ont un dépassement de 0 qui ferait baisser la moyenne#Exact \: on mesure la gravité des seuls retards.
+~Pour exclure les incidents P1#Non \: le critère porte sur le SLA, pas sur la priorité.
+~Parce que MOYENNE.SI.ENS exige au moins deux critères#Non \: un seul critère suffit techniquement.
+~Pour compter le nombre d'incidents en retard#Non \: c'est NB.SI.ENS qui compte.
+}
+
+::K4L3-A7 P1 grave::Étape 4 – 81 % des P1 sont résolus à temps, mais les 5 en retard dépassent leur cible de 12,9 h en moyenne. Que faut-il retenir ?{
+=Les retards sont rares mais graves \: plus de trois fois le délai promis de 4 h#Exact \: le pourcentage seul ne le montre pas.
+~Avec 81 %, les P1 sont bien maîtrisés#Non \: l'ampleur des retards est très élevée. Revoyez la diapositive 8 (K4-L3-S3).
+~Le dépassement moyen est faux car il y a trop peu d'incidents#Non \: le calcul est juste ; affichez simplement « 5 sur 27 ». Revoyez la diapositive 7 (K4-L3-S3).
+~Il faut baisser la cible des P1#Non \: la cible est une promesse métier. Revoyez la diapositive 8 (K4-L3-S3).
+}
+
+::K4L3-A8 Pastèque::Pour aller plus loin – En septembre, le SLA de résolution atteint 96 % et la satisfaction 2,9 sur 5. Que diriez-vous à Hélène ?{
+=La promesse est tenue sur le papier, mais les utilisateurs vivent mal le service \: c'est l'effet pastèque#Exact \: lisez toujours le SLA avec la satisfaction.
+~Septembre est le meilleur mois de l'année#Non \: la satisfaction s'effondre. Revoyez la diapositive 9 (K4-L3-S3).
+~L'enquête de satisfaction n'est pas fiable#Non \: plus de 40 réponses par mois. Revoyez la diapositive 9 (K4-L3-S3).
+~Le SLA de prise en charge explique la baisse#Non \: il est à 99 % en septembre. Revoyez la diapositive 9 (K4-L3-S3).
+}

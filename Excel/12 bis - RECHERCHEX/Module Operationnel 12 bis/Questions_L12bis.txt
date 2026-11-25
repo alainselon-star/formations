@@ -1,0 +1,31 @@
+MC
+10
+Dans le catalogue du fournisseur, les articles sont en A2:A31 et les codes en D2:D31. Quelle formule affiche l'article du code saisi en A5 ?
+*=RECHERCHEX(A5;Catalogue!$D$2:$D$31;Catalogue!$A$2:$A$31) | Exact : on cherche dans les codes, on renvoie les articles, même s'ils sont à gauche.
+=RECHERCHEV(A5;Catalogue!$A$2:$D$31;1;FAUX) | Non : RECHERCHEV chercherait le code dans la colonne des articles.
+=RECHERCHEX(A5;Catalogue!$A$2:$A$31;Catalogue!$D$2:$D$31) | Non : les deux plages sont inversées.
+=RECHERCHEX(Catalogue!$D$2:$D$31;A5;Catalogue!$A$2:$A$31) | Non : on donne d'abord la valeur cherchée.
+
+MC
+10
+Le code saisi n'existe pas dans le catalogue. Sophie veut afficher « Code inconnu », sans SIERREUR. Que fait-elle ?
+*Elle ajoute "Code inconnu" en 4e argument de RECHERCHEX | Exact : c'est la valeur renvoyée si rien n'est trouvé.
+Elle ajoute FAUX en 4e argument | Non : c'est la syntaxe de RECHERCHEV.
+Elle ajoute -1 en 6e argument | Non : -1 change le sens de recherche.
+Ce n'est pas possible sans SIERREUR | Non : RECHERCHEX a un argument prévu pour ça.
+
+MC
+10
+Le code L-342 apparaît quatre fois dans l'historique des prix, du plus ancien au plus récent. Comment obtenir le prix le plus récent ?
+*Avec -1 en 6e argument : la recherche part de la dernière ligne | Exact : =RECHERCHEX(E2;codes;prix;;;-1).
+Avec -1 en 5e argument | Non : le 5e argument règle la correspondance (exacte ou inférieure).
+Avec RECHERCHEV et FAUX | Non : RECHERCHEV renvoie toujours la première ligne trouvée.
+Avec VRAI en 4e argument | Non : le 4e argument est la valeur si non trouvé.
+
+MC
+10
+Karim envoie un classeur rempli de RECHERCHEX à un client équipé d'Excel 2016. Que voit le client ?
+*#NOM? : la fonction n'existe pas dans sa version | Exact : RECHERCHEX existe dans Microsoft 365, Excel 2021, 2024 et pour le web.
+Les bons résultats, sans problème | Non : Excel 2016 ne connaît pas RECHERCHEX.
+#N/A sur toutes les lignes | Non : #N/A signale une valeur non trouvée, pas une fonction inconnue.
+Les formules sont automatiquement converties en RECHERCHEV | Non : Excel ne convertit pas les fonctions.

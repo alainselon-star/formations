@@ -1,0 +1,516 @@
+$CATEGORY: $course$/Banque Opérationnel
+
+$CATEGORY: $course$/Banque Opérationnel/L01 La liste illisible
+
+::L01-1::Dans une colonne de montants, certaines cellules sont calées à gauche et la barre d'état affiche une Somme bien trop petite. Que se passe-t-il ?{
+~Les montants n'ont pas le format Monétaire#Non \: le format ne change que l'affichage, pas la Somme. À travailler → Leçon 01 – La liste illisible.
+~La barre d'état n'additionne que les cellules visibles à l'écran#Non \: elle additionne toute la sélection, mais seulement les vrais nombres. À travailler → Leçon 01 – La liste illisible.
+~La colonne est trop étroite#Non \: une colonne trop étroite affiche des dièses, elle ne change pas la Somme. À travailler → Leçon 01 – La liste illisible.
+=Ces cellules contiennent du texte, qu'Excel ignore dans la Somme#Exact \: un nombre se cale à droite ; un texte, à gauche, et il n'est pas additionné.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 01 – La liste illisible.
+}
+
+::L01-2::La colonne Montant contient « 4230 EUR » et « 2540 euros ». Quelle est la bonne méthode pour obtenir des nombres sans rien retaper ?{
+=Sélectionner la colonne, remplacer «  euros » par rien, puis «  EUR » par rien#Exact \: la colonne d'abord, et « euros » avant « EUR ».
+~Taper « € » à la fin de chaque montant#Non \: on ne tape jamais l'unité, c'est le format qui l'affiche. À travailler → Leçon 01 – La liste illisible.
+~Appliquer le format Monétaire à la colonne#Non \: un format ne transforme pas du texte en nombre. À travailler → Leçon 01 – La liste illisible.
+~Remplacer «  EUR » par rien, puis «  euros », sans rien sélectionner#Non \: sans sélection, toute la feuille est modifiée, et « EUR » en premier laisse « 2540os ». À travailler → Leçon 01 – La liste illisible.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 01 – La liste illisible.
+}
+
+::L01-3::Une cellule affiche « 1 851 € ». La barre de formule affiche 1850,5. Quelle valeur Excel utilise-t-il dans un total ?{
+=1850,5#Exact \: le format change l'affichage, jamais la valeur.
+~1851#Non \: réduire les décimales n'arrondit pas la valeur. Pour arrondir vraiment, il faut ARRONDI. À travailler → Leçon 01 – La liste illisible.
+~1850#Non \: la valeur n'est ni tronquée ni arrondie. À travailler → Leçon 01 – La liste illisible.
+~Cela dépend de la largeur de la colonne#Non \: la largeur ne change que l'affichage. À travailler → Leçon 01 – La liste illisible.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 01 – La liste illisible.
+}
+
+::L01-4::Une date s'affiche « 46030 » au lieu d'une date. Que faut-il faire ?{
+~Lui appliquer le format Texte#Non \: elle ne serait plus une date calculable. À travailler → Leçon 01 – La liste illisible.
+~Élargir la colonne#Non \: une colonne trop étroite affiche des dièses, pas un nombre. À travailler → Leçon 01 – La liste illisible.
+=Lui appliquer un format Date \: c'est une vraie date qui a perdu son habillage#Exact \: une date est un nombre de jours depuis le 1er janvier 1900.
+~La retaper \: elle est cassée#Non \: la valeur est juste, seul l'affichage manque. À travailler → Leçon 01 – La liste illisible.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 01 – La liste illisible.
+}
+
+::L01-5::Les surfaces de la colonne C doivent s'afficher sous la forme « 12 m² », tout en restant des nombres utilisables dans les calculs. Que faire ?{
+~Calculer \=C2&" m²" dans une autre colonne#Non \: le résultat est du texte, dans une colonne en plus. À travailler → Leçon 01 – La liste illisible.
+=Format personnalisé 0 "m²" sur la colonne C#Exact \: le texte entre guillemets s'affiche, la valeur reste un nombre.
+~Appliquer le format Texte, puis ajouter m²#Non \: le format Texte empêche tout calcul. À travailler → Leçon 01 – La liste illisible.
+~Saisir « 12 m² » dans chaque cellule#Non \: ce serait du texte, impossible à calculer. À travailler → Leçon 01 – La liste illisible.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 01 – La liste illisible.
+}
+
+
+$CATEGORY: $course$/Banque Opérationnel/L03 La formule qui se dérègle
+
+::L03-1::En J4, la formule \=H4*P3 donne la bonne TVA. Recopiée en J5, elle donne un résultat faux. Que contient J5 ?{
+~\=H4*P3 \: rien n'a bougé#Non \: recopiée, une formule relative s'adapte à sa nouvelle place. À travailler → Leçon 03 – La formule qui se dérègle.
+~\=H5*P3 \: la formule est juste, c'est Excel qui s'est trompé#Non \: sans $, la référence au taux bouge aussi. À travailler → Leçon 03 – La formule qui se dérègle.
+=\=H5*P4 \: le taux a glissé d'une ligne#Exact \: une référence relative suit la formule. Le montant devait suivre, pas le taux.
+~\=H5*$P$3 \: Excel pose les $ tout seul#Non \: c'est à vous de bloquer la référence, avec F4. À travailler → Leçon 03 – La formule qui se dérègle.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 03 – La formule qui se dérègle.
+}
+
+::L03-2::Le taux de TVA est saisi une seule fois en F1. Quelle formule écrire en C2 pour la recopier vers le bas ?{
+~\=B2*F$1$#Non \: le $ se place devant ce qu'il bloque, pas après. À travailler → Leçon 03 – La formule qui se dérègle.
+~\=B2*F1#Non \: recopiée, elle irait chercher F2, F3… À travailler → Leçon 03 – La formule qui se dérègle.
+=\=B2*$F$1#Exact \: le montant suit la ligne, le taux reste sur F1.
+~\=$B$2*$F$1#Non \: toutes les lignes utiliseraient le montant de B2. À travailler → Leçon 03 – La formule qui se dérègle.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 03 – La formule qui se dérègle.
+}
+
+::L03-3::Dans une grille, les quantités sont en colonne A et les taux de remise en ligne 2. Quelle formule écrire en B3 pour la recopier dans toute la grille ?{
+=\=$A3*B$2#Exact \: la colonne des quantités et la ligne des taux sont bloquées, le reste suit.
+~\=A$3*$B2#Non \: les cadenas sont inversés. À travailler → Leçon 03 – La formule qui se dérègle.
+~\=A3*B2#Non \: les deux références glisseraient. À travailler → Leçon 03 – La formule qui se dérègle.
+~\=$A$3*$B$2#Non \: toutes les cases donneraient le même résultat. À travailler → Leçon 03 – La formule qui se dérègle.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 03 – La formule qui se dérègle.
+}
+
+::L03-4::Le taux de TVA est en B1 d'une feuille nommée Paramètres. Quelle formule l'utilise dans une autre feuille, en restant fixe à la recopie ?{
+~\=H4*$B$1#Non \: sans nom de feuille, Excel cherche B1 dans la feuille de la formule. À travailler → Leçon 03 – La formule qui se dérègle.
+=\=H4*Paramètres!$B$1#Exact \: le nom de la feuille, un point d'exclamation, puis la cellule bloquée.
+~\=H4*Paramètres.$B$1#Non \: la feuille se sépare de la cellule par un point d'exclamation. À travailler → Leçon 03 – La formule qui se dérègle.
+~\=H4*[Paramètres]$B$1#Non \: les crochets désignent un autre classeur, pas une feuille. À travailler → Leçon 03 – La formule qui se dérègle.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 03 – La formule qui se dérègle.
+}
+
+::L03-5::En D2, Karim a écrit \=B2*C2. Il recopie la formule jusqu'en D10. Quelle formule obtient-il en D5 ?{
+=\=B5*C5#Exact \: sans $, les deux références suivent la ligne.
+~\=B5*C2#Non \: C2 bougerait aussi. À travailler → Leçon 03 – La formule qui se dérègle.
+~\=B2*C2#Non \: sans $, les références bougent à la recopie. À travailler → Leçon 03 – La formule qui se dérègle.
+~\=B2*C5#Non \: B2 bougerait aussi. À travailler → Leçon 03 – La formule qui se dérègle.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 03 – La formule qui se dérègle.
+}
+
+
+$CATEGORY: $course$/Banque Opérationnel/L04 Le tableau qui réfléchit
+
+::L04-1::Un acompte de 30 % est demandé pour les devis de 3 000 € ou plus, rien en dessous. Le montant est en H4. Quelle formule écrire ?{
+~\=SI(H4>\=3000,H4*30%,0)#Non \: dans un Excel français, les arguments se séparent par des points-virgules. À travailler → Leçon 04 – Le tableau qui réfléchit.
+=\=SI(H4>\=3000;H4*30%;0)#Exact \: le test, la valeur si vrai, la valeur si faux, séparés par des points-virgules.
+~\=SI(H4>3000;H4*30%;0)#Non \: un devis de 3 000 € pile n'aurait pas d'acompte. « Ou plus » s'écrit >\=. À travailler → Leçon 04 – Le tableau qui réfléchit.
+~\=SI(H4\=>3000;H4*30%;0)#Non \: \=> n'existe pas, on écrit >\=. À travailler → Leçon 04 – Le tableau qui réfléchit.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 04 – Le tableau qui réfléchit.
+}
+
+::L04-2::Thomas touche une prime si son chiffre d'affaires (B2) dépasse 50 000 € et si son taux de devis acceptés (C2) atteint au moins 30 %. Quelle formule affiche « Prime » dans ce cas ?{
+~\=SI(B2>50000;C2>\=30%;"Prime")#Non \: le deuxième argument n'est pas une seconde condition, c'est la valeur si vrai. À travailler → Leçon 04 – Le tableau qui réfléchit.
+~\=SI(OU(B2>50000;C2>\=30%);"Prime";"")#Non \: avec OU, une seule condition suffirait. À travailler → Leçon 04 – Le tableau qui réfléchit.
+=\=SI(ET(B2>50000;C2>\=30%);"Prime";"")#Exact \: ET répond VRAI seulement si les deux conditions sont vraies, et SI choisit la réponse.
+~\=ET(B2>50000;C2>\=30%;"Prime")#Non \: ET répond seulement VRAI ou FAUX ; il faut un SI autour. À travailler → Leçon 04 – Le tableau qui réfléchit.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 04 – Le tableau qui réfléchit.
+}
+
+::L04-3::Une formule affiche \#NOM?. Elle s'écrit \=SI(I4\=En attente;"Relancer";""). Que faut-il corriger ?{
+=Mettre En attente entre guillemets#Exact \: un texte dans une formule s'écrit toujours entre guillemets droits.
+~Élargir la colonne#Non \: \#NOM? n'est pas un problème d'affichage. À travailler → Leçon 04 – Le tableau qui réfléchit.
+~Remplacer les points-virgules par des virgules#Non \: dans un Excel français, ce sont bien des points-virgules. À travailler → Leçon 04 – Le tableau qui réfléchit.
+~Supprimer les deux guillemets ""#Non \: "" veut dire « rien », c'est correct. À travailler → Leçon 04 – Le tableau qui réfléchit.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 04 – Le tableau qui réfléchit.
+}
+
+::L04-4::Pour classer les devis en Petit (moins de 1 500 €), Moyen (moins de 5 000 €) et Gros, quelle formule est correcte ?{
+~\=SI(H4<1500;"Petit");SI(H4<5000;"Moyen";"Gros")#Non \: le second SI doit se placer à l'intérieur du premier. À travailler → Leçon 04 – Le tableau qui réfléchit.
+~\=SI(H4<1500;"Petit";"Moyen";"Gros")#Non \: SI n'accepte que trois arguments. À travailler → Leçon 04 – Le tableau qui réfléchit.
+~\=SI(H4<5000;"Moyen";SI(H4<1500;"Petit";"Gros"))#Non \: tout montant sous 1 500 € est déjà sous 5 000 € ; « Petit » n'apparaîtrait jamais. À travailler → Leçon 04 – Le tableau qui réfléchit.
+=\=SI(H4<1500;"Petit";SI(H4<5000;"Moyen";"Gros"))#Exact \: trois réponses, deux SI, en partant du plus petit seuil.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 04 – Le tableau qui réfléchit.
+}
+
+::L04-5::Thomas touche une prime si son chiffre d'affaires (B2) atteint ou dépasse son objectif (C2). Quelle formule affiche « Prime » dans ce cas, et rien sinon ?{
+~\=SI(B2>\=C2;Prime;"")#Non \: sans guillemets, Excel affiche \#NOM?. À travailler → Leçon 04 – Le tableau qui réfléchit.
+~\=SI(C2>\=B2;"Prime";"")#Non \: le test est inversé. À travailler → Leçon 04 – Le tableau qui réfléchit.
+=\=SI(B2>\=C2;"Prime";"")#Exact \: « atteint ou dépasse » s'écrit >\=, et le texte va entre guillemets.
+~\=SI(B2>C2;"Prime";"")#Non \: l'objectif tout juste atteint ne donnerait pas de prime. À travailler → Leçon 04 – Le tableau qui réfléchit.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 04 – Le tableau qui réfléchit.
+}
+
+
+$CATEGORY: $course$/Banque Opérationnel/L05 Compter et totaliser par critère
+
+::L05-1::La plage D2\:D50 indique le statut de chaque devis \: « Accepté », « Refusé » ou « En attente ». Quelle formule compte les devis acceptés ?{
+=\=NB.SI(D2\:D50;"Accepté")#Exact \: NB.SI compte les cellules qui remplissent le critère.
+~\=SOMME.SI(D2\:D50;"Accepté")#Non \: SOMME.SI additionne des montants, il ne compte pas. À travailler → Leçon 05 – Compter et totaliser par critère.
+~\=NB(D2\:D50;"Accepté")#Non \: NB compte les nombres, sans critère. À travailler → Leçon 05 – Compter et totaliser par critère.
+~\=SI(D2\:D50\="Accepté";1;0)#Non \: SI décide ligne par ligne, il ne compte pas une plage. À travailler → Leçon 05 – Compter et totaliser par critère.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 05 – Compter et totaliser par critère.
+}
+
+::L05-2::Les commerciaux sont en G2\:G301 et les montants en H2\:H301. Quelle formule additionne les montants de Julie ?{
+=\=SOMME.SI(G2\:G301;"Julie";H2\:H301)#Exact \: où chercher, quoi chercher, puis ce qu'il faut additionner.
+~\=SOMME.SI(H2\:H301;"Julie";G2\:G301)#Non \: la plage du critère vient en premier, les montants en dernier. À travailler → Leçon 05 – Compter et totaliser par critère.
+~\=NB.SI(G2\:G301;"Julie")#Non \: NB.SI compte les devis, il n'additionne pas les montants. À travailler → Leçon 05 – Compter et totaliser par critère.
+~\=SOMME(G2\:G301;"Julie")#Non \: SOMME n'accepte pas de critère. À travailler → Leçon 05 – Compter et totaliser par critère.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 05 – Compter et totaliser par critère.
+}
+
+::L05-3::Le seuil des « gros devis » est en B9. Quel critère compte les montants supérieurs à ce seuil ?{
+~">B9"#Non \: Excel chercherait le texte « B9 » et renverrait 0. À travailler → Leçon 05 – Compter et totaliser par critère.
+~"B9>"#Non \: l'opérateur se place avant la valeur. À travailler → Leçon 05 – Compter et totaliser par critère.
+~>B9#Non \: un opérateur dans un critère s'écrit entre guillemets. À travailler → Leçon 05 – Compter et totaliser par critère.
+=">"&B9#Exact \: l'esperluette colle l'opérateur et la valeur de B9.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 05 – Compter et totaliser par critère.
+}
+
+::L05-4::Sophie veut le nombre de devis de Julie OU de Thomas, dont les noms sont en G2\:G301. Que faut-il écrire ?{
+~\=NB.SI(G2\:G301;"Julie OU Thomas")#Non \: Excel chercherait ce texte exact. À travailler → Leçon 05 – Compter et totaliser par critère.
+~\=NB.SI(G2\:G301;"Julie";"Thomas")#Non \: NB.SI n'accepte qu'un seul critère. À travailler → Leçon 05 – Compter et totaliser par critère.
+=\=NB.SI(G2\:G301;"Julie")+NB.SI(G2\:G301;"Thomas")#Exact \: un OU s'obtient en additionnant deux NB.SI.
+~\=NB.SI.ENS(G2\:G301;"Julie";G2\:G301;"Thomas")#Non \: .ENS exige que toutes les conditions soient vraies ; le résultat serait 0. À travailler → Leçon 05 – Compter et totaliser par critère.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 05 – Compter et totaliser par critère.
+}
+
+::L05-5::Les montants sont en H2\:H301, les commerciaux en G2\:G301 et les statuts en I2\:I301. Quelle formule additionne les montants acceptés de Julie ?{
+~\=SOMME.SI(G2\:G301;"Julie";H2\:H301;"Accepté")#Non \: SOMME.SI n'accepte qu'un seul critère. À travailler → Leçon 05 – Compter et totaliser par critère.
+=\=SOMME.SI.ENS(H2\:H301;G2\:G301;"Julie";I2\:I301;"Accepté")#Exact \: dans SOMME.SI.ENS, la plage à additionner vient en premier.
+~\=SOMME.SI.ENS(G2\:G301;"Julie";I2\:I301;"Accepté";H2\:H301)#Non \: dans SOMME.SI.ENS, les montants viennent en premier, pas en dernier. À travailler → Leçon 05 – Compter et totaliser par critère.
+~\=NB.SI.ENS(G2\:G301;"Julie";I2\:I301;"Accepté")#Non \: NB.SI.ENS compte les devis, il n'additionne pas. À travailler → Leçon 05 – Compter et totaliser par critère.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 05 – Compter et totaliser par critère.
+}
+
+
+$CATEGORY: $course$/Banque Opérationnel/L06 Les 500 lignes
+
+::L06-1::La liste des devis est filtrée. Sophie veut afficher uniquement les devis dont le montant est compris entre 5 000 € et 10 000 €. Que faut-il utiliser ?{
+~Flèche de la colonne Montant → Trier du plus petit au plus grand#Non \: le tri range les lignes, il n'en cache aucune. À travailler → Leçon 06 – Les 500 lignes.
+~Accueil → Rechercher (Ctrl+F) → 5000#Non \: la recherche va de cellule en cellule, elle ne filtre pas. À travailler → Leçon 06 – Les 500 lignes.
+=Flèche de la colonne Montant → Filtres numériques → Entre#Exact \: deux conditions sur la même colonne, supérieur ou égal ET inférieur ou égal.
+~Flèche de la colonne Montant → Filtres numériques → 10 premiers#Non \: ce filtre garde les plus gros montants, pas une fourchette. À travailler → Leçon 06 – Les 500 lignes.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 06 – Les 500 lignes.
+}
+
+::L06-2::Après un filtre, les numéros de ligne sont bleus et sautent (2, 5, 9…). Que s'est-il passé ?{
+=Des lignes sont masquées par le filtre, mais toujours présentes#Exact \: filtrer ne supprime rien. Données → Effacer pour tout réafficher.
+~Des lignes ont été supprimées#Non \: un filtre cache, il ne supprime pas. À travailler → Leçon 06 – Les 500 lignes.
+~Le fichier est trié#Non \: un tri renumérote dans l'ordre, sans sauts. À travailler → Leçon 06 – Les 500 lignes.
+~Les volets sont figés#Non \: figer les volets ne masque aucune ligne. À travailler → Leçon 06 – Les 500 lignes.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 06 – Les 500 lignes.
+}
+
+::L06-3::On veut ranger la liste par chantier, et dans chaque chantier du plus gros montant au plus petit. Que faut-il faire ?{
+=Données → Trier \: Chantier de A à Z, puis Ajouter un niveau \: Montant du plus grand au plus petit#Exact \: le second niveau départage les lignes du même chantier.
+~Trier la colonne Montant, puis la colonne Chantier, chacune sélectionnée seule#Non \: en triant une colonne seule, les montants changent de ligne. À travailler → Leçon 06 – Les 500 lignes.
+~Figer les volets sur la colonne Chantier#Non \: figer garde les titres visibles, sans trier. À travailler → Leçon 06 – Les 500 lignes.
+~Filtrer sur chaque chantier l'un après l'autre#Non \: le filtre ne range pas les lignes. À travailler → Leçon 06 – Les 500 lignes.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 06 – Les 500 lignes.
+}
+
+::L06-4::Une liste est filtrée. Quelle formule écrite sous la colonne des montants donne le total des seules lignes visibles ?{
+=\=SOUS.TOTAL(9;E2\:E501)#Exact \: SOUS.TOTAL ignore les lignes masquées par le filtre ; 9 \= somme.
+~\=SOMME(E2\:E501)#Non \: SOMME additionne toutes les lignes, même masquées. À travailler → Leçon 06 – Les 500 lignes.
+~\=NB(E2\:E501)#Non \: NB compte des nombres, il n'additionne pas. À travailler → Leçon 06 – Les 500 lignes.
+~\=SOMME.SI(E2\:E501;"visible")#Non \: « visible » n'est pas un critère qu'Excel comprend. À travailler → Leçon 06 – Les 500 lignes.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 06 – Les 500 lignes.
+}
+
+::L06-5::Après avoir fusionné deux fichiers clients, Sophie obtient des lignes identiques en double. Elle veut ne garder qu'une ligne par client. Quelle commande utilise-t-elle ?{
+~Trier la liste de A à Z#Non \: le tri regroupe les doublons sans les supprimer. À travailler → Leçon 06 – Les 500 lignes.
+~Mise en forme conditionnelle > Valeurs en double#Non \: elle colore les doublons sans les supprimer. À travailler → Leçon 06 – Les 500 lignes.
+=Données > Supprimer les doublons#Exact \: Excel garde la première occurrence et supprime les autres.
+~Filtrer la colonne Client#Non \: le filtre cache des lignes sans les supprimer. À travailler → Leçon 06 – Les 500 lignes.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 06 – Les 500 lignes.
+}
+
+
+$CATEGORY: $course$/Banque Opérationnel/L07 La liste qui grandit
+
+::L07-1::Karim transforme sa liste de devis avec Accueil > Mettre sous forme de tableau. Quel est le principal avantage ?{
+~Les doublons sont supprimés#Non \: il faut Données → Supprimer les doublons. À travailler → Leçon 07 – La liste qui grandit.
+=Le tableau s'agrandit tout seul \: formules, totaux et mise en forme suivent les nouvelles lignes#Exact \: Excel reconnaît la liste comme un tout et lui donne un nom.
+~Le tableau prend des couleurs alternées#Non \: ce n'est que la partie visible ; le vrai changement, c'est qu'Excel reconnaît la liste. À travailler → Leçon 07 – La liste qui grandit.
+~Les montants sont convertis au format Monétaire#Non \: la mise sous forme de tableau ne change pas les formats de nombre. À travailler → Leçon 07 – La liste qui grandit.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 07 – La liste qui grandit.
+}
+
+::L07-2::Karim ajoute une colonne « TTC » à son tableau structuré et saisit une formule uniquement dans la première ligne. Que se passe-t-il ?{
+~Il faut tirer la poignée de recopie jusqu'en bas#Non \: c'était nécessaire dans une plage ordinaire. À travailler → Leçon 07 – La liste qui grandit.
+~Seule la première ligne est calculée#Non \: dans un tableau, la formule se propage à toute la colonne. À travailler → Leçon 07 – La liste qui grandit.
+~Excel affiche une erreur#Non \: la formule est acceptée et recopiée. À travailler → Leçon 07 – La liste qui grandit.
+=Excel recopie la formule sur toutes les lignes du tableau, y compris les futures#Exact \: c'est une colonne calculée.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 07 – La liste qui grandit.
+}
+
+::L07-3::Sophie veut le total des montants sous son tableau structuré, qui s'adapte automatiquement aux lignes ajoutées et aux filtres. Que faut-il faire ?{
+~Écrire TOTAL dans une ligne tapée à la main#Non \: elle ne suit ni les ajouts ni les filtres. À travailler → Leçon 07 – La liste qui grandit.
+=Cocher Ligne Total dans l'onglet Création de tableau#Exact \: la Ligne Total reste en bas, suit les ajouts et tient compte des filtres.
+~Taper \=SOMME(H2\:H208) sous le tableau#Non \: la plage resterait figée à la ligne 208 et ignorerait les filtres. À travailler → Leçon 07 – La liste qui grandit.
+~Insérer un segment#Non \: un segment filtre, il ne totalise pas. À travailler → Leçon 07 – La liste qui grandit.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 07 – La liste qui grandit.
+}
+
+::L07-4::Dans une formule, que désigne Factures[Montant HT] ?{
+=Toute la colonne Montant HT du tableau Factures, quelle que soit sa longueur#Exact \: c'est une référence structurée.
+~La cellule Montant HT de la ligne en cours#Non \: ce serait [@[Montant HT]], avec l'arobase. À travailler → Leçon 07 – La liste qui grandit.
+~Le titre de la colonne seulement#Non \: la référence désigne les données de la colonne. À travailler → Leçon 07 – La liste qui grandit.
+~La feuille nommée Factures#Non \: une feuille se désigne avec un point d'exclamation. À travailler → Leçon 07 – La liste qui grandit.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 07 – La liste qui grandit.
+}
+
+::L07-5::Karim colle les 12 factures de la semaine juste sous un tableau structuré, sans ligne vide. Que se passe-t-il ?{
+=Le tableau s'agrandit \: formats, colonnes calculées et Ligne Total suivent#Exact \: c'est tout l'intérêt d'un tableau structuré.
+~Les nouvelles lignes restent hors du tableau#Non \: collées juste dessous, elles sont intégrées. À travailler → Leçon 07 – La liste qui grandit.
+~Excel demande de recréer le tableau#Non \: aucune action n'est nécessaire. À travailler → Leçon 07 – La liste qui grandit.
+~Les formules du tableau s'effacent#Non \: les formules sont conservées et propagées. À travailler → Leçon 07 – La liste qui grandit.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 07 – La liste qui grandit.
+}
+
+
+$CATEGORY: $course$/Banque Opérationnel/L09 Des données propres dès la saisie
+
+::L09-1::Pour éviter les fautes de frappe, Karim veut que la colonne Statut n'accepte que « Accepté », « Refusé » ou « En attente », choisis dans une liste déroulante. Quel outil utilise-t-il ?{
+~Accueil > Mise en forme conditionnelle#Non \: elle colore les cellules, elle ne contrôle pas la saisie. À travailler → Leçon 09 – Des données propres dès la saisie.
+=Données > Validation des données > Liste#Exact \: la validation des données contrôle la saisie et propose une liste déroulante.
+~Données > Filtrer#Non \: le filtre cache des lignes, il n'empêche aucune saisie. À travailler → Leçon 09 – Des données propres dès la saisie.
+~Révision > Protéger la feuille#Non \: la protection empêche de modifier, elle ne propose pas de liste. À travailler → Leçon 09 – Des données propres dès la saisie.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 09 – Des données propres dès la saisie.
+}
+
+::L09-2::La synthèse compte 51 devis alors que la liste en contient 60. Les statuts comportent des fautes de frappe. Comment retrouver ces cellules après avoir posé la règle de validation ?{
+=Données > Validation des données (flèche) > Entourer les données non valides#Exact \: Excel entoure en rouge chaque cellule qui ne respecte pas la règle.
+~Ctrl+Z jusqu'à la première saisie#Non \: cela annulerait le travail sans trouver les erreurs. À travailler → Leçon 09 – Des données propres dès la saisie.
+~Rien \: la règle corrige automatiquement les cellules existantes#Non \: elle ne contrôle que les nouvelles saisies. À travailler → Leçon 09 – Des données propres dès la saisie.
+~Accueil > Rechercher > « Accepté »#Non \: cela trouve les bons statuts, pas les fautes. À travailler → Leçon 09 – Des données propres dès la saisie.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 09 – Des données propres dès la saisie.
+}
+
+::L09-3::La colonne Montant HT ne doit accepter que des nombres positifs. Quelle règle poser ?{
+~Mise en forme conditionnelle en rouge si négatif#Non \: elle signale, mais n'empêche pas la saisie. À travailler → Leçon 09 – Des données propres dès la saisie.
+~Validation des données \: Autoriser Liste, source 0#Non \: la liste n'accepterait que la valeur 0. À travailler → Leçon 09 – Des données propres dès la saisie.
+~Format de cellule Monétaire#Non \: le format change l'affichage, il ne refuse rien. À travailler → Leçon 09 – Des données propres dès la saisie.
+=Validation des données \: Autoriser Décimal, supérieure à 0#Exact \: un montant négatif ou un texte sera refusé.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 09 – Des données propres dès la saisie.
+}
+
+::L09-4::Une règle de validation (style Arrêt) est posée sur la colonne Statut. Julie colle une cellule copiée ailleurs, contenant « OK ». Que se passe-t-il ?{
+~Excel transforme « OK » en « Accepté »#Non \: Excel ne corrige rien tout seul. À travailler → Leçon 09 – Des données propres dès la saisie.
+~Excel refuse le collage#Non \: la règle ne contrôle que la saisie au clavier. À travailler → Leçon 09 – Des données propres dès la saisie.
+=Le collage passe et la cellule perd sa règle#Exact \: le copier-coller contourne la validation. Préférez Collage spécial > Valeurs.
+~Excel demande une confirmation#Non \: ce serait le style Avertissement, et seulement pour une saisie au clavier. À travailler → Leçon 09 – Des données propres dès la saisie.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 09 – Des données propres dès la saisie.
+}
+
+::L09-5::Une règle de validation doit refuser toute saisie hors de la liste. Quel style d'alerte d'erreur choisir ?{
+~Information#Non \: la saisie passe après un message. À travailler → Leçon 09 – Des données propres dès la saisie.
+~Avertissement#Non \: l'utilisateur peut confirmer et la saisie passe. À travailler → Leçon 09 – Des données propres dès la saisie.
+=Arrêt#Exact \: avec Arrêt, la saisie est refusée.
+~Aucun \: la liste suffit#Non \: sans alerte bloquante, une saisie au clavier pourrait passer. À travailler → Leçon 09 – Des données propres dès la saisie.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 09 – Des données propres dès la saisie.
+}
+
+
+$CATEGORY: $course$/Banque Opérationnel/L10 Comprendre en 10 secondes
+
+::L10-1::Karim a créé un graphique à partir des ventes de janvier et février (A1\:B3). Il saisit les ventes de mars en ligne 4. Que se passe-t-il ?{
+~Le graphique est supprimé#Non \: il reste en place, sans mars. À travailler → Leçon 10 – Comprendre en 10 secondes.
+=Mars n'apparaît pas \: il faut étendre la source du graphique#Exact \: tirez le cadre coloré ou utilisez Sélectionner des données. Un tableau structuré l'éviterait.
+~Mars apparaît automatiquement#Non \: la source d'un graphique ordinaire s'arrête à la plage choisie. À travailler → Leçon 10 – Comprendre en 10 secondes.
+~Le graphique affiche une erreur#Non \: aucune erreur, mars manque simplement. À travailler → Leçon 10 – Comprendre en 10 secondes.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 10 – Comprendre en 10 secondes.
+}
+
+::L10-2::Julie veut montrer sur un même graphique le chiffre d'affaires mensuel (des dizaines de milliers d'euros) et le taux de devis acceptés (en %). Que faut-il faire ?{
+=Un graphique combiné, avec le taux sur un axe secondaire#Exact \: chaque série a sa propre échelle, euros à gauche et % à droite.
+~Deux graphiques côte à côte#Non \: cela fonctionne, mais la demande est un seul graphique. À travailler → Leçon 10 – Comprendre en 10 secondes.
+~Un histogramme simple avec les deux séries#Non \: le taux, proche de zéro à l'échelle des euros, serait invisible. À travailler → Leçon 10 – Comprendre en 10 secondes.
+~Un graphique en secteurs#Non \: il montre des parts d'un tout, pas deux séries dans le temps. À travailler → Leçon 10 – Comprendre en 10 secondes.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 10 – Comprendre en 10 secondes.
+}
+
+::L10-3::Thomas voulait un groupe de barres par mois, avec une barre par commercial. Excel a fait l'inverse \: un groupe par commercial. Que faire ?{
+~Changer le type de graphique en secteurs#Non \: le problème n'est pas le type. À travailler → Leçon 10 – Comprendre en 10 secondes.
+=Création de graphique → Intervertir les lignes/colonnes#Exact \: les séries et les catégories sont échangées en un clic.
+~Modifier les couleurs du graphique#Non \: les couleurs ne changent pas le regroupement. À travailler → Leçon 10 – Comprendre en 10 secondes.
+~Supprimer le graphique et trier le tableau#Non \: le tri ne change pas l'orientation des séries. À travailler → Leçon 10 – Comprendre en 10 secondes.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 10 – Comprendre en 10 secondes.
+}
+
+::L10-4::Sophie veut montrer quelle part du chiffre d'affaires revient à chacun des deux commerciaux. Quel graphique choisir ?{
+~Histogramme empilé sur 9 mois#Non \: il répond à une autre question, l'évolution. À travailler → Leçon 10 – Comprendre en 10 secondes.
+~Courbe#Non \: la courbe montre une évolution dans le temps. À travailler → Leçon 10 – Comprendre en 10 secondes.
+~Sparkline#Non \: elle montre une tendance dans une cellule. À travailler → Leçon 10 – Comprendre en 10 secondes.
+=Secteurs#Exact \: peu de parts, qui font 100 % ensemble.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 10 – Comprendre en 10 secondes.
+}
+
+::L10-5::Sophie veut montrer au banquier l'évolution du chiffre d'affaires mois par mois. Quel graphique choisir ?{
+~Secteurs#Non \: les secteurs montrent des parts d'un tout. À travailler → Leçon 10 – Comprendre en 10 secondes.
+~Sparkline dans une seule cellule#Non \: elle montre une tendance, sans axe ni valeurs, pas pour une présentation. À travailler → Leçon 10 – Comprendre en 10 secondes.
+~Nuage de points#Non \: il croise deux mesures, pas une évolution. À travailler → Leçon 10 – Comprendre en 10 secondes.
+=Histogramme ou courbe#Exact \: le temps se lit de gauche à droite.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 10 – Comprendre en 10 secondes.
+}
+
+
+$CATEGORY: $course$/Banque Opérationnel/L11 L'impression ratée
+
+::L11-1::Karim imprime la liste des 300 clients sur plusieurs pages. Les en-têtes de colonnes (ligne 1) n'apparaissent que sur la première page. Comment les répéter sur chaque page ?{
+~Insertion > En-tête et pied de page, puis y saisir les titres#Non \: ils ne s'aligneraient pas avec les colonnes. À travailler → Leçon 11 – L'impression ratée.
+~Recopier la ligne d'en-têtes toutes les 50 lignes#Non \: cela ajoute de fausses lignes dans les données. À travailler → Leçon 11 – L'impression ratée.
+=Mise en page > Imprimer les titres > Lignes à répéter en haut#Exact \: avec $1\:$1, chaque page commence par la ligne des titres.
+~Affichage > Figer les volets > Figer la ligne supérieure#Non \: figer les volets n'agit que sur l'écran. À travailler → Leçon 11 – L'impression ratée.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 11 – L'impression ratée.
+}
+
+::L11-2::À l'impression, la liste des devis tient sur deux pages en largeur parce que la dernière colonne déborde. Karim veut toutes les colonnes sur la largeur d'une seule page, quel que soit le nombre de lignes. Que fait-il ?{
+=Mise en page > Mise à l'échelle > Largeur \: 1 page#Exact \: avec Hauteur Automatique, Excel réduit juste assez pour la largeur.
+~Réduire la police de toutes les cellules à 6 points#Non \: illisible, et il faudrait la remettre ensuite. À travailler → Leçon 11 – L'impression ratée.
+~Affichage > Zoom à 50 %#Non \: le zoom ne change que l'écran. À travailler → Leçon 11 – L'impression ratée.
+~Supprimer la dernière colonne avant d'imprimer#Non \: on perd une information. À travailler → Leçon 11 – L'impression ratée.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 11 – L'impression ratée.
+}
+
+::L11-3::La feuille de Sophie contient un récapitulatif en A1\:F17 et, plus bas, des calculs intermédiaires. Elle veut que seul le récapitulatif s'imprime, à chaque fois et sans refaire de réglage. Que fait-elle ?{
+~Figer les volets sous la ligne 17#Non \: figer les volets n'agit pas sur l'impression. À travailler → Leçon 11 – L'impression ratée.
+~Insérer un saut de page sous la ligne 17#Non \: les calculs s'imprimeraient quand même, sur la page suivante. À travailler → Leçon 11 – L'impression ratée.
+=Sélectionner A1\:F17, puis Mise en page > Zone d'impression > Définir#Exact \: la zone est enregistrée avec la feuille.
+~Sélectionner A1\:F17, puis Fichier > Imprimer > Imprimer la sélection#Non \: cela ne vaut que pour cette impression. À travailler → Leçon 11 – L'impression ratée.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 11 – L'impression ratée.
+}
+
+::L11-4::Avant d'envoyer la liste à la banque, comment vérifier exactement ce qui sera imprimé ou exporté en PDF ?{
+~Regarder la feuille en affichage Normal#Non \: l'affichage Normal ne montre pas les pages. À travailler → Leçon 11 – L'impression ratée.
+=Fichier > Imprimer (Ctrl+P) \: l'aperçu montre chaque page#Exact \: le PDF reprend exactement ce que montre l'aperçu.
+~Zoomer à 100 %#Non \: le zoom ne montre pas les pages. À travailler → Leçon 11 – L'impression ratée.
+~Enregistrer le fichier puis le rouvrir#Non \: cela ne montre pas la mise en page. À travailler → Leçon 11 – L'impression ratée.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 11 – L'impression ratée.
+}
+
+::L11-5::La liste des 300 clients est longue \: en descendant, Karim ne voit plus les en-têtes de colonnes à l'écran. Que fait-il ?{
+~Insertion > En-tête et pied de page#Non \: l'en-tête de page sert à l'impression. À travailler → Leçon 11 – L'impression ratée.
+~Mise en page > Imprimer les titres > Lignes à répéter en haut#Non \: ce réglage agit sur l'impression, pas sur l'écran. À travailler → Leçon 11 – L'impression ratée.
+~Réduire le zoom à 50 % pour tout voir#Non \: le texte devient illisible. À travailler → Leçon 11 – L'impression ratée.
+=Affichage > Figer les volets > Figer la ligne supérieure#Exact \: à l'écran, on fige les volets. Imprimer les titres, c'est pour le papier.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 11 – L'impression ratée.
+}
+
+
+$CATEGORY: $course$/Banque Opérationnel/L15 Coller autrement
+
+::L15-1::Sophie copie les totaux de son tableau de bord, calculés par des formules, vers un classeur destiné au comptable. Il doit pouvoir retravailler les montants, sans formules ni lien vers le fichier de Sophie. Quel collage choisit-elle ?{
+~Collage spécial > Image#Non \: une image ne peut pas être retravaillée. À travailler → Leçon 15 – Coller autrement.
+~Collage spécial > Coller avec liaison#Non \: la liaison garde un lien vers le fichier de Sophie. À travailler → Leçon 15 – Coller autrement.
+~Coller normalement avec Ctrl+V#Non \: les formules seraient collées et pourraient afficher \#REF!. À travailler → Leçon 15 – Coller autrement.
+=Collage spécial > Valeurs#Exact \: seuls les résultats sont collés, sans formules.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 15 – Coller autrement.
+}
+
+::L15-2::Karim a la liste des mois en colonne, de A2 à A13. Il veut les mêmes mois en ligne, de B1 à M1, sans les retaper. Quelle méthode utilise-t-il ?{
+=Copier A2\:A13, puis Collage spécial > Transposer en B1#Exact \: Transposer échange lignes et colonnes.
+~Trier la colonne A de A à Z#Non \: le tri ne change pas l'orientation. À travailler → Leçon 15 – Coller autrement.
+~Copier A2\:A13, puis Collage spécial > Valeurs en B1#Non \: les mois resteraient en colonne. À travailler → Leçon 15 – Coller autrement.
+~Tirer la poignée de recopie de A2 vers la droite#Non \: la recopie répète ou prolonge, elle ne transpose pas. À travailler → Leçon 15 – Coller autrement.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 15 – Coller autrement.
+}
+
+::L15-3::Les prix du catalogue sont en C2\:C80. Sophie veut les augmenter tous de 5 %, directement dans ces cellules, sans colonne intermédiaire ni formule. Que fait-elle ?{
+~Ctrl+H \: remplacer chaque prix par le prix + 5 %#Non \: Rechercher-remplacer ne calcule pas. À travailler → Leçon 15 – Coller autrement.
+~Écrire \=C2*1,05 en C2, puis recopier jusqu'en C80#Non \: C2 ferait référence à elle-même (référence circulaire). À travailler → Leçon 15 – Coller autrement.
+~Appliquer le format Pourcentage à C2\:C80#Non \: le format change l'affichage, pas la valeur. À travailler → Leçon 15 – Coller autrement.
+=Copier une cellule contenant 1,05, puis Collage spécial > Multiplication sur C2\:C80#Exact \: chaque prix est multiplié sur place par 1,05.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 15 – Coller autrement.
+}
+
+::L15-4::Sophie veut que le tableau copié dans le classeur de la banque se mette à jour quand elle modifie le sien. Quel collage choisit-elle ?{
+~Collage spécial > Formats#Non \: seule la mise en forme serait collée. À travailler → Leçon 15 – Coller autrement.
+~Collage spécial > Valeurs#Non \: les valeurs sont figées. À travailler → Leçon 15 – Coller autrement.
+~Collage spécial > Transposer#Non \: cela change l'orientation, sans lien. À travailler → Leçon 15 – Coller autrement.
+=Collage spécial > Coller avec liaison#Exact \: chaque cellule collée renvoie vers la cellule d'origine.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 15 – Coller autrement.
+}
+
+::L15-5::Karim colle un tableau ailleurs \: les données arrivent, mais les colonnes sont trop étroites et affichent des dièses. Quel collage aurait gardé les largeurs ?{
+~Collage spécial > Formules#Non \: seules les formules seraient collées. À travailler → Leçon 15 – Coller autrement.
+~Coller avec liaison#Non \: la liaison ne reprend pas les largeurs. À travailler → Leçon 15 – Coller autrement.
+~Collage spécial > Valeurs#Non \: seules les valeurs seraient collées. À travailler → Leçon 15 – Coller autrement.
+=Collage spécial > Largeurs de colonnes#Exact \: à faire après un collage normal, ou via l'option de collage « Conserver la largeur des colonnes sources ».
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 15 – Coller autrement.
+}
+
+
+$CATEGORY: $course$/Banque Opérationnel/L17 Calculer avec des dates
+
+::L17-1::Sophie veut le nombre de jours entre la date d'un devis (B2) et sa date de signature (C2). Elle écrit \=C2-B2 et obtient « 14/01/1900 ». Que doit-elle faire ?{
+~Écrire plutôt \=ANNEE(C2)-ANNEE(B2)#Non \: cela donne un écart en années. À travailler → Leçon 17 – Calculer avec des dates.
+=Mettre le résultat au format Standard#Exact \: le résultat vaut 14 jours ; Excel l'a juste habillé en date.
+~Appliquer le format Texte aux cellules B2 et C2#Non \: des dates en texte ne se calculent plus. À travailler → Leçon 17 – Calculer avec des dates.
+~Écrire plutôt \=B2-C2#Non \: le résultat serait négatif. À travailler → Leçon 17 – Calculer avec des dates.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 17 – Calculer avec des dates.
+}
+
+::L17-2::Une facture est datée en B2 et se paie à 30 jours. Quelle formule donne la date d'échéance ?{
+~\=MOIS(B2)+1#Non \: cela renvoie un numéro de mois, pas une date. À travailler → Leçon 17 – Calculer avec des dates.
+~\=B2+"30 jours"#Non \: on n'ajoute pas un texte à une date. À travailler → Leçon 17 – Calculer avec des dates.
+~\=B2*30#Non \: multiplier une date n'a pas de sens. À travailler → Leçon 17 – Calculer avec des dates.
+=\=B2+30#Exact \: ajouter un nombre à une date ajoute des jours.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 17 – Calculer avec des dates.
+}
+
+::L17-3::Karim veut une cellule qui affiche toujours la date du jour, mise à jour à chaque ouverture du fichier. Que tape-t-il ?{
+=\=AUJOURDHUI()#Exact \: AUJOURDHUI() se recalcule à chaque ouverture.
+~Ctrl+; (point-virgule)#Non \: Ctrl+; tape la date du jour une fois pour toutes, figée. À travailler → Leçon 17 – Calculer avec des dates.
+~La date du jour au clavier#Non \: elle ne changera plus. À travailler → Leçon 17 – Calculer avec des dates.
+~\=DATE()#Non \: DATE attend une année, un mois et un jour. À travailler → Leçon 17 – Calculer avec des dates.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 17 – Calculer avec des dates.
+}
+
+::L17-4::L'échéance d'une facture est en C2. Quelle formule donne le nombre de jours restant avant l'échéance ?{
+~\=JOURS(AUJOURDHUI())#Non \: JOURS attend deux dates. À travailler → Leçon 17 – Calculer avec des dates.
+=\=C2-AUJOURDHUI()#Exact \: l'échéance moins aujourd'hui ; au format Standard.
+~\=AUJOURDHUI()-C2#Non \: le résultat serait négatif tant que l'échéance n'est pas passée. À travailler → Leçon 17 – Calculer avec des dates.
+~\=C2-30#Non \: cela recule l'échéance de 30 jours. À travailler → Leçon 17 – Calculer avec des dates.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 17 – Calculer avec des dates.
+}
+
+::L17-5::Une date collée depuis un autre fichier s'affiche 46030, mais les calculs sur cette date sont justes. Que s'est-il passé ?{
+~Le fichier est endommagé#Non \: la valeur est juste. À travailler → Leçon 17 – Calculer avec des dates.
+=La date a perdu son format Date, la valeur est intacte#Exact \: une date est un nombre de jours ; il suffit de lui remettre un format Date.
+~La date a été convertie en texte#Non \: en texte, les calculs ne marcheraient pas. À travailler → Leçon 17 – Calculer avec des dates.
+~Il faut recalculer avec F9#Non \: il ne s'agit pas d'un calcul en retard. À travailler → Leçon 17 – Calculer avec des dates.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 17 – Calculer avec des dates.
+}
+
+
+$CATEGORY: $course$/Banque Opérationnel/L16 Un classeur, plusieurs feuilles
+
+::L16-1::Dans la feuille Récap, Karim veut afficher la valeur de la cellule B4 de la feuille Janvier, et qu'elle suive les corrections. Que tape-t-il ?{
+~Le chiffre lu dans la feuille Janvier#Non \: un chiffre recopié ne suit pas les corrections. À travailler → Leçon 16 – Un classeur, plusieurs feuilles.
+=\=Janvier!B4#Exact \: le nom de la feuille, un point d'exclamation, puis la cellule.
+~\=Janvier(B4)#Non \: Janvier n'est pas une fonction. À travailler → Leçon 16 – Un classeur, plusieurs feuilles.
+~\=B4#Non \: cela désigne B4 de la feuille Récap elle-même. À travailler → Leçon 16 – Un classeur, plusieurs feuilles.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 16 – Un classeur, plusieurs feuilles.
+}
+
+::L16-2::Les feuilles Janvier, Février et Mars sont côte à côte. Quelle formule additionne leur cellule B4 ?{
+~\=SOMME(B4;B4;B4)#Non \: cela additionne trois fois la cellule de la feuille active. À travailler → Leçon 16 – Un classeur, plusieurs feuilles.
+=\=SOMME(Janvier\:Mars!B4)#Exact \: la somme porte sur toutes les feuilles placées entre Janvier et Mars.
+~\=SOMME(Janvier!B4\:Mars!B4)#Non \: cette écriture n'est pas valide. À travailler → Leçon 16 – Un classeur, plusieurs feuilles.
+~\=Janvier\:Mars!B4#Non \: il manque la fonction SOMME. À travailler → Leçon 16 – Un classeur, plusieurs feuilles.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 16 – Un classeur, plusieurs feuilles.
+}
+
+::L16-3::Le récapitulatif utilise \=SOMME(Janvier\:Mars!B4). Karim insère une copie de la feuille Mars entre Février et Mars. Que se passe-t-il ?{
+~La formule affiche \#REF!#Non \: pas d'erreur, seulement un total faux. À travailler → Leçon 16 – Un classeur, plusieurs feuilles.
+~Rien \: la formule ne lit que Janvier, Février et Mars#Non \: la formule prend tout ce qui est entre les bornes, quel que soit le nom. À travailler → Leçon 16 – Un classeur, plusieurs feuilles.
+=Le récapitulatif compte aussi la nouvelle feuille#Exact \: toutes les feuilles placées entre les deux bornes sont additionnées.
+~Excel demande s'il faut inclure la nouvelle feuille#Non \: Excel ne pose aucune question. À travailler → Leçon 16 – Un classeur, plusieurs feuilles.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 16 – Un classeur, plusieurs feuilles.
+}
+
+::L16-4::Sophie a sélectionné les onglets Février et Mars avec Ctrl pour les mettre en forme. Elle tape ensuite 5000 en B4 sans rien faire d'autre. Que se passe-t-il ?{
+~Le groupe se dissocie tout seul#Non \: il faut le dissocier soi-même. À travailler → Leçon 16 – Un classeur, plusieurs feuilles.
+=5000 est écrit en B4 des deux feuilles#Exact \: tant que les feuilles sont groupées, une saisie s'applique à toutes. Il fallait dissocier.
+~Excel refuse la saisie#Non \: la saisie est acceptée, dans toutes les feuilles. À travailler → Leçon 16 – Un classeur, plusieurs feuilles.
+~5000 est écrit seulement dans Février#Non \: le groupe n'était pas dissocié. À travailler → Leçon 16 – Un classeur, plusieurs feuilles.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 16 – Un classeur, plusieurs feuilles.
+}
+
+::L16-5::Karim doit préparer la feuille d'avril, identique à celle de mars, formules et mise en forme comprises. Quelle est la méthode la plus rapide ?{
+=Ctrl + faire glisser l'onglet Mars, puis renommer la copie#Exact \: la copie reprend tout ; on renomme Avril et on efface les ventes.
+~Copier les cellules de Mars et les coller dans une nouvelle feuille avec Collage spécial > Valeurs#Non \: Valeurs ne garde ni les formules ni la mise en forme. À travailler → Leçon 16 – Un classeur, plusieurs feuilles.
+~Double-cliquer sur l'onglet Mars#Non \: le double-clic sert à renommer. À travailler → Leçon 16 – Un classeur, plusieurs feuilles.
+~Insérer une feuille vide et refaire le tableau#Non \: c'est long et source d'erreurs. À travailler → Leçon 16 – Un classeur, plusieurs feuilles.
+~Je ne sais pas#Pas de souci, c'est l'objet du parcours. → Leçon 16 – Un classeur, plusieurs feuilles.
+}

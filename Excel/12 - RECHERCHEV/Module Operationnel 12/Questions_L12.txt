@@ -1,0 +1,31 @@
+MC
+10
+Karim saisit le code L-318 en A5 du devis. Le catalogue (codes, articles, catégories, prix) est en Catalogue!A2:D31. Quelle formule affiche le prix de l'article ?
+*=RECHERCHEV(A5;Catalogue!$A$2:$D$31;4;FAUX) | Exact : le prix est la 4e colonne de la table, et FAUX demande le code exact.
+=RECHERCHEV(A5;Catalogue!$A$2:$D$31;2;FAUX) | Non : la 2e colonne contient l'article, pas le prix.
+=RECHERCHEV(Catalogue!$A$2:$D$31;A5;4;FAUX) | Non : on donne d'abord la valeur cherchée, puis la table.
+=RECHERCHEV(A5;Catalogue!$A$2:$D$31;D;FAUX) | Non : le troisième argument est un numéro de colonne, pas une lettre.
+
+MC
+10
+Après recopie de la formule vers le bas, les dernières lignes du devis affichent #N/A alors que les codes existent bien. Quelle est la cause la plus probable ?
+*La table du catalogue n'est pas bloquée avec des $ et a glissé vers le bas | Exact : Catalogue!A2:D31 est devenu A9:D38 ; il faut $A$2:$D$31.
+Le catalogue n'est pas trié par code | Non : avec FAUX, le tri n'a aucune importance.
+Il manque SIERREUR | Non : SIERREUR masquerait l'erreur sans la corriger.
+Le format des prix n'est pas Monétaire | Non : le format ne change pas le résultat d'une recherche.
+
+MC
+10
+Une formule RECHERCHEV écrite sans quatrième argument renvoie parfois le prix d'un autre article, sans message d'erreur. Pourquoi ?
+*Sans quatrième argument, Excel cherche une valeur approchée dans une table supposée triée | Exact : il faut ajouter FAUX pour une correspondance exacte.
+Le numéro de colonne est faux | Non : il renverrait une autre colonne pour tous les codes.
+Le code cherché n'existe pas | Non : avec FAUX, ce serait #N/A.
+La table contient des doublons | Non : le problème vient de la valeur approchée.
+
+MC
+10
+Sophie veut la remise de chaque client selon un barème trié : 0 % à partir de 0 €, 3 % à partir de 1 000 €, 5 % à partir de 3 000 €. Un client a 2 450 € de devis. Quelle formule et quel résultat ?
+*=RECHERCHEV(B4;$E$4:$F$6;2;VRAI), qui renvoie 3 % | Exact : VRAI s'arrête sur le plus grand seuil inférieur ou égal à 2 450 €, soit 1 000 €.
+=RECHERCHEV(B4;$E$4:$F$6;2;FAUX), qui renvoie 3 % | Non : avec FAUX, 2 450 n'est pas trouvé : #N/A.
+=RECHERCHEV(B4;$E$4:$F$6;2;VRAI), qui renvoie 5 % | Non : 2 450 € n'atteint pas le seuil de 3 000 €.
+=SIERREUR(B4;"3 %") | Non : SIERREUR ne cherche rien dans un barème.

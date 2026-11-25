@@ -1,0 +1,46 @@
+Excel Opérationnel · Leçon 16 – Un classeur, plusieurs feuilles
+
+Diapositive 1 – Un classeur, plusieurs feuilles
+  NARRATEUR : Une feuille par mois, et une feuille de synthèse pour le trimestre. C'est l'organisation la plus courante d'un classeur. Dans cette leçon, vous allez relier les feuilles entre elles, additionner plusieurs feuilles d'un seul coup, mettre en forme plusieurs feuilles à la fois, et préparer le mois suivant en copiant une feuille.
+
+Diapositive 2 – Lundi : le récapitulatif du trimestre
+  SOPHIE : Karim, il me faut les ventes du premier trimestre, par commercial et par métier. Tu as une feuille par mois, il suffit de tout regrouper dans la feuille Récap.
+  KARIM : C'est ce que j'ai fait : j'ai recopié les chiffres des trois mois à la calculatrice. Mais Julie vient de corriger une vente de février. Je dois tout refaire ?
+
+Diapositive 3 – Des chiffres recopiés, donc figés
+  NARRATEUR : Voici la feuille Récap de Karim. Les totaux sont justes, aujourd'hui. Mais cliquez sur B4 : la barre de formule affiche treize mille neuf cent cinquante, un nombre tapé à la main. Rien ne relie cette cellule aux feuilles Janvier, Février et Mars. Quand Julie corrige une vente de février, le récapitulatif ne bouge pas : il devient faux, sans prévenir.
+
+Diapositive 4 – Solution 1 : recopier à la calculatrice
+  NARRATEUR : Sans l'outil, on recopie. Quatre commerciaux, trois métiers, trois mois : trente-six chiffres à additionner pour remplir douze cellules. À chaque correction dans un mois, il faut retrouver la bonne cellule et refaire l'addition. Et pour mettre en forme les feuilles de février et de mars comme celle de janvier, refaire chaque réglage, feuille par feuille. Une demi-heure à chaque fois, et des erreurs de recopie.
+
+Diapositive 5 – Une cellule a une adresse complète
+  NARRATEUR : Le principe : chaque cellule a une adresse complète, le nom de la feuille, un point d'exclamation, puis la cellule. Janvier point d'exclamation B4, c'est la cellule B4 de la feuille Janvier. Si le nom de la feuille contient une espace, Excel l'entoure d'apostrophes. Et pour une cellule d'un autre classeur, le nom du fichier s'ajoute entre crochets. Pas besoin de taper tout cela : on tape égal, puis on clique sur l'onglet et sur la cellule, et Excel écrit l'adresse.
+
+Diapositive 6 – Aller chercher une cellule dans une autre feuille
+  NARRATEUR : Dans la feuille Récap, cliquez en B4 et tapez égal. Cliquez sur l'onglet Janvier, puis sur B4, tapez plus, cliquez sur l'onglet Février, sur B4, plus, Mars, B4, et Entrée. Vous revenez sur Récap avec treize mille neuf cent cinquante euros. La barre de formule affiche Janvier B4 plus Février B4 plus Mars B4 : un lien vivant. Si Julie corrige février, le récapitulatif suit.
+
+Diapositive 7 – Additionner plusieurs feuilles d'un coup
+  NARRATEUR : Avec trois mois, l'addition est encore lisible. Avec douze, elle devient interminable. La somme en trois dimensions additionne la même cellule sur une série de feuilles. Tapez égal SOMME, parenthèse, cliquez sur l'onglet Janvier, maintenez Majuscule et cliquez sur l'onglet Mars, cliquez sur B4, fermez la parenthèse, Entrée. La formule devient SOMME de Janvier deux-points Mars point d'exclamation B4. Recopiez-la dans tout le tableau : le trimestre est complet, cent quinze mille huit cents euros.
+
+Diapositive 8 – Attention à l'ordre des onglets
+  NARRATEUR : La somme en trois dimensions ne lit pas les noms des feuilles entre les deux bornes : elle prend tout ce qui est placé entre l'onglet Janvier et l'onglet Mars. Karim prépare avril, et glisse sa nouvelle feuille entre Février et Mars : le total du trimestre saute à cent cinquante-sept mille deux cents euros, car avril est compté. Remettez la feuille après Mars, et tout redevient juste. Règle : les feuilles à additionner, côte à côte ; les autres, en dehors.
+
+Diapositive 9 – Travailler sur plusieurs feuilles à la fois
+  NARRATEUR : Les feuilles de février et de mars sont restées sans mise en forme. Cliquez sur l'onglet Février, maintenez Contrôle et cliquez sur Mars : les deux onglets sont sélectionnés, et la barre de titre affiche Groupe. Tout ce que vous faites maintenant s'applique aux deux feuilles : gras, bordures, format monétaire. Attention : une saisie aussi. Dès que vous avez fini, clic droit sur un onglet, Dissocier les feuilles.
+
+Diapositive 10 – Préparer le mois suivant : copier une feuille
+  NARRATEUR : Pour préparer avril, inutile de tout reconstruire. Maintenez Contrôle et faites glisser l'onglet Mars vers la droite : Excel crée Mars deux, identique, avec ses formules et sa mise en forme. Double-cliquez sur l'onglet pour le renommer Avril, puis effacez les chiffres de vente. Les formules de total restent en place. Autre chemin : clic droit sur l'onglet, Déplacer ou copier, et cochez Créer une copie.
+
+Diapositive 11 – Un lien vers un autre classeur
+  NARRATEUR : On peut aussi aller chercher une cellule dans un autre fichier. Les deux classeurs ouverts, tapez égal, passez dans l'autre classeur avec Affichage, Changer de fenêtre, cliquez sur la cellule, Entrée. L'adresse contient le nom du fichier entre crochets, et des dollars : Excel la fige. À la prochaine ouverture, Excel demandera s'il faut mettre à jour les liaisons. Si le fichier source est déplacé ou renommé, le lien casse : Données, Modifier les liens permet de le retrouver.
+
+Diapositive 12 – Les pièges à éviter
+  NARRATEUR : Les pièges les plus fréquents. Oublier de dissocier un groupe : votre saisie écrase la même cellule dans toutes les feuilles. Insérer une feuille entre les bornes d'une somme en trois dimensions : elle est comptée. Cliquer sur l'onglet de la feuille de départ avant Entrée : la formule pointe vers elle-même. Renommer une feuille n'est pas un problème : Excel met les formules à jour. Supprimer une feuille, en revanche, provoque des erreurs dièse RÉF.
+
+Diapositive 13 – À retenir
+  NARRATEUR : Retenez. Une cellule d'une autre feuille s'écrit Feuille, point d'exclamation, cellule : tapez égal et cliquez, Excel l'écrit pour vous. SOMME de Janvier deux-points Mars additionne toutes les feuilles placées entre les deux. Le groupe de feuilles applique vos gestes à plusieurs feuilles, dissociez ensuite. Contrôle glisser un onglet copie la feuille. Et un lien vers un autre classeur se met à jour à l'ouverture.
+
+Diapositive 14 – Des feuilles qui se parlent
+  SOPHIE : Julie a corrigé février, et le trimestre est déjà à jour.
+  KARIM : Et avril est prêt en dix secondes.
+  NARRATEUR : Bravo. Passez maintenant à l'atelier.

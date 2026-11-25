@@ -1,0 +1,29 @@
+<h3>Atelier 07 – Le Change Management, à vous de jouer (20 min)</h3>
+<p>Le comité des changements annonce 98 % de réussite, et l'entrepôt appelle chaque vendredi. Vous allez recalculer le taux de succès des 58 changements de Valdor, mesurer les incidents qu'ils ont causés, puis examiner les changements d'urgence et les changements non autorisés.</p>
+<p><strong>Fichier :</strong> votre copie de <em>K4_L7_Atelier_Valdor.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Changements</strong> (58 changements, table T_Changements), <strong>Incidents</strong> (856 incidents, table T_Incidents), <strong>Succès</strong> et <strong>Risques</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie chaque étape. Chaque erreur vous renvoie à la diapositive de la leçon à revoir.</p>
+
+<h4>Étape 1 – Deux taux de succès</h4>
+<p><strong>Faites :</strong> feuille Succès, en B5, comptez les changements réalisés : <code>=NB.SI(T_Changements[Statut];"&lt;&gt;Annulé")</code>. En B6, le taux strict : <code>=NB.SI(T_Changements[Statut];"Réussi")/B5</code>. En B7, le taux large : <code>=(NB.SI(T_Changements[Statut];"Réussi")+NB.SI(T_Changements[Statut];"Réussi avec incidents"))/B5</code>.</p>
+<p><strong>Vous devez voir :</strong> 57 changements réalisés ; 70,2 % de succès strict ; 98,2 % de succès large.</p>
+<p><strong>Pourquoi :</strong> le chiffre du comité (98 %) compte comme réussis les changements qui ont causé des incidents. Le taux strict, 70 %, mesure les changements réussis sans dégât.</p>
+<p><strong>Si ça ne marche pas :</strong> vous trouvez 58 ? Le changement annulé ne doit pas compter : le critère "&lt;&gt;Annulé" l'exclut. Revoyez le taux de succès (leçon, diapositive 5).</p>
+
+<h4>Étape 2 – Le taux de succès par type</h4>
+<p><strong>Faites :</strong> en B11, <code>=NB.SI.ENS(T_Changements[Type];A11;T_Changements[Statut];"&lt;&gt;Annulé")</code>. En C11, <code>=NB.SI.ENS(T_Changements[Type];A11;T_Changements[Statut];"Réussi")</code>. En D11, <code>=C11/B11</code>. Recopiez jusqu'à la ligne 13.</p>
+<p><strong>Vous devez voir :</strong> Standard 31 sur 31 (100 %) ; Normal 6 sur 22 (27 %) ; Urgence 3 sur 4 (75 %).</p>
+<p><strong>Pourquoi :</strong> les changements standard, répétitifs et préapprouvés, ne posent aucun souci. Les changements normaux, dont les mises en production, concentrent le risque : c'est sur eux que Romain doit agir.</p>
+
+<h4>Étape 3 – Les incidents causés par les changements</h4>
+<p><strong>Faites :</strong> feuille Risques, en B5, <code>=NB.SI(T_Changements[Nb incidents liés];"&gt;0")</code>. En B6, divisez par le nombre de changements réalisés (<code>=B5/Succès!B5</code>). En B7, <code>=SOMME(T_Changements[Nb incidents liés])</code>, et en B8 rapportez au total des incidents (<code>=B7/NBVAL(T_Incidents[N° ticket])</code>). En B9, <code>=NB.SI.ENS(T_Incidents[Jour];"Vendredi";T_Incidents[Changement lié];"&lt;&gt;")</code>.</p>
+<p><strong>Vous devez voir :</strong> 17 changements ont causé au moins un incident, soit 29,8 % ; 132 incidents, soit 15,4 % de tous les incidents ; 77 ouverts un vendredi.</p>
+<p><strong>Pourquoi :</strong> près d'un changement sur trois laisse des dégâts, et plus de la moitié de ces incidents arrivent le vendredi, au lendemain des mises en production du jeudi.</p>
+<p><strong>Si ça ne marche pas :</strong> le critère "&gt;0" doit être écrit entre guillemets. Revoyez les incidents causés (leçon, diapositive 6).</p>
+
+<h4>Étape 4 – Urgences et changements non autorisés</h4>
+<p><strong>Faites :</strong> en B10, <code>=NB.SI(T_Changements[Type];"Urgence")/Succès!B5</code>. En B11, <code>=NB.SI(T_Changements[Autorisé par le CAB];"Non")</code>. En B12, <code>=SOMME.SI(T_Changements[Autorisé par le CAB];"Non";T_Changements[Nb incidents liés])</code>. En B13, <code>=NB.SI.ENS(T_Incidents[Priorité];"P1 - Critique";T_Incidents[Changement lié];"CHG-0036")</code>.</p>
+<p><strong>Vous devez voir :</strong> 7,0 % de changements d'urgence ; 2 changements non autorisés, qui ont causé 15 incidents ; dont 2 incidents majeurs pour la règle de pare-feu CHG-0036.</p>
+<p><strong>Pourquoi :</strong> la cible des changements non autorisés est zéro. Ces deux changements « sans risque » ont causé 15 incidents, dont une panne du VPN de 38 heures.</p>
+
+<h4>Pour aller plus loin</h4>
+<p>Filtrez la table T_Changements sur les titres qui commencent par « Mise en production ». Combien ont causé des incidents, et combien au total ? Proposez en deux phrases une règle que Romain pourrait présenter au comité des changements.</p>

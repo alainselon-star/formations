@@ -1,0 +1,21 @@
+<h3>Pour aller plus loin – Deux fournisseurs, un historique (facultatif, 30 min)</h3>
+<p>Vous avez réussi l'atelier ? Ce défi se fait dans le <strong>vrai Excel</strong> (Microsoft 365, Excel 2021 ou 2024 : RECHERCHEX n'existe pas dans les versions plus anciennes). Il est <strong>moins guidé</strong>. Sophie hésite entre deux fournisseurs dont les catalogues ne sont pas rangés de la même façon, et elle veut suivre les commandes de ses clients.</p>
+<p><strong>Le fichier :</strong> <em>Excel_12bis_avance_fournisseurs.xlsx</em>, juste sous cette page. Les cellules à remplir sont en jaune. La feuille <strong>Contrôle</strong> vous dit, mission par mission, si c'est juste (✓) ou à revoir (✗).</p>
+
+<h4>Mission 1 – Le comparatif (feuille Comparatif)</h4>
+<p><strong>Le besoin :</strong> pour 12 codes, l'article, le prix chez le fournisseur A, le prix chez le fournisseur B et le meilleur des deux. Le fournisseur A met le code en première colonne, le fournisseur B en dernière. Certains articles ne sont pas chez B : affichez « Non référencé ».</p>
+<details><summary>Un indice</summary><p>Une seule fonction pour les deux catalogues : RECHERCHEX ne se soucie pas de l'ordre des colonnes. Le 4e argument gère « Non référencé ». Pour le meilleur prix, MIN ignore le texte.</p></details>
+
+<h4>Mission 2 – La dernière commande (feuille Commandes)</h4>
+<p><strong>Le besoin :</strong> pour chaque client, la date et le montant de sa <strong>dernière</strong> commande. Les commandes sont listées de la plus ancienne à la plus récente.</p>
+<details><summary>Un indice</summary><p>Le 6e argument de RECHERCHEX, -1, fait partir la recherche de la fin. Laissez le 5e argument à 0.</p></details>
+
+<h4>Mission 3 – Le total et la remise (feuille Commandes)</h4>
+<p><strong>Le besoin :</strong> le total de l'année de chaque client, puis sa remise selon le barème. Le barème est écrit du plus haut au plus bas.</p>
+<details><summary>Un indice</summary><p>Le total : SOMME.SI, comme en leçon 05. La remise : RECHERCHEX avec -1 en 5e argument (exact ou immédiatement inférieur), qui accepte un barème dans n'importe quel ordre.</p></details>
+
+<h4>Bonus non contrôlé – Plusieurs colonnes d'un coup</h4>
+<p>Sur une feuille vide, tapez un code en A1 et en B1 : <code>=RECHERCHEX(A1;'Fournisseur A'!A2:A31;'Fournisseur A'!B2:C31)</code>. L'article et le prix se déversent dans B1 et C1, avec une seule formule.</p>
+
+<h4>Vérifier et se corriger</h4>
+<p>Ouvrez la feuille <strong>Contrôle</strong> : 3 ✓ sur 3, c'est gagné. Le <strong>corrigé</strong>, sous cette page, contient toutes les formules. Ouvrez-le seulement après avoir vraiment essayé.</p>

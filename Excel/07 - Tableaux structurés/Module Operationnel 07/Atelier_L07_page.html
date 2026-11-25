@@ -1,0 +1,36 @@
+<h3>Atelier 07 – La liste qui grandit, à vous de jouer (20 min)</h3>
+<p>Karim doit ajouter les 12 factures de la semaine, et Sophie veut un récap à jour. Vous allez transformer la liste en tableau structuré, une fois pour toutes.</p>
+<p><strong>Fichier :</strong> votre copie de <em>Excel_7_Tableaux_structures_factures_2026.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Factures</strong> (207 factures, lignes 2 à 208, puis une ligne TOTAL tapée à la main), <strong>Récap</strong> et <strong>Nouvelles factures</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie que vous avez compris chaque geste.</p>
+
+<h4>Étape 1 – Préparer la liste</h4>
+<p><strong>Faites :</strong> feuille Factures, supprimez les lignes 209 (vide) et 210 (TOTAL) : clic droit sur leur numéro → Supprimer. Supprimez aussi la colonne K (Montant TTC) : vous allez la recréer.</p>
+<p><strong>Pourquoi :</strong> un tableau est une liste continue, avec une seule ligne de titres, sans ligne vide ni ligne de total tapée à la main.</p>
+
+<h4>Étape 2 – Convertir et nommer</h4>
+<p><strong>Faites :</strong> cliquez en A2, puis <strong>Ctrl+L</strong> (ou Accueil → Mettre sous forme de tableau). Vérifiez la plage <code>=$A$1:$J$208</code> et la case « Mon tableau comporte des en-têtes » → OK. Onglet Création de tableau, zone Nom du tableau : tapez <strong>Factures</strong> → Entrée.</p>
+<p><strong>Vous devez voir :</strong> des lignes à rayures, des flèches de filtre sur les titres et, quand vous cliquez dans la liste, l'onglet Création de tableau.</p>
+<p><strong>Si ça ne marche pas :</strong> des titres « Colonne1, Colonne2 » apparaissent ? La case des en-têtes était décochée : Ctrl+Z et recommencez.</p>
+
+<h4>Étape 3 – La colonne calculée</h4>
+<p><strong>Faites :</strong> en K1, tapez Montant TTC. En K2, tapez <code>=</code>, cliquez sur H2, tapez <code>*(1+</code>, cliquez sur I2, tapez <code>)</code> → Entrée. Format Monétaire.</p>
+<p><strong>Vous devez voir :</strong> <code>=[@[Montant HT]]*(1+[@[Taux TVA]])</code>, et toutes les lignes remplies d'un coup ; 1 716,00 € en K2.</p>
+<p><strong>Pourquoi :</strong> l'arobase veut dire « sur cette ligne ». La formule s'appliquera aussi aux lignes ajoutées.</p>
+
+<h4>Étape 4 – Ajouter les factures d'octobre</h4>
+<p><strong>Faites :</strong> feuille Nouvelles factures, copiez A4:J15. Feuille Factures, cliquez en A209, juste sous le tableau, et collez.</p>
+<p><strong>Vous devez voir :</strong> le tableau va jusqu'à la ligne 220 ; les rayures, les formats et le montant TTC suivent sur les 12 nouvelles lignes.</p>
+<p><strong>Si ça ne marche pas :</strong> les lignes ne sont pas rayées et K reste vide ? Une ligne vide les sépare du tableau : supprimez-la.</p>
+
+<h4>Étape 5 – La Ligne Total</h4>
+<p><strong>Faites :</strong> Création de tableau → cochez <strong>Ligne Total</strong> (Ctrl+Maj+T). Sous Montant HT et Montant TTC, choisissez Somme dans la petite flèche ; sous N° facture, Nombre.</p>
+<p><strong>Vous devez voir :</strong> 219 factures, 1 193 180 € HT, 1 346 193 € TTC. Filtrez ensuite Statut sur « En attente » : 34 factures, 173 430 € HT. Effacez le filtre.</p>
+<p><strong>Pourquoi :</strong> la Ligne Total écrit SOUS.TOTAL : elle suit les ajouts et les filtres.</p>
+
+<h4>Étape 6 – Le récap avec des références structurées</h4>
+<p><strong>Faites :</strong> feuille Récap, en C5, tapez <code>=SOMME.SI(</code>, puis sélectionnez à la souris la colonne Type de travaux dans la feuille Factures, <code>;A5;</code>, puis la colonne Montant HT, et fermez la parenthèse. Faites de même pour le nombre en B5 avec NB.SI. Recopiez.</p>
+<p><strong>Vous devez voir :</strong> <code>=SOMME.SI(Factures[Type de travaux];A5;Factures[Montant HT])</code> ; Peinture : 73 factures, 354 510 €. Le total du récap égale celui du tableau.</p>
+
+<h4>Étape 7 – Une ligne de plus</h4>
+<p><strong>Faites :</strong> décochez la Ligne Total, cliquez dans la dernière cellule du tableau (K220) et appuyez sur Tab. Puis recochez la Ligne Total.</p>
+<p><strong>Vous devez voir :</strong> une nouvelle ligne vide dans le tableau, déjà prête avec sa formule TTC. Supprimez-la ensuite (clic droit → Supprimer → Lignes du tableau).</p>

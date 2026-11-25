@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Atelier 03
+
+::J1 Glissement::Étape 1 – Une formule de TVA recopiée donne des 0 sur les lignes du bas. Que s'est-il passé ?{
+=La référence au taux a glissé vers des cellules vides#Exact \: sans $, le taux suit la recopie.
+~Les montants du bas sont du texte#Non \: ce serait possible, mais ici c'est le taux qui a glissé ; lisez la formule d'une cellule du bas.
+~Excel arrondit les petites TVA à 0#Non \: Excel n'arrondit pas tout seul.
+}
+
+::J2 F4::Étape 1 – Le curseur est juste après Q3 dans =H4*Q3. Que donne un seul appui sur F4 ?{
+=H4*$Q$3#Exact \: colonne et ligne bloquées.
+~$H$4*Q3#Non \: F4 bloque la référence où se trouve le curseur.
+~=H4*Q$3#Non \: c'est le deuxième appui.
+}
+
+::J3 TTC::Étape 2 – Pourquoi ne met-on aucun $ dans =H4+J4 ?{
+=Les deux cellules doivent suivre la ligne#Exact \: on ne bloque que ce qui ne doit pas bouger.
+~Parce qu'une addition n'accepte pas les $#Non \: elle les accepte, mais ici ils fausseraient le calcul.
+~Parce que le TTC est un total#Non \: chaque ligne calcule son propre TTC.
+}
+
+::J4 Part::Étape 3 – Quelle formule calcule la part de la facture de la ligne 4 dans le total de la ligne 29, prête à être recopiée ?{
+=\=H4/$H$29#Exact \: le montant suit, le total reste.
+~\=H4/H29#Non \: le total glisserait vers des cellules vides, d'où les #DIV/0!.
+~\=$H$4/$H$29#Non \: toutes les lignes donneraient la part de la première facture.
+}
+
+::J5 Parametre::Étape 4 – La commission passe de 5 % à 6 %. Avec =H4*$Q$4, que faut-il faire ?{
+=Taper 6 % dans Q4#Exact \: toutes les commissions se recalculent.
+~Modifier la formule de M4 puis la recopier#Non \: c'est le cas d'un taux écrit en dur, comme =H4*5%.
+~Rien, Excel le détecte tout seul#Non \: il faut changer la valeur du taux.
+}
+
+::J6 Cumul::Étape 5 – Dans =SOMME($H$4:H4) recopiée vers le bas, quelle partie bouge ?{
+=La fin de la plage, H4#Exact \: le début reste en H4, la plage s'allonge à chaque ligne.
+~Le début de la plage, $H$4#Non \: il est bloqué.
+~Aucune#Non \: H4, sans $, suit la ligne.
+}
+
+::J7 Mixte::Étape 6 – Dans =$A5*(1+B$4), que bloque $A5 ?{
+=La colonne A ; la ligne reste libre#Exact \: chaque ligne lit son montant dans la colonne A.
+~La ligne 5 ; la colonne reste libre#Non \: le $ est devant A, pas devant 5.
+~La colonne A et la ligne 5#Non \: ce serait $A$5.
+}
+
+::J8 Controle::Étape 7 – Quel outil affiche d'un coup toutes les formules d'une feuille, à la place des résultats ?{
+=Formules → Afficher les formules#Exact \: cliquez de nouveau pour revenir aux résultats.
+~Formules → Repérer les antécédents#Non \: il trace des flèches pour une seule cellule.
+~Accueil → Format → Texte#Non \: cela casserait les formules.
+}

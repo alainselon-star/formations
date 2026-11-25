@@ -1,0 +1,29 @@
+<h3>Atelier 06 – Le Problem Management, à vous de jouer (20 min)</h3>
+<p>Le WMS a planté tous les lundis pendant des mois. Romain vous confie les 40 problèmes de Valdor. Vous allez mesurer la part des incidents liés à un problème, le délai pour trouver les causes, la part d'erreurs connues, puis repérer les récidives et le problème le plus coûteux.</p>
+<p><strong>Fichier :</strong> votre copie de <em>K4_L6_Atelier_Valdor.xlsx</em> (à télécharger juste sous cette page) : feuilles <strong>Problèmes</strong> (40 problèmes, table T_Problemes), <strong>Incidents</strong> (856 incidents, table T_Incidents), <strong>Incidents liés</strong> et <strong>Analyse</strong>. <strong>Durée :</strong> 20 minutes.</p>
+<p>Gardez le fichier ouvert : le quiz de contrôle, en bas de la section, vérifie chaque étape. Chaque erreur vous renvoie à la diapositive de la leçon à revoir.</p>
+
+<h4>Étape 1 – La part des incidents liés à un problème</h4>
+<p><strong>Faites :</strong> feuille Incidents liés, en B5, tapez <code>=NB.SI(T_Incidents[Problème lié];"&lt;&gt;")/NBVAL(T_Incidents[N° ticket])</code>. En B9, <code>=NB.SI.ENS(T_Incidents[Mois];A9;T_Incidents[Problème lié];"&lt;&gt;")/NB.SI(T_Incidents[Mois];A9)</code>, puis recopiez jusqu'à B14.</p>
+<p><strong>Vous devez voir :</strong> 25,9 % sur six mois ; 24 % en mai, 31 % en juin, 20 % en juillet, 34 % en août et septembre, 11 % en octobre.</p>
+<p><strong>Pourquoi :</strong> la chute d'octobre suit la correction du WMS, le 1er octobre. Les incidents du lundi ont disparu avec leur cause.</p>
+
+<h4>Étape 2 – Le délai pour trouver la cause</h4>
+<p><strong>Faites :</strong> feuille Problèmes, tapez en J1 le titre <em>Délai cause racine (j)</em> : la table s'agrandit. En J2, tapez <code>=SI([@[Date cause racine]]="";"";[@[Date cause racine]]-[@[Date ouverture]])</code>. Puis, feuille Analyse : en B5 <code>=NB(T_Problemes[Délai cause racine (j)])</code>, en B6 <code>MOYENNE</code>, en B7 <code>MEDIANE</code>, en B8 <code>MAX</code> de la même colonne.</p>
+<p><strong>Vous devez voir :</strong> 31 problèmes avec une cause identifiée ; 21,6 jours en moyenne, 14,9 en médiane, 98,2 au maximum.</p>
+<p><strong>Pourquoi :</strong> le maximum, c'est PRB-0001, le WMS du lundi. Pendant ces 98 jours, les incidents se sont accumulés chaque semaine.</p>
+<p><strong>Si ça ne marche pas :</strong> le délai s'affiche comme une date ? Appliquez le format Nombre. Revoyez le délai de cause racine (leçon, diapositive 6).</p>
+
+<h4>Étape 3 – Le portefeuille de problèmes et les erreurs connues</h4>
+<p><strong>Faites :</strong> en B12, tapez <code>=NB.SI(T_Problemes[Statut];A12)</code> ; en C12, <code>=SOMME.SI(T_Problemes[Statut];A12;T_Problemes[Nb incidents liés])</code>. Recopiez jusqu'à la ligne 15. En B16, la part d'erreurs connues : <code>=NB.SI(T_Problemes[Erreur connue];"Oui")/NBVAL(T_Problemes[Erreur connue])</code>.</p>
+<p><strong>Vous devez voir :</strong> Résolu 19 problèmes (127 incidents), Erreur connue 12 (57), En analyse 3 (14), Nouveau 6 (24) ; 78 % de problèmes avec erreur connue.</p>
+<p><strong>Pourquoi :</strong> 9 problèmes n'ont pas encore de cause, avec 38 incidents rattachés. Et 31 problèmes sur 40 ont un contournement documenté : le premier niveau peut résoudre sans escalader.</p>
+
+<h4>Étape 4 – Récidives et problème le plus coûteux</h4>
+<p><strong>Faites :</strong> en B20, comptez les récidives : <code>=NB.SI(T_Problemes[Titre];"*récidive*")</code>. En B21, <code>=MAX(T_Problemes[Nb incidents liés])</code>. En B22, retrouvez le problème : <code>=INDEX(T_Problemes[N° problème];EQUIV(B21;T_Problemes[Nb incidents liés];0))</code>.</p>
+<p><strong>Vous devez voir :</strong> 19 récidives sur 40 problèmes ; 52 incidents au maximum, pour PRB-0001.</p>
+<p><strong>Pourquoi :</strong> près d'un problème sur deux est revenu après avoir été déclaré corrigé. Les astérisques de "*récidive*" signifient « n'importe quel texte avant ou après ».</p>
+<p><strong>Si ça ne marche pas :</strong> EQUIV renvoie #N/A ? Vérifiez le dernier argument : 0, pour une correspondance exacte. Revoyez les récidives (leçon, diapositive 8).</p>
+
+<h4>Pour aller plus loin</h4>
+<p>Romain veut appliquer la règle « plus de 5 incidents liés = problème prioritaire ». Combien de problèmes sans cause identifiée (Nouveau ou En analyse) dépassent ce seuil ? Utilisez NB.SI.ENS, puis écrivez lesquels traiter en premier.</p>

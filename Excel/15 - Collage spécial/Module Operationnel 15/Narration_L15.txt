@@ -1,0 +1,46 @@
+Excel Opérationnel · Leçon 15 – Coller autrement
+
+Diapositive 1 – Coller autrement
+  NARRATEUR : Copier, coller : le geste le plus courant d'Excel. Mais Contrôle V colle tout, les formules, les liens, les formats, et pas toujours ce que l'on veut. Dans cette leçon, vous allez apprendre à choisir ce que vous collez : les seules valeurs, une liste retournée, ou un calcul appliqué d'un coup à toute une plage.
+
+Diapositive 2 – Lundi : trois demandes, trois collages
+  SOPHIE : Karim, envoie au comptable le chiffre d'affaires par mois, juste les chiffres, sans nos formules. Mets les mois en ligne dans le planning. Et nos fournisseurs augmentent : passe tous les prix du catalogue à plus cinq pour cent.
+  KARIM : J'ai fait Contrôle V dans le fichier du comptable : il m'a appelé, Excel lui parle de liaisons vers un fichier qu'il n'a pas. Et pour les prix, je ne vais pas en retaper trente-neuf.
+
+Diapositive 3 – Ctrl+V colle aussi les formules
+  NARRATEUR : Voici ce que le comptable a reçu. En apparence, les bons chiffres. Mais cliquez sur une cellule : ce n'est pas quatre-vingt-quinze mille cinq cent dix, c'est une formule qui va chercher le résultat dans le fichier de Karim, entre crochets. À l'ouverture, Excel demande de mettre à jour les liaisons. Si le comptable n'a pas le fichier, les chiffres ne peuvent plus être recalculés, et s'il le modifie, ils changent. Contrôle V colle tout : la valeur affichée, mais aussi la formule et le format.
+
+Diapositive 4 – Solution 1 : retaper
+  NARRATEUR : Sans l'outil, on retape. Les neuf chiffres d'affaires dans le fichier du comptable : risque d'inverser deux chiffres. Les douze mois du planning, un par un, de B1 à M1. Et les trente-neuf prix du catalogue : calculer chaque prix fois un virgule zéro cinq, puis le taper, ou bien ajouter une colonne de formules, la recopier, puis remplacer les anciens prix à la main. Une demi-heure en tout, et des fautes de frappe à chaque étape.
+
+Diapositive 5 – Une cellule, plusieurs couches
+  NARRATEUR : Une cellule contient plusieurs couches empilées : la formule, la valeur qu'elle calcule, le format qui l'habille, parfois un commentaire. Contrôle V colle toutes les couches. Le collage spécial vous laisse choisir lesquelles. On l'ouvre avec Contrôle Alt V, ou par la flèche sous le bouton Coller, puis Collage spécial. Et après un collage normal, un petit bouton Options de collage apparaît : il propose les mêmes choix en un clic.
+
+Diapositive 6 – Valeurs : les chiffres, sans les formules
+  NARRATEUR : Copiez le tableau de bord. Dans le fichier du comptable, Contrôle Alt V, cochez Valeurs, OK. Cliquez sur une cellule : la barre de formule affiche quatre-vingt-quinze mille cinq cent dix, un simple nombre. Plus de formule, plus de liaison : le comptable peut retravailler les montants. Une limite : Valeurs ne garde pas les formats, les euros disparaissent. Choisissez alors Valeurs et formats des nombres.
+
+Diapositive 7 – Transposer : de la colonne à la ligne
+  NARRATEUR : Les mois sont en colonne, de A8 à A19. Le planning les veut en ligne, de B1 à M1. Copiez A8 à A19, cliquez en B1, Contrôle Alt V, cochez Transposé, OK. Les douze mois s'alignent en ligne, sans rien retaper. Transposer échange lignes et colonnes : une colonne devient une ligne, un tableau de trois lignes sur douze colonnes devient un tableau de douze lignes sur trois colonnes.
+
+Diapositive 8 – Une opération sur toute une plage
+  NARRATEUR : Pour augmenter les trente-neuf prix de cinq pour cent, sans colonne intermédiaire. Le coefficient un virgule zéro cinq est en F1 : copiez F1. Sélectionnez les prix, C2 à C40. Contrôle Alt V, Opération : Multiplication, OK. Chaque prix est multiplié par un virgule zéro cinq, sur place. La peinture à quatre-vingt-neuf euros passe à quatre-vingt-treize euros quarante-cinq. Les cellules gardent des nombres, pas des formules. Addition, Soustraction et Division fonctionnent de la même façon.
+
+Diapositive 9 – Coller avec liaison, coller les largeurs
+  NARRATEUR : Deux autres choix utiles. Coller avec liaison fait l'inverse de Valeurs : chaque cellule collée renvoie vers la cellule d'origine et se met à jour quand celle-ci change. C'est utile entre deux feuilles d'un même fichier, plus risqué vers un autre fichier. Et Largeurs de colonnes reprend la largeur des colonnes d'origine, pour éviter les dièses après un collage. On l'utilise souvent juste après un collage normal, avec le bouton Options de collage.
+
+Diapositive 10 – Le bouton Options de collage
+  NARRATEUR : Après un Contrôle V, un petit bouton apparaît en bas à droite de la zone collée : Options de collage. Il propose les collages les plus courants en icônes : Valeurs, Formules, Transposer, Conserver la largeur des colonnes sources, Coller avec liaison, Image. Passez la souris sur une icône : Excel montre un aperçu du résultat avant de valider. On peut aussi appuyer sur Contrôle juste après le collage pour l'ouvrir au clavier.
+
+Diapositive 11 – Les pièges à éviter
+  NARRATEUR : Les pièges les plus fréquents. Écrire égale C2 fois un virgule zéro cinq dans la cellule C2 elle-même : Excel signale une référence circulaire. Coller Valeurs et perdre les euros : préférez Valeurs et formats des nombres. Transposer sur une zone qui chevauche la plage copiée : Excel refuse. Oublier d'effacer le coefficient un virgule zéro cinq après la multiplication. Et coller une image pour le comptable : il ne pourra rien retravailler.
+
+Diapositive 12 – Quel collage pour quel besoin ?
+  NARRATEUR : Récapitulons avec les trois demandes de Sophie. Des chiffres sans formules pour le comptable : Valeurs. Des mois en colonne à mettre en ligne : Transposé. Tous les prix plus cinq pour cent, sur place : Opération Multiplication. Et pour un tableau qui doit rester à jour : Coller avec liaison.
+
+Diapositive 13 – À retenir
+  NARRATEUR : Retenez. Contrôle V colle tout. Contrôle Alt V ouvre le collage spécial. Valeurs pour des chiffres sans formules, Valeurs et formats des nombres pour garder les euros. Transposé pour passer d'une colonne à une ligne. Opération pour multiplier ou ajouter sur place. Coller avec liaison pour une copie qui suit. Et le bouton Options de collage pour les mêmes choix, en un clic.
+
+Diapositive 14 – Trois demandes, trois collages
+  SOPHIE : Le comptable n'a plus de liaison, et le catalogue est à jour.
+  KARIM : Trois collages, cinq minutes, et pas un chiffre retapé.
+  NARRATEUR : Bravo. Passez maintenant à l'atelier.

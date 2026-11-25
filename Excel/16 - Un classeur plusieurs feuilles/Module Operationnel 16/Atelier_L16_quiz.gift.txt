@@ -1,0 +1,49 @@
+$CATEGORY: $course$/Atelier 16
+
+::J1 Groupe::Étape 1 – Comment sélectionner les feuilles Février et Mars pour les mettre en forme ensemble ?{
+=Clic sur l'onglet Février, puis Ctrl+clic sur l'onglet Mars#Exact \: « [Groupe] » s'affiche dans la barre de titre.
+~Clic sur Février, puis double-clic sur Mars#Non \: le double-clic sert à renommer un onglet.
+~Sélectionner les cellules de Février, puis celles de Mars#Non \: une sélection de cellules reste dans une seule feuille.
+}
+
+::J2 Dissocier::Étape 1 – Pourquoi dissocier les feuilles dès que la mise en forme est finie ?{
+=Parce qu'en groupe, une saisie s'écrit dans toutes les feuilles sélectionnées#Exact \: on risque d'écraser les chiffres des autres mois.
+~Parce que le groupe empêche d'enregistrer#Non \: on peut enregistrer, mais c'est risqué.
+~Parce que la mise en forme disparaît sinon#Non \: elle reste appliquée.
+}
+
+::J3 Lien::Étape 2 – Que signifie la formule \=Janvier!B4 ?{
+=La valeur de la cellule B4 de la feuille Janvier#Exact \: le nom de la feuille, un point d'exclamation, puis la cellule.
+~Le total de la feuille Janvier jusqu'à B4#Non \: aucune somme n'est faite.
+~Une copie figée de B4#Non \: c'est un lien, il suit les modifications.
+}
+
+::J4 Somme 3D::Étape 3 – Comment obtenir \=SOMME(Janvier\:Mars!B4) en cliquant ?{
+=Taper \=SOMME(, cliquer sur Janvier, Maj+clic sur Mars, cliquer sur B4, fermer la parenthèse#Exact \: Maj sélectionne toutes les feuilles entre les deux.
+~Taper \=SOMME(, cliquer sur Janvier, Ctrl+clic sur Mars, cliquer sur B4#Non \: Ctrl ne prend pas les feuilles intermédiaires.
+~Taper \=SOMME(B4) dans chaque feuille#Non \: cela ne relie pas les feuilles.
+}
+
+::J5 Recopie::Étape 4 – On recopie \=SOMME(Janvier\:Mars!B4) en C5. Quelle formule obtient-on ?{
+=\=SOMME(Janvier\:Mars!C5)#Exact \: la référence est relative ; les feuilles restent les mêmes.
+~\=SOMME(Février\:Avril!C5)#Non \: les noms de feuilles ne se décalent pas.
+~\=SOMME(Janvier\:Mars!B4)#Non \: B4 n'est pas figée par des $.
+}
+
+::J6 Copie::Étape 6 – Quel geste copie la feuille Mars ?{
+=Ctrl + faire glisser l'onglet Mars#Exact \: Excel crée « Mars (2) », formules et mise en forme comprises.
+~Faire glisser l'onglet Mars sans Ctrl#Non \: cela déplace la feuille.
+~Double-cliquer sur l'onglet Mars#Non \: cela permet de la renommer.
+}
+
+::J7 Ordre::Étape 7 – Avril est placé entre Février et Mars. Pourquoi le total du trimestre change-t-il ?{
+=Parce que Janvier\:Mars prend toutes les feuilles placées entre ces deux onglets#Exact \: il faut placer Avril après Mars.
+~Parce qu'Excel a ajouté Avril à la formule#Non \: la formule n'a pas changé.
+~Parce que la copie a modifié les chiffres de Mars#Non \: Mars n'a pas bougé.
+}
+
+::J8 Classeur::Étape 8 – Pourquoi la formule \='[Excel_16_Ventes_T1.xlsx]Récap T1'!$E$8 contient-elle des apostrophes ?{
+=Parce que le nom de la feuille contient une espace#Exact \: Excel entoure alors le nom du fichier et de la feuille d'apostrophes.
+~Parce que la cellule est dans un autre classeur#Non \: les crochets indiquent le classeur, les apostrophes viennent de l'espace.
+~Parce que la référence est absolue#Non \: ce sont les $ qui la rendent absolue.
+}

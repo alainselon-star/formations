@@ -1,0 +1,29 @@
+$CATEGORY: $course$/K4-L3 Leçon
+
+::K4-L3 Leçon Q1::Comment calcule-t-on le pourcentage de SLA de résolution ?{
+=Incidents résolus dans le délai ÷ nombre total d'incidents#Exact. Revoyez la diapositive 6.
+~Délai moyen de résolution ÷ cible#Non \: ce rapport compare un MTTR à une cible, ce n'est pas un pourcentage de SLA. Revoyez la diapositive 6.
+~Incidents en retard ÷ incidents résolus à temps#Non \: le dénominateur est le total des incidents. Revoyez la diapositive 6.
+~Incidents pris en charge à temps ÷ incidents#Non \: c'est le SLA de prise en charge. Revoyez la diapositive 5.
+}
+
+::K4-L3 Leçon Q2::Le SLA de prise en charge reste entre 96 et 100 % tous les mois. À quoi sert-il ?{
+=D'alarme \: s'il baisse, la file n'est plus surveillée#Exact \: il varie trop peu pour piloter l'amélioration. Revoyez la diapositive 5.
+~À piloter l'amélioration du service#Non \: c'est le rôle du SLA de résolution. Revoyez la diapositive 6.
+~À rien \: on peut le supprimer#Non \: une alarme reste utile. Revoyez la diapositive 5.
+~À mesurer la satisfaction#Non \: la satisfaction se mesure par enquête. Revoyez la diapositive 9.
+}
+
+::K4-L3 Leçon Q3::En août, 3 incidents P1 sur 6 sont hors délai \: 50 %. Quel est le piège ?{
+=Le volume \: avec si peu d'incidents, un seul fait bouger le % de plus de 10 points#Exact \: affichez « 3 sur 6 » à côté du pourcentage. Revoyez la diapositive 7.
+~L'effet pastèque#Non \: ici le chiffre est rouge, pas faussement vert. Revoyez la diapositive 9.
+~Le chrono en pause#Non \: rien n'indique de pause abusive. Revoyez la diapositive 7.
+~Il n'y a pas de piège \: 50 % est un chiffre fiable#Non \: sur 6 incidents, il est très instable. Revoyez la diapositive 7.
+}
+
+::K4-L3 Leçon Q4::Septembre \: SLA de résolution 96 %, satisfaction 2,9 sur 5. Que faut-il en conclure ?{
+=La promesse est tenue sur le papier, mais les utilisateurs vivent mal le service#Exact \: c'est l'effet pastèque. Revoyez la diapositive 9.
+~Le service n'a jamais été aussi bon#Non \: la satisfaction s'effondre. Revoyez la diapositive 9.
+~L'enquête de satisfaction est fausse#Non \: elle mesure autre chose que le SLA. Revoyez la diapositive 9.
+~Il faut supprimer le SLA#Non \: il faut le lire avec la satisfaction. Revoyez la diapositive 9.
+}

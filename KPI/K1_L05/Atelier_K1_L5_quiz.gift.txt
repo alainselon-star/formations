@@ -1,0 +1,49 @@
+$CATEGORY: $course$/K1-L5 Atelier
+
+::K1L5-A1 Catégorie::Étape 1 – Ticket R-01 \: « WMS \: étiquettes non imprimées », classé dans « Imprimantes ». Quelle est l'erreur ?{
+=La catégorie \: le problème réel vient de l'application WMS#Exact \: l'imprimante n'est que le symptôme.
+~La priorité#Non \: P2 est cohérent pour un quai bloqué. Revoyez la diapositive 8 (K1-L5-S4).
+~Aucune, l'étiquette sort bien d'une imprimante#Non \: on classe selon la cause, pas le symptôme. Revoyez la diapositive 8 (K1-L5-S4).
+}
+
+::K1L5-A2 Priorité::Étape 1 – Ticket R-02 \: « Souris qui ne répond plus », en priorité P1 – Critique. Quelle est l'erreur ?{
+=La priorité \: une souris n'arrête pas l'activité de l'entreprise#Exact \: urgence faible, impact sur une seule personne.
+~La catégorie#Non \: « Poste de travail > Matériel » convient. Revoyez la diapositive 6 (K1-L5-S2).
+~Aucune, l'utilisateur est bloqué#Non \: une souris de rechange règle le problème en minutes ; P1 fausse le SLA. Revoyez la diapositive 6 (K1-L5-S2).
+}
+
+::K1L5-A3 Lien::Étape 1 – Ticket R-03 \: erreur ERP ouverte le 28 août à 9 h 12, sans changement lié. Pourquoi est-ce une erreur ?{
+=La mise en production ERP de la veille (CHG-0037) n'est pas reliée#Exact \: sans ce lien, le changement paraît sans effet.
+~La date d'ouverture est fausse#Non \: rien n'indique une erreur de date. Revoyez la diapositive 6 (K1-L5-S2).
+~Le ticket aurait dû être une demande#Non \: c'est bien un incident. Revoyez la diapositive 6 (K1-L5-S2).
+}
+
+::K1L5-A4 Solution::Étape 1 – Ticket R-04 \: solution saisie « Résolu ». Quel est le problème ?{
+=La solution n'est pas réutilisable et favorise les réouvertures#Exact \: un collègue ne saura pas ce qui a été fait.
+~Rien, le ticket est bien résolu#Non \: une solution doit expliquer ce qui a été fait. Revoyez la diapositive 6 (K1-L5-S2).
+~La catégorie est fausse#Non \: Outlook relève bien de la messagerie. Revoyez la diapositive 8 (K1-L5-S4).
+}
+
+::K1L5-A5 Dates::Étape 1 – Ticket R-05 \: ouvert à 11 h 15, pris en charge à 10 h 50. Quel KPI est faussé ?{
+=Le délai de prise en charge, qui devient négatif#Exact \: une date incohérente fausse les moyennes.
+~Le taux de réouverture#Non \: les dates de prise en charge n'y interviennent pas. Revoyez la diapositive 7 (K1-L5-S3).
+~Aucun, l'écart est trop petit#Non \: un délai négatif est impossible et fausse les calculs. Revoyez la diapositive 7 (K1-L5-S3).
+}
+
+::K1L5-A6 Attente::Étape 1 – Ticket R-06 \: mis en attente « de l'équipe réseau ». Pourquoi est-ce une attente abusive ?{
+=On attend une équipe interne, pas l'utilisateur#Exact \: le chrono est arrêté alors que c'est le support qui fait attendre.
+~Parce que l'attente est toujours interdite#Non \: elle est légitime quand on attend l'utilisateur. Revoyez la diapositive 7 (K1-L5-S3).
+~Parce que le ticket est en priorité P3#Non \: la priorité n'a rien à voir. Revoyez la diapositive 7 (K1-L5-S3).
+}
+
+::K1L5-A7 KPI août::Étapes 2 et 3 – Après correction des 3 incidents mal classés, que devient le KPI de l'entrepôt d'août ?{
+=Il passe de 63 % à 53 %#Exact \: 10 incidents résolus à temps sur 19, au lieu de 10 sur 16.
+~Il passe de 63 % à 73 %#Non \: les 3 incidents n'avaient pas été résolus à temps. Revoyez la diapositive 3 (K1-L5-S2).
+~Il ne change pas#Non \: le périmètre change, donc le KPI aussi. Revoyez la diapositive 3 (K1-L5-S2).
+}
+
+::K1L5-A8 Filtre::Étape 3 – Quel est le moyen le plus sûr de retrouver les incidents WMS mal classés ?{
+=Filtrer les titres qui contiennent « WMS » et comparer avec la catégorie#Exact \: le titre décrit souvent la cause réelle.
+~Filtrer la catégorie sur « Applications métier > WMS »#Non \: les incidents mal classés n'y sont justement pas.
+~Trier par date d'ouverture#Non \: le tri ne fait pas apparaître l'incohérence.
+}

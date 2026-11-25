@@ -1,0 +1,29 @@
+$CATEGORY: $course$/K4-L4 Leçon
+
+::K4-L4 Leçon Q1::Comment calcule-t-on le taux de réouverture ?{
+=Incidents rouverts ÷ incidents résolus#Exact. Revoyez la diapositive 5.
+~Incidents rouverts ÷ incidents hors délai#Non \: le dénominateur est le total des incidents résolus. Revoyez la diapositive 5.
+~Nombre de changements de groupe ÷ incidents#Non \: ce sont les réassignations. Revoyez la diapositive 7.
+~Incidents rouverts ÷ techniciens#Non \: on rapporte aux incidents, pas aux personnes. Revoyez la diapositive 5.
+}
+
+::K4-L4 Leçon Q2::Kevin a le délai médian le plus court, mais 30 % de réouvertures. Que conclure ?{
+=Il clôt trop tôt \: un KPI de vitesse se lit avec un KPI de qualité#Exact \: c'est la paire vitesse – qualité. Revoyez la diapositive 6.
+~C'est le meilleur technicien de l'équipe#Non \: ses tickets reviennent. Revoyez la diapositive 6.
+~Les utilisateurs rouvrent ses tickets par erreur#Non \: rien ne l'indique. Revoyez la diapositive 6.
+~Il faut supprimer le taux de réouverture#Non \: c'est lui qui révèle le problème. Revoyez la diapositive 6.
+}
+
+::K4-L4 Leçon Q3::Un incident d'application passe du Service Desk à l'équipe Applications métier. Comment juger cette réassignation ?{
+=Elle est normale \: c'est une escalade prévue#Exact \: à partir de deux réassignations, le ticket tourne. Revoyez la diapositive 7.
+~C'est un ping-pong#Non \: une seule réassignation est une escalade normale. Revoyez la diapositive 7.
+~C'est une erreur de catégorie#Non \: la catégorie est juste, le ticket va à la bonne équipe. Revoyez la diapositive 9.
+~C'est une réouverture#Non \: une réouverture suit un passage à Résolu. Revoyez la diapositive 5.
+}
+
+::K4-L4 Leçon Q4::Les 27 incidents réassignés quatre fois ou plus sont tous Wifi ou VPN. Quelle action est la plus adaptée ?{
+=Écrire une règle d'affectation et un OLA entre les équipes concernées#Exact \: le ping-pong révèle une frontière floue. Revoyez la diapositive 8.
+~Sanctionner les techniciens qui réassignent#Non \: la cause est l'organisation, pas les personnes. Revoyez la diapositive 8.
+~Interdire les réassignations#Non \: certaines escalades sont nécessaires. Revoyez la diapositive 7.
+~Passer tous les incidents Wifi en P1#Non \: la priorité dépend de l'urgence et de l'impact. Revoyez la diapositive 9.
+}

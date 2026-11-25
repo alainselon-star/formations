@@ -1,0 +1,22 @@
+<h3>Pour aller plus loin – Le tableau de bord par trimestre (facultatif, 40 min)</h3>
+<p>Vous avez réussi l'atelier ? Ce défi se fait dans le <strong>vrai Excel</strong>, sur un fichier à télécharger. Il est <strong>moins guidé</strong>. Sophie veut maintenant deux sélecteurs : le <strong>commercial</strong> et la <strong>période</strong> (l'année ou un trimestre). Tout le tableau de bord doit suivre ces deux choix, y compris l'objectif et le top 3 des clients.</p>
+<p><strong>Le fichier :</strong> <em>Excel_14_avance_tableau_de_bord.xlsx</em>, juste sous cette page. Feuille <strong>Devis</strong> : 400 devis de janvier à septembre 2026. Feuille <strong>Objectifs</strong> : un objectif par commercial et par période. Feuille <strong>Calculs</strong> : une feuille de travail pour le top 3. Les cellules à remplir sont en jaune. La feuille <strong>Contrôle</strong> suit vos choix de B3 et B4 : changez-les et vérifiez que tout reste ✓.</p>
+
+<h4>Mission 1 – Les sélecteurs et la période (Tableau de bord B3, B4, E3:E5)</h4>
+<p><strong>Le besoin :</strong> une liste déroulante en B3 (les commerciaux de la feuille Objectifs) et en B4 (Année, T1, T2, T3). En E3 le critère commercial, en E4 et E5 la première et la dernière date de la période choisie.</p>
+<details><summary>Un indice</summary><p>E3 : comme dans l'atelier, <code>=SI(B3="Tous";"*";B3)</code>. E4 : si B4 vaut « Année », le 1<sup>er</sup> janvier ; sinon <code>DATE(2026;3*DROITE(B4;1)-2;1)</code> donne le premier jour du trimestre. E5 : FIN.MOIS à partir de E4, avec 2 mois pour un trimestre et 11 pour l'année.</p></details>
+
+<h4>Mission 2 – Les indicateurs, l'objectif et l'écart (B8:B13)</h4>
+<p><strong>Le besoin :</strong> nombre de devis, CA accepté, taux de transformation et panier moyen, pour le commercial <em>et</em> la période choisis. Puis l'objectif de la période, lu dans la feuille Objectifs, et l'écart (CA − objectif), en vert s'il est positif, en rouge s'il est négatif.</p>
+<details><summary>Un indice</summary><p>Reprenez les formules de l'atelier et ajoutez deux critères sur la date : <code>Devis!$B$2:$B$401;"&gt;="&amp;$E$4</code> et <code>"&lt;="&amp;$E$5</code>. L'objectif est un tableau à double entrée : <code>=INDEX(Objectifs!$B$2:$E$4;EQUIV(B3;Objectifs!$A$2:$A$4;0);EQUIV(B4;Objectifs!$B$1:$E$1;0))</code>. EQUIV trouve la ligne, le second EQUIV la colonne, INDEX lit le croisement. La couleur : Mise en forme conditionnelle → Règles de mise en surbrillance des cellules, deux règles.</p></details>
+
+<h4>Mission 3 – Le mois par mois et le cumul (B17:C28)</h4>
+<p><strong>Le besoin :</strong> le CA accepté de chaque mois pour le commercial choisi (toute l'année, quel que soit le trimestre), et le cumul depuis janvier. Ajoutez un graphique en colonnes du CA mensuel.</p>
+<details><summary>Un indice</summary><p>Le CA du mois : la formule de l'atelier. Le cumul : <code>=SOMME($B$17:B17)</code>, puis recopiez vers le bas. Le début de la plage est bloqué, la fin avance avec la ligne.</p></details>
+
+<h4>Mission 4 – Le top 3 des clients (Calculs B2:B31, puis D8:E10)</h4>
+<p><strong>Le besoin :</strong> les trois clients qui ont rapporté le plus de CA accepté sur la sélection, avec leur montant.</p>
+<details><summary>Un indice</summary><p>Dans la feuille Calculs, calculez d'abord le CA accepté de chaque client avec SOMME.SI.ENS (client, commercial, statut et les deux dates). Dans le tableau de bord : <code>=GRANDE.VALEUR(Calculs!$B$2:$B$31;1)</code> donne le 1<sup>er</sup> montant (2, puis 3, pour les suivants), et <code>=INDEX(Calculs!$A$2:$A$31;EQUIV(E8;Calculs!$B$2:$B$31;0))</code> retrouve le nom.</p></details>
+
+<h4>Vérifier et se corriger</h4>
+<p>Ouvrez la feuille <strong>Contrôle</strong> : 4 ✓ sur 4, c'est gagné. Puis changez le commercial et la période : les quatre ✓ doivent tenir. Les listes déroulantes, les couleurs et le graphique ne sont pas contrôlés : comparez avec le <strong>corrigé</strong>, sous cette page. Ouvrez-le seulement après avoir vraiment essayé.</p>
