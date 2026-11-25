@@ -1,0 +1,16 @@
+﻿Leçons Excel — chaque leçon a son sous-dossier, rempli par l'agent de production.
+
+01 - La liste illisible
+02 - SOMME MOYENNE MIN MAX
+03 - Références absolues
+04 - Fonction SI
+05 - NB.SI et SOMME.SI
+06 - Tris et filtres
+07 - Tableaux structurés
+08 - Mise en forme conditionnelle
+09 - Validation de données
+10 - Graphiques
+11 - Mise en page et impression
+12 - RECHERCHEV et RECHERCHEX
+13 - Tableaux croisés dynamiques
+14 - Tableau de bord

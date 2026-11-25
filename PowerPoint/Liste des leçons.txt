@@ -1,0 +1,7 @@
+﻿Leçons PowerPoint — chaque leçon a son sous-dossier, rempli par l'agent de production.
+
+01 - Masques
+02 - Le mur de texte
+03 - Montrer des chiffres
+04 - Le trou de mémoire
+05 - Capter l'attention

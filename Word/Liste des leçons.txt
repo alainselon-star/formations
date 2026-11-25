@@ -1,0 +1,8 @@
+﻿Leçons Word — chaque leçon a son sous-dossier, rempli par l'agent de production.
+
+01 - Styles
+02 - Table des matières
+03 - Sections
+04 - Tableaux Word
+05 - Publipostage
+06 - Modèles

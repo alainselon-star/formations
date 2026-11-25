@@ -1,0 +1,12 @@
+﻿Leçons IA — chaque leçon a son sous-dossier. Ordre revu le 15/10/2026 (orientation IA de base + Copilot).
+
+01 - C'est quoi l'IA générative (avec ses limites)
+02 - Bien rédiger une demande
+03 - Copilot Chat : par où commencer
+04 - Copilot dans Outlook
+05 - Copilot dans Teams
+06 - Copilot dans Word
+07 - Copilot dans PowerPoint
+08 - Copilot dans Excel
+09 - Ce que Copilot voit : données, droits et partage
+10 - Bonus : créer un agent Copilot

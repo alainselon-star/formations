@@ -1,0 +1,416 @@
+$CATEGORY: $course$/Révision K1
+
+::K1-L1 Leçon Q1::« 154 incidents ouverts en juin » \: de quoi s'agit-il ?{
+=D'une métrique#Exact \: c'est un comptage de données, sans référence ni cible. Revoyez la diapositive 5. (Leçon 01)
+~D'un indicateur#Non \: il manque une référence (un total, un délai promis). Revoyez la diapositive 5. (Leçon 01)
+~D'un KPI#Non \: aucun objectif ni cible n'y est associé. Revoyez la diapositive 5. (Leçon 01)
+~D'une donnée#Non \: une donnée est un fait brut unique, comme l'heure d'ouverture d'un ticket. Revoyez la diapositive 5. (Leçon 01)
+}
+
+::K1-L1 Leçon Q2::Qu'est-ce qui transforme un indicateur en KPI ?{
+=Le relier à un objectif et lui fixer une cible#Exact \: c'est l'usage pour décider qui fait le KPI. Revoyez la diapositive 6. (Leçon 01)
+~Le calculer en pourcentage#Non \: un pourcentage reste un simple indicateur s'il ne sert aucun objectif. Revoyez la diapositive 6. (Leçon 01)
+~L'afficher dans un graphique#Non \: la présentation ne change pas la nature du chiffre. Revoyez la diapositive 6. (Leçon 01)
+~Le calculer chaque jour#Non \: la fréquence ne suffit pas sans objectif ni cible. Revoyez la diapositive 6. (Leçon 01)
+}
+
+::K1-L1 Leçon Q3::Le backlog grossit depuis trois semaines. Pourquoi est-ce un indicateur avancé ?{
+=Il annonce une dégradation avant qu'elle ne touche les utilisateurs#Exact \: il prévient, on peut encore agir. Revoyez la diapositive 7. (Leçon 01)
+~Il mesure la satisfaction des utilisateurs#Non \: la satisfaction est un indicateur de résultat. Revoyez la diapositive 7. (Leçon 01)
+~Il est calculé plus souvent que les autres#Non \: « avancé » parle de ce qu'il annonce, pas de sa fréquence. Revoyez la diapositive 7. (Leçon 01)
+~Il dépasse déjà sa cible#Non \: un indicateur avancé alerte justement avant le constat. Revoyez la diapositive 7. (Leçon 01)
+}
+
+::K1-L1 Leçon Q4::SLA respecté \: 92 % en juin, 88 % en juillet. Cible 90 %, seuil d'alerte 85 %. Que faire en juillet ?{
+=Surveiller de près \: on est sous la cible et la tendance baisse#Exact \: sans être sous le seuil, la tendance justifie l'attention. Revoyez la diapositive 8. (Leçon 01)
+~Rien \: on est au-dessus du seuil d'alerte#Non \: la tendance compte aussi, deux mois de baisse sont un signal. Revoyez la diapositive 8. (Leçon 01)
+~Déclencher un plan d'urgence \: la cible n'est pas atteinte#Non \: le plan d'action se déclenche au seuil d'alerte, pas à la cible. Revoyez la diapositive 8. (Leçon 01)
+~Changer la cible pour 85 %#Non \: on n'ajuste pas la cible pour masquer une baisse. Revoyez la diapositive 8. (Leçon 01)
+}
+
+::K1L1-A1 Donnée::Étape 1 – Élément 6 \: « Le technicien qui a résolu INC-00262 est Inès Morel ». De quoi s'agit-il ?{
+=D'une donnée#Exact \: c'est un fait brut, propre à un seul ticket.
+~D'une métrique#Non \: rien n'est compté ni calculé. Revoyez la diapositive 5 de la leçon (K1-L1-S2).
+~D'un indicateur#Non \: il n'y a ni calcul ni référence. Revoyez la diapositive 5 de la leçon (K1-L1-S2).
+~D'un KPI#Non \: aucun objectif ni cible. Revoyez la diapositive 5 de la leçon (K1-L1-S2).
+}
+
+::K1L1-A2 Métrique::Étape 1 – Élément 8 \: « Délai moyen de prise en charge en juin \: 20 minutes ». De quoi s'agit-il ?{
+=D'une métrique#Exact \: une moyenne est un calcul sur des données, sans référence ni cible.
+~D'un indicateur#Non \: une moyenne n'est pas rapportée à une référence (un délai promis, un total). Avec « 20 minutes pour une cible de 30 », on irait plus loin. Revoyez la diapositive 6 (K1-L1-S2).
+~D'une donnée#Non \: une donnée concerne un seul ticket ; ici, on a calculé sur tout le mois. Revoyez la diapositive 5 (K1-L1-S2).
+~D'un KPI#Non \: aucune cible ni usage pour décider. Revoyez la diapositive 6 (K1-L1-S2).
+}
+
+::K1L1-A3 KPI::Étape 1 – Élément 5 \: « Backlog en fin de journée \: seuil d'alerte 15 tickets, suivi chaque matin par Romain ». Pourquoi est-ce un KPI ?{
+=Il a un seuil, un responsable et une fréquence de suivi pour décider#Exact \: c'est l'usage pour piloter qui en fait un KPI.
+~Parce que le backlog est un nombre de tickets#Non \: un nombre seul est une métrique. Revoyez la diapositive 6 (K1-L1-S2).
+~Parce qu'il est calculé chaque jour#Non \: la fréquence ne suffit pas sans seuil ni usage. Revoyez la diapositive 6 (K1-L1-S2).
+~Ce n'est pas un KPI, c'est une donnée#Non \: le backlog est un comptage, suivi face à un seuil. Revoyez la diapositive 5 (K1-L1-S2).
+}
+
+::K1L1-A4 NB.SI::Étape 3 – Quelle formule compte les incidents de juin résolus dans le SLA ?{
+=\=NB.SI(T_Juin[SLA résolution respecté];"Oui")#Exact \: NB.SI compte les lignes qui remplissent la condition.
+~\=NBVAL(T_Juin[SLA résolution respecté])#Non \: NBVAL compte toutes les cellules non vides, « Oui » comme « Non ».
+~\=SOMME(T_Juin[SLA résolution respecté])#Non \: on ne peut pas additionner du texte.
+}
+
+::K1L1-A5 Indicateur::Étape 4 – En B5, \=B4/B3 donne 92,2 %. Qu'est-ce qui fait de ce résultat un indicateur ?{
+=La métrique (142) est rapportée à une référence (le total de 154)#Exact \: rapporter à une référence donne un sens au chiffre.
+~Le format pourcentage#Non \: le format n'est qu'un habillage. Revoyez la diapositive 6 (K1-L1-S2).
+~La comparaison à la cible de 90 %#Non \: la comparaison à une cible fait passer au KPI, étape suivante. Revoyez la diapositive 6 (K1-L1-S2).
+}
+
+::K1L1-A6 Situation::Étape 5 – Si B5 vaut 87 %, avec une cible de 90 % et un seuil d'alerte de 85 %, qu'affiche B8 ?{
+=Sous la cible#Exact \: 87 % est sous la cible mais au-dessus du seuil d'alerte.
+~Cible atteinte#Non \: 87 % est inférieur à 90 %. Revoyez la diapositive 8 (K1-L1-S4).
+~Alerte#Non \: l'alerte se déclenche sous 85 %. Revoyez la diapositive 8 (K1-L1-S4).
+}
+
+::K1L1-A7 Réouverture::Étape 6 – Le taux de réouverture de juin est de 9,7 %. Pourquoi n'est-ce pas encore un KPI ?{
+=Aucune cible ni usage pour décider ne lui a été fixé#Exact \: c'est un indicateur ; il devient KPI quand on le relie à un objectif.
+~Parce qu'il est trop faible#Non \: la valeur ne change pas la nature du chiffre. Revoyez la diapositive 6 (K1-L1-S2).
+~Parce qu'il n'est pas en pourcentage#Non \: il est bien en pourcentage, et ce n'est pas le critère. Revoyez la diapositive 6 (K1-L1-S2).
+}
+
+::K1L1-A8 Résultat::Étape 7 – Satisfaction moyenne de 4,0 sur 42 réponses pour 154 incidents. Quelle lecture est la bonne ?{
+=Un indicateur de résultat, à lire avec prudence car 27 % seulement ont répondu#Exact \: il constate, et l'échantillon est réduit.
+~Un indicateur avancé, qui annonce les problèmes à venir#Non \: la satisfaction constate ce qui s'est déjà passé. Revoyez la diapositive 7 (K1-L1-S3).
+~Un chiffre fiable pour tous les utilisateurs#Non \: 112 utilisateurs n'ont pas répondu. Revoyez la diapositive 7 (K1-L1-S3).
+}
+
+::K1-L2 Leçon Q1::« Réduire les incidents de l'entrepôt » \: quel critère SMART manque d'abord ?{
+=Mesurable \: on ne sait ni de combien ni avec quel chiffre#Exact \: sans chiffre ni cible, l'objectif ne se vérifie pas. Revoyez la diapositive 5. (Leçon 02)
+~Spécifique \: l'entrepôt n'est pas précisé#Non \: l'entrepôt est bien nommé ; c'est la mesure qui manque. Revoyez la diapositive 5. (Leçon 02)
+~Pertinent \: l'entrepôt n'est pas important#Non \: la pertinence n'est pas en cause, l'entrepôt se plaint. Revoyez la diapositive 5. (Leçon 02)
+~Aucun \: l'objectif est déjà SMART#Non \: il manque au moins une mesure, une cible et une échéance. Revoyez la diapositive 5. (Leçon 02)
+}
+
+::K1-L2 Leçon Q2::Sur la fiche d'identité d'un KPI, à quoi sert la rubrique « Responsable » ?{
+=Désigner qui doit réagir quand le KPI passe sous le seuil#Exact \: un KPI sans responsable dérive sans que personne n'agisse. Revoyez la diapositive 6. (Leçon 02)
+~Indiquer qui saisit les tickets#Non \: la saisie relève de la source, pas du responsable du KPI. Revoyez la diapositive 6. (Leçon 02)
+~Indiquer qui a inventé l'indicateur#Non \: on désigne celui qui agit, pas l'auteur. Revoyez la diapositive 6. (Leçon 02)
+~Désigner qui reçoit le tableau de bord#Non \: ce sont les destinataires, une autre rubrique. Revoyez la diapositive 6. (Leçon 02)
+}
+
+::K1-L2 Leçon Q3::Kevin a le délai moyen le plus court jusqu'à la 1re résolution, et le plus long jusqu'à la résolution finale. Qu'en conclure ?{
+=Il faut préciser sur la fiche quelle date de fin le KPI utilise#Exact \: même nom, deux chiffres ; seule la définition tranche. Revoyez la diapositive 7. (Leçon 02)
+~Kevin est le meilleur technicien#Non \: ses tickets sont souvent rouverts, le délai réel est long. Revoyez la diapositive 7. (Leçon 02)
+~Le délai moyen est un mauvais indicateur, il faut l'abandonner#Non \: il est utile s'il est bien défini. Revoyez la diapositive 7. (Leçon 02)
+~Les données sont fausses#Non \: les deux calculs sont justes, ils mesurent deux choses. Revoyez la diapositive 7. (Leçon 02)
+}
+
+::K1-L2 Leçon Q4::Le backlog des tickets proches du dépassement, regardé chaque matin \: à quel niveau de pilotage appartient-il ?{
+=Opérationnel#Exact \: il sert à agir dans la journée, pour le technicien et le team leader. Revoyez la diapositive 9. (Leçon 02)
+~Tactique#Non \: le niveau tactique se pilote au mois, pour ajuster l'organisation. Revoyez la diapositive 9. (Leçon 02)
+~Stratégique#Non \: la direction regarde au trimestre la satisfaction et les coûts. Revoyez la diapositive 9. (Leçon 02)
+~Aucun, ce n'est pas un KPI#Non \: suivi chaque jour avec un seuil, c'est un KPI opérationnel. Revoyez la diapositive 9. (Leçon 02)
+}
+
+::K1L2-A1 Temporel::Étape 1 – « Atteindre une satisfaction moyenne de 4,2 sur 5 ». Quel critère SMART manque le plus ?{
+=Temporel#Exact \: ni échéance ni rythme de mesure. Pour quand, et vérifié quand ?
+~Mesurable#Non \: 4,2 sur 5 est bien un chiffre mesurable. Revoyez la diapositive 5 (K1-L2-S1).
+~Spécifique#Non \: la satisfaction moyenne est une mesure précise. Revoyez la diapositive 5 (K1-L2-S1).
+~Atteignable#Non \: 4,2 est exigeant mais plausible. Revoyez la diapositive 5 (K1-L2-S1).
+}
+
+::K1L2-A2 Atteignable::Étape 1 – « Résoudre 100 % des incidents en moins de 15 minutes, chaque mois, dès janvier 2027 ». Quel critère SMART manque le plus ?{
+=Atteignable#Exact \: certains incidents demandent des heures ; une cible impossible décourage l'équipe.
+~Temporel#Non \: « chaque mois, dès janvier 2027 » fixe le rythme et l'échéance. Revoyez la diapositive 5 (K1-L2-S1).
+~Mesurable#Non \: 100 % en moins de 15 minutes se mesure. Revoyez la diapositive 5 (K1-L2-S1).
+~Spécifique#Non \: les incidents et le délai sont précisés. Revoyez la diapositive 5 (K1-L2-S1).
+}
+
+::K1L2-A3 Spécifique::Étape 1 – « Améliorer le support avec un taux de 90 %, mesuré chaque mois dès janvier 2027 ». Quel critère SMART manque le plus ?{
+=Spécifique#Exact \: un taux de quoi ? Rien ne dit ce qui est mesuré.
+~Mesurable#Non \: un taux de 90 % est un chiffre ; c'est l'objet du taux qui manque. Revoyez la diapositive 5 (K1-L2-S1).
+~Temporel#Non \: le rythme et l'échéance sont donnés. Revoyez la diapositive 5 (K1-L2-S1).
+~Atteignable#Non \: on ne peut même pas juger, faute de savoir ce qui est mesuré. Revoyez la diapositive 5 (K1-L2-S1).
+}
+
+::K1L2-A4 Pertinent::Étape 1 – « Porter à 95 % le taux d'ouverture des mails d'information du support ». Pourquoi ce n'est pas un bon KPI pour Hélène ?{
+=Il n'est pas pertinent \: il ne dit rien du service rendu à l'entrepôt#Exact \: il est mesurable et daté, mais ne répond pas au besoin.
+~Il n'est pas mesurable#Non \: un taux d'ouverture se mesure très bien. Revoyez la diapositive 5 (K1-L2-S1).
+~Il n'est pas temporel#Non \: dans le fichier, il est mesuré chaque mois dès janvier 2027. Revoyez la diapositive 5 (K1-L2-S1).
+}
+
+::K1L2-A5 Périmètre::Étape 2 – Pourquoi la fiche doit-elle préciser le périmètre (site, catégorie, priorité) ?{
+=Pour que tout le monde calcule le même chiffre à partir des mêmes tickets#Exact \: sans périmètre écrit, deux personnes obtiennent deux résultats.
+~Pour rendre le KPI plus facile à atteindre#Non \: le périmètre sert la cohérence, pas la facilité. Revoyez la diapositive 6 (K1-L2-S2).
+~Parce que l'outil ITSM l'exige#Non \: c'est une exigence de méthode, pas de l'outil. Revoyez la diapositive 6 (K1-L2-S2).
+}
+
+::K1L2-A6 NB.SI.ENS::Étape 3 – Pourquoi utiliser NB.SI.ENS plutôt que NB.SI ?{
+=Pour combiner plusieurs critères \: site, catégorie, priorité et mois#Exact \: NB.SI n'accepte qu'un seul critère.
+~Parce que NB.SI ne fonctionne pas dans un tableau structuré#Non \: NB.SI fonctionne, mais avec un seul critère.
+~Pour obtenir un pourcentage directement#Non \: NB.SI.ENS compte ; le pourcentage vient de la division à l'étape 4.
+}
+
+::K1L2-A7 Septembre::Étape 5 – Le KPI de septembre affiche 100 %, avec un temps moyen en attente de près de 790 minutes. Quelle lecture est la bonne ?{
+=Le résultat est à vérifier \: le chrono du SLA s'arrête pendant l'attente#Exact \: un très bon chiffre peut venir d'un usage abusif du statut En attente.
+~Le service s'est nettement amélioré#Non \: l'attente a explosé, le délai réel s'est allongé. Revoyez la diapositive 10 (K1-L2-S2).
+~Les données de septembre sont fausses#Non \: les données sont justes ; c'est la règle de calcul qui masque l'attente. Revoyez la diapositive 7 (K1-L2-S2).
+}
+
+::K1L2-A8 Deux MTTR::Étape 6 – Kevin \: 3,4 h jusqu'à la 1re résolution, 23,7 h jusqu'à la résolution finale. Que faut-il retenir ?{
+=La fiche d'identité doit préciser la date de fin retenue#Exact \: même nom, deux classements opposés selon la définition.
+~Kevin est le technicien le plus efficace#Non \: ses tickets sont souvent rouverts, le délai réel est le plus long. Revoyez la diapositive 7 (K1-L2-S2).
+~Il faut toujours prendre le chiffre le plus favorable#Non \: on choisit la définition qui reflète le service rendu, pas la plus flatteuse. Revoyez la diapositive 7 (K1-L2-S2).
+}
+
+::K1-L3 Leçon Q1::L'équipe Applications métier s'engage auprès du Service Desk à traiter un incident escaladé en 6 heures. De quel engagement s'agit-il ?{
+=D'un OLA#Exact \: c'est un engagement entre équipes internes, qui doit tenir dans le SLA. Revoyez la diapositive 5. (Leçon 03)
+~D'un SLA#Non \: le SLA est la promesse faite aux utilisateurs. Revoyez la diapositive 5. (Leçon 03)
+~D'un contrat de sous-traitance#Non \: il lie le support à un fournisseur externe. Revoyez la diapositive 5. (Leçon 03)
+~D'un XLA#Non \: l'XLA porte sur l'expérience vécue par l'utilisateur. Revoyez la diapositive 10. (Leçon 03)
+}
+
+::K1-L3 Leçon Q2::Un incident P2 (résolution en 8 h ouvrées, 8 h-18 h) est ouvert le vendredi à 16 h. Quelle est son échéance ?{
+=Lundi à 14 h#Exact \: 2 h le vendredi, puis 6 h le lundi à partir de 8 h. Revoyez la diapositive 7. (Leçon 03)
+~Samedi à 0 h#Non \: le délai ne court pas la nuit ni le week-end. Revoyez la diapositive 7. (Leçon 03)
+~Lundi à 8 h#Non \: il reste 6 h ouvrées à consommer le lundi. Revoyez la diapositive 7. (Leçon 03)
+~Vendredi à 18 h#Non \: il ne reste que 2 h ouvrées le vendredi. Revoyez la diapositive 7. (Leçon 03)
+}
+
+::K1-L3 Leçon Q3::Un technicien passe un ticket « en attente » pendant qu'il attend la réponse d'un collègue de l'équipe réseau. Qu'en penser ?{
+=C'est une pause abusive \: c'est le support qui fait attendre l'utilisateur#Exact \: la pause n'est légitime que si l'on attend l'utilisateur. Revoyez la diapositive 8. (Leçon 03)
+~C'est normal \: le technicien ne peut rien faire#Non \: l'attente vient du support lui-même. Revoyez la diapositive 8. (Leçon 03)
+~C'est sans effet sur les KPI#Non \: le chrono s'arrête, le SLA paraît meilleur qu'il n'est. Revoyez la diapositive 8. (Leçon 03)
+~C'est obligatoire dès qu'on escalade#Non \: l'escalade ne justifie pas d'arrêter le chrono. Revoyez la diapositive 8. (Leçon 03)
+}
+
+::K1-L3 Leçon Q4::SLA tenu à 96 %, satisfaction à 2,9 sur 5. Que mesure un XLA que le SLA ne mesure pas ?{
+=L'expérience vécue par l'utilisateur#Exact \: le SLA mesure la promesse tenue, l'XLA ce que vit l'utilisateur. Revoyez la diapositive 10. (Leçon 03)
+~Le délai de prise en charge#Non \: c'est déjà un SLA. Revoyez la diapositive 9. (Leçon 03)
+~Le respect des OLA#Non \: les OLA relient les équipes internes. Revoyez la diapositive 5. (Leçon 03)
+~Le nombre de tickets traités#Non \: c'est une métrique d'activité. Revoyez la diapositive 10. (Leçon 03)
+}
+
+::K1L3-A1 OLA::Étape 1 – « L'équipe Infra & réseau s'engage à répondre aux questions du Service Desk sous 2 heures ouvrées. » De quel engagement s'agit-il ?{
+=D'un OLA#Exact \: deux équipes internes s'engagent l'une envers l'autre.
+~D'un SLA#Non \: le SLA est une promesse faite aux utilisateurs. Revoyez la diapositive 5 (K1-L3-S1).
+~D'un contrat de sous-traitance#Non \: l'équipe Infra & réseau est interne à Valdor. Revoyez la diapositive 5 (K1-L3-S1).
+}
+
+::K1L3-A2 Contrat::Étape 1 – « L'opérateur télécom garantit une disponibilité de la ligne internet de 99,9 % par mois. » De quel engagement s'agit-il ?{
+=D'un contrat de sous-traitance#Exact \: un fournisseur externe s'engage envers Valdor.
+~D'un SLA#Non \: ce n'est pas le support qui promet aux utilisateurs. Revoyez la diapositive 5 (K1-L3-S1).
+~D'un OLA#Non \: l'opérateur n'est pas une équipe interne. Revoyez la diapositive 5 (K1-L3-S1).
+}
+
+::K1L3-A3 Férié::Étape 2 – Ticket E-3 \: incident P2 (8 h ouvrées) ouvert le lundi 13 juillet à 15 h. Quelle est son échéance ?{
+=Le mercredi 15 juillet à 13 h#Exact \: 3 h le lundi, le 14 juillet est férié, puis 5 h le mercredi.
+~Le mardi 14 juillet à 13 h#Non \: le 14 juillet est férié, le chrono ne court pas. Revoyez la diapositive 7 (K1-L3-S2).
+~Le lundi 13 juillet à 23 h#Non \: le délai ne court que de 8 h à 18 h. Revoyez la diapositive 7 (K1-L3-S2).
+}
+
+::K1L3-A4 Week-end::Étape 2 – Ticket E-6 \: incident P2 ouvert par le portail le samedi 20 juin à 10 h. Quand le chrono démarre-t-il ?{
+=Le lundi 22 juin à 8 h#Exact \: hors horaires, le délai ne commence qu'à l'ouverture du support ; échéance lundi 16 h.
+~Le samedi 20 juin à 10 h#Non \: le samedi ne compte pas. Revoyez la diapositive 7 (K1-L3-S2).
+~Le dimanche 21 juin à minuit#Non \: le dimanche ne compte pas non plus. Revoyez la diapositive 7 (K1-L3-S2).
+}
+
+::K1L3-A5 SERIE.JOUR.OUVRE::Étape 2 – À quoi sert le dernier argument de SERIE.JOUR.OUVRE.INTL(ENT(B5);1;1;T_Feries[Jour férié]) ?{
+=À sauter les jours fériés du calendrier#Exact \: sans lui, la fonction ne saute que les week-ends.
+~À ajouter un jour supplémentaire#Non \: c'est le 2e argument (1) qui donne le nombre de jours.
+~À choisir les jours de week-end#Non \: c'est le 3e argument (1 \= samedi et dimanche).
+}
+
+::K1L3-A6 Priorité::Étape 3 – D'après vos calculs, quelle priorité a le plus faible taux de résolution à temps ?{
+=P2 – Haute, avec 79 %#Exact \: les incidents urgents sont les plus difficiles à résoudre dans le délai.
+~P4 – Basse#Non \: 98 % des P4 sont résolus à temps. Revoyez la diapositive 9 (K1-L3-S2).
+~P3 – Moyenne#Non \: 93 % des P3 sont résolus à temps. Revoyez la diapositive 9 (K1-L3-S2).
+~P1 – Critique#Non \: 81 %, c'est bas, mais P2 fait moins bien. Revoyez la diapositive 9 (K1-L3-S2).
+}
+
+::K1L3-A7 Pause::Étape 4 – En septembre, le SLA passe de 96 % (chrono hors attente) à 74 % (attente comptée). Qu'en conclure ?{
+=Le statut En attente masque des délais que les utilisateurs ont réellement subis#Exact \: il faut encadrer son usage et le suivre.
+~Le support s'est amélioré en septembre#Non \: le délai réel s'est allongé. Revoyez la diapositive 8 (K1-L3-S2).
+~Il faut toujours compter le temps en attente#Non \: la pause est légitime quand on attend l'utilisateur. Revoyez la diapositive 8 (K1-L3-S2).
+}
+
+::K1L3-A8 XLA::Étapes 3 et 4 – Quel engagement aiderait Hélène à vérifier que l'entrepôt vit vraiment le service promis ?{
+=Un XLA, qui porte sur l'expérience vécue#Exact \: il complète le SLA en mesurant ce que ressent l'utilisateur.
+~Un OLA plus strict#Non \: l'OLA aligne les équipes internes, il ne mesure pas l'expérience. Revoyez la diapositive 10 (K1-L3-S3).
+~Un SLA avec un délai plus court#Non \: le SLA mesure toujours la promesse, pas le ressenti. Revoyez la diapositive 10 (K1-L3-S3).
+}
+
+::K1-L4 Leçon Q1::SLA à 96 %, satisfaction à 2,9 sur 5. Comment s'appelle ce piège ?{
+=L'effet pastèque#Exact \: vert à l'extérieur, rouge à l'intérieur. Revoyez la diapositive 5. (Leçon 04)
+~La loi de Goodhart#Non \: Goodhart décrit un objectif qui déforme les comportements. Revoyez la diapositive 6. (Leçon 04)
+~Le piège de la moyenne#Non \: il s'agit ici de deux indicateurs qui se contredisent. Revoyez la diapositive 5. (Leçon 04)
+~Un problème de qualité des données#Non \: les deux chiffres sont justes. Revoyez la diapositive 5. (Leçon 04)
+}
+
+::K1-L4 Leçon Q2::On récompense le technicien qui résout le plus vite. Quel KPI faut-il placer à côté pour éviter les effets pervers ?{
+=Son taux de réouverture#Exact \: deux KPI qui se surveillent, rapidité et qualité. Revoyez la diapositive 6. (Leçon 04)
+~Son nombre de tickets traités#Non \: il pousse aussi à aller vite. Revoyez la diapositive 6. (Leçon 04)
+~Son délai moyen de prise en charge#Non \: c'est encore un indicateur de rapidité. Revoyez la diapositive 6. (Leçon 04)
+~Aucun, la rapidité suffit#Non \: c'est exactement le piège de Goodhart. Revoyez la diapositive 6. (Leçon 04)
+}
+
+::K1-L4 Leçon Q3::Pour les incidents P2, la moyenne est de 8,9 h, la médiane de 5,0 h. Pourquoi cet écart ?{
+=Quelques incidents très longs tirent la moyenne vers le haut#Exact \: la médiane, elle, n'est pas sensible aux cas extrêmes. Revoyez la diapositive 7. (Leçon 04)
+~La médiane est mal calculée#Non \: les deux calculs sont justes. Revoyez la diapositive 7. (Leçon 04)
+~La moitié des incidents dure 8,9 h#Non \: c'est la médiane qui coupe les incidents en deux moitiés. Revoyez la diapositive 7. (Leçon 04)
+~Les P2 sont mal priorisés#Non \: l'écart vient de la forme de la distribution. Revoyez la diapositive 7. (Leçon 04)
+}
+
+::K1-L4 Leçon Q4::Seuls 30 % des utilisateurs répondent à l'enquête de satisfaction. Que faut-il faire ?{
+=Afficher le nombre de réponses à côté de la moyenne#Exact \: le lecteur sait sur quel échantillon repose le chiffre. Revoyez la diapositive 8. (Leçon 04)
+~Supprimer l'indicateur de satisfaction#Non \: il reste précieux, il faut seulement le lire avec prudence. Revoyez la diapositive 8. (Leçon 04)
+~Remplacer les absences de réponse par la note 3#Non \: on inventerait des données. Revoyez la diapositive 8. (Leçon 04)
+~Ne rien changer, 30 % suffit toujours#Non \: il faut au moins afficher l'échantillon. Revoyez la diapositive 8. (Leçon 04)
+}
+
+::K1L4-A1 Moyenne::Étapes 1 et 2 – Incidents P2 \: moyenne 8,9 h, médiane 5,0 h. Quelle phrase est juste ?{
+=La moitié des incidents P2 sont résolus en moins de 5 h ouvrées#Exact \: c'est la définition de la médiane.
+~La moitié des incidents P2 sont résolus en moins de 8,9 h ouvrées#Non \: c'est la médiane qui coupe en deux moitiés, pas la moyenne. Revoyez la diapositive 7 (K1-L4-S3).
+~La plupart des incidents P2 durent environ 8,9 h#Non \: la moyenne est tirée par les cas extrêmes. Revoyez la diapositive 7 (K1-L4-S3).
+}
+
+::K1L4-A2 Centile::Étape 2 – Pour les P2, le centile 90 vaut 22,6 h ouvrées. Que signifie ce chiffre ?{
+=10 % des incidents P2 ont été résolus en plus de 22,6 h ouvrées#Exact \: le centile 90 décrit les plus mal servis.
+~90 % des incidents P2 ont dépassé 22,6 h#Non \: c'est l'inverse, 90 % sont en dessous. Revoyez la diapositive 7 (K1-L4-S3).
+~Le délai moyen des 90 % premiers incidents#Non \: un centile n'est pas une moyenne. Revoyez la diapositive 7 (K1-L4-S3).
+}
+
+::K1L4-A3 Matricielle::Étape 2 – Dans une ancienne version d'Excel, MEDIANE(SI(...)) renvoie une erreur ou un résultat faux. Que faire ?{
+=Valider la formule par Ctrl+Maj+Entrée#Exact \: c'est une formule matricielle.
+~Remplacer MEDIANE par MOYENNE#Non \: on ne mesurerait plus la même chose.
+~Trier la colonne avant le calcul#Non \: le tri ne règle pas le calcul matriciel.
+}
+
+::K1L4-A4 MAX::Étape 2 – Pourquoi regarder aussi le maximum ?{
+=Pour repérer le pire cas, qui mérite souvent une analyse individuelle#Exact \: un incident de 53 h ouvrées est une histoire à comprendre.
+~Pour remplacer la moyenne#Non \: le maximum ne décrit qu'un seul incident. Revoyez la diapositive 7 (K1-L4-S3).
+~Parce qu'il est toujours égal au centile 90#Non \: il est au-delà du centile 90. Revoyez la diapositive 7 (K1-L4-S3).
+}
+
+::K1L4-A5 Goodhart::Étape 3 – Kevin \: 22 minutes de délai médian, 30 % de réouverture. Quel piège illustre-t-il ?{
+=La loi de Goodhart \: on optimise le chiffre, pas le service#Exact \: la rapidité devenue objectif pousse à fermer trop vite.
+~L'effet pastèque#Non \: il s'agit ici du comportement d'une personne face à un objectif. Revoyez la diapositive 6 (K1-L4-S2).
+~Le piège de la moyenne#Non \: le délai est une médiane, et le problème vient de la réouverture. Revoyez la diapositive 6 (K1-L4-S2).
+}
+
+::K1L4-A6 Paire::Étape 3 – Quelle paire de KPI aurait évité de récompenser Kevin à tort ?{
+=Délai de résolution et taux de réouverture#Exact \: l'un surveille l'autre.
+~Délai de résolution et nombre de tickets traités#Non \: les deux poussent à aller vite. Revoyez la diapositive 6 (K1-L4-S2).
+~Délai moyen et délai médian#Non \: ce sont deux mesures du même délai. Revoyez la diapositive 6 (K1-L4-S2).
+}
+
+::K1L4-A7 Réponses::Étape 4 – Pourquoi utiliser "<>" comme critère dans NB.SI.ENS(...;T_Incidents[Satisfaction (1-5)];"<>") ?{
+=Pour ne compter que les cellules non vides, donc les réponses#Exact \: "<>" signifie « différent de vide ».
+~Pour compter les notes différentes de 5#Non \: il faudrait écrire "<>5".
+~Pour exclure les tickets rouverts#Non \: le critère porte sur la colonne Satisfaction.
+}
+
+::K1L4-A8 Échantillon::Étape 4 – En septembre, 41 réponses pour 144 incidents. Comment présenter la satisfaction de 2,9 ?{
+=Avec son nombre de réponses \: 2,9 sur 5 (41 réponses, 28 %)#Exact \: le lecteur sait sur quoi repose le chiffre.
+~Seule, l'échantillon n'a pas d'importance#Non \: moins d'un tiers des utilisateurs ont répondu. Revoyez la diapositive 8 (K1-L4-S4).
+~En la recalculant comme si tous avaient répondu 3#Non \: on inventerait des données. Revoyez la diapositive 8 (K1-L4-S4).
+}
+
+::K1-L5 Leçon Q1::Quel champ du ticket décide dans quel périmètre de KPI le ticket est compté (entrepôt, applications…) ?{
+=La catégorie#Exact \: elle fixe le périmètre de tous les KPI par domaine. Revoyez la diapositive 5. (Leçon 05)
+~La priorité#Non \: la priorité fixe le délai promis. Revoyez la diapositive 5. (Leçon 05)
+~Le statut#Non \: le statut pilote le chrono. Revoyez la diapositive 7. (Leçon 05)
+~La solution#Non \: elle sert la réouverture et la base de connaissances. Revoyez la diapositive 5. (Leçon 05)
+}
+
+::K1-L5 Leçon Q2::Un incident causé par la mise en production de la veille n'est pas relié au changement. Qui est trompé en premier ?{
+=Le responsable des changements#Exact \: la mise en production paraît sans risque. Revoyez la diapositive 6. (Leçon 05)
+~L'utilisateur#Non \: son incident est traité normalement. Revoyez la diapositive 6. (Leçon 05)
+~Le team leader#Non \: le lien manquant touche d'abord le suivi des changements. Revoyez la diapositive 6. (Leçon 05)
+~Personne, le lien est facultatif#Non \: sans lien, le KPI des changements est faux. Revoyez la diapositive 6. (Leçon 05)
+}
+
+::K1-L5 Leçon Q3::Que fait le statut « Résolu » au chrono de résolution ?{
+=Il l'arrête#Exact \: c'est pourquoi on ne passe en résolu qu'après accord de l'utilisateur. Revoyez la diapositive 7. (Leçon 05)
+~Il le met en pause#Non \: c'est le statut En attente. Revoyez la diapositive 7. (Leçon 05)
+~Il le relance#Non \: c'est la réouverture qui relance le ticket. Revoyez la diapositive 7. (Leçon 05)
+~Rien, seul le statut Clos compte#Non \: le délai de résolution s'arrête au statut Résolu. Revoyez la diapositive 7. (Leçon 05)
+}
+
+::K1-L5 Leçon Q4::Parmi ces vérifications, laquelle fait partie de l'autocontrôle avant de résoudre ?{
+=La catégorie correspond au problème réel, pas au symptôme#Exact \: c'est le premier des 6 points. Revoyez la diapositive 8. (Leçon 05)
+~Le ticket a été résolu en moins de 10 minutes#Non \: la rapidité n'est pas un critère de qualité de saisie. Revoyez la diapositive 8. (Leçon 05)
+~La priorité est haute pour être traité plus vite#Non \: la priorité suit l'urgence et l'impact. Revoyez la diapositive 8. (Leçon 05)
+~Le ticket a été mis en attente au moins une fois#Non \: l'attente n'est justifiée que côté utilisateur. Revoyez la diapositive 8. (Leçon 05)
+}
+
+::K1L5-A1 Catégorie::Étape 1 – Ticket R-01 \: « WMS \: étiquettes non imprimées », classé dans « Imprimantes ». Quelle est l'erreur ?{
+=La catégorie \: le problème réel vient de l'application WMS#Exact \: l'imprimante n'est que le symptôme.
+~La priorité#Non \: P2 est cohérent pour un quai bloqué. Revoyez la diapositive 8 (K1-L5-S4).
+~Aucune, l'étiquette sort bien d'une imprimante#Non \: on classe selon la cause, pas le symptôme. Revoyez la diapositive 8 (K1-L5-S4).
+}
+
+::K1L5-A2 Priorité::Étape 1 – Ticket R-02 \: « Souris qui ne répond plus », en priorité P1 – Critique. Quelle est l'erreur ?{
+=La priorité \: une souris n'arrête pas l'activité de l'entreprise#Exact \: urgence faible, impact sur une seule personne.
+~La catégorie#Non \: « Poste de travail > Matériel » convient. Revoyez la diapositive 6 (K1-L5-S2).
+~Aucune, l'utilisateur est bloqué#Non \: une souris de rechange règle le problème en minutes ; P1 fausse le SLA. Revoyez la diapositive 6 (K1-L5-S2).
+}
+
+::K1L5-A3 Lien::Étape 1 – Ticket R-03 \: erreur ERP ouverte le 28 août à 9 h 12, sans changement lié. Pourquoi est-ce une erreur ?{
+=La mise en production ERP de la veille (CHG-0037) n'est pas reliée#Exact \: sans ce lien, le changement paraît sans effet.
+~La date d'ouverture est fausse#Non \: rien n'indique une erreur de date. Revoyez la diapositive 6 (K1-L5-S2).
+~Le ticket aurait dû être une demande#Non \: c'est bien un incident. Revoyez la diapositive 6 (K1-L5-S2).
+}
+
+::K1L5-A4 Solution::Étape 1 – Ticket R-04 \: solution saisie « Résolu ». Quel est le problème ?{
+=La solution n'est pas réutilisable et favorise les réouvertures#Exact \: un collègue ne saura pas ce qui a été fait.
+~Rien, le ticket est bien résolu#Non \: une solution doit expliquer ce qui a été fait. Revoyez la diapositive 6 (K1-L5-S2).
+~La catégorie est fausse#Non \: Outlook relève bien de la messagerie. Revoyez la diapositive 8 (K1-L5-S4).
+}
+
+::K1L5-A5 Dates::Étape 1 – Ticket R-05 \: ouvert à 11 h 15, pris en charge à 10 h 50. Quel KPI est faussé ?{
+=Le délai de prise en charge, qui devient négatif#Exact \: une date incohérente fausse les moyennes.
+~Le taux de réouverture#Non \: les dates de prise en charge n'y interviennent pas. Revoyez la diapositive 7 (K1-L5-S3).
+~Aucun, l'écart est trop petit#Non \: un délai négatif est impossible et fausse les calculs. Revoyez la diapositive 7 (K1-L5-S3).
+}
+
+::K1L5-A6 Attente::Étape 1 – Ticket R-06 \: mis en attente « de l'équipe réseau ». Pourquoi est-ce une attente abusive ?{
+=On attend une équipe interne, pas l'utilisateur#Exact \: le chrono est arrêté alors que c'est le support qui fait attendre.
+~Parce que l'attente est toujours interdite#Non \: elle est légitime quand on attend l'utilisateur. Revoyez la diapositive 7 (K1-L5-S3).
+~Parce que le ticket est en priorité P3#Non \: la priorité n'a rien à voir. Revoyez la diapositive 7 (K1-L5-S3).
+}
+
+::K1L5-A7 KPI août::Étapes 2 et 3 – Après correction des 3 incidents mal classés, que devient le KPI de l'entrepôt d'août ?{
+=Il passe de 63 % à 53 %#Exact \: 10 incidents résolus à temps sur 19, au lieu de 10 sur 16.
+~Il passe de 63 % à 73 %#Non \: les 3 incidents n'avaient pas été résolus à temps. Revoyez la diapositive 3 (K1-L5-S2).
+~Il ne change pas#Non \: le périmètre change, donc le KPI aussi. Revoyez la diapositive 3 (K1-L5-S2).
+}
+
+::K1L5-A8 Filtre::Étape 3 – Quel est le moyen le plus sûr de retrouver les incidents WMS mal classés ?{
+=Filtrer les titres qui contiennent « WMS » et comparer avec la catégorie#Exact \: le titre décrit souvent la cause réelle.
+~Filtrer la catégorie sur « Applications métier > WMS »#Non \: les incidents mal classés n'y sont justement pas.
+~Trier par date d'ouverture#Non \: le tri ne fait pas apparaître l'incohérence.
+}
+
+::K1-L6 Leçon Q1::« Quels incidents reviennent, et pourquoi ? » \: quel rôle se pose cette question ?{
+=Le responsable des problèmes#Exact \: il cherche les causes communes des incidents récurrents. Revoyez la diapositive 5. (Leçon 06)
+~L'Incident Manager#Non \: il pilote le traitement des incidents, pas leurs causes profondes. Revoyez la diapositive 5. (Leçon 06)
+~Le technicien#Non \: il se concentre sur ses tickets du jour. Revoyez la diapositive 5. (Leçon 06)
+~Le Delivery Manager#Non \: il suit les engagements envers le client. Revoyez la diapositive 5. (Leçon 06)
+}
+
+::K1-L6 Leçon Q2::Le taux de réouverture par technicien est élevé pour l'un d'eux. Qui agit en premier ?{
+=Le team leader#Exact \: il coache le technicien sur la qualité de clôture. Revoyez la diapositive 6. (Leçon 06)
+~Le responsable des changements#Non \: les réouvertures ne viennent pas d'un changement. Revoyez la diapositive 6. (Leçon 06)
+~Le Delivery Manager#Non \: il agit sur les engagements contractuels. Revoyez la diapositive 6. (Leçon 06)
+~La direction#Non \: c'est une question de management d'équipe. Revoyez la diapositive 6. (Leçon 06)
+}
+
+::K1-L6 Leçon Q3::Dans quel ordre se posent les trois questions pour lire un graphique ?{
+=Que montre-t-il ? Qui est concerné ? Quelle action ?#Exact \: le fait, le rôle, l'action. Revoyez la diapositive 7. (Leçon 06)
+~Quelle action ? Que montre-t-il ? Qui est concerné ?#Non \: on décrit d'abord le fait. Revoyez la diapositive 7. (Leçon 06)
+~Qui est concerné ? Quelle action ? Que montre-t-il ?#Non \: on ne cherche un responsable qu'après avoir décrit le fait. Revoyez la diapositive 7. (Leçon 06)
+~Que montre-t-il ? Quelle action ? Qui est concerné ?#Non \: l'action dépend de celui qui peut agir. Revoyez la diapositive 7. (Leçon 06)
+}
+
+::K1-L6 Leçon Q4::Les incidents grimpent le lendemain de la plupart des mises en production. Qui est concerné en premier ?{
+=Le responsable des changements#Exact \: la cause est dans la façon de mettre en production. Revoyez la diapositive 8. (Leçon 06)
+~Le responsable des problèmes#Non \: ici la cause est connue, c'est le changement. Revoyez la diapositive 8. (Leçon 06)
+~Le team leader#Non \: son équipe subit le pic mais n'en est pas la cause. Revoyez la diapositive 8. (Leçon 06)
+~Le technicien#Non \: il traite les incidents, il ne pilote pas les mises en production. Revoyez la diapositive 8. (Leçon 06)
+}

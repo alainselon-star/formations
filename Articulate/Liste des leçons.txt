@@ -1,0 +1,32 @@
+﻿Leçons Articulate — chaque leçon a son sous-dossier (parcours d'autoformation en .docx et .pdf, fichier de travail et corrigé).
+Leçons 00 à 06 : sans licence, à faire AVANT d'activer l'essai (14 jours). Leçons 07 à 18 : pendant l'essai. Leçons 19 à 21 : métier et freelance.
+Suivi : Suivi des niveaux.xlsx. Révision : Articulate_anki_complet.apkg (une étiquette par leçon).
+
+— Introduction —
+00 - Articulate, c'est quoi ? À quels besoins ça répond ?   [prérequis : Aucun]
+— Concevoir, sans licence —
+01 - Cadrer la demande d'un client   [prérequis : 00]
+02 - Écrire des objectifs observables   [prérequis : 01]
+03 - Découper un module en séquences   [prérequis : 02]
+04 - Le storyboard   [prérequis : 03]
+05 - Le QCM qui mesure vraiment   [prérequis : 02]
+06 - Le feedback qui fait apprendre   [prérequis : 04, 05]
+— Rise 360, pendant l'essai —
+07 - Votre premier cours Rise   [prérequis : 00, 04]
+08 - Choisir le bon bloc Rise   [prérequis : 07]
+09 - Quiz et suivi dans Rise   [prérequis : 05, 07]
+— Storyline 360, pendant l'essai —
+10 - Storyline : scènes, diapositives, chronologie   [prérequis : 00]
+11 - Storyline : états et calques   [prérequis : 10]
+12 - Storyline : les déclencheurs   [prérequis : 11]
+13 - Storyline : variables et conditions   [prérequis : 12]
+14 - Le scénario à embranchements et la simulation   [prérequis : 13]
+15 - Les quiz dans Storyline (import, banque, résultats)   [prérequis : 05, 12]
+— Publier et livrer —
+16 - Publier en SCORM et tester   [prérequis : 09 ou 15]
+17 - La recette avant livraison   [prérequis : 16]
+18 - Archiver avant la fin de l'essai   [prérequis : 16]
+— Métier et freelance —
+19 - Le brief client et le devis   [prérequis : 01]
+20 - Droits et licences des médias   [prérequis : 04]
+21 - Le plan d'essai de 14 jours   [prérequis : 01 à 06]

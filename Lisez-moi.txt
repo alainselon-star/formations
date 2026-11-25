@@ -1,0 +1,11 @@
+﻿Formation bureautique — dossier rempli automatiquement par l'agent « Production des leçons ».
+
+Chaque dossier de leçon contient :
+- Déroulé formateur (.docx) : préparer et animer la séance
+- Exercices (.docx) + fichiers de travail : niveaux 1 guidé, 2 semi-guidé, 3 autonome, 4 défi
+- Corrigé (.docx et fichiers corrigés)
+- Fiche mémo stagiaire (.docx)
+- Quiz (.docx)
+- Cartes Anki (.apkg) : double-cliquer pour importer dans Anki
+
+Avancement : document « Suivi_production » du projet Claude « Formation bureautique ».

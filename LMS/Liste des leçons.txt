@@ -1,0 +1,22 @@
+﻿Leçons LMS — chaque leçon a son sous-dossier (parcours d'autoformation en .docx et .pdf, fichier de travail et corrigé).
+Leçon 00 : introduction. 01 à 03 : livrer à un LMS (côté concepteur). 04 à 09 : pratiquer avec Moodle (sites de démonstration publics). 10 à 13 : votre propre plateforme.
+Suivi : Suivi des niveaux.xlsx. Révision : LMS_anki_complet.apkg (une étiquette par leçon).
+
+— Introduction —
+00 - Un LMS, c'est quoi ? À quoi ça sert ?   [prérequis : Aucun]
+— Livrer à un LMS —
+01 - Les normes : SCORM, xAPI, cmi5   [prérequis : 00]
+02 - Les questions à poser au client sur son LMS   [prérequis : 01]
+03 - Tester un module avant livraison (SCORM Cloud)   [prérequis : 01]
+— Pratiquer avec Moodle —
+04 - Se repérer dans Moodle   [prérequis : 00]
+05 - Créer un cours et inscrire des stagiaires   [prérequis : 04]
+06 - Importer un module SCORM et régler le suivi   [prérequis : 01, 05]
+07 - L'achèvement des activités et du cours   [prérequis : 05]
+08 - Rapports, traces et preuves (FOAD, Qualiopi)   [prérequis : 07]
+09 - Les attestations   [prérequis : 08]
+— Votre propre plateforme —
+10 - Choisir sa plateforme : Moodle, LMS en ligne, plateforme de vente   [prérequis : 00]
+11 - Installer Moodle sur un serveur (VPS)   [prérequis : 10]
+12 - Sécuriser et sauvegarder sa plateforme   [prérequis : 11]
+13 - Vendre ses formations en ligne   [prérequis : 10]

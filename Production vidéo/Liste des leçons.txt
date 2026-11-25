@@ -1,0 +1,48 @@
+﻿Leçons Production vidéo — chaque leçon a son sous-dossier (parcours d'autoformation en .docx et .pdf, fichiers de travail).
+Leçon 00 : introduction (les six compétences de base). Leçons 01 à 06 : les compétences de base, dans l'ordre.
+Leçons 07 à 32 : le catalogue, à prendre dans l'ordre que vous voulez (prérequis indiqués entre crochets).
+Suivi : Suivi des niveaux.xlsx. Révision : Video_anki_complet.apkg (une étiquette par leçon).
+
+— Introduction —
+00 - Les compétences de base (introduction)   [prérequis : Aucun]
+— Compétences de base —
+01 - Prendre le son   [prérequis : 00]
+02 - Monter   [prérequis : 01]
+03 - Capturer l'écran   [prérequis : 01, 02]
+04 - Filmer (cadrage, lumière)   [prérequis : 01]
+05 - Écrire   [prérequis : 00]
+06 - Exporter et diffuser   [prérequis : 02]
+— Son et voix —
+07 - Supprimer le bruit de fond   [prérequis : 01]
+08 - Le rythme et le ton de la voix   [prérequis : 01, 07]
+09 - La musique de fond   [prérequis : 01, 02]
+— Montage —
+10 - Les zooms   [prérequis : 02, 03]
+11 - Flèches et surlignages   [prérequis : 02, 03]
+12 - Les sous-titres   [prérequis : 02]
+13 - Les transitions sobres   [prérequis : 02]
+14 - Titres et chapitrage   [prérequis : 02, 06]
+15 - Couper le superflu et accélérer   [prérequis : 02, 03]
+— Écriture —
+16 - Écrire une situation-problème   [prérequis : 05]
+17 - Écrire un gag de bureau   [prérequis : 05, 16]
+18 - Le storyboard   [prérequis : 05]
+19 - Une idée par vidéo et une vraie fin   [prérequis : 05]
+— Animation —
+20 - Choisir son outil d'animation et créer son avatar   [prérequis : 05]
+21 - Les personnages récurrents   [prérequis : 20]
+22 - Faire parler un personnage   [prérequis : 01, 20]
+23 - Gestes, expressions et décors   [prérequis : 20, 22]
+24 - Le schéma animé   [prérequis : 05]
+— Face caméra —
+25 - L'incrustation face caméra   [prérequis : 03, 04]
+— Interactivité —
+26 - Le premier quiz interactif   [prérequis : 05]
+27 - Le scénario à choix   [prérequis : 05, 26]
+28 - L'infographie interactive   [prérequis : 05]
+29 - Le module e-learning (SCORM)   [prérequis : 05, 06, 26]
+— Analyse —
+30 - Décortiquer une vidéo de formation   [prérequis : 00]
+31 - Tester sa vidéo   [prérequis : une vidéo finie]
+— Assemblage —
+32 - Les ateliers d'assemblage   [prérequis : 01 à 06 au niveau 1]
