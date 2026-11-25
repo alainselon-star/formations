@@ -1,0 +1,17 @@
+# Sorties de publication Storyline (régénérables depuis les fichiers .story)
+html5/
+mobile/
+story_content/
+
+# Fichiers temporaires Office et système
+~$*
+*.tmp
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# Vidéos lourdes : stockées hors du dépôt
+*.mp4
+*.mov
+*.mkv
+*.avi
